@@ -1,7 +1,11 @@
-This is your first step.
 
-## Task
+## Configure Environment (Unlike optimise version is built)
 
-This is an _example_ of creating a scenario and running a **command**
+```
+yum install -y postgresql-server postgresql-contrib
 
-`echo 'Hello World'`{{execute}}
+postgresql-setup initdb
+systemctl start postgresql
+systemctl enable postgresql
+```{{execute}}
+
