@@ -1,0 +1,30 @@
+{
+  "title": "Banque National du Canada",
+  "description": "PostgreSQL Hands on",
+  "difficulty": "Beginner",
+  "time": "2 minutes",
+  "details": {	
+    "steps": [{
+      "title": "Step 1 - Install PostgreSQL",
+      "text": "step1.md"
+    }],
+    "intro": {
+	  "courseData": "courseBase.sh",	
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+     "showdashboard": true,
+	 "dashboard": "Dashboard",
+	 "uilayout": "terminal-iframe",
+	 "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },			  
+  "backend": {
+    "imageid": "crunchydata-base1",
+	"port":"5050"
+  }
+}
