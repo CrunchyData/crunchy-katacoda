@@ -3,9 +3,9 @@
 
 set -e -u
 
-yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
 
-yum install postgresql10 pgbackrest
+yum install -y postgresql10 pgbackrest
 
 
 docker network create --driver bridge pgnet
