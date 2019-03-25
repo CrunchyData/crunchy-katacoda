@@ -9,7 +9,7 @@ This could take a few minutes
 Execute the following to get the IP of the server to connect pgadmin to.
 
 ``` 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pgadmin
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' primary
 
 ```{{execute}}
 
