@@ -1,6 +1,9 @@
 #!/bin/bash
 
+
 set -e -u
+
+yum install -y postgresql-client postgresql-contrib pgbackrest
 
 docker network create --driver bridge pgnet
 
