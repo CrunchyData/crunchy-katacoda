@@ -4,10 +4,11 @@
 set -e -u
 
 echo 'adding postgres rpm'
-yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+yum install -y yum install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-centos11-11-2.noarch.rpm
+ 
 
 echo 'installing postgres and backrest'
-yum install -y postgresql10 pgbackrest
+yum install -y postgresql11 pgbackrest
 
 
 docker network create --driver bridge pgnet
