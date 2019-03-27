@@ -5,11 +5,12 @@ yum install -y yum install https://download.postgresql.org/pub/repos/yum/11/redh
 
 echo 'installing postgres and backrest'
 yum install -y postgresql11 pgbackrest postgresql-contrib
-
 postgresql-setup initdb
-systemctl start postgresql
-systemctl enable postgresql
 
 echo "Pull Docker Images"
 docker pull crunchydata/crunchy-postgres:centos7-11.2-2.3.1
+docker pull crunchydata/crunchy-postgres-gis:centos7-11.2-2.3.1
 docker pull crunchydata/crunchy-pgadmin4:centos7-11.2-2.3.1
+docker pull crunchydata/crunchy-pgpool:centos7-11.2-2.3.1
+
+docker pull thesteve0/postgres-appdev
