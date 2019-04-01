@@ -6,8 +6,12 @@ echo 'adding postgres rpm'
 yum install -y yum install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-centos11-11-2.noarch.rpm
 
 echo 'installing postgres and backrest'
-yum install -y postgresql11 pgbackrest postgresql-contrib postgis25_11 pgadmin4 unzip
-postgresql-setup initdb
+yum install -y postgresql11 postgres11-server  pgbackrest postgresql-contrib postgis25_11 pgadmin4 unzip
+/usr/pgsql-11/bin/postgresql-11-setup initdb
+
+systemctl start postgresql11
+systemctl enable postgresql11
+
 
 echo "Pull Docker Images"
 docker pull crunchydata/crunchy-postgres:centos7-11.2-2.3.1
