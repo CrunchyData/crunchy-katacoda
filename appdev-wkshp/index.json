@@ -1,0 +1,28 @@
+{
+  "title": "Other Cool Features in PostgreSQL for Application Development",
+  "description": "A Workshop to Introduce all the other features in PostgreSQL to help your application development",
+  "difficulty": "intermediate",
+  "time": "3 hours",
+  "details": {
+    "steps": [{
+      "title": "Step 1 - Run Command",
+      "text": "step1.md"
+    }],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
