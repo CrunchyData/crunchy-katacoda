@@ -18,8 +18,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 1", "target": "host01"},
+      {"name": "Terminal 2", "target": "host01"}
+    ]
   },
   "backend": {
     "imageid": "crunchydata-single1"
