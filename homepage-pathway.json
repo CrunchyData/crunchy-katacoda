@@ -1,0 +1,10 @@
+{
+  "title": "CrunchyData Learning Portal",
+  "private": true,
+  "courses": [
+    {
+      "external_link": "https://crunchydata.katacoda.com/postgrestraining",
+      "title": "Postgres Training"
+    }
+  ]
+}
