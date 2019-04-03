@@ -21,6 +21,52 @@ you have ever tried to install all these pieces you know what a hassle it can be
 
 ## Running PostgreSQL in Containers
 
+### Simpleset method
 
+Let's start with the quickest and easiest way to start up PostgreSQL using a container.
+
+    `docker run -e PG_PASSWORD=password thesteve0/postgres-appdev` {{execute}}
+
+If you click the little check mark in the box above it will execute the command in the terminal window. 
+What you are doing is telling docker to run image 
+[_thesteve0/postgres-appdev_](https://cloud.docker.com/u/thesteve0/repository/docker/thesteve0/postgres-appdev) and pass 
+in the environment variable for what you want the password to be for both the standard user and the postgres (DBAdmin) user. 
+
+1. The default name for the primary database will be: mydb
+1. The default username is: rnduser2w3
+1. The default port will be: 5432
+1. And the postgres user password will be equal to the user password which you set in the command.
+
+**CONGRATULATIONS you just spun up a fully working PostgreSQL database with a bunch of functionality!**  
+
+But this is a pretty simplistic way to start it let's start it with a few options set. Because we didn't run the container 
+in "detached" mode we never got our prompt back. Detached mode allows the container to run in the background and give us 
+ back our prompt. To shut down the container click on tab  titled "Terminal 2" and find out information on our running container:
+
+    `docker ps` {{execute}}
+    
+![docker ps](/crunchy-katacoda/appdev-wkshp/assets/docker_ps.jpg)
+
+Please note either the name or the ID of your running container (highlighted in red above). Now in the same terminal type 
+in the following command:     
+
+    `docker kill <id or name of your container>`
+    
+If you go back to the first tab, "Terminal" you will see that you get your prompt back. Let's start PostgreSQL more 
+appropriately for our workshop. 
+
+### Better way to start the container
+
+Let's set a new username, give the container a fixed (rather than random) name, expose port 5432 from the container 
+into the VM we are running, and have it detach so we can get our prompt back. 
+
+    `docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABASE=workshop --name=pgsql thesteve0/postgres-appdev`
+    
+And with that we have now spun up PostgreSQL with
+1. The ability to connect from our VM to the instance running in the container
+1. Username: groot
+1. Password: password
+1. A database named: workshop
+1. A container named: pgsql
 
 Now that we have PostgreSQL running let's move on to adding some tables and data.

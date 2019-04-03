@@ -5,7 +5,9 @@
   "time": "3 hours",
   "details": {
     "steps": [
-      {"title": "Running in Containers", "text": "01-running-in-containers.md"}
+      {"title": "Running in Containers", "text": "01-running-in-containers.md"},
+      {"title": "Creating Tables and Adding Data", "text": "02-adding-data.md"}
+
     ],
     "intro": {
       "courseData": "env-init.sh",
