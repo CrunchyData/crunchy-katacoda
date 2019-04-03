@@ -1,6 +1,6 @@
 {
-  "title": "Other Cool Features in PostgreSQL for Application Development",
-  "description": "A Workshop to Introduce all the other features in PostgreSQL to help your application development",
+  "title": "Features in PostgreSQL for Application Development",
+  "description": "A workshop to introduce features in PostgreSQL to help app. dev.",
   "difficulty": "intermediate",
   "time": "3 hours",
   "details": {
@@ -21,7 +21,6 @@
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
     "terminals": [
-      {"name": "Terminal 1", "target": "host01"},
       {"name": "Terminal 2", "target": "host01"}
     ]
   },

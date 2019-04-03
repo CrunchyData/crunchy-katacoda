@@ -1,0 +1,9 @@
+For learning more on what you can do with Katacoda
+
+The main doc site
+https://www.katacoda.com/docs
+
+Scenarios
+https://katacoda.com/scenario-examples/
+source
+https://github.com/katacoda/scenario-examples
