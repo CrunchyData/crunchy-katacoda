@@ -1,0 +1,9 @@
+web:
+  build: .
+  environment:
+    CERT_NAME: 'katacoda'
+    VIRTUAL_HOST: 'crunchydata.katacoda.com'
+    CTA: 'https://crunchydata.katacoda.com'
+    KATACODA_HOST: 'https://katacoda.com'
+    KATACODA_USER: 'crunchydata'
+  restart: always
