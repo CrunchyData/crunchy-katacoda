@@ -47,7 +47,7 @@ find out information on our running container:
 
 `docker ps`{{execute}}
     
-![dockerps](/crunchy-katacoda/scenarios/appdev-wkshp/assets/docker_ps.jpg)
+![dockerps](/crunchy-katacoda/appdev-wkshp/assets/docker_ps.jpg)
 
 Please note either the name or the ID of your running container (highlighted in red above). Now in the same terminal type 
 in the following command:     
