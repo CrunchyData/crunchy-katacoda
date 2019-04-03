@@ -21,11 +21,11 @@ you have ever tried to install all these pieces you know what a hassle it can be
 
 ## Running PostgreSQL in Containers
 
-### Simpleset method
+#### Simplest method
 
 Let's start with the quickest and easiest way to start up PostgreSQL using a container.
 
-`docker run -e PG_PASSWORD=password thesteve0/postgres-appdev` {{execute}}
+`docker run -e PG_PASSWORD=password thesteve0/postgres-appdev`{{execute}}
 
 If you click the little check mark in the box above it will execute the command in the terminal window. 
 What you are doing is telling docker to run image 
@@ -39,11 +39,13 @@ in the environment variable for what you want the password to be for both the st
 
 **CONGRATULATIONS you just spun up a fully working PostgreSQL database with a bunch of functionality!**  
 
-But this is a pretty simplistic way to start it let's start it with a few options set. Because we didn't run the container 
-in "detached" mode we never got our prompt back. Detached mode allows the container to run in the background and give us 
- back our prompt. To shut down the container click on tab  titled "Terminal 2" and find out information on our running container:
+But this is a pretty simplistic way to start PostgreSQL - great if you wanna just "get going quickly". 
 
-`docker ps` {{execute}}
+Because we didn't run the container in "detached" mode we never got our prompt back. Detached mode allows the container 
+to run in the background and give us back our prompt. To shut down the container click on tab  titled "Terminal 2" and 
+find out information on our running container:
+
+`docker ps`{{execute}}
     
 ![docker ps](/crunchy-katacoda/scenarios/appdev-wkshp/assets/docker_ps.jpg)
 
@@ -55,7 +57,7 @@ in the following command:
 If you go back to the first tab, "Terminal" you will see that you get your prompt back. Let's start PostgreSQL more 
 appropriately for our workshop. 
 
-### Better way to start the container
+#### Better way to start the container
 
 Let's set a new username, give the container a fixed (rather than random) name, expose port 5432 from the container 
 into the VM we are running, and have it detach so we can get our prompt back. 
