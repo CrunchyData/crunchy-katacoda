@@ -4,10 +4,9 @@
   "difficulty": "intermediate",
   "time": "3 hours",
   "details": {
-    "steps": [{
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    }],
+    "steps": [
+      {"title": "Running in Containers", "text": "01-running-in-containers.md"}
+    ],
     "intro": {
       "courseData": "env-init.sh",
       "code": "set-env.sh",
