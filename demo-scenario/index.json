@@ -13,13 +13,11 @@
       "credits": ""
     },
 		"assets": {
-					"client": [
-						{
-							"file": "2015CountyTypologyCodes.csv"
-							"target": "~/"
-						}
-					]
-				}
+		  "client": [ {
+			  "file": "2015CountyTypologyCodes.csv",
+				"target": "~/"
+		   }]
+		},		
     "finish": {
       "text": "finish.md"
     }
