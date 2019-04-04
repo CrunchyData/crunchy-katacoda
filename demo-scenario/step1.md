@@ -1,6 +1,5 @@
 
-## Configure Environment (Unlike optimise version is built)
-
+## Configure Environment 
 ```
 systemctl enable postgresql-11
 systemctl start postgresql-11
