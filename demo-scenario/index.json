@@ -16,6 +16,10 @@
 	  {
 	  	"title": "Step 3 - Load Data ",
 			"text": "step3.md"
+	  },
+	  {
+	  	"title": "Step 4 - pgbackrest ",
+			"text": "step4.md"
 	  }],
     "intro": {
       "text": "intro.md",
