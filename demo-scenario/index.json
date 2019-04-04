@@ -12,6 +12,10 @@
 	  {
 	  	"title": "Step 2 - Create user ",
 			"text": "step2.md"
+	  },
+	  {
+	  	"title": "Step 3 - Load Data ",
+			"text": "step3.md"
 	  }],
     "intro": {
       "text": "intro.md",
