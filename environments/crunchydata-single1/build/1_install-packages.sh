@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Removing base packages (9.6)"
+yum remove -y postgresql.x86_64
+
 echo "Installing required packages"
 
 echo 'adding postgres rpm'
