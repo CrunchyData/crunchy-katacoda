@@ -40,7 +40,9 @@ wal_level = replica
 ```
 
 ## Restart Postgres
+```
 systemctl restart postgresql-11
+```{{execute}}
 
 ## Create the stanza
 ```
