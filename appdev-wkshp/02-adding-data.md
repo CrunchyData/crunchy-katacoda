@@ -36,7 +36,7 @@ To exit nano hit
 
 To create the table we just need to do the following SQL statement:
 
-```psql -h localhost -U groot -f /data/crunchy_demo_data/boundaries/county_boundaries.dd.sql```{{execute}}
+```psql -h localhost -U groot -f /data/crunchy_demo_data/boundaries/county_boundaries.dd.sql workshop```{{execute}}
 
 We are telling the psql (the PostgreSQL command line client) that we want to connect to _localhost_ as user _groot_ and 
 it should execute the ddl file in the _workshop_ database.  
@@ -66,7 +66,7 @@ We had to store the geometries as Well Known Binary (WKB) format to work with th
 seeing all the random hexidecimal digits for most of the line. If you scroll up you can see this is for Cuming County, 
 Alabama. 
 
-The code book for the original data is located at :
+The code book for the original data is located at :s
 
 ``` /data/crunchy_demo_data/boundaries/codebook_for_attributes.xml```
 
