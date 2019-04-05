@@ -20,6 +20,10 @@
 	  {
 	  	"title": "Step 4 - pgbackrest ",
 			"text": "step4.md"
+	  },
+	  {
+	  	"title": "Step 4 - restore ",
+			"text": "restore.md"
 	  }],
     "intro": {
       "text": "intro.md",

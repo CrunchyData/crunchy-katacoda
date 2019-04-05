@@ -1,4 +1,15 @@
 ## Configure pgbackrest
+
+Make sure you are root, 
+
+```
+exit
+```{{execute}}
+
+```
+vi /etc/pgbackrest.conf
+```{{execute}}
+
 ```
 [global]
 repo1-path=/var/lib/pgbackrest
@@ -10,11 +21,15 @@ pg1-path=/var/lib/pgsql/11/data
 
 ## Modify permissions
 ```
-sudo chmod 750 /var/lib/pgbackrest
-sudo chown postgres:postgres /var/lib/pgbackrest
-```
+chmod 750 /var/lib/pgbackrest
+chown postgres:postgres /var/lib/pgbackrest
+```{{execute}}
 
 ## Postgresql.conf settings
+```
+vi /var/lib/pgsql/11/data/postgresql.conf
+```{{execute}}
+
 ```
 archive_command = 'pgbackrest --stanza=demo archive-push %p'
 archive_mode = on
@@ -41,4 +56,9 @@ sudo -u postgres pgbackrest --stanza=demo --log-level-console=info check
 ```
 sudo -u postgres pgbackrest --stanza=demo \
        --log-level-console=info backup
+```{{execute}}
+
+## Get information
+```
+sudo -u postgres pgbackrest info 
 ```{{execute}}
