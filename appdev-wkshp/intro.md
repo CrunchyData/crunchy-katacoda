@@ -17,10 +17,3 @@ The overall goal is to have you feel comfortable using these features and explor
 
 We will _not_ be going in depth on each of these topics. Just enough to get you started. 
 
-## Final Notes 
-
-The container used in this class is available [in Dockerhub](https://cloud.docker.com/u/thesteve0/repository/docker/thesteve0/postgres-appdev) so as long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. All the [data from the](https://github.com/CrunchyData/crunchy-demo-data/releases/tag/v0.1) workshop was intentionally chosen from public domain or permissive licenses so that you can use it for commercial and non-commercial purposes. Feel free to download it and play some more at your own pace.
-  
-  The only way to truly learn this technology is to play/experiment/use it for a while. You have all the tools you need - do it!
-  
-  And with that, let's start the workshop.

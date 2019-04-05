@@ -6,8 +6,9 @@
   "details": {
     "steps": [
       {"title": "Running in Containers", "text": "01-running-in-containers.md"},
-      {"title": "Creating Tables and Adding Data", "text": "02-adding-data.md"}
-
+      {"title": "Creating Tables and Adding Data", "text": "02-adding-data.md"},
+      {"title": "Working with Spatial Data", "text": "03-spatial-data.md"},
+      {"title": "Full-text Search", "text": "04-full-text-search.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
