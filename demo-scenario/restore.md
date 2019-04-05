@@ -20,10 +20,14 @@ To restore a backup of the PostgreSQL cluster run pgBackRest with the restore co
 ```
 sudo -u postgres find /var/lib/pgsql/11/data -mindepth 1 -delete
 ```{{execute}}
+```
+Note this will throw an error, but it did delete the directory
+```
 
 # Now restore the backup
 
 ```
-sudo -u postgres pgbackrest --stanza=demo restore
+chown postgres /var/log/pgbackrest
+sudo -u postgres pgbackrest --stanza=demo --log-level-console=info restore
 systemctl start postgresql-11
 ```{{execute}}
