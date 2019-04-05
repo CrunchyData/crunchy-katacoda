@@ -31,3 +31,8 @@ chown postgres /var/log/pgbackrest
 sudo -u postgres pgbackrest --stanza=demo --log-level-console=info restore
 systemctl start postgresql-11
 ```{{execute}}
+
+# Check to make sure we can connect
+```
+sudo -u postgres psql davec
+```{{execute}}
