@@ -66,9 +66,9 @@ We had to store the geometries as Well Known Binary (WKB) format to work with th
 seeing all the random hexidecimal digits for most of the line. If you scroll up you can see this is for Cuming County, 
 Alabama. 
 
-The code book for the original data is located at :
+The code book for the original data is located at:
 
-_/data/crunchy_demo_data/boundaries/codebook_for_attributes.xml_
+*/data/crunchy_demo_data/boundaries/codebook_for_attributes.xml*
 
 but we don't have time today to really dig in on the codebook.
 
@@ -137,7 +137,7 @@ types in this data so we can go through and load it quickly.
 
 ```psql -U groot -h localhost workshop```{{execute}}
 
-```\COPY county_typology from '/data/crunchy_demo_data/typology/2015CountyTypologyCodes.csv' with CSV HEADER``` {{execute}}
+```\COPY county_typology from '/data/crunchy_demo_data/typology/2015CountyTypologyCodes.csv' with CSV HEADER```{{execute}}
 
 
 
