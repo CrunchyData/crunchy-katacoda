@@ -19,7 +19,7 @@ vi 11/data1/postgresql.conf
 # Start the replica
 
 ```
-/usr/pgsql-11/bin/pg_ctl -d 11/data1 -l logfile1 start
+/usr/pgsql-11/bin/pg_ctl -D 11/data1 -l logfile1 start
 cat logfile
 ```{{execute}}
 

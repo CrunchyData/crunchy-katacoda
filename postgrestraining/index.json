@@ -2,7 +2,7 @@
   "title": "PostgreSQL Training",
   "description": "PostgreSQL Training Course",
   "difficulty": "Beginner",
-  "time": "2 minutes",
+  "time": "20 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
@@ -24,10 +24,6 @@
 	  {
 	  	"title": "Step 4 - restore ",
 			"text": "restore.md"
-	  },
-	  {
-	  	"title": "Step 5 - replication ",
-			"text": "replication.md"
 	  }],
     "intro": {
       "text": "intro.md",

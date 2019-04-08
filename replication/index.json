@@ -2,7 +2,7 @@
   "title": "Demo Scenario",
   "description": "A Sample Scenario",
   "difficulty": "Beginner",
-  "time": "2 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",
@@ -16,14 +16,6 @@
 	  {
 	  	"title": "Step 3 - Load Data ",
 			"text": "step3.md"
-	  },
-	  {
-	  	"title": "Step 4 - pgbackrest ",
-			"text": "step4.md"
-	  },
-	  {
-	  	"title": "Step 4 - restore ",
-			"text": "restore.md"
 	  },
 	  {
 	  	"title": "Step 5 - replication ",
