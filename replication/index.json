@@ -1,6 +1,6 @@
 {
-  "title": "Demo Scenario",
-  "description": "A Sample Scenario",
+  "title": "PostgreSQL Replication",
+  "description": "How to setup streaming replication",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
