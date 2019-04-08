@@ -1,6 +1,6 @@
 {
   "title": "PostgreSQL Training",
-  "description": "PostgreSQL Training Course",
+  "description": "Backup and Restore",
   "difficulty": "Beginner",
   "time": "20 minutes",
   "details": {
@@ -24,6 +24,10 @@
 	  {
 	  	"title": "Step 4 - restore ",
 			"text": "restore.md"
+	  },
+	  {
+	  	"title": "Step 4 - PITR ",
+			"text": "pitr.md"
 	  }],
     "intro": {
       "text": "intro.md",
