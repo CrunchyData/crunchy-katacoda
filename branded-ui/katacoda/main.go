@@ -95,6 +95,7 @@ func main() {
 
 	router.Get("/", index)
 	router.Get("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))).ServeHTTP)
+	router.Get("/training", traininghome)
 	router.Get("/training/", traininghome)
 	router.Get("/training/:course", trainingcourse)
 	router.Get("/training/:course/", trainingcourse)
