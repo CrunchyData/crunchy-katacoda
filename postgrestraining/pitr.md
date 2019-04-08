@@ -15,9 +15,17 @@ sudo -u postgres psql davec -c "begin; \
 sudo -u postgres psql -Atc "select current_timestamp"
 ```{{execute}}
 
+## Drop the important table
+```
+sudo -u postgres psql davec -c "begin; \
+       drop table important_table; \
+       commit; \
+       select * from important_table;"
+```{{execute}}
+
 ## Stop the database
 ```
-systemctl start postgresql-11
+systemctl stop postgresql-11
 ```{{execute}}
 
 ## Restore the database to the point before the drop
@@ -33,6 +41,6 @@ cat /var/lib/pgsql/11/data/recovery.conf
 ## Start the database and check the table is there
 ```
 systemctl start postgresql-11
-sudo -u postgres psql -c "select * from important_table"
+sudo -u postgres psql davec -c "select * from important_table"
 ```{{execute}}
 
