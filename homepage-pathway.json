@@ -5,6 +5,10 @@
     {
       "external_link": "https://crunchydata.katacoda.com/postgrestraining",
       "title": "Postgres Training"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/replication",
+      "title": "PostgreSQL Replication"
     }
   ]
 }
