@@ -13,7 +13,7 @@ psql davec -c "begin; \
 
 ## Create a restore point to use to restore to
 ```
-psql -Atc "pg_create_restore_point('before_drop')"
+psql -Atc "select pg_create_restore_point('before_drop')"
 ```{{execute}}
 
 ## Drop the important table
@@ -34,19 +34,23 @@ systemctl stop postgresql-11
 ```
 sudo -iu postgres 
 pgbackrest --stanza=demo --delta \
-       --type=time "--target=before_drop" \
+       --type=name "--target=before_drop" \
        --target-action=promote restore
 exit
-```{{exit}}
-```
 cat /var/lib/pgsql/11/data/recovery.conf
 ```{{execute}}
 
-## Start the database and check the table is there
+## Start the database 
 ```
 systemctl start postgresql-11
+```{{execute}}
+
+## Check the table is there
+```
 sudo -iu postgres 
 psql davec -c "select * from important_table"
 exit
 ```{{execute}}
+
+
 
