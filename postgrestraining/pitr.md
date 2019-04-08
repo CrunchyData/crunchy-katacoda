@@ -13,14 +13,11 @@ psql davec -c "begin; \
 
 ## Record the time for the restore
 ```
-sudo -iu postgres 
 psql -Atc "select current_timestamp"
-exit
 ```{{execute}}
 
 ## Drop the important table
 ```
-sudo -iu postgres 
 psql davec -c "begin; \
        drop table important_table; \
        commit; \
