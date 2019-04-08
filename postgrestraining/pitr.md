@@ -11,9 +11,9 @@ psql davec -c "begin; \
 ```{{execute}} 
 
 
-## Record the time for the restore
+## Create a restore point to use to restore to
 ```
-psql -Atc "select current_timestamp"
+psql -Atc "pg_create_restore_point('before_drop')"
 ```{{execute}}
 
 ## Drop the important table
@@ -34,10 +34,10 @@ systemctl stop postgresql-11
 ```
 sudo -iu postgres 
 pgbackrest --stanza=demo --delta \
-       --type=time "--target=<time from previous step>" \
+       --type=time "--target=before_drop" \
        --target-action=promote restore
 exit
-```
+```{{exit}}
 ```
 cat /var/lib/pgsql/11/data/recovery.conf
 ```{{execute}}
