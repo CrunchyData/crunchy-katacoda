@@ -11,9 +11,9 @@ psql davec -c "begin; \
 ```{{execute}} 
 
 
-## Record the time for the restore
+## Create a restore point to use to restore to
 ```
-psql -Atc "select current_timestamp"
+psql -Atc "select pg_create_restore_point('before_drop')"
 ```{{execute}}
 
 ## Drop the important table
@@ -49,4 +49,3 @@ sudo -iu postgres
 psql davec -c "select * from important_table"
 exit
 ```{{execute}}
-
