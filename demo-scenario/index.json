@@ -33,12 +33,6 @@
       "text": "intro.md",
       "credits": ""
     },
-		"assets": {
-		  "client": [ {
-			  "file": "2015CountyTypologyCodes.csv",
-				"target": "~/"
-		   }]
-		},		
     "finish": {
       "text": "finish.md"
     }
