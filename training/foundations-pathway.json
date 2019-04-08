@@ -1,0 +1,18 @@
+{
+  "title": "Foundations Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata",
+      "id": "postgrestraining",
+      "course_id": "postgrestraining",
+      "title": "PostgreSQL Training"
+    },
+    {
+      "pathway_id": "crunchydata",
+      "id": "replication",
+      "course_id": "replication",
+      "title": "PostgresSQL Replication"
+    }
+  ]
+}
