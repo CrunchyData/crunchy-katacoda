@@ -83,7 +83,7 @@ func traininghome(w http.ResponseWriter, r *http.Request) {
 }
 
 func trainingscenario(w http.ResponseWriter, r *http.Request) {
- 	pageData := ScenarioPageData{Name: vestigo.Param(r, "scenario"), Training: TrainingPageData{Name: vestigo.Param(r, "course"), Site: getSiteData()}}
+ 	pageData := ScenarioPageData{Name: vestigo.Param(r, "scenario"), Site: getSiteData(), Training: TrainingPageData{Name: vestigo.Param(r, "course")}}
 	renderTemplate(w, "templates/training-scenario.html", &pageData)
 }
 
