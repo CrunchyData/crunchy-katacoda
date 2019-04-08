@@ -34,23 +34,18 @@ systemctl stop postgresql-11
 ```
 sudo -iu postgres 
 pgbackrest --stanza=demo --delta \
-       --type=name "--target=before_drop" \
+       --type=time "--target=<time from previous step>" \
        --target-action=promote restore
 exit
+```
+```
 cat /var/lib/pgsql/11/data/recovery.conf
 ```{{execute}}
 
-## Start the database 
+## Start the database and check the table is there
 ```
 systemctl start postgresql-11
-```{{execute}}
-
-## Check the table is there
-```
 sudo -iu postgres 
 psql davec -c "select * from important_table"
 exit
 ```{{execute}}
-
-
-
