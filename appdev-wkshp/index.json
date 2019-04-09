@@ -1,0 +1,33 @@
+{
+  "title": "Features in PostgreSQL for Application Development",
+  "description": "A workshop to introduce features in PostgreSQL to help app. dev.",
+  "difficulty": "intermediate",
+  "time": "3 hours",
+  "details": {
+    "steps": [
+      {"title": "Running in Containers", "text": "01-running-in-containers.md"},
+      {"title": "Creating Tables and Adding Data", "text": "02-adding-data.md"},
+      {"title": "Working with Spatial Data", "text": "03-spatial-data.md"},
+      {"title": "Full-text Search", "text": "04-full-text-search.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

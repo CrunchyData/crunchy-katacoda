@@ -18,8 +18,8 @@ docker pull thesteve0/postgres-appdev
 
 echo "Downloading sample data"
 cd /tmp
-wget https://github.com/thesteve0/crunchydemodata/releases/download/v0.1/crunchy_demo_data_v0.1.zip
+wget https://github.com/thesteve0/crunchydemodata/releases/download/v0.2/crunchy_demo_data_v0.2.zip
 mkdir /data
 chmod 777 /data
-unzip crunchy_demo_data_v0.1.zip -d /data
-rm -f crunchy_demo_data_v0.1.zip
+unzip crunchy_demo_data_v0.2.zip -d /data
+rm -f crunchy_demo_data_v0.2.zip
