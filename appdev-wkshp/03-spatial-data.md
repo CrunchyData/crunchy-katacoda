@@ -66,12 +66,13 @@ First is the query returning all the counties with 22.5KM of a storm event locat
 
 and then do the grouping and counting:
 
-```
+```sql
 with all_counties as (
            select geo.statefp, geo.county_name, se.locationid from county_geometry as geo, se_locations as se where ST_intersects(geo.the_geom, ST_Buffer(se.the_geom, 12500.0)) limit 200
    )
    select statefp, county_name, count(*) from all_counties group by statefp, county_name order by statefp, count(*) DESC;
- ```{{execute}}
+
+```
 
 The _with x as ()_ syntax is called a [Common Table Expression](https://www.postgresql.org/docs/11/queries-with.html) 
 (CTE) in PostgreSQL and makes writing subqueries a lot easier. The CTE create a temporary table that exists for just 
