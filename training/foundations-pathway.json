@@ -13,6 +13,12 @@
       "id": "replication",
       "course_id": "replication",
       "title": "PostgresSQL Replication"
+    },
+    {
+      "pathway_id": "crunchydata",
+      "id": "appdev-wkshp",
+      "course_id": "appdev-wkshp",
+      "title": "Features in PostgreSQL for Application Development"
     }
   ]
 }
