@@ -36,7 +36,7 @@ To exit nano hit
 
 To create the table we just need to do the following SQL statement:
 
-```psql -h localhost -U groot -f /data/crunchy_demo_data/boundaries/county_boundaries.dd.sql workshop```{{execute}}
+```psql -h localhost -U groot -f /data/crunchy_demo_data/boundaries/county_boundaries.ddl.sql workshop```{{execute}}
 
 We are telling the psql (the PostgreSQL command line client) that we want to connect to _localhost_ as user _groot_ and 
 it should execute the ddl file in the _workshop_ database.  
