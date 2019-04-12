@@ -3,10 +3,19 @@
 echo "Installing required packages"
 
 echo 'adding postgres rpm'
-yum install -y yum install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-centos11-11-2.noarch.rpm
+yum install -y https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-centos11-11-2.noarch.rpm
+if [ "$?" -ne 0 ]; then
+    echo "Unable to install Postgres Repo"
+    exit 1
+fi
 
 echo 'installing postgres and backrest'
 yum install -y postgresql11 postgresql11-server  pgbackrest postgresql11-contrib postgis25_11 pgadmin4 unzip
+if [ "$?" -ne 0 ]; then
+    echo "Unable to install Postgres"
+    exit 1
+fi
+
 /usr/pgsql-11/bin/postgresql-11-setup initdb
 
 echo "Pull Docker Images"
