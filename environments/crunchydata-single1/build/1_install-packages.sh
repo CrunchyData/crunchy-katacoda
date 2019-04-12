@@ -22,7 +22,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 echo 'installing RPMs'
-yum install -y postgresql11 postgresql11-server  pgbackrest postgresql11-contrib postgis25_11 pgadmin4 unzip
+yum install -y postgresql11 postgresql11-server  pgbackrest postgresql11-contrib postgis25_11 pgadmin4 R unzip
 if [ "$?" -ne 0 ]; then
     echo "Unable to install Postgres"
     exit 1
