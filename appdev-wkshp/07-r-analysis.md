@@ -22,7 +22,8 @@ right next to the data. No need to move it across the wire and then run the anal
 that is triggered to update the results everytime there is a new data entry. Then we can expose that to application developers 
 as a simple function that they can call in their sql like:
 
-```SELECT my_r_regression() ```
+
+`SELECT my_r_regression()`
 
 and get back the slope, intercept, and any other summary stats you want to give them. Data scientists and statisticians can 
 feel comfortable that the correct analysis is being done without anyone changing their methods. Application developers are 
@@ -41,19 +42,21 @@ After this we will quickly do the linear regression we talked about earlier.
 
 To start R just type:
 
-```R```{{execute}}
+`R`{{execute}}
 
 at the terminal.
 
 Now to do 2x2 you just do:
 
-```2x2```{{execute}}
+
+`2x2`{{execute}}
 
 and hit enter. Wow, amazing right ;)
 
 To quite R just type:
 
-```quit()```{{execute}} 
+
+`quit()`{{execute}} 
 
 and say N when it asks if you want to save your workspace. A workspace is just as it sounds - in your profile it will store 
 your command history and data you may have output.
@@ -87,14 +90,16 @@ We already installed the R language (PL/R) into PostgreSQL for you, so let's get
 
 First we need to make PL/R a trusted language - this has to be done as the postgres user:
 
-```psql -U postgres -h localhost workshop```{{execute}}
+`psql -U postgres -h localhost workshop`{{execute}}
+
 
 Unless you specified a different password when we started the container, the password will be "password" just like the user 
 groot.
 
 Now update the language status:
 
-```UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plr';```{{execute}}
+
+`UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plr';`{{execute}}
 
 Now logout:
 
@@ -104,7 +109,8 @@ Changing the language status only has to happen once in the lifetime of the data
 
 Now log back in as normal user groot. 
 
-```psql -U groot -h localhost workshop```{{execute}}
+`psql -U groot -h localhost workshop`{{execute}}
+
 
 and then enter the following command:
 
@@ -146,7 +152,8 @@ $$ LANGUAGE 'plr';
 
 And now let's exercise our function:
 
-```select r_corr(array_agg(aland), array_agg(awater)) from county_geometry;```{{execute}}
+
+`select r_corr(array_agg(aland), array_agg(awater)) from county_geometry;`{{execute}}
 
 What we get back is the string which represents the DataFrame (R term for dataset) for the results of the correlation test. 
 The first three elemets are the statistical test score, the degrees of freedom, and the P value respectively, the _cor =_ represents the correlation coefficient,
