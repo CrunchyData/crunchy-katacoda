@@ -28,6 +28,7 @@ Building a FTS index is actually quite simple:
 
 `CREATE INDEX se_details_fulltext_idx ON se_details USING GIN (to_tsvector('english', event_narrative));`{{execute}}
 
+
 This function will take a little while to run as it tokenizes and lexemes all the content in the column.
 The syntax is basically the same as creating any GIN index. The only difference is that we use the to_tsvector function, 
 passing in the dictionary to use, 'english', and the field to analyze.
@@ -52,6 +53,7 @@ solution that works best for you.
 
 If we want to do a full text search we can now do something like this:
 
+
 `select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('villag');`{{execute}}  
 
 You will notice in the result set we are getting village and villages. To_tsquery is a basic search parser. 
@@ -67,6 +69,7 @@ This query also allows us to use the :* operator and get the search to do full s
  As expected this return no results. But if we now change the distance between the words to allow for an intervening word
  we start to get what we expect:
  
+
  `select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('grapefruit <2> hail');`{{execute}}
  
  The order of the words using the <N> operator is order sensitive. Swapping grapefruit and hail we again get no results:

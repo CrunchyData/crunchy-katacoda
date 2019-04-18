@@ -22,6 +22,7 @@ right next to the data. No need to move it across the wire and then run the anal
 that is triggered to update the results everytime there is a new data entry. Then we can expose that to application developers 
 as a simple function that they can call in their sql like:
 
+
 `SELECT my_r_regression()`
 
 and get back the slope, intercept, and any other summary stats you want to give them. Data scientists and statisticians can 
@@ -47,11 +48,13 @@ at the terminal.
 
 Now to do 2x2 you just do:
 
+
 `2x2`{{execute}}
 
 and hit enter. Wow, amazing right ;)
 
 To quite R just type:
+
 
 `quit()`{{execute}} 
 
@@ -89,10 +92,12 @@ First we need to make PL/R a trusted language - this has to be done as the postg
 
 `psql -U postgres -h localhost workshop`{{execute}}
 
+
 Unless you specified a different password when we started the container, the password will be "password" just like the user 
 groot.
 
 Now update the language status:
+
 
 `UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plr';`{{execute}}
 
@@ -105,6 +110,7 @@ Changing the language status only has to happen once in the lifetime of the data
 Now log back in as normal user groot. 
 
 `psql -U groot -h localhost workshop`{{execute}}
+
 
 and then enter the following command:
 
@@ -145,6 +151,7 @@ $$ LANGUAGE 'plr';
 ```
 
 And now let's exercise our function:
+
 
 `select r_corr(array_agg(aland), array_agg(awater)) from county_geometry;`{{execute}}
 
