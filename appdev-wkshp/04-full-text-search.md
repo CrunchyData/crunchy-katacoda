@@ -26,7 +26,7 @@ Events details table.
 
 Building a FTS index is actually quite simple:
 
-```CREATE INDEX se_details_fulltext_idx ON se_details USING GIN (to_tsvector('english', event_narrative));```{{execute}}
+`CREATE INDEX se_details_fulltext_idx ON se_details USING GIN (to_tsvector('english', event_narrative));`{{execute}}
 
 This function will take a little while to run as it tokenizes and lexemes all the content in the column.
 The syntax is basically the same as creating any GIN index. The only difference is that we use the to_tsvector function, 
@@ -52,33 +52,33 @@ solution that works best for you.
 
 If we want to do a full text search we can now do something like this:
 
-```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('villag');```{{execute}}  
+`select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('villag');`{{execute}}  
 
 You will notice in the result set we are getting village and villages. To_tsquery is a basic search parser. 
-This query also allows us to use the _:*_ operator and get the search to do full stemming after the end of the word
+This query also allows us to use the :* operator and get the search to do full stemming after the end of the word
 
-```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('english', 'villa:*');```{{execute}}
+`select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('english', 'villa:*');`{{execute}}
  
  We can also now look for phrases such as words that appear close together in the document. Let's look for some big hail:
  
- ```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('grapefruit <1> hail');```{{execute}}
+ `select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('grapefruit <1> hail');`{{execute}}
  
  The *<1>* operator in this case tells the search to look for the words grapefruit and hail next to each other in the document. 
  As expected this return no results. But if we now change the distance between the words to allow for an intervening word
  we start to get what we expect:
  
- ```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('grapefruit <2> hail');```{{execute}}
+ `select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('grapefruit <2> hail');`{{execute}}
  
  The order of the words using the <N> operator is order sensitive. Swapping grapefruit and hail we again get no results:
  
- ```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('hail <2> grapefruit');```{{execute}} 
+ `select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('hail <2> grapefruit');`{{execute}} 
   
 You can also use | (OR) and ! (NOT) operators inside the to_tsquery(). Once you start writing more complicated search phrasings 
 you should start to use parentheses to group search together.
 
 The following search will find all documents with grapefruit OR the prefix golf with the word hail two words later.
 
-```select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('(grapefruit | golf:* ) <2> hail');```
+`select begin_date_time, event_narrative from se_details where to_tsvector('english', event_narrative) @@ to_tsquery('(grapefruit | golf:* ) <2> hail');`{{execute}}
 
 ## Final notes on full text search
 
