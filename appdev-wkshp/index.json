@@ -8,7 +8,12 @@
       {"title": "Running in Containers", "text": "01-running-in-containers.md"},
       {"title": "Creating Tables and Adding Data", "text": "02-adding-data.md"},
       {"title": "Working with Spatial Data", "text": "03-spatial-data.md"},
-      {"title": "Full-text Search", "text": "04-full-text-search.md"}
+      {"title": "Full-text Search", "text": "04-full-text-search.md"},
+      {"title": "HSTORE column types", "text": "05-key-value.md"},
+      {"title": "JSON(B) column types", "text": "06-json-data.md"},
+      {"title": "PL/R, Using R in PostgreSQL", "text": "07-r-analysis.md"}
+
+
     ],
     "intro": {
       "courseData": "env-init.sh",
