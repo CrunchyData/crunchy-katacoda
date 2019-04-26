@@ -1,0 +1,10 @@
+{
+  "title": "CrunchyData Learning Portal",
+  "private": true,
+  "courses": [
+    {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgres-for-dbas/replication/",
+      "title": "PostgreSQL Replication"
+    }
+  ]
+}
