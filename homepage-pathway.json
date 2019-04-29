@@ -3,12 +3,34 @@
   "private": true,
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/postgrestraining",
-      "title": "PostgreSQL Training"
+      "external_link": "https://crunchydata.katacoda.com/basic-postgres-for-dbas/",
+      "title": "Basic PostgreSQL for DBAs",
+      "action": "Start Course"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/replication",
-      "title": "PostgreSQL Replication"
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "Basic PostgreSQL for Developers",
+      "action": "Coming Soon"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "PostGIS",
+      "action": "Coming Soon"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "Advanced Concepts",
+      "action": "Coming Soon"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "PostgreSQL for Kubernetes/OpenShift",
+      "action": "Coming Soon"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "Workshops",
+      "action": "Coming Soon"
     }
   ]
 }

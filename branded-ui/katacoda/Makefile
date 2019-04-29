@@ -2,7 +2,7 @@ NAME=portal
 .PHONY: dev start
 
 dev:
-	docker run -it -p 3000:3000 --rm -w /go/src/github.com/$(NAME) \
+	docker run -it -p 3333:3000 --rm -w /go/src/github.com/$(NAME) \
 	  -v $(shell pwd)/:/go/src/github.com/$(NAME) \
 	  golang:1.12
 

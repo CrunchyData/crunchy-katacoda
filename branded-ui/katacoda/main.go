@@ -20,6 +20,7 @@ type SitePageData struct {
 type TrainingPageData struct {
 	Site SitePageData
 	Name  string
+	Subcourse string
 }
 
 type ScenarioPageData struct {
@@ -72,6 +73,16 @@ func course(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "templates/course.html", &pageData)
 }
 
+func subcourse(w http.ResponseWriter, r *http.Request) {
+	pageData := TrainingPageData{Name: vestigo.Param(r, "course"), Subcourse: vestigo.Param(r, "subcourse"), Site: getSiteData()}
+	renderTemplate(w, "templates/subcourse.html", &pageData)
+}
+
+func subcoursescenario(w http.ResponseWriter, r *http.Request) {
+	pageData := ScenarioPageData{Name: vestigo.Param(r, "scenario"), Training: TrainingPageData{Name: vestigo.Param(r, "course"), Subcourse: vestigo.Param(r, "subcourse")}, Site: getSiteData()}
+	renderTemplate(w, "templates/subcoursescenario.html", &pageData)
+}
+
 func trainingcourse(w http.ResponseWriter, r *http.Request) {
 	pageData := TrainingPageData{Name: "training/" + vestigo.Param(r, "course"), Site: getSiteData()}
 	renderTemplate(w, "templates/course.html", &pageData)
@@ -80,6 +91,11 @@ func trainingcourse(w http.ResponseWriter, r *http.Request) {
 func traininghome(w http.ResponseWriter, r *http.Request) {
 	pageData := TrainingPageData{Name: "training", Site: getSiteData() }
 	renderTemplate(w, "templates/course.html", &pageData)
+}
+
+func comingsoon(w http.ResponseWriter, r *http.Request) {
+	pageData := TrainingPageData{Name: "comingsoon", Site: getSiteData() }
+	renderTemplate(w, "templates/comingsoon.html", &pageData)
 }
 
 func trainingscenario(w http.ResponseWriter, r *http.Request) {
@@ -95,13 +111,21 @@ func main() {
 
 	router.Get("/", index)
 	router.Get("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))).ServeHTTP)
+	router.Get("/:course", course)
+	router.Get("/:course/", course)
+	router.Get("/:course/courses/:subcourse", subcourse)
+	router.Get("/:course/courses/:subcourse/", subcourse)
+	router.Get("/comingsoon", comingsoon)
+	router.Get("/comingsoon/", comingsoon)
 	router.Get("/training", traininghome)
 	router.Get("/training/", traininghome)
 	router.Get("/training/:course", trainingcourse)
 	router.Get("/training/:course/", trainingcourse)
 	router.Get("/training/:course/:scenario", trainingscenario)
-	router.Get("/:scenario", scenario)
-	router.Get("/:scenario/", scenario)
+	router.Get("/:course/:scenario", scenario)
+	router.Get("/:course/:scenario/", scenario)
+	router.Get("/:course/courses/:subcourse/:scenario", subcoursescenario)
+	router.Get("/:course/courses/:subcourse/:scenario/", subcoursescenario)
 
 	http.Handle("/", router)
 
