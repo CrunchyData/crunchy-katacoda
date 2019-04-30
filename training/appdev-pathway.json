@@ -1,0 +1,12 @@
+{
+  "title": "Application Developer Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata",
+      "id": "appdev-wkshp",
+      "course_id": "appdev-wkshp",
+      "title": "PostgreSQL for Application Development"
+    }
+  ]
+}
