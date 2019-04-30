@@ -3,6 +3,12 @@
   "private": true,
   "courses": [
     {
+
+      "external_link": "https://crunchydata.katacoda.com/comingsoon/",
+      "title": "Basic PostgreSQL for DBAs",
+      "action": "Start Course"
+    },
+    {
       "external_link": "https://crunchydata.katacoda.com/comingsoon",
       "title": "Basic PostgreSQL for Developers",
       "action": "Coming Soon"
@@ -10,6 +16,17 @@
     {
       "external_link": "https://crunchydata.katacoda.com/comingsoon",
       "title": "PostGIS",
+      "action": "Coming Soon"
+    },
+    {
+
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "Advanced Concepts",
+      "action": "Coming Soon"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "title": "PostgreSQL for Kubernetes/OpenShift",
       "action": "Coming Soon"
     },
     {
