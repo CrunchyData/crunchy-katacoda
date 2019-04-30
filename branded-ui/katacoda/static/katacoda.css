@@ -71,6 +71,23 @@ padding-top: 40px;
 text-align: center;
 }
 
+.masterheader ul {
+  display: inline-block;
+  right: 0;
+  position: absolute;
+  list-style: none;
+  line-height: 40px;
+}
+
+.masterheader li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.masterheader li a {
+  text-decoration: none;
+}
+
 .text-center {
   text-align: center;
 }
