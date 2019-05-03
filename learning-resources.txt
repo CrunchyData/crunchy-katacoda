@@ -7,3 +7,9 @@ Scenarios
 https://katacoda.com/scenario-examples/
 source
 https://github.com/katacoda/scenario-examples
+
+If you want to test out new image builds (not content builds) before deploying to the production site you can go to
+beta.katacoda.com/crunchydata
+
+New VM image builds are automatically deployed there before they are manually moved to production katacoda. Please
+remember is that you need to have content using image type before you can test it.

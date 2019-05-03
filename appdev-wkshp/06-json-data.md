@@ -17,7 +17,7 @@ We stored the reponse from Wikipedia as JSONB but it is not a very rich document
 some basic but interesting queries. 
 
 The first thing to understand that there are two major operator types - ones that return JSON and other that return text. 
-For example, this operator `_->` gets a JSON object field by a key and returns JSON:
+For example, this operator `->` gets a JSON object field by a key and returns JSON:
 
 ```javascript
 '{"a": "value"}'::json->'a'  = "value"

@@ -15,7 +15,7 @@ Let's go ahead and load the U.S. County boundaries into a spatially enabled tabl
 To see the Data Definition Languague (DDL) SQL for creating  the table. We will use the simple _nano_ editor 
 to look at the file.  
 
-```nano /data/crunchy_demo_data/boundaries/county_boundaries.dd.sql```{{execute}}
+```nano /data/crunchy_demo_data/boundaries/county_boundaries.ddl.sql```{{execute}}
 
 Typically with a postgis table you would have to make sure you loaded the postgis extension into your database, but in 
 this case, when the container was spun up and created the database for you it already added the extension. 
