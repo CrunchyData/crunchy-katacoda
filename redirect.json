@@ -1,0 +1,6 @@
+[
+    {"scenario": "appdev-wkshp", "targetCourse": "workshops", "targetScenario": "appdev-wkshp"},
+    {"scenario": "pitr", "targetCourse": "workshops", "targetScenario": "pitr"},
+    {"scenario": "replication", "targetCourse": "workshops", "targetScenario": "replication"}
+  ]
+  

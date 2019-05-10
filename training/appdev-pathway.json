@@ -3,7 +3,7 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata",
+      "pathway_id": "crunchydata/workshops",
       "id": "appdev-wkshp",
       "course_id": "appdev-wkshp",
       "title": "PostgreSQL for Application Development"

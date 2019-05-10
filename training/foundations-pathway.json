@@ -3,19 +3,19 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata",
+      "pathway_id": "crunchydata/workshops",
       "id": "postgrestraining",
       "course_id": "postgrestraining",
       "title": "PostgreSQL Training"
     },
     {
-      "pathway_id": "crunchydata",
+      "pathway_id": "crunchydata/workshops",
       "id": "replication",
       "course_id": "replication",
       "title": "PostgresSQL Replication"
     },
     {
-      "pathway_id": "crunchydata",
+      "pathway_id": "crunchydata/workshops",
       "id": "appdev-wkshp",
       "course_id": "appdev-wkshp",
       "title": "PostgreSQL for Application Development"
