@@ -17,7 +17,7 @@ EOF
 setenforce 0
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y docker kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 systemctl enable --now kubelet
 
@@ -37,6 +37,7 @@ cat <<EOF > /opt/launch-kubeadm.sh
 #!/bin/sh
 rm $HOME/.kube/config
 kubeadm reset -f || true
+systemctl start kubelet
 mkdir -p /root/.kube
 kubeadm init --kubernetes-version $(kubeadm version -o short) --token=96771a.f608976060d16396
 mkdir -p $HOME/.kube
@@ -258,3 +259,17 @@ items:
         type: RollingUpdate
 EOF
 
+cat <<EOF > /usr/local/bin/launch.sh
+#!/bin/bash
+echo Waiting for Kubernetes to start...
+  while [ ! -f /root/.kube/config ]
+  do
+    sleep 1
+  done
+echo Kubernetes started
+if [ -f /root/.kube/start ]; then
+  /root/.kube/start
+fi
+EOF
+
+chmod +x /usr/local/bin/launch.sh
