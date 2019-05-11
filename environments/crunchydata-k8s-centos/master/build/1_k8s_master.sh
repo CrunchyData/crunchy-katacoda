@@ -1,8 +1,11 @@
+set -e 
 sudo yum remove -y docker docker-common
 
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install -y docker-ce docker-ce-cli containerd.io
+systemctl enable --now docker
+systemctl start docker
 
 
 echo '127.0.0.1 master' >> /etc/hosts
