@@ -4,9 +4,9 @@
   "courses": [
     {
       "pathway_id": "crunchydata/workshops",
-      "id": "postgrestraining",
-      "course_id": "postgrestraining",
-      "title": "PostgreSQL Training"
+      "id": "pitr",
+      "course_id": "pitr",
+      "title": "PostgreSQL Point In Time Recovery"
     },
     {
       "pathway_id": "crunchydata/workshops",
