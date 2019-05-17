@@ -86,11 +86,11 @@ location and if they two overlap.
 #### Spatial buffer and then select
 
 Finally let's do more complicated query that you could not do without sophisticated spatial operations. Suppose we were 
-trying to put together emergency response centers in counties with high potential for storms. We are going to buffer 12 KM (about 8 miles) 
+trying to put together emergency response centers in counties with high potential for storms. We are going to buffer a 12.5 KM radius (about 8 miles) 
 off a storm even center point and then select all the counties that intersect that buffered circle. We will use a grouping 
 query to do a count of the storms circles per county.
 
-First is the query returning all the counties with 22.5KM of a storm event location:
+First is the query returning all the counties with 12.5KM of a storm event location:
 
 ```select geo.statefp, geo.county_name, se.locationid from county_geometry as geo, se_locations as se where ST_intersects(geo.the_geom, ST_Buffer(se.the_geom, 12500.0))  limit 200;```{{execute}}
 
