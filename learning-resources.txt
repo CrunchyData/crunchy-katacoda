@@ -1,3 +1,28 @@
+#Katacoda instructions for CrunchyData
+
+The top level of our site has courses - courses are made up of scenarios - scenarios have a json file that defines the intro,
+the instructional pages, the final page, the shell scripts to run when the scenario starts, which katacoda image to run, and
+what the scenario layout will look like in terms of terminals and web pages.
+
+## Here is how the site "works"
+1. homepage-pathway.json controls what shows up on the home page on crunchydata.katacoda.com. It lists all the courses on our site
+    * first item is the url of the course which is "https://crunchydata.katacoda.com/<name of the pathway minus the name pathway>"
+        An example "external_link": "https://crunchydata.katacoda.com/workshops/" means there will be a workshops-pathway.json
+        Inside that JSON file will be the layout for which scenarios will be in the course.
+    * The title of the Course you want to show up to the end user
+    * And then the action - which should be "Start Course" if you have content in the directory
+2.
+
+## Setting up a future workshop
+1. Go to https:://dashboard.katacoda.com
+2. Log in using the account and credentials that you used to log in to katacoda
+3.
+
+The list of available trainings comes from the pathways in the training directory. Whatever pathway you choose
+will determine the home page that attendees will see when they sign in
+
+
+
 For learning more on what you can do with Katacoda
 
 The main doc site
