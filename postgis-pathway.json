@@ -1,4 +1,14 @@
 {
   "title": "CrunchyData PostGIS",
+<<<<<<< HEAD
+  "courses": [
+    {
+      "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisinto/",
+      "course_id": "qpostgisintro",
+      "title": "Quick Intro. To PostGIS"
+    }
+  ]
+=======
   "courses": []
+>>>>>>> 2930e32889613de3534aabf3bf13b86bb8514a27
 }
