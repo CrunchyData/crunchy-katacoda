@@ -2,7 +2,7 @@
   "title": "CrunchyData PostGIS",
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisinto/",
+      "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisintro/",
       "course_id": "qpostgisintro",
       "title": "Quick Intro. To PostGIS"
     }
