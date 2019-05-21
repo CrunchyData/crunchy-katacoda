@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-# Nothing for now
+# Runs in the background
