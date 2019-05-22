@@ -24,7 +24,7 @@ to data orphans or data being out of sync
 
 Make sure the benefits of using these datatypes outweighs the cost before using them.
 
-Our recommended pattern is to process the JSON or Key-Value pairs and, as much as possible, store them in a well defined 
+Our recommended pattern is to process the JSON and, as much as possible, store them in a well defined 
 schema. Again you are free to do what you want, but this is our recommendation.
 
 With that, on to the JSONB
@@ -50,10 +50,11 @@ You will see one JSONB column named *json_content*. Again we are using JSONB bec
 json_content  | jsonb   
 ```
 
-You will also see that we created a GIN index on the JSONB column. GIN is the appropriate index type for JSON content.
+You will also see that we created a GIN index on the JSONB column. [GIN](https://www.postgresql.org/docs/11/gin-intro.html) 
+is the appropriate index type for JSON content.
 
 ```
-    "wikipedia_json_content_indx" gin (json_content)
+"wikipedia_json_content_indx" gin (json_content)
 ```
 
 
@@ -109,7 +110,7 @@ We can use this syntax to get the text value of the revision warnings:
 
 Or we can use the JSON path operator
 
-```select json_content #>> '{warnings,revisions,warnings}' from wikipedia;```{{execute}}
+```select json_content #>> '{warnings,revisions,warnings}' from wikipedia limit 5;```{{execute}}
 
 
 #### A more advanced query
@@ -142,6 +143,9 @@ with normalized_to AS (
 
 ## Final Notes on Working with JSON in PostgreSQL
 
-Now we have seen how you can query and select different parts of your document. We didn't even cover containment or other
-fun operations. One other fun thing to keep in mind you can also create 
+Now we have seen how you can query and select different parts of your document. We didn't even cover 
+[containment](https://www.postgresql.org/docs/11/datatype-json.html#JSON-CONTAINMENT) or other
+[fun operations](https://www.postgresql.org/docs/11/datatype-json.html). There is a 
+[full page](https://www.postgresql.org/docs/11/functions-json.html) of JSON functions and operators, 
+go ahead and start playing with them right now in this class if you want. One other fun thing to keep in mind you can also create 
 indexes directly on a tree within the JSONB document, which is recommended if you are going within that document tree a lot.

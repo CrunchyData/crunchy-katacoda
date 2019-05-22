@@ -22,6 +22,32 @@ This search function **must** use the same dictionary that was used to create th
 And with that **very** basic introduction let's get to it. We are going to do a FTS on the event narratives in the Storm 
 Events details table.
 
+## Look at our data
+
+The storm events data is public domain data from the U.S. weather service. We will be looking at the storm details information 
+which contains narrative information about the storms.
+
+et's go ahead and log in to our PostgreSQL database:
+
+```psql -U groot -h localhost workshop```{{execute}}
+
+Remember that the password is the word 'password'.
+
+Now if you do:
+
+`\d se_details`{{execute}}
+
+PostgreSQL will show you a full description of the storm events details table. To see all the \ commands in PostgreSQL just do 
+`\?` (though don't do it right now).
+
+You will see text columns. any of which could be used by themself or combined together as a single document. Today we are just going 
+to use event_narrative
+
+```
+event_narrative   | text
+```
+
+
 #### Build the index
 
 Building a FTS index is actually quite simple:
@@ -88,7 +114,7 @@ The following search will find all documents with grapefruit OR the prefix golf 
 As you can see, we can do powerful and fast full text searching with FTS in PostgreSQL. Unfortunately, the documentation 
 on this feature is actually quite sparse and difficult to interpret. If you want to learn this syntax you are going to have to dig in with debugging 
 and trying different query techniques to get your desired results. 
-One other [helpful document](https://www.postgresql.eu/events/pgconfeu2018/sessions/session/2116/slides/137/pgconf.eu-2018-fts.pdf) is a presentation by one of the lead developers.
-Hopefully in the future the PostgreSQL community will update and improve this documentation.  
+One other [helpful document](https://www.postgresql.eu/events/pgconfeu2018/sessions/session/2116/slides/137/pgconf.eu-2018-fts.pdf) is 
+a presentation by one of the lead developers. Hopefully in the future the PostgreSQL community will update and improve this documentation.  
 
  

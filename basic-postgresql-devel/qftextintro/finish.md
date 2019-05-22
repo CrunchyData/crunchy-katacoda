@@ -6,7 +6,9 @@ As long as you have Docker on your machine you can use the same version of Postg
 from public domain or permissive licenses so that you can use it for commercial and non-commercial purposes. Feel free 
 to download it and play some more at your own pace on your own machine.
   
-I hope you enjoyed learning a little about using [JSON in PostgreSQL](https://www.postgresql.org/docs/11/datatype-json.html) 
-and can bring that into your work. 
+The only way to truly learn this technology is to play/experiment/use it for a while. 
+You can keep using this environment and [the documentation](https://www.postgresql.org/docs/11/textsearch.html) to play with 
+full text search, especially things like [highlighting results](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-HEADLINE)
+ and changing [document weights](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-RANKING).  
   
 And with that, we are finished.

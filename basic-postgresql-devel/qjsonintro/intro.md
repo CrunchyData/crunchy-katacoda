@@ -7,5 +7,5 @@ Here are the details on the database we are connecting to:
 1. Password: password (same password for the postgres user as well)
 1. A database named: workshop
 
-We will _not_ be going in depth on JSON in PostgreSQL we are just going to cover enough to get whet your appetite.
+We will _not_ be going in depth on JSON in PostgreSQL. We are just going to cover enough to whet your appetite.
 
