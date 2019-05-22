@@ -55,7 +55,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p interface{}) {
 }
 
 func getSiteData() SitePageData {
-	return SitePageData{VirtualHost: os.Getenv("VIRTUAL_HOST"),CTA: os.Getenv("CTA"), KatacodaHost: os.Getenv("KATACODA_HOST"), KatacodaUser: os.Getenv("KATACODA_USER")}
+	return SitePageData{VirtualHost: "learn.crunchydata.com",CTA: os.Getenv("CTA"), KatacodaHost: os.Getenv("KATACODA_HOST"), KatacodaUser: os.Getenv("KATACODA_USER")}
 }
 
 func scenario(w http.ResponseWriter, r *http.Request) {
