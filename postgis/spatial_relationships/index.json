@@ -19,10 +19,6 @@
     },
     "assets": {
       "client": [
-        {
-          "file": "nyc_data.sql.gz",
-          "target": "~/"
-        }
       ]
     }
   },
