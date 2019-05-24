@@ -92,7 +92,7 @@ POINT(-74.0106714688735 40.7071048155841)
 If you load data or create a new geometry without specifying an SRID, the SRID value will be 0. 
 
 ``` {.sql}
-SELECT ST_SRID('POINT(1 1)')
+SELECT ST_SRID('POINT(1 1)'::geometry);
 ```{{execute}}
 
 ```
@@ -102,7 +102,7 @@ SELECT ST_SRID('POINT(1 1)')
 If you know what the SRID of the coordinates is supposed to be, you can set it post-facto, using ST\_SetSRID on the geometry. Then you will be able to transform the geometry into other systems.
 
 ``` {.sql}
-SELECT ST_SRID(ST_SetSRID('POINT(1 1)', 4326))
+SELECT ST_SRID(ST_SetSRID('POINT(1 1)'::geometry, 4326));
 ```{{execute}}
 
 ```
