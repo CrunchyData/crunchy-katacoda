@@ -3,11 +3,11 @@
   "courses": [
     {
       "external_link": "https://crunchydata.katacoda.com/postgis/geometries/",
-      "course_id": "Geometries",
+      "course_id": "geometries",
       "title": "Geometries"
     },{
       "external_link": "https://crunchydata.katacoda.com/postgis/projection/",
-      "course_id": "Projection",
+      "course_id": "projection",
       "title": "Projection"
     },{
       "external_link": "https://crunchydata.katacoda.com/postgis/spatial_relationships/",
