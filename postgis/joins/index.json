@@ -5,7 +5,7 @@
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Joins", "text": "join.md"}
+      {"title": "Joins", "text": "joins.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
