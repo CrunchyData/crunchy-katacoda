@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!bash
 
 echo 'Please wait while we prep the environment (should take about 10 seconds)'
 echo 'Starting the database...'
@@ -8,4 +8,5 @@ echo 'Loading data...'
 curl http://s3.cleverelephant.ca/nyc_data.sql.gz | gzip -dc | PGPASSWORD="password" psql -h localhost -U groot nyc
 
 echo 'Finished and ready to go.'
+clear
 PGPASSWORD="password" psql -h localhost -U groot nyc
