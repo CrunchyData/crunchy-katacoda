@@ -8,7 +8,7 @@ We can confirm the SRID of our data with the :command:`ST_SRID` command:
 
 ```sql  
 SELECT ST_SRID(geom) FROM nyc_streets LIMIT 1;
-```
+```{{execute}}
   
 ```
 26918
@@ -18,13 +18,13 @@ And what is definition of "26918"? As we saw in loading data section, the defini
 
 ```sql
 SELECT * FROM spatial_ref_sys WHERE srid = 26918;
-```
+```{{execute}}
    
 In fact, for the internal PostGIS re-projection calculations, it is the contents of the `proj4text` column that are used. For our 26918 projection, here is the proj.4 text:
 
 ```sql
 SELECT proj4text FROM spatial_ref_sys WHERE srid = 26918;
-```
+```{{execute}}
   
 ```
 +proj=utm +zone=18 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
@@ -43,7 +43,7 @@ SELECT ST_Equals(
        ST_GeomFromText('POINT(0 0)', 4326),
        ST_GeomFromText('POINT(0 0)', 26918)
        );
-```
+```{{execute}}
 ```
 ERROR:  Operation on two geometries with different SRIDs
 CONTEXT:  SQL function "st_equals" statement 1
@@ -71,8 +71,7 @@ The most common SRID for geographic coordinates is 4326, which corresponds to "l
 You can also pull the definitions from the ``spatial_ref_sys`` table:
 
 ```sql
-SELECT srtext FROM spatial_ref_sys WHERE srid = 4326;
-```
+SELECT srtext FROM spatial_ref_sys WHERE srid = 4326;```{{execute}}
   
 ```
 GEOGCS["WGS 84",
@@ -89,8 +88,7 @@ Let's convert the coordinates of the "Broad St" subway station into geographics:
 ```sql
 SELECT ST_AsText(ST_Transform(geom,4326)) 
   FROM nyc_subway_stations 
-  WHERE name = 'Broad St';
-```
+  WHERE name = 'Broad St';```{{execute}}
 ```
 POINT(-74.0106714688735 40.7071048155841)
 ```
@@ -101,8 +99,7 @@ To view a table's SRID assignment, query the database's `geometry_columns` table
 
 ```sql
 SELECT f_table_name AS name, srid 
-FROM geometry_columns;
-```  
+FROM geometry_columns;```{{execute}}
 ```
         name         | srid  
 ---------------------+-------
