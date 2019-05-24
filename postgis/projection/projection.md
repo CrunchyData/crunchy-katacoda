@@ -86,36 +86,28 @@ SELECT ST_AsText(ST_Transform(geom,4326))
 FROM nyc_subway_stations 
 WHERE name = 'Broad St';
 ```{{execute}}
-
-    POINT(-74.0106714688735 40.7071048155841)
-
-If you load data or create a new geometry without specifying an SRID, the SRID value will be 0. Recall in geometries, that when we created our `geometries` table we didn't specify an SRID. If we query our database, we should expect all the `nyc_` tables to have an SRID of 26918, while the `geometries` table defaulted to an SRID of 0.
-
-To view a table's SRID assignment, query the database's `geometry_columns` table.
+```
+POINT(-74.0106714688735 40.7071048155841)
+```
+If you load data or create a new geometry without specifying an SRID, the SRID value will be 0. 
 
 ``` {.sql}
-SELECT f_table_name AS name, srid 
-FROM geometry_columns;
+SELECT ST_SRID('POINT(1 1)')
 ```{{execute}}
+
 ```
-         name         | srid  
- ---------------------+------- 
-    nyc_census_blocks | 26918  
-    nyc_neighborhoods | 26918 
-          nyc_streets | 26918
-  nyc_subway_stations | 26918 
-           geometries | 0
+0
 ```
-However, if you know what the SRID of the coordinates is supposed to be, you can set it post-facto, using ST\_SetSRID on the geometry. Then you will be able to transform the geometry into other systems.
+
+If you know what the SRID of the coordinates is supposed to be, you can set it post-facto, using ST\_SetSRID on the geometry. Then you will be able to transform the geometry into other systems.
 
 ``` {.sql}
-SELECT ST_AsText(
- ST_Transform(
-   ST_SetSRID(geom,26918),
- 4326)
-)
-FROM geometries;
+SELECT ST_SRID(ST_SetSRID('POINT(1 1)', 4326))
 ```{{execute}}
+
+```
+4326
+```
 
 Function List
 -------------
