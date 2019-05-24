@@ -1,18 +1,12 @@
-# Quick Introduction to PostGIS
-This short litle class will give you a quick introduction to some of the ways you can use PostGIS, the spatial extension
-for PostgreSQL. The database has already been started and the spatial data has already been loaded
+# Introduction to PostGIS Geometries
+This scenario is going give you an introduction to Geometries in PostGIS. You may remember geometries from your math classes in school and the word has the same meaning here. Point, lines, and polygons will form the building blocks for all the work we do in vector capabilities in PostGIS. 
+ 
+The database has already been started and the spatial data has already been loaded. This scenario will use data from New York City (NYC). If you want to dig in deeper on the data please go ahead and do [this scenario](TODO link to paul's scenario) first. Data from this scenario will be used in all the other exercises as well.
 
-We loaded some data for U.S. Counties - a sub-state (province) geographic subdivision. 
-We chose U.S. data because so much of it is freely available and released under a permissive license. 
-
-All the data and SQL used in the following pieces are found in /data/crunchy_demo_data in your vm.
-
-The two tables you will be working with are county boundaries and the point location of storm events. 
-
-Here are the details on the database we are connecting to:
+We have already logged you into the PostgreSQL command line but, if you get disconnected here are the details on the database we are connecting to:
 1. Username: groot
 1. Password: password (same password for the postgres user as well)
-1. A database named: workshop
+1. A database named: nyc
 
-We will _not_ be going in depth on PostGIS we are just going to cover enough to get whet your appetite. 
+And with that, let's dig in. 
 
