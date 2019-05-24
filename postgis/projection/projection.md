@@ -121,8 +121,7 @@ ST_Transform(
   ST_SetSRID(geom,26918),
 4326)
 )
-FROM geometries;
-```
+FROM geometries;```{{execute}}
 
 ## Function List
 
