@@ -63,7 +63,7 @@ SELECT name, ST_AsText(geom)
 
 ### Linestrings
 
-![image](assets/introduction/lines.png)
+![image](geometries/assets//lines.png)
 
 A **linestring** is a path between locations. It takes the form of an ordered series of two or more points. Roads and rivers are typically represented as linestrings. A linestring is said to be **closed** if it starts and ends on the same point. It is said to be **simple** if it does not cross or touch itself (except at its endpoints if it is closed). A linestring can be both **closed** and **simple**.
 
@@ -98,7 +98,7 @@ SELECT ST_Length(geom)
 
 ### Polygons
 
-![image](assets/introduction/polygons.png)
+![image](geometries/assets/polygons.png)
 
 A polygon is a representation of an area. The outer boundary of the polygon is represented by a ring. This ring is a linestring that is both closed and simple as defined above. Holes within the polygon are also represented by rings.
 
@@ -121,7 +121,7 @@ SELECT ST_AsText(geom)
 
 The first polygon has only one ring. The second one has an interior "hole". Most graphics systems include the concept of a "polygon", but GIS systems are relatively unique in allowing polygons to explicitly have holes.
 
-![image](assets/screenshots/polygons.png)
+![image](geometries/assets/polygons2.png)
 
 Some of the specific spatial functions for working with polygons are:
 
@@ -155,7 +155,7 @@ There are four collection types, which group multiple simple geometries into set
 
 Collections are another concept that shows up in GIS software more than in generic graphics software. They are useful for directly modeling real world objects as spatial objects. For example, how to model a lot that is split by a right-of-way? As a **MultiPolygon**, with a part on either side of the right-of-way.
 
-![image](assets/screenshots/collection2.png)
+![image](geometries/assets/collection2.png)
 
 Our example collection contains a polygon and a point:
 
@@ -167,7 +167,7 @@ SELECT name, ST_AsText(geom)
 
     GEOMETRYCOLLECTION(POINT(2 0),POLYGON((0 0, 1 0, 1 1, 0 1, 0 0)))
 
-![image](assets/screenshots/collection.png)
+![image](geometries/assets/collection.png)
 
 Some of the specific spatial functions for working with collections are:
 

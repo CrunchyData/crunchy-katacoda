@@ -85,7 +85,7 @@ In addition to emitters for the various forms (WKT, WKB, GML, KML, JSON, SVG), P
 SELECT ST_AsGeoJSON(ST_GeomFromGML('<gml:Point><gml:coordinates>1,1</gml:coordinates></gml:Point>'));
 ```{{execute}}
 
-![image](/geometries/assets/represent-07.png)
+![image](geometries/assets/represent-07.png)
 
 Casting from Text
 -----------------
