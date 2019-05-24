@@ -33,7 +33,7 @@ geometry different from both but of the same dimension.
 Let's take our Broad Street subway station and determine its
 neighborhood using the **ST_Intersects** function:
 
-``` {.sourceCode .sql}
+```
 SELECT name, ST_AsText(geom)
 FROM nyc_subway_stations
 WHERE name = 'Broad St';
@@ -41,7 +41,7 @@ WHERE name = 'Broad St';
 
 >    POINT(583571 4506714)
 
-``` {.sourceCode .sql}
+```
 SELECT name, boroname
 FROM nyc_neighborhoods
 WHERE ST_Intersects(geom, ST_GeomFromText('POINT(583571 4506714)',26918));
