@@ -16,7 +16,7 @@ FROM nyc_neighborhoods AS neighborhoods
 JOIN nyc_subway_stations AS subways
 ON ST_Contains(neighborhoods.geom, subways.geom)
 WHERE subways.name = 'Broad St';
-```
+```{{execute}}
 ```
  subway_name | neighborhood_name  |  borough  
 -------------+--------------------+----------- 
@@ -43,7 +43,7 @@ ON ST_Intersects(neighborhoods.geom, census.geom)
 WHERE neighborhoods.boroname = 'Manhattan'
 GROUP BY neighborhoods.name
 ORDER BY white_pct DESC;
-```
+```{{execute}}
 ```
   neighborhood_name  | population | white_pct | black_pct 
 ---------------------+------------+-----------+----------- 
@@ -97,7 +97,7 @@ SELECT
   100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct, 
   Sum(popn_total) AS popn_total
 FROM nyc_census_blocks;
-```
+```{{execute}}
 ```
     white_pct     |    black_pct     | popn_total 
 ------------------+------------------+------------ 
@@ -111,7 +111,7 @@ First, note that the contents of the `nyc_subway_stations` table `routes` field 
 
 ``` {.sql}
 SELECT DISTINCT routes FROM nyc_subway_stations;
-```
+```{{execute}}
 
     A,C,G
     4,5
@@ -131,7 +131,7 @@ So to find the A-train, we will want any row in `routes` that has an 'A' in it. 
 SELECT DISTINCT routes 
 FROM nyc_subway_stations AS subways 
 WHERE strpos(subways.routes,'A') > 0;
-```
+```{{execute}}
 
     A,B,C
     A,C
@@ -154,7 +154,7 @@ FROM nyc_census_blocks AS census
 JOIN nyc_subway_stations AS subways
 ON ST_DWithin(census.geom, subways.geom, 200)
 WHERE strpos(subways.routes,'A') > 0;
-```
+```{{execute}}
 ```
       white_pct     |    black_pct     | popn_total 
   ------------------+------------------+------------ 
@@ -176,7 +176,7 @@ INSERT INTO subway_lines (route) VALUES
   ('J'),('L'),('M'),('N'),('Q'),('R'),('S'),
   ('Z'),('1'),('2'),('3'),('4'),('5'),('6'),
   ('7');
-```
+```{{execute}}
 
 Now we can join the table of subway lines onto our original query.
 
@@ -193,7 +193,7 @@ JOIN subway_lines AS lines
 ON strpos(subways.routes, lines.route) > 0
 GROUP BY lines.route
 ORDER BY black_pct DESC;
-```
+```{{execute}}
 ```
     route | white_pct | black_pct | popn_total 
    -------+-----------+-----------+------------ 
