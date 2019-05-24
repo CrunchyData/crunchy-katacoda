@@ -5,7 +5,7 @@
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Working with Spatial Data", "text": "01-spatial-data.md"},
+      {"title": "Spatial Relationships", "text": "01-spatial-rel.md"},
       {"title": "ST_Equals", "text": "02-equals.md"}
     ],
     "intro": {
