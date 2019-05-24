@@ -1,4 +1,4 @@
-# Projection
+# Spatial Joins
 
 This scenario is going to give you an introduction to spatial joins in PostGIS. "Joins" are a database technique to match rows in two tables. Usually joins use an identifying key, matching numbers or strings between tables. Spatial joins use a spatial condition to match rows: rows with geometries that intersect, or geometries within a certain radius, are matched up.
  
