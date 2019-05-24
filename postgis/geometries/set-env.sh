@@ -9,5 +9,3 @@ docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABA
 echo 'loading data'
 curl http://s3.cleverelephant.ca/nyc_data.sql.gz |gzip -dc | PGPASSWORD="password" psql -h localhost -U groot nyc && \
 PGPASSWORD="password" psql -h localhost -U groot nyc
-
-echo 'finished and ready to go'

@@ -9,7 +9,7 @@ Our example table contains a mixture of different geometry types. We can collect
 -   ST\_NDims(geometry) returns the number of dimensions of the geometry
 -   ST\_SRID(geometry) returns the spatial reference identifier number of the geometry
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT name, ST_GeometryType(geom), ST_NDims(geom), ST_SRID(geom)
   FROM geometries;
 ```{{execute}}
@@ -28,7 +28,7 @@ Point | ST\_Point | 2 | 0
 
 A spatial **point** represents a single location on the Earth. This point is represented by a single coordinate (including either 2-, 3- or 4-dimensions). Points are used to represent objects when the exact details, such as shape and size, are not important at the target scale. For example, cities on a map of the world can be described as points, while a map of a single state might represent cities as polygons.
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_AsText(geom) 
   FROM geometries
   WHERE name = 'Point';
@@ -43,7 +43,7 @@ Some of the specific spatial functions for working with points are:
 
 So, we can read the ordinates from a point like this:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_X(geom), ST_Y(geom)
   FROM geometries
   WHERE name = 'Point';
@@ -51,7 +51,7 @@ SELECT ST_X(geom), ST_Y(geom)
 
 The New York City subway stations (`nyc_subway_stations`) table is a data set represented as points. The following SQL query will return the geometry associated with one point (in the ST\_AsText column).
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT name, ST_AsText(geom)
   FROM nyc_subway_stations
   LIMIT 1;
@@ -67,7 +67,7 @@ The street network for New York (`nyc_streets`) was loaded earlier in the worksh
 
 The following SQL query will return the geometry associated with one linestring (in the ST\_AsText column).
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_AsText(geom) 
   FROM geometries
   WHERE name = 'Linestring';
@@ -84,7 +84,7 @@ Some of the specific spatial functions for working with linestrings are:
 
 So, the length of our linestring is:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_Length(geom) 
   FROM geometries
   WHERE name = 'Linestring';
@@ -102,7 +102,7 @@ Polygons are used to represent objects whose size and shape are important. City 
 
 The following SQL query will return the geometry associated with one linestring (in the ST\_AsText column).
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_AsText(geom) 
   FROM geometries
   WHERE name LIKE 'Polygon%';
@@ -129,7 +129,7 @@ Some of the specific spatial functions for working with polygons are:
 
 We can calculate the area of our polygons using the area function:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT name, ST_Area(geom) 
   FROM geometries
   WHERE name LIKE 'Polygon%';
@@ -155,7 +155,7 @@ Collections are another concept that shows up in GIS software more than in gener
 
 Our example collection contains a polygon and a point:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT name, ST_AsText(geom) 
   FROM geometries
   WHERE name = 'Collection';

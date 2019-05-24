@@ -4,7 +4,7 @@ Introduction
 Before we start playing with our data lets have a look at some simpler examples. Go ahead and execute the following SQL statement in 
 the console.
 
-``` {.sourceCode .sql}
+```postgresql
 CREATE TABLE geometries (name varchar, geom geometry);
 
 INSERT INTO geometries VALUES 
@@ -35,7 +35,7 @@ In conformance with the Simple Features for SQL (SFSQL) specification, PostGIS p
 
 Let's have a look at the `geometry_columns` table in our database. 
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT * FROM geometry_columns;
 ```{{execute}}
 
@@ -54,6 +54,6 @@ By querying this table, GIS clients and libraries can determine what to expect w
 >
 > Do some or all of your `nyc` tables not have an `srid` of 26918? It's easy to fix by updating the table:
 >
-> ``` {.sourceCode .sql}
+> ```postgresql
 > SELECT UpdateGeometrySRID('nyc_neighborhoods','geom',26918);
 > ```{{execute}}

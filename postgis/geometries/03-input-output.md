@@ -24,7 +24,7 @@ Within the database, geometries are stored on disk in a format only used by the 
 
 The most common use of a constructor is to turn a text representation of a geometry into an internal representation:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_GeomFromText('POINT(583571 4506714)',26918);
 ```{{execute}}
 
@@ -32,7 +32,7 @@ Note that in addition to a text parameter with a geometry representation, we als
 
 The following SQL query shows an example of WKB representation (the call to encode() is required to convert the binary output into an ASCII form for printing):
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT encode(
   ST_AsBinary(ST_GeometryFromText('LINESTRING(0 0,1 0)')), 
   'hex');
@@ -46,7 +46,7 @@ Since WKT and WKB were defined in the SFSQL specification, they do not handle 3-
 
 Here is an example of a 3D linestring in WKT:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_AsText(ST_GeometryFromText('LINESTRING(0 0 0,1 0 0,1 1 2)'));
 ```{{execute}}
 
@@ -62,7 +62,7 @@ On the output side, the ST\_AsText function is conservative, and only emits ISO 
 
 In addition to the ST\_GeometryFromText function, there are many other ways to create geometries from well-known text or similar formatted inputs:
 
-``` {.sourceCode .sql}
+```postgresql
 -- Using ST_GeomFromText with the SRID parameter
 SELECT ST_GeomFromText('POINT(2 2)',4326);
 
@@ -81,7 +81,7 @@ SELECT 'SRID=4326;POINT(2 2)'::geometry;
 
 In addition to emitters for the various forms (WKT, WKB, GML, KML, JSON, SVG), PostGIS also has consumers for four (WKT, WKB, GML, KML). Most applications use the WKT or WKB geometry creation functions, but the others work too. Here's an example that consumes GML and output JSON:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT ST_AsGeoJSON(ST_GeomFromGML('<gml:Point><gml:coordinates>1,1</gml:coordinates></gml:Point>'));
 ```{{execute}}
 
@@ -94,19 +94,19 @@ The WKT strings we've see so far have been of type 'text' and we have been conve
 
 PostgreSQL includes a short form syntax that allows data to be converted from one type to another, the casting syntax, oldata::newtype. So for example, this SQL converts a double into a text string.
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT 0.9::text;
 ```{{execute}}
 
 Less trivially, this SQL converts a WKT string into a geometry:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT 'POINT(0 0)'::geometry;
 ```{{execute}}
 
 One thing to note about using casting to create geometries: unless you specify the SRID, you will get a geometry with an unknown SRID. You can specify the SRID using the "extended" well-known text form, which includes an SRID block at the front:
 
-``` {.sourceCode .sql}
+```postgresql
 SELECT 'SRID=4326;POINT(0 0)'::geometry;
 ```{{execute}}
 

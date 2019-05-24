@@ -17,7 +17,7 @@ Exercises
 
 -   **"What is the area of the 'West Village' neighborhood?"**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT ST_Area(geom)
       FROM nyc_neighborhoods
       WHERE name = 'West Village';
@@ -25,13 +25,13 @@ Exercises
 
         1044614.5296486
 
-    > **note**
-    >
-    > The area is given in square meters. To get an area in hectares, divide by 10000. To get an area in acres, divide by 4047.
+> **note**
+>
+> The area is given in square meters. To get an area in hectares, divide by 10000. To get an area in acres, divide by 4047.
 
 -   **"What is the area of Manhattan in acres?"** (Hint: both `nyc_census_blocks` and `nyc_neighborhoods` have a `boroname` in them.)
 
-    ``` {.sourceCode .sql}
+    ``` postgresql
     SELECT Sum(ST_Area(geom)) / 4047
       FROM nyc_neighborhoods
       WHERE boroname = 'Manhattan';
@@ -51,7 +51,7 @@ Exercises
 
 -   **"How many census blocks in New York City have a hole in them?"**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT Count(*) 
       FROM nyc_census_blocks
       WHERE ST_NumInteriorRings(ST_GeometryN(geom,1)) > 0;
@@ -65,7 +65,7 @@ Exercises
 
 -   **"What is the total length of streets (in kilometers) in New York City?"** (Hint: The units of measurement of the spatial data are meters, there are 1000 meters in a kilometer.)
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT Sum(ST_Length(geom)) / 1000
       FROM nyc_streets;
     ```{{execute}}
@@ -74,7 +74,7 @@ Exercises
 
 -   **"How long is 'Columbus Cir' (Columbus Circle)?**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT ST_Length(geom)
       FROM nyc_streets
       WHERE name = 'Columbus Cir';
@@ -84,7 +84,7 @@ Exercises
 
 -   **"What is the JSON representation of the boundary of the 'West Village'?"**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT ST_AsGeoJSON(geom)
       FROM nyc_neighborhoods
       WHERE name = 'West Village';
@@ -99,7 +99,7 @@ Exercises
 
 -   **"How many polygons are in the 'West Village' multipolygon?"**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT ST_NumGeometries(geom)
       FROM nyc_neighborhoods
       WHERE name = 'West Village';
@@ -113,7 +113,7 @@ Exercises
 
 -   **"What is the length of streets in New York City, summarized by type?"**
 
-    ``` {.sourceCode .sql}
+    ```postgresql
     SELECT type, Sum(ST_Length(geom)) AS length
     FROM nyc_streets
     GROUP BY type
