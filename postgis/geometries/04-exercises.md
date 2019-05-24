@@ -41,7 +41,7 @@ Exercises
 
     or...
 
-    ``` {.sourceCode .sql}
+    ````postgresql
     SELECT Sum(ST_Area(geom)) / 4047
       FROM nyc_census_blocks
       WHERE boroname = 'Manhattan';

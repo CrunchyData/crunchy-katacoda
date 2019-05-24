@@ -19,12 +19,15 @@ name       |    st_geometrytype    | st_ndims | st_srid
 
 -----------------+-----------------------+----------+--------- 
 Point | ST\_Point | 2 | 0  
- Polygon | ST\_Polygon | 2 | 0 PolygonWithHole | ST\_Polygon | 2 | 0 Collection | ST\_GeometryCollection | 2 | 0 Linestring | ST\_LineString | 2 | 0
+Polygon | ST\_Polygon | 2 | 0 
+PolygonWithHole | ST\_Polygon | 2 | 0 
+Collection | ST\_GeometryCollection | 2 | 0 
+Linestring | ST\_LineString | 2 | 0
 ```
 
 ### Points
 
-![image](assets/introduction/points.png)
+![image](geometries/assets/introduction/points.png)
 
 
 A spatial **point** represents a single location on the Earth. This point is represented by a single coordinate (including either 2-, 3- or 4-dimensions). Points are used to represent objects when the exact details, such as shape and size, are not important at the target scale. For example, cities on a map of the world can be described as points, while a map of a single state might represent cities as polygons.
