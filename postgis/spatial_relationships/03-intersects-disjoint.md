@@ -1,6 +1,3 @@
-ST_Intersects
--------------
-
 **ST_Intersects(geometry A, geometry B)** returns t (TRUE) if the two
 shapes have any space in common, i.e., if their boundaries or interiors
 intersect.

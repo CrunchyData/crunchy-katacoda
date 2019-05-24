@@ -11,7 +11,8 @@
       {"title": "ST_Within and ST_Contains", "text": "04-within-contains.md"},
       {"title": "ST_Crosses, ST_Overlaps, ST_Touches", "text": "05-cross-overlap-touch.md"},
       {"title": "ST_Distance and ST_DWithin", "text": "06-distance-dwithin.md"},
-      {"title": "Exercises", "text": "07-exercises.md"}
+      {"title": "Exercises", "text": "07-exercises.md"},
+      {"title": "Summary", "text": "08-summary.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
