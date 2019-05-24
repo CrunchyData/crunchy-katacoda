@@ -2,6 +2,19 @@
   "title": "CrunchyData PostGIS",
   "courses": [
     {
+      "external_link": "https://crunchydata.katacoda.com/postgis/geometries/",
+      "course_id": "Geometries",
+      "title": "Geometries"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/projection/",
+      "course_id": "Projection",
+      "title": "Projection"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/spatial_relationships/",
+      "course_id": "spatial_relationships",
+      "title": "Spatial Relationships"
+    },
+    {
       "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisintro/",
       "course_id": "qpostgisintro",
       "title": "Quick Intro. To PostGIS"
