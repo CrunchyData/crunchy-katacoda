@@ -1,6 +1,3 @@
-ST_Distance
------------
-
 A common GIS question is "find all the stuff within distance
 X of this other stuff".
 
@@ -18,9 +15,6 @@ SELECT ST_Distance(
     3
 ```
 
-ST_DWithin
------------
-
 For testing whether two objects are within a distance of one another,
 the **ST_DWithin** function provides an index-accelerated true/false test.
 This is useful for questions like "how many trees are within a 500 meter
@@ -32,7 +26,7 @@ just have to test the distance relationship.
 Using the Broad Street subway station again, we can find the streets
 nearby (within 10 meters of) the subway stop:
 
-``` {.sourceCode .sql}
+```
 SELECT name
 FROM nyc_streets
 WHERE ST_DWithin(
