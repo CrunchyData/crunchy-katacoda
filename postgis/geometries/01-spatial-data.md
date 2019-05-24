@@ -1,16 +1,6 @@
-# Working with Spatial Data in PostGIS
+# Connecting to Your Database
 
-PostgreSQL has the Gold Standard in spatial extensions for any RDBMs on the market - PostGIS. If you have data that has 
-direct spatial information, like coordinates, or indirect, such as an address, you can leverage the power of spatial 
-analysis to enhance the insights into your dataIn the workshopwe will barely be scratching the surface of what you can 
-do with PostGIS so please don't consider this exhaustive in the slightest.
 
-Final note before we dig in, remember that usually to work with spatial data you need to 
-
-```CREATE EXTENSION postgis;```
-
-in your database to enable all the functionality. We don't have to do it in the workshop because we already enabled the 
-extension when we created the DB in the container. 
 
 #### Spatial Tables
 
