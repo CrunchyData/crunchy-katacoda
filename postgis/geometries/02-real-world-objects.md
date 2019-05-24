@@ -14,7 +14,8 @@ SELECT name, ST_GeometryType(geom), ST_NDims(geom), ST_SRID(geom)
   FROM geometries;
 ```{{execute}}
 
-```    name       |    st_geometrytype    | st_ndims | st_srid 
+```    
+name       |    st_geometrytype    | st_ndims | st_srid 
 
 -----------------+-----------------------+----------+--------- 
 Point | ST\_Point | 2 | 0  

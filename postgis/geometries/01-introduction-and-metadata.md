@@ -49,11 +49,3 @@ Again this screenshot shows you the output of the command above in a GUI.
 -   The `type` column defines the type of geometry as described below; we've seen Point and Linestring types so far.
 
 By querying this table, GIS clients and libraries can determine what to expect when retrieving data and can perform any necessary projection, processing or rendering without needing to inspect each geometry.
-
-> **note**
->
-> Do some or all of your `nyc` tables not have an `srid` of 26918? It's easy to fix by updating the table:
->
-> ```postgresql
-> SELECT UpdateGeometrySRID('nyc_neighborhoods','geom',26918);
-> ```{{execute}}

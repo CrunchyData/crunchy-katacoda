@@ -1,8 +1,8 @@
   {
-  "title": "Quick Introduction to PostGIS",
-  "description": "A very brief introduction to using PostGIS",
-  "difficulty": "intermediate",
-  "time": "20 minutes",
+  "title": "Introduction to PostGIS Geometries",
+  "description": "Learning about Vectors representation in PostGIS",
+  "difficulty": "beginner",
+  "time": "10 minutes",
   "details": {
     "steps": [
       {"title": "Introduction to Geometries and Metadata", "text": "01-introduction-and-metadata.md"},
