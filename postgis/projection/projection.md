@@ -8,7 +8,7 @@ Sometimes, you need to transform and re-project between spatial reference system
 
 We can confirm the SRID of our data with the :command:`ST_SRID` command:
 
-```sql  
+``` {.sql}
 SELECT ST_SRID(geom) FROM nyc_streets LIMIT 1;
 ```{{execute}}
   
