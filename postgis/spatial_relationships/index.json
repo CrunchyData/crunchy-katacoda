@@ -6,7 +6,8 @@
   "details": {
     "steps": [
       {"title": "Spatial Relationships", "text": "01-spatial-rel.md"},
-      {"title": "ST_Equals", "text": "02-equals.md"}
+      {"title": "ST_Equals", "text": "02-equals.md"},
+      {"title": "ST_Intersects, ST_Disjoint, ST_Crosses and ST_Overlaps", "text": "03-intersects.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",

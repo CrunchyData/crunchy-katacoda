@@ -1,5 +1,3 @@
-# Spatial Relationships
-
 Spatial databases are powerful because they not only store geometry, they also have the ability to compare relationships between geometries.
 
 Questions like “Which are the closest bike racks to a park?” or “Where are the intersections of subway lines and streets?” can only be answered by comparing geometries representing the bike racks, streets, and subway lines.
