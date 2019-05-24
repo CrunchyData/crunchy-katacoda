@@ -7,7 +7,9 @@
     "steps": [
       {"title": "Spatial Relationships", "text": "01-spatial-rel.md"},
       {"title": "ST_Equals", "text": "02-equals.md"},
-      {"title": "ST_Intersects, ST_Disjoint, ST_Crosses and ST_Overlaps", "text": "03-intersects.md"}
+      {"title": "ST_Intersects and ST_Disjoint", "text": "03-intersects-disjoint.md"},
+      {"title": "ST_Within and ST_Contains", "text": "04-within-contains.md"},
+      {"title": "ST_Crosses, ST_Overlaps, ST_Touches", "text": "05-cross-overlap-touch.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
