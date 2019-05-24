@@ -10,3 +10,5 @@ echo 'loading data'
 curl http://s3.cleverelephant.ca/nyc_data.sql.gz |gzip -dc | PGPASSWORD="password" psql -h localhost -U groot nyc
 
 echo 'finished and ready to go'
+clear
+PGPASSWORD="password" psql -h localhost -U groot nyc
