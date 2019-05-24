@@ -3,13 +3,13 @@ Projecting Data
 
 The earth is not flat, and there is no simple way of putting it down on a flat paper map (or computer screen), so people have come up with all sorts of ingenious solutions, each with pros and cons. Some projections preserve area, so all objects have a relative size to each other; other projections preserve angles (conformal) like the Mercator projection; some projections try to find a good intermediate mix with only little distortion on several parameters. Common to all projections is that they transform the (spherical) world onto a flat Cartesian coordinate system, and which projection to choose depends on how you will be using the data.
 
-We've already encountered projections when we loaded our nyc data. (Recall that pesky SRID 26918). Sometimes, however, you need to transform and re-project between spatial reference systems. PostGIS includes built-in support for changing the projection of data, using the `ST\_Transform(geometry, srid)` function. For managing the spatial reference identifiers on geometries, PostGIS provides the `ST\_SRID(geometry)` and `ST\_SetSRID(geometry, srid)` functions.
+We've already encountered projections when we loaded our nyc data. (Recall that pesky SRID 26918). Sometimes, however, you need to transform and re-project between spatial reference systems. PostGIS includes built-in support for changing the projection of data, using the `ST_Transform(geometry, srid)` function. For managing the spatial reference identifiers on geometries, PostGIS provides the `ST_SRID(geometry)` and `ST_SetSRID(geometry, srid)` functions.
 
-We can confirm the SRID of our data with the `ST\_SRID()` function:
+We can confirm the SRID of our data with the `ST_SRID()` function:
 
 ``` {.sql}
 SELECT ST_SRID(geom) FROM nyc_streets LIMIT 1;
-```
+```{{execute}}
 
     26918
 
@@ -17,13 +17,13 @@ And what is definition of "26918"? The definition is contained in the `spatial_r
 
 ``` {.sql}
 SELECT * FROM spatial_ref_sys WHERE srid = 26918;
-```
+```{{execute}}
 
 In fact, for the internal PostGIS re-projection calculations, it is the contents of the `proj4text` column that are used. For our 26918 projection, here is the proj.4 text:
 
 ``` {.sql}
 SELECT proj4text FROM spatial_ref_sys WHERE srid = 26918;
-```
+```{{execute}}
 
     +proj=utm +zone=18 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
 
@@ -41,7 +41,7 @@ SELECT ST_Equals(
          ST_GeomFromText('POINT(0 0)', 4326),
          ST_GeomFromText('POINT(0 0)', 26918)
          );
-```
+```{{execute}}
 
     ERROR:  Operation on two geometries with different SRIDs
     CONTEXT:  SQL function "st_equals" statement 1
@@ -69,7 +69,7 @@ You can also pull the definitions from the `spatial_ref_sys` table:
 
 ``` {.sql}
 SELECT srtext FROM spatial_ref_sys WHERE srid = 4326;
-```
+```{{execute}}
 
     GEOGCS["WGS 84",
       DATUM["WGS_1984",
@@ -85,7 +85,7 @@ Let's convert the coordinates of the 'Broad St' subway station into geographics:
 SELECT ST_AsText(ST_Transform(geom,4326)) 
 FROM nyc_subway_stations 
 WHERE name = 'Broad St';
-```
+```{{execute}}
 
     POINT(-74.0106714688735 40.7071048155841)
 
@@ -96,7 +96,7 @@ To view a table's SRID assignment, query the database's `geometry_columns` table
 ``` {.sql}
 SELECT f_table_name AS name, srid 
 FROM geometry_columns;
-```
+```{{execute}}
 ```
          name         | srid  
  ---------------------+------- 
@@ -115,7 +115,7 @@ SELECT ST_AsText(
  4326)
 )
 FROM geometries;
-```
+```{{execute}}
 
 Function List
 -------------
