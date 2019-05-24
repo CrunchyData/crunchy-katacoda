@@ -1,9 +1,13 @@
 Here are some more queries using the tables we have available:
 
-* `nyc_census_blocks - blkid, popn_total, boroname, geom`
-* `nyc_streets - name, type, geom`
-* `nyc_subway_stations - name, geom`
-* `nyc_neighborhoods- name, boroname, geom`
+* `nyc_census_blocks`
+  * `blkid, popn_total, boroname, geom`
+* `nyc_streets`
+  * `name, type, geom`
+* `nyc_subway_stations`
+  * `name, geom`
+* `nyc_neighborhoods`
+  * `name, boroname, geom`
 
 **What is the geometry value for the street named ‘Atlantic Commons’?**
 
@@ -49,6 +53,13 @@ WHERE ST_DWithin(
   0.1
 );
 ```{{execute}}
+
+```
+     name
+------------------
+ Cumberland St
+ Atlantic Commons
+ ```
 
 **Approximately how many people live on (within 50 meters of) Atlantic Commons?**
 

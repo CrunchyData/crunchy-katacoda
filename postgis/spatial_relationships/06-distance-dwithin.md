@@ -40,7 +40,8 @@ WHERE ST_DWithin(
     name
 --------------
 Wall St
-Broad St Nassau St
+Broad St
+Nassau St
 ```
 
 And we can verify the answer on a map. The Broad St station is actually
