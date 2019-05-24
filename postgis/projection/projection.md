@@ -14,7 +14,7 @@ SELECT ST_SRID(geom) FROM nyc_streets LIMIT 1;
 26918
 ```
 
-And what is definition of "26918"? As we saw in _loading data section <loading_data>_, the definition is contained in the `spatial_ref_sys table. In fact, **two** definitions are there. The "well-known text" (`WKT`) definition is in the `srtext` column, and there is a second definition in "proj.4" format in the `proj4text` column.
+And what is definition of "26918"? As we saw in loading data section, the definition is contained in the `spatial_ref_sys table`. In fact, **two** definitions are there. The "well-known text" (`WKT`) definition is in the `srtext` column, and there is a second definition in "proj.4" format in the `proj4text` column.
 
 ```sql
 SELECT * FROM spatial_ref_sys WHERE srid = 26918;
@@ -30,7 +30,7 @@ SELECT proj4text FROM spatial_ref_sys WHERE srid = 26918;
 +proj=utm +zone=18 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
 ```
 
-In practice, both the `srtext` and the `proj4text` columns are important: the `srtext` column is used by external programs like [GeoServer](http://geoserver.org), [QGIS](http://qgis.org), and [FME](http://www.safe.com)` and others; the `proj4text` column is used internally.
+In practice, both the `srtext` and the `proj4text` columns are important: the `srtext` column is used by external programs like [GeoServer](http://geoserver.org), [QGIS](http://qgis.org), and [FME](http://www.safe.com) and others; the `proj4text` column is used internally.
 
 # Comparing Data
 
@@ -77,11 +77,11 @@ SELECT srtext FROM spatial_ref_sys WHERE srid = 4326;
 ```
 GEOGCS["WGS 84",
   DATUM["WGS_1984",
-    SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],
-    AUTHORITY["EPSG","6326"]],
-  PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],
-  UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],
-  AUTHORITY["EPSG","4326"]]
+    SPHEROID["WGS 84", 6378137, 298.257223563, AUTHORITY["EPSG","7030"]],
+    AUTHORITY["EPSG", "6326"]],
+  PRIMEM["Greenwich", 0, AUTHORITY["EPSG","8901"]],
+  UNIT["degree", 0.01745329251994328, AUTHORITY["EPSG","9122"]],
+  AUTHORITY["EPSG", "4326"]]
 ```
 
 Let's convert the coordinates of the "Broad St" subway station into geographics:
@@ -126,7 +126,7 @@ FROM geometries;
 
 ## Function List
 
-* [ST_AsText](http://postgis.net/docs/ST_AsText.html): Returns the Well-Known Text (WKT) representation of the geometry/geography without SRID metadata.
+* [ST_AsText(geometry)](http://postgis.net/docs/ST_AsText.html): Returns the Well-Known Text (WKT) representation of the geometry/geography without SRID metadata.
 * [ST_SetSRID(geometry, srid)](http://postgis.net/docs/ST_SetSRID.html): Sets the SRID on a geometry to a particular integer value.
 * [ST_SRID(geometry)](http://postgis.net/docs/ST_SRID.html): Returns the spatial reference identifier for the ST_Geometry as defined in spatial_ref_sys table.
 * [ST_Transform(geometry, srid)](http://postgis.net/docs/ST_Transform.html): Returns a new geometry with its coordinates transformed to the SRID referenced by the integer parameter.
