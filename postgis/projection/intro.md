@@ -1,10 +1,12 @@
-# Start
+# Projection
 
-First connect to the database.
+This scenario is going give you an introduction to coordinate reprojection in PostGIS. If you've ever used a flat map, you've experienced coordinate reprojection.
+ 
+The database has already been started and the spatial data has already been loaded. This scenario will use data from New York City (NYC). Data from this scenario is used in all the other exercises as well.
 
-```
-psql -U groot -h localhost workshop
-```{{execute}}
+We have already logged you into the PostgreSQL command line but, if you get disconnected here are the details on the database we are connecting to:
 
+* Username: groot
+* Password: password
+* A database named: nyc
 
-Start text goes here...
