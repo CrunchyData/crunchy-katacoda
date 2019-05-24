@@ -32,4 +32,4 @@ WHERE ST_Equals(geom, '0101000020266900000EEBD4CF27CF2141BC17D69516315141');
 Broad St
 ```
 
-> NOTE: The WKB data format of the point is not human readable (`0101000020266900000EEBD4CF27CF2141BC17D69516315141`) but it is an exact representation of the coordinate values. For a test like equality, using the exact value is necessary.
+> NOTE: The WKB data format of the point is not human readable, but it is an exact representation of the coordinate values. For a test like equality, using the exact value is necessary.

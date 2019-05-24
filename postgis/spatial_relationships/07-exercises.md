@@ -1,13 +1,13 @@
-Here are some more queries using the tables we have available:
+Here are some more queries using the NYC dataset tables:
 
 * `nyc_census_blocks`
-  * `blkid, popn_total, boroname, geom`
+  * blkid, popn_total, boroname, geom
 * `nyc_streets`
-  * `name, type, geom`
+  * name, type, geom
 * `nyc_subway_stations`
-  * `name, geom`
+  * name, geom
 * `nyc_neighborhoods`
-  * `name, boroname, geom`
+  * name, boroname, geom
 
 **What is the geometry value for the street named ‘Atlantic Commons’?**
 

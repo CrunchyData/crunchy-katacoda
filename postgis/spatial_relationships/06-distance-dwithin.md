@@ -14,6 +14,11 @@ SELECT ST_Distance(
 ```
     3
 ```
+> NOTE: The distance value returned is in the units of the spatial reference
+system of the input geometries
+
+ST_DWithin
+----------
 
 For testing whether two objects are within a distance of one another,
 the **ST_DWithin** function provides an index-accelerated true/false test.
