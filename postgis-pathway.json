@@ -10,13 +10,13 @@
       "course_id": "projection",
       "title": "Projection"
     },{
-      "external_link": "https://crunchydata.katacoda.com/postgis/joins/",
-      "course_id": "joins",
-      "title": "Spatial Joins"
-    },{
       "external_link": "https://crunchydata.katacoda.com/postgis/spatial_relationships/",
       "course_id": "spatial_relationships",
       "title": "Spatial Relationships"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/joins/",
+      "course_id": "joins",
+      "title": "Spatial Joins"
     },
     {
       "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisintro/",
