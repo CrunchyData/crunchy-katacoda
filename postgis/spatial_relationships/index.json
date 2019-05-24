@@ -9,7 +9,8 @@
       {"title": "ST_Equals", "text": "02-equals.md"},
       {"title": "ST_Intersects and ST_Disjoint", "text": "03-intersects-disjoint.md"},
       {"title": "ST_Within and ST_Contains", "text": "04-within-contains.md"},
-      {"title": "ST_Crosses, ST_Overlaps, ST_Touches", "text": "05-cross-overlap-touch.md"}
+      {"title": "ST_Crosses, ST_Overlaps, ST_Touches", "text": "05-cross-overlap-touch.md"},
+      {"title": "ST_Distance and ST_DWithin", "text": "06-distance-dwithin.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
