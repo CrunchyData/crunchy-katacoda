@@ -3,7 +3,7 @@ You have now learned about how PostGIS supports a full set of standard spatial a
 The spatial relationships are based on a mathematical model called the *Dimensionally-Extended 9 Intersection Matrix* (DE-9IM).
 More technical details of this are available [here](https://en.wikipedia.org/wiki/DE-9IM).
 
-The relationsship functions and their definitions are summarized below:
+The relationship functions and their definitions are summarized below:
 
 Spatial Relationship functions
 ------------------------------
