@@ -10,6 +10,10 @@ Spatial Relationship functions
 
 * **ST_Contains(geometry A, geometry B)**: Returns true if and only if no points of B lie in the exterior of A, and at least one point of the interior of B lies in the interior of A.  The converse of **ST_Within**.
 
+* **ST_CoveredBy(geometry A, geometry B)**: Returns true if and only if no points of A lie in the exterior of B. In other words, A lies completely inside B.  The converse of **ST_Covers**.
+
+* **ST_Covers(geometry A, geometry B)**: Returns true if and only if no points of B lie in the exterior of A. In other words, B lies completely inside A.  The converse of **ST_CoveredBy**.
+
 * **ST_Crosses(geometry A, geometry B)**: Returns true if the supplied geometries have some, but not all, interior points in common.
 
 * **ST_Disjoint(geometry A , geometry B)**: Returns true if the geometries do not spatially intersect - i.e.

@@ -34,3 +34,13 @@ SELECT ST_Covers(
 ```
   ST_Covers(A,B) = ST_CoveredBy(B, A)
 ```
+
+```
+SELECT ST_CoveredBy(
+    'LINESTRING (0 0, 1 0)'::geometry,
+    'POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))'::geometry );
+```{{execute}}
+
+```
+  t
+```
