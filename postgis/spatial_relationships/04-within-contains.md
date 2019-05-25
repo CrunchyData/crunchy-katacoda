@@ -1,16 +1,17 @@
-**ST_Within** and **ST_Contains** are a pair of functions with opposite meanings.
-
-ST_Within
----------
+**ST_Within** and **ST_Contains** are a pair of functions
+which have related but opposite meanings.
 
 **ST_Within(geometry A , geometry B)** returns TRUE if the first geometry
 is completely within the second geometry.
 
 ![](spatial_relationships/assets/st_within.png)
 
-ST_Contains
------------
+**ST_Contains(geometry A, geometry B)** returns TRUE if the first geometry
+completely contains the second geometry.
 
-**ST_Contains(geometry A, geometry B)** returns TRUE if the second geometry
-is completely contained by the first geometry.
-**ST_Contains** tests for the exact opposite result of **ST_Within**.
+**ST_Contains** tests for the opposite relationship of **ST_Within**.
+Symbolically, this means
+
+```
+  ST_Contains(A,B) = ST_Within(B, A)
+```
