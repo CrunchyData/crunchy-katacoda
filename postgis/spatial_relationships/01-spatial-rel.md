@@ -11,7 +11,7 @@ Most of the relationship functions accept two geometries as input, and return th
 a boolean value.  You can try this with the following query:
 
 ```
-select ST_Intersects('POINT(1 1)', 'LINESTRING(1 1, 2 2)');
+SELECT ST_Intersects('POINT(1 1)', 'LINESTRING(1 1, 2 2)');
 ```{{execute}}
 
 Usually the boolean relationship functions are used in the ``WHERE`` clause of SQL queries (this is known as a *spatial filter*).
