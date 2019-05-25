@@ -7,7 +7,9 @@ polygons do not contain Linestrings which lie along their edge
 (in their boundary).
 
 ```
-SELECT ST_Contains('POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))', 'LINESTRING (0 0, 1 0)');
+SELECT ST_Contains(
+    'POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))'::geometry,
+    'LINESTRING (0 0, 1 0)'::geometry );
 ```{{execute}}
 
 ```
@@ -18,14 +20,16 @@ SELECT ST_Contains('POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))', 'LINESTRING (0 0, 1 0)
 which generally corresponds more closely to what you would expect.
 
 ```
-SELECT ST_Covers('POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))', 'LINESTRING (0 0, 1 0)');
+SELECT ST_Covers(
+    'POLYGON ((0 1, 1 1, 1 0, 0 0, 0 1))'::geometry,
+    'LINESTRING (0 0, 1 0)'::geometry );
 ```{{execute}}
 
 ```
   t
 ```
 
-**ST_CoveredBy(geometry A, geometry B)** has the opposite meaning to *ST_Covers**, so that:
+**ST_CoveredBy(geometry A, geometry B)** has the opposite meaning to **ST_Covers**, so that:
 
 ```
   ST_Covers(A,B) = ST_CoveredBy(B, A)
