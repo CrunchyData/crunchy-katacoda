@@ -17,4 +17,4 @@ echo 'finished storm center points'
 
 clear
 
-echo 'ready to go!'
+: 'ready to go!'

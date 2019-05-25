@@ -16,4 +16,4 @@ echo 'finished county boundaries'
 
 clear
 
-echo 'ready to go!'
+: 'ready to go!'

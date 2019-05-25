@@ -18,4 +18,4 @@ PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/stor
 PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY se_locations (episode_id, event_id, location_index, range, azimuth, location, latitude, longitude, the_geom) from '\''/data/crunchy_demo_data/storms/storm_locations_copy.txt'\'' WITH CSV QUOTE '\''"'\'' '
 echo 'finished storm center points'
 
-echo 'ready to go!'
+: 'ready to go!'
