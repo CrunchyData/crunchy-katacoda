@@ -32,7 +32,7 @@ Financial District | Manhattan
 ST_Disjoint
 -----------
 
-The opposite of **ST_Intersects** is **ST_Disjoint(geometry A , geometry B)**.
+**ST_Disjoint(geometry A , geometry B)** is the opposite of **ST_Intersects**.
 If two geometries are disjoint, they do not intersect, and vice-versa.
 In fact, it is often more efficient to test "not intersects" than to
 test "disjoint" because the intersects tests can be spatially indexed,

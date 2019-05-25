@@ -14,13 +14,13 @@ and Linestring/Polygon comparisons.
 
 **ST_Overlaps(geometry A, geometry B)** compares two geometries of the same
 dimension and returns true if their intersection set results in a
-geometry different from both but of the same dimension.
+geometry different from both, but having the same dimension.
 
 ![](spatial_relationships/assets/st_overlaps.png)
 
 
 **ST_Touches(geometry A, geometry B)** returns true if either of the
-geometries' boundaries intersect or if only one of the geometry's
+geometries' boundaries intersect, or if only one of the geometry's
 interiors intersects the other's boundary.
 
 ![](spatial_relationships/assets/st_touches.png)
