@@ -11,9 +11,10 @@
       {"title": "ST_Within, ST_Contains", "text": "04-within-contains.md"},
       {"title": "ST_Covers, ST_CoveredBy", "text": "05-covers-coveredby.md"},
       {"title": "ST_Crosses, ST_Overlaps, ST_Touches", "text": "06-cross-overlap-touch.md"},
-      {"title": "ST_Distance, ST_DWithin", "text": "07-distance-dwithin.md"},
-      {"title": "Exercises", "text": "08-exercises.md"},
-      {"title": "Summary", "text": "09-summary.md"}
+      {"title": "ST_Relate", "text": "07-relate.md"},
+      {"title": "ST_Distance, ST_DWithin", "text": "08-distance-dwithin.md"},
+      {"title": "Exercises", "text": "09-exercises.md"},
+      {"title": "Summary", "text": "10-summary.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",

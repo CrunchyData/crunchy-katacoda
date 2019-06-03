@@ -1,7 +1,6 @@
 You have now learned about how PostGIS supports a full set of standard spatial and distance relationship functions.
 
-The spatial relationships are based on a mathematical model called the *Dimensionally-Extended 9 Intersection Matrix* (DE-9IM).
-More technical details of this are available [here](https://en.wikipedia.org/wiki/DE-9IM).
+More technical details of the spatial relationships and the *Dimensionally-Extended 9 Intersection Model* (DE-9IM) are available [here](https://en.wikipedia.org/wiki/DE-9IM).
 
 The relationship functions and their definitions are summarized below:
 
@@ -28,6 +27,15 @@ Spatial Relationship functions
 * **ST_Touches(geometry A, geometry B)**: Returns true if the geometries have at least one point in common, but their interiors do not intersect.
 
 * **ST_Within(geometry A , geometry B)**: Returns true if the geometry A is completely inside geometry B.  The converse of **ST_Contains**.
+
+Relate functions
+----------------
+
+* **ST_Relate(geometry A, geometry B)**: Returns the DE-9IM code
+indicating the full topological relationhips between A and B.
+
+* **ST_Relate(geometry A, geometry B, text mask)**: Tests whether the
+geometries A and B have a DE-9IM code which matches the given mask.
 
 Distance Relationship functions
 -------------------------------
