@@ -1,6 +1,6 @@
 You have now learned about how PostGIS supports a full set of standard spatial and distance relationship functions.
 
-More technical details of the spatial relationships and the *Dimensionally-Extended 9 Intersection Model* (DE-9IM) are available [here](https://en.wikipedia.org/wiki/DE-9IM).
+More technical details about spatial relationships and the *Dimensionally-Extended 9 Intersection Model* (DE-9IM) are available [here](https://en.wikipedia.org/wiki/DE-9IM).
 
 The relationship functions and their definitions are summarized below:
 
