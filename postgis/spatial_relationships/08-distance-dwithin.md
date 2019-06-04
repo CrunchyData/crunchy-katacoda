@@ -1,9 +1,9 @@
 A common GIS question is "find all the stuff within distance
 X of this other stuff".
 
-The **ST_Distance(geometry A, geometry B)** calculates the *shortest*
-distance between two geometries and returns it as a float. This is
-useful for actually reporting back the distance between objects.
+The **ST_Distance(geometry A, geometry B)** function calculates the *shortest*
+distance between two geometries and returns it as a floating point number. This is
+useful for reporting the actual distance between objects.
 
 ```
 SELECT ST_Distance(
@@ -14,8 +14,13 @@ SELECT ST_Distance(
 ```
     3
 ```
+> NOTE: The distance value returned is in the units of the spatial reference
+system of the input geometries
 
-For testing whether two objects are within a distance of one another,
+ST_DWithin
+----------
+
+For testing whether two objects are within a given distance of one another,
 the **ST_DWithin** function provides an index-accelerated true/false test.
 This is useful for questions like "how many trees are within a 500 meter
 buffer of the road?". You don't have to calculate an actual buffer, you
