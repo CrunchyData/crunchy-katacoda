@@ -30,12 +30,22 @@ exit
 systemctl stop postgresql-11
 ```{{execute}}
 
-## Restore the database to the point before the drop
+## Restore the database to the point before the drop note
+we have to use the current timeline in order to get the data back
+
+## We can confirm that the timeline is in fact 2 using the function
+`pg_control_checkpoint()`
+
+```
+sudo -u postgres psql davec -x -c "select * from pg_control_checkpoint()"
+```
+
 ```
 sudo -iu postgres 
 pgbackrest --stanza=demo --delta \
        --type=name "--target=before_drop" \
-       --target-action=promote restore
+       --target-action=promote \
+       --target-timeline=2 restore
 exit
 
 cat /var/lib/pgsql/11/data/recovery.conf
@@ -48,7 +58,5 @@ systemctl start postgresql-11
 
 ## Check the table is there
 ```
-sudo -iu postgres 
-psql davec -c "select * from important_table"
-exit
+sudo -u postgres psql davec -c "select * from important_table"
 ```{{execute}}
