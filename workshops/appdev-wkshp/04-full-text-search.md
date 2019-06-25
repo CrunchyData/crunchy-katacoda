@@ -7,7 +7,7 @@ its derivative such as ElasticSearch and SOLR. In this exercise we are going to 
 
 #### Basic ideas in FTS
 
-There is a [detailed discussion]    (https://www.postgresql.org/docs/11/textsearch-intro.html) in the documentation about the 
+There is a [detailed discussion](https://www.postgresql.org/docs/11/textsearch-intro.html) in the documentation about the 
 concepts in FTS. For now let's just focus on the steps (along with simplify the actual work).
 
 1. The first step is to take the field(s) which have the content (a document) and analyze the text into words and phrases along with 

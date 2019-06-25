@@ -1,14 +1,27 @@
 {
   "title": "CrunchyData PostGIS",
-<<<<<<< HEAD
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisinto/",
+      "external_link": "https://crunchydata.katacoda.com/postgis/geometries/",
+      "course_id": "geometries",
+      "title": "Geometries"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/projection/",
+      "course_id": "projection",
+      "title": "Projection"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/spatial_relationships/",
+      "course_id": "spatial_relationships",
+      "title": "Spatial Relationships"
+    },{
+      "external_link": "https://crunchydata.katacoda.com/postgis/joins/",
+      "course_id": "joins",
+      "title": "Spatial Joins"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/postgis/qpostgisintro/",
       "course_id": "qpostgisintro",
       "title": "Quick Intro. To PostGIS"
     }
   ]
-=======
-  "courses": []
->>>>>>> 2930e32889613de3534aabf3bf13b86bb8514a27
 }

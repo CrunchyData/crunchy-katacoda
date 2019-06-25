@@ -1,0 +1,33 @@
+  {
+  "title": "Introduction to PostGIS Geometries",
+  "description": "Learning about Vectors representation in PostGIS",
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "Introduction to Geometries and Metadata", "text": "01-introduction-and-metadata.md"},
+      {"title": "Real World Objects", "text": "02-real-world-objects.md"},
+      {"title": "Geometry Input and Output", "text": "03-input-output.md"},
+      {"title": "Additional Exercises", "text": "04-exercises.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

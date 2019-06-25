@@ -1,15 +1,21 @@
 {
   "title": "CrunchyData Basic PostgreSQL for Developers",
-<<<<<<< HEAD
   "courses": [
     {
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/runcontainers/",
       "course_id": "runcontainers",
-      "title": "Quick Intro. To PostgreSQL in Containers
+      "title": "Quick Intro. To PostgreSQL in Containers"
+    }, {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/qftextintro/",
+      "course_id": "qftextintro",
+      "title": "Quick Intro To Full Text Search in PostgreSQL"
+    },
+    {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/qjsonintro/",
+      "course_id": "qjsonintro",
+      "title": "Quick Intro To JSON in PostgreSQL"
     }
 
   ]
-=======
-  "courses": []
->>>>>>> 2930e32889613de3534aabf3bf13b86bb8514a27
+
 }

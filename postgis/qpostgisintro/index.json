@@ -1,0 +1,30 @@
+  {
+  "title": "Quick Introduction to PostGIS",
+  "description": "A very brief introduction to using PostGIS",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Working with Spatial Data", "text": "01-spatial-data.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
