@@ -29,6 +29,6 @@
     ]
   },
   "backend": {
-    "imageid": "crunchydata-k8s-centos"
+    "imageid": "crunchydata-single1"
   }
 }
