@@ -10,8 +10,8 @@
       {"title": "pg_hba.conf", "text": "30-pg_hba-conf.md"},
       {"title": "Creating Roles and Databases", "text": "40-create-roles-database.md"},
       {"title": "postgresql.conf Part 1", "text": "50-postgresql-conf-part1.md"},
-      {"title": "postgresql.conf Part 2", "text": "51-postgresql-conf-part1.md"},
-      {"title": "postgresql.conf Part 3", "text": "52-postgresql-conf-part1.md"}
+      {"title": "postgresql.conf Part 2", "text": "51-postgresql-conf-part2.md"},
+      {"title": "postgresql.conf Part 3", "text": "52-postgresql-conf-part3.md"}
     ],
     "intro": {
       "text": "intro.md",
