@@ -1,4 +1,11 @@
 {
-  "title": "CrunchyData Learning Portal",
-  "courses": [ ]
+  "title": "Basic PostgreSQL for DBAs",
+  "courses": [ 
+   {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/setting-up-pg/",
+      "title": "Setting Up PostgreSQL",
+      "course_id": "setting-up-pg"
+    }
+  ]
 }
+
