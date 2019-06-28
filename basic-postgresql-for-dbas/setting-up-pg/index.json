@@ -1,0 +1,29 @@
+  {
+  "title": "Setting Up PostgreSQL (EL7)",
+  "description": "Creating a new database cluster, setting up roles, creating databases, and standard settings",
+  "difficulty": "beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Setting Up Default PG Instance", "text": "01-db-init.md"},
+      {"title": "Initial Login", "text": "02-initial-login.md"}
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
