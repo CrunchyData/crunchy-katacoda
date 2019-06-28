@@ -6,6 +6,7 @@ TODO: CREATE A TRAINING USER ON SYSTEM WITH SUDO PRIVILEGES TO PROVIDE A MORE RE
 
 As we discussed in the previous step, the default setup for the cluster provided by EL7 based systems is to allow peer based authentication. Back in our root user terminal, let's see what happens if we try and log into the database using just the `psql` command with no additional options
 ```
+clear
 psql
 ```{{execute T1}}
 The error that returns shows that if you do not tell psql which role you want to log in as (using the `-U` option), psql will default to trying to log in as a role that matches the current system user. In this case `root`.

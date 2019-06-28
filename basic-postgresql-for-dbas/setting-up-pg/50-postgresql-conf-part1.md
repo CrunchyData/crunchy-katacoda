@@ -11,4 +11,11 @@ SELECT name, setting, context FROM pg_settings WHERE name IN ('shared_buffers', 
 
 We can also see the current value of any setting here as well, similarly how we used the `SHOW` command earlier. The meanings of the `context` column can be found in the documentation - https://www.postgresql.org/docs/11/view-pg-settings.html. For the settings we checked above, we can see that `archive_command` and `work_mem` only require a reload while `archive_mode` and `shared_buffers` require a restart. And `work_mem` is even more unique in that each individual role can change that setting for themselves for the duration of their session.
 
+If you need to restart the database, the best way to do that in a production environment on EL7 is with systemd
+```
+\q
+sudo systemctl restart postgresql-11
+```{{execute T1}}
+
+
 Let's move on to reviewing some important settings. We'll be briefly going over each setting but also provide a link to its documentation for more information.
