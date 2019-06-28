@@ -25,7 +25,8 @@ psql
 Now we're getting an error about a `root` database not existing. So if we don't provide a database name (using the `-d` option), psql will try and log in to a database name that matches the current system user. 
 ```
 psql -d postgres
-```{{execute T2}}
+\q
+```{{execute T1}}
 The `peer` authentication method only checks for the role name to match, so we can give another database name and log in that way. But to make it even easier, let's create a new database back on the `postgres_terminal`
 ```
 CREATE DATABASE root;
@@ -35,6 +36,8 @@ Let's try one last time back on our root terminal with no options
 psql
 ```{{execute T1}}
 And it works! We're now taking advantage of the `peer` authentication method to log into the database without a password.
+
+We can also set the password for our own role (or other roles if you're a superuser) using the `\password` command. It is recommended to use this method vs setting the password during role creation or using the ALTER ROLE command since this keeps the password from getting put in the clear into the history buffer or the logs.
 
 This step was given in this manner since this is often an issue we see when people are first setting up PostgreSQL and cannot figure out why they can't log in as their normal system user. Going through this process hopefully helps you better understand how psql works in any environment.
 

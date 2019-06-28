@@ -5,10 +5,13 @@
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Setting Up Default PG Instance", "text": "01-db-init.md"},
-      {"title": "Initial Login", "text": "02-initial-login.md"},
-      {"title": "pg_hba.conf", "text": "03-pg_hba-conf.md"},
-      {"title": "Creating Roles and Databases", "text": "04-create-roles-database.md"}
+      {"title": "Setting Up Default PG Instance", "text": "10-db-init.md"},
+      {"title": "Initial Login", "text": "20-initial-login.md"},
+      {"title": "pg_hba.conf", "text": "30-pg_hba-conf.md"},
+      {"title": "Creating Roles and Databases", "text": "40-create-roles-database.md"},
+      {"title": "postgresql.conf Part 1", "text": "50-postgresql-conf-part1.md"},
+      {"title": "postgresql.conf Part 2", "text": "51-postgresql-conf-part1.md"},
+      {"title": "postgresql.conf Part 3", "text": "52-postgresql-conf-part1.md"}
     ],
     "intro": {
       "text": "intro.md",
