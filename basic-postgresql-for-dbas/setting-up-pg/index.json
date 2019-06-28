@@ -7,6 +7,7 @@
     "steps": [
       {"title": "Setting Up Default PG Instance", "text": "01-db-init.md"},
       {"title": "Initial Login", "text": "02-initial-login.md"}
+      {"title": "pg_hba.conf", "text": "pg_hba-conf.md"}
     ],
     "intro": {
       "text": "intro.md",
