@@ -12,17 +12,17 @@ Passing the `initdb` command to the script tells it to initialize the PostgreSQL
 Next we enable the service via systemd
 ```
 sudo systemctl enable postgresql-11
-```{{execute}}
+```{{execute T1}}
 
 And now we start the database via systemd
 ```
 sudo systemctl start postgresql-11
-```{{execute}}
+```{{execute T1}}
 
 After starting a service it's always good to check its status
 ```
 systemctl status postgresql-11
-```{{execute}}
+```{{execute T1}}
 If you encounter any issues, you can check the syslog for any errors related to systemd starting the service (`/var/log/messages`) or check the PostgreSQL logs as well (/`/var/lib/pgsql/##/data/log` where ## is the major version of PG. Ex 11,10,96,etc).
 
 Note that prior to PG10, the log directory was called `pg_log`.
