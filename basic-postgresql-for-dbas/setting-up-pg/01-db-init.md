@@ -25,3 +25,4 @@ systemctl status postgresql-11
 ```{{execute}}
 If you encounter any issues, you can check the syslog for any errors related to systemd starting the service (`/var/log/messages`) or check the PostgreSQL logs as well (/`/var/lib/pgsql/##/data/log` where ## is the major version of PG. Ex 11,10,96,etc).
 
+Note that prior to PG10, the log directory was called `pg_log`.
