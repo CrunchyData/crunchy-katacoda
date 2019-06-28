@@ -12,11 +12,11 @@ It is recommended to avoid the "trust" authentication method whenever possible s
 The example system in this scenario enables peer authentication by default. This means that any system user that has a matching database role can log in without requiring a password. Since the cluster was created by the `postgres` system user, a `postgres` role exists in the database. You can see the existing roles via `psql` by using the `\du` command
 ```
 \du
-```{{execute}}
+```{{execute postgres_terminal}}
 You can also see the current contents of the pg_hba.conf file from within the database if you are on at least PG10. 
 ```
 SELECT * FROM pg_hba_file_rules;
-```{{execute}}
+```{{execute postgres_terminal}}
 Note that this shows the actual file's contents, not what may be active within the database. Putting pg_hba.conf changes in place requires reloading the database, which we will do shortly.
 
 An example for adding an entry to allow a password protected connection for replication would be as follows:
@@ -36,16 +36,14 @@ The fifth column refers to the authentication method. Here `md5` refers to a has
 Reloading the database can be done in two ways. While logged into the database, any superuser can call the `pg_reload_conf()` function
 ```
 SELECT * FROM pg_reload_conf();
-```{{execute}}
-Or from the system command line, any users with access to control PostgreSQL via systemd can issue a reload. First we'll log out of psql with the `\q` command, return to being root, then issue the reload
+```{{execute postgres_terminal}}
+Or from the system command line, any users with access to control PostgreSQL via systemd can issue a reload. So on our original root terminal, issue the reload
 ```
-\q
-exit
 systemctl reload postgresql-11
 ```{{execute}}
 If there are any errors encountered in the pg_hba.conf, the changes will not be applied. You can check the PostgreSQL logs for either a successful SIGHUP or any error messages
 ```
-tail -f /var/lib/pgsql/11/data/log/*.log
+tail /var/lib/pgsql/11/data/log/postgresql-*.log
 ```{{execute}}
 
 

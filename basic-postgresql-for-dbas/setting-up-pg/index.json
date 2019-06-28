@@ -7,7 +7,8 @@
     "steps": [
       {"title": "Setting Up Default PG Instance", "text": "01-db-init.md"},
       {"title": "Initial Login", "text": "02-initial-login.md"},
-      {"title": "pg_hba.conf", "text": "03-pg_hba-conf.md"}
+      {"title": "pg_hba.conf", "text": "03-pg_hba-conf.md"},
+      {"title": "Creating Roles and Databases", "text": "04-create-roles-database.md"}
     ],
     "intro": {
       "text": "intro.md",
@@ -21,7 +22,7 @@
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
     "terminals": [
-      {"name": "Terminal 2", "target": "host01"}
+      {"name": "postgres_terminal", "target": "host01"}
     ]
   },
   "backend": {
