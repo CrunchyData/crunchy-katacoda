@@ -1,5 +1,3 @@
-PostgreSQL Host Based Authentication (pg_hba.conf)
---------------------------------------------------
 
 The pg_hba.conf file, by default located in the data directory, is how connection authentication is managed in PostgreSQL. This covers the incoming connections only, not specific object access within the database itself (the latter is covered via the GRANTs system).
 

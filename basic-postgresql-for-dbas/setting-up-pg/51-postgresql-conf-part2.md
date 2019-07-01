@@ -1,5 +1,3 @@
-postgresql.conf Part 2 - Connections & Memory
----------------------------------------------
 
 These last sections of this scenario are all explanation and no futher commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
 

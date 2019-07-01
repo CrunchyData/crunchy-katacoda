@@ -1,5 +1,3 @@
-Creating Roles and Databases
-----------------------------
 
 TODO: CREATE A TRAINING USER ON SYSTEM WITH SUDO PRIVILEGES TO PROVIDE A MORE REALISTIC SCENARIO
 

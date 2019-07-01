@@ -1,5 +1,3 @@
-postgresql.conf Part 4 - Autovacuum
---------------------------------
 
 LINK TO ADVANCED SCENARIO THAT EXPLAINS XIDS/EXHAUSTION/WRAPAROUND
 

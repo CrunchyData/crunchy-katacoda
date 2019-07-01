@@ -5,13 +5,15 @@
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Setting Up Default PG Instance", "text": "10-db-init.md"},
+      {"title": "Setting Up The Default PG Instance", "text": "10-db-init.md"},
       {"title": "Initial Login", "text": "20-initial-login.md"},
-      {"title": "pg_hba.conf", "text": "30-pg_hba-conf.md"},
+      {"title": "PostgreSQL Host Based Authentication (pg_hba.conf)", "text": "30-pg_hba-conf.md"},
       {"title": "Creating Roles and Databases", "text": "40-create-roles-database.md"},
-      {"title": "postgresql.conf Part 1", "text": "50-postgresql-conf-part1.md"},
-      {"title": "postgresql.conf Part 2", "text": "51-postgresql-conf-part2.md"},
-      {"title": "postgresql.conf Part 3", "text": "52-postgresql-conf-part3.md"}
+      {"title": "postgresql.conf Part 1 - Making changes", "text": "50-postgresql-conf-part1.md"},
+      {"title": "postgresql.conf Part 2 - Connections & Memory", "text": "51-postgresql-conf-part2.md"},
+      {"title": "postgresql.conf Part 3 - Write Ahead Log (WAL)", "text": "52-postgresql-conf-part3.md"},
+      {"title": "postgresql.conf Part 4 - Logging", "text": "53-postgresql-conf-part4.md"},
+      {"title": "postgresql.conf Part 5 - Autovacuum", "text": "54-postgresql-conf-part5.md"}
     ],
     "intro": {
       "text": "intro.md",

@@ -1,5 +1,3 @@
-Setting Up Default PG Instance
-------------------------------
 
 With the packages installed, the first thing we need to do is to initialize the PostgreSQL cluster. CentOS does not do this for you automatically, but does provide a script (`/usr/pgsql-11/bin/postgresql-11-setup`) to set up the default instance for you that will be managed by systemd.
 

@@ -1,5 +1,3 @@
-postgresql.conf Part 3 - Write Ahead Log (WAL) 
-----------------------------------------------
 
 `wal_level` = replica
 
