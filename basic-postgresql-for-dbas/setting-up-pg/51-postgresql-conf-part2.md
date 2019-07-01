@@ -1,5 +1,5 @@
-postgresql.conf Part 2
-----------------------
+postgresql.conf Part 2 - Connections & Memory
+---------------------------------------------
 
 These last sections of this scenario are all explanation and no futher commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
 
@@ -15,26 +15,8 @@ Some of these settings will require a restart of the database to change, so it i
 
 `maintenance_work_mem` (1GB good starting point)
 
-`wal_level` = replica
-
 `effective_cache_size` (50% RAM good starting point)
-
-`archive_mode` = on
-
-`archive_command` = ‘/bin/true’
-
-`archive_timeout` = 60
-
-`max_wal_senders` = 10
-
-`wal_keep_segments` = 30
-
-`max_replication_slots` = 10
 
 `hot_standby` = on (setting for replica)
 
-`logging_collector` = on
 
-`autovacuum_freeze_max_age` = 1000000000 (only set this high if monitoring for wraparound. So monitor for wraparound and set it this high.)
-
-LINK TO ADVANCED SCENARIO THAT EXPLAINS XIDS/EXHAUSTION/WRAPAROUND
