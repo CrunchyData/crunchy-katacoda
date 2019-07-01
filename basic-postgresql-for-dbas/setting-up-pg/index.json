@@ -16,6 +16,7 @@
       {"title": "postgresql.conf Part 5 - Autovacuum", "text": "54-postgresql-conf-part5.md"}
     ],
     "intro": {
+      "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""
     },
