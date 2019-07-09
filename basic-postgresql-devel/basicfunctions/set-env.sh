@@ -16,4 +16,4 @@ echo 'finished county boundaries'
 
 clear
 
-: 'ready to go!'
+PGPASSWORD="password" psql -h localhost -U groot workshop
