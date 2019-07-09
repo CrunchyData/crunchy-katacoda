@@ -28,23 +28,21 @@ We already stated we are going to return a string so let's go ahead and set that
 other return types. 
 
 ```
-RETURN string AS
+RETURNS VARCHAR AS
 ```{{execute}} 
 
 ### Function Body
 Now we can write our function body. We demarcate the begin and end of the code with $$ symbol. We use $$ rather than " or
-' so that we don't have to bother escaping strings in our code. 
+' so that we don't have to bother escaping strings in our code. When using SQL as our programming language only the last 
+executed line (ending in a ;) will be returned. We also *can't* use RETURN to specify which result we want to return. 
 
 ```
 $$
-BEGIN
-RETURN SELECT 'hello world';
-END;
+   SELECT 'hello world';
 $$
 ```{{execute}}
 
-Notice we use the SQL ';' delimeters at the the end of each SQL statement. We also wrap out SQL in a BEGIN and END; 
-transaction statement. 
+Notice we use the SQL ';' delimeters at the the end of each SQL statement. 
 
 ### Language Specification
 
@@ -64,7 +62,7 @@ select brilliance();
 ```{{execute}}
 
 Now any time we want to say "Hello World" in the _workshop_ database all we have to do is call our function.
-I know this wasn't that exciting yet but now you hopefully see the basic structure of PostgreSQL function. As mentioned
+I know this wasn't that exciting yet but hopefully, now you see the basic structure of PostgreSQL function. As mentioned
 in the intro., functions form the bases for most every extra functionality we want to create, such a stored procedures.
 
 ## Wrap Up
