@@ -16,7 +16,7 @@ block of the function and give it a name. Please note the capitalization for SQL
 here for clarity. 
 
 ```
-CREATE FUNCTION brilliance( )
+CREATE FUNCTION brilliance()
 ```{{execute}}
 
 We are declaring a function named "brilliance" and saying it doesn't accept any parameters. We will return to cover this
