@@ -46,7 +46,7 @@ Let's go ahead and use our cool new function!
 
 '''
 select brilliance('student');
-'''
+'''{{execute}}
 
 Go ahead and change the name to anything else you want to try. 
 
@@ -72,32 +72,48 @@ Time to exercise our function again:
 
 '''
 select brilliance('student', 1);
-'''
+'''{{execute}}
 
 
 ## Default Values for Parameters
 
-HERE
+It is also possible to specify default values for parameters for when the function is called without a value for a parameter. 
+**Note**, if you have a list of parameters, once you specify a default value for a parameter ALL following parameters must 
+have default values as well. 
 
-
-Now to use our brand new shiny function
+Let's go ahead and specify default values for both parameters in our great new function. 
 
 ```
-select brilliance();
+CREATE OR REPLACE FUNCTION brilliance(name varchar = 'Jorge', rank int = 7)
+RETURNS VARCHAR AS
+$$
+   SELECT 'hello ' || name || '! You are number ' || rank;
+$$
+LANGUAGE sql;
 ```{{execute}}
 
-Now any time we want to say "Hello World" in the _workshop_ database all we have to do is call our function.
-I know this wasn't that exciting yet but hopefully, now you see the basic structure of PostgreSQL function. As mentioned
-in the intro., functions form the bases for most every extra functionality we want to create, such a stored procedures.
+And now if we call our function we will get those values if we don't specify a value
+
+'''
+select brilliance();
+'''{{execute}}
+
+But we can also specify only one parameter and use the parameter name. Read more in the [official docs](https://www.postgresql.org/docs/11/sql-syntax-calling-funcs.html) about how
+to call functions:
+
+'''
+select brilliance(rank => 1);
+'''{{execute}}
+
 
 ## Wrap Up
 
-No two functions can have the same name UNLESS they have  different parameter signatures. 
+**NOTE** No two functions can have the same name UNLESS they have  different parameter signatures. 
 For example, you can't have two functions named _myfunction_ unless one is myfunction() 
 and the other is myfunction(myparam varchar). What this also means is that you can overload a function to 
 do different behavior depending on the types passed in. Keep this in mind if you run into an error or trying to determine 
 how to architect your functions. 
 
 
-We just finished the basic skeleton of a function: declaration, function name, parameters, return type, code block, and 
-language used. In our next exercise we will explore doing more with the function declaration and parameters. 
+Though we covered the basics of adding parameters to your functions we will return to this as we move on to the next section. 
+In the next exercise we will cover different ways to return values and how to handle different return types. 
