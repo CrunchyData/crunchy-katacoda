@@ -52,9 +52,9 @@ for assignment of a single value or a single row we need to wrap our select stat
 
 When we use this function:
 
-'''
+```
 select brilliance();
-'''{{execute}}
+```{{execute}}
 
 Notice we get a different type of result:
 
@@ -75,9 +75,9 @@ anonymous record type to hold the output.
 
 Let's make it a bit nicer to read:
 
-'''
+```
 select * from brilliance();
-'''{{execute}}
+```{{execute}}
 
 Which should give you a result like this:
 
@@ -117,7 +117,7 @@ As $$
 
 To get rid of our functions we can just do:
 
-'''
+```
 DROP FUNCTION brilliance;
 ```
 
