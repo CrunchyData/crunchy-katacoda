@@ -13,7 +13,7 @@ we are going to use this so we can keep iterating on our function.
 
 ## Parameterising Our Function
 
-You know the next step in our function right? Of course we need to get it so say "Hello <your name>". Let's start with the 
+You know the next step in our function right? Of course we need to get it so say "Hello [your name]". Let's start with the 
 simplest way possible
 
 ```
@@ -39,7 +39,7 @@ $$
 LANGUAGE sql;
 ```{{execute}}
 
-If we had used more parameters we would  keep incrementing the $number for each new parameter. The '||' is the concatenation 
+If we had used more parameters we would keep incrementing the $number for each new parameter. The '||' is the concatenation 
 operator per the SQL standard. 
 
 Let's go ahead and use our cool new function!
@@ -70,9 +70,9 @@ as long as there is one string type in the concatenation.
 
 Time to exercise our function again:
 
-'''
+```
 select brilliance('student', 1);
-'''{{execute}}
+```{execute}}
 
 
 ## Default Values for Parameters
@@ -92,27 +92,41 @@ $$
 LANGUAGE sql;
 ```{{execute}}
 
-And now if we call our function we will get those values if we don't specify a value
+And now if we call our function we will get those values if we don't specify a value. Before we do this we need to drop our
+original function - think about why?....
 
-'''
+```
+DROP FUNCTION brilliance();
+```
+
+Since we already wrote a function named brilliance in step 1  that accepted no parameters, it is going to try and use that 
+rather than what we want to happen here. 
+
+```
 select brilliance();
-'''{{execute}}
+```{{execute}}
 
 But we can also specify only one parameter and use the parameter name. Read more in the [official docs](https://www.postgresql.org/docs/11/sql-syntax-calling-funcs.html) about how
 to call functions:
 
-'''
+```
 select brilliance(rank => 1);
-'''{{execute}}
+```{{execute}}
 
 
 ## Wrap Up
 
 **NOTE** No two functions can have the same name UNLESS they have  different parameter signatures. 
 For example, you can't have two functions named _myfunction_ unless one is myfunction() 
-and the other is myfunction(myparam varchar). What this also means is that you can overload a function to 
-do different behavior depending on the types passed in. Keep this in mind if you run into an error or trying to determine 
-how to architect your functions. 
+and the other is myfunction(myparam varchar). You could actually have functions:
+1.  myfunction() 
+1.  myfunction(varchar)
+1.  myfunction(int) 
+
+As long as the parameters are different (order does not matter) they can co-exist. What this also means is that you can 
+overload a function to  do different behavior depending on the types passed in.As we saw above, having default values
+along with over-ridden function names can sometimes cause issues for the users of the functions.
+Keep this in mind if you run into an error or trying to determine how to architect your functions. 
 
 
 Though we covered the basics of adding parameters to your functions we will return to this as we move on to the next section. 
