@@ -75,6 +75,7 @@ select brilliance('student', 1);
 ```{{execute}}
 
 
+
 ## Default Values for Parameters
 
 It is also possible to specify default values for parameters for when the function is called without a value for a parameter. 
@@ -94,6 +95,7 @@ LANGUAGE sql;
 
 And now if we call our function we will get those values if we don't specify a value. Before we do this we need to drop our
 original function - think about why?....
+
 
 ```
 DROP FUNCTION brilliance();
