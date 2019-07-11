@@ -95,14 +95,39 @@ would just have more columns.
 
 ## Different Data Types to Return
 
-So far all we have returning simple values that match base types in SQL. The list of what we can actually return includes:
+So far all we have returning simple values that match base types in SQL. As mentioned earlier you can 
+return anything you can use to define a column in a table, even your custom defined type. 
+Quite often you are going to want to return a row in a table or perhaps a whole table (or use them as OUT parameters):
 
-DIFFERENCE BETWEEN RECORD, SETOF RECORDS, TABLE
+1. RETURNS RECORD - A record can be thought of as a single row in an arbitrary table. 
+1. RETURNS <tablename> - If you want a row to obey the schema of a table you can just pass in the table name.
+1. RETURNS SETOF RECORD - By adding the SETOF to the statement you can now return multiple records (rows)
+1. RETURNS SETOF <tablename> - And by extension, this will return multiple rows with a schema that obeys the table schema
 
-1. 
-1. 
+Specific to the RETURNS X AS, you can actually define a table in the place of X. For example:
+
+
+```
+CREATE FUNCTION my-little-table()
+RETURNS TABLE (id int, name text, quarter tsrange)
+As $$
+```
+
+## Clean up
+
+To get rid of our functions we can just do:
+
+'''
+DROP FUNCTION brilliance;
+```
 
 
 ## Wrap Up
-We just finished the basic skeleton of a function: declaration, function name, parameters, return type, code block, and 
-language used. In our next exercise we will explore doing more with the function declaration and parameters. 
+
+With that we have concluded our basic introduction to PostgreSQL functions. We did not actually go into specifics of PL/PGSQL
+or PL/Python nor did we cover any of the more advanced ways of working with function results like Lateral Joins and such.
+Those will be topics for later classes. 
+
+The main goal was really to get you to understand the basic structure of functions, how to pass data in and out, and get
+your hands dirty. Hopefully you now have a good foundation for diving into [more of](https://www.postgresql.org/docs/current/plpgsql.html) 
+the [core documentation](https://www.postgresql.org/docs/current/extend.html).

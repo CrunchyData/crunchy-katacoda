@@ -9,11 +9,5 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   sleep 1
 done
 
-echo 'loading wikipedia data'
-PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/wikipedia/wikipedia.ddl.sql workshop
-PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY wikipedia (county, state, json_content, response_attr) from '\''/data/crunchy_demo_data/wikipedia/wikipedia_copy.txt'\'' WITH CSV QUOTE '\''^'\'' '
-echo 'finished county boundaries'
-
-clear
 
 PGPASSWORD="password" psql -h localhost -U groot workshop

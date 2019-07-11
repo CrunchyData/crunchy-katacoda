@@ -1,0 +1,18 @@
+{
+  "title": "Hughes Developer Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "basicfunctions",
+      "course_id": "basicfunctions",
+      "title": "Basic Introduction to PostgreSQL functions"
+    },
+    {
+      "pathway_id": "crunchydata/workshops",
+      "id": "appdev-wkshp",
+      "course_id": "appdev-wkshp",
+      "title": "PostgreSQL for Application Development"
+    }
+  ]
+}
