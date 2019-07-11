@@ -44,9 +44,9 @@ operator per the SQL standard.
 
 Let's go ahead and use our cool new function!
 
-'''
+```
 select brilliance('student');
-'''{{execute}}
+```{{execute}}
 
 Go ahead and change the name to anything else you want to try. 
 
@@ -72,7 +72,7 @@ Time to exercise our function again:
 
 ```
 select brilliance('student', 1);
-```{execute}}
+```{{execute}}
 
 
 ## Default Values for Parameters
