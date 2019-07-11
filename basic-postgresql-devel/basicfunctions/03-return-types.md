@@ -20,7 +20,9 @@ An INOUT parameter means it will be used to pass data in and then return data th
 For our function let's rid of the RETURNS <type> AS statement and add another OUT parameter
 
 ```
-CREATE OR REPLACE FUNCTION brilliance(name varchar = 'Jorge', rank int = 7, out greetings varchar, out word_count int)
+CREATE OR REPLACE FUNCTION 
+brilliance(name varchar = 'Jorge', rank int = 7, out greetings varchar, out word_count int) 
+AS
 
 ```{{execute}}
 
@@ -31,18 +33,75 @@ Now let's alter the body of the text.
 
 ```
 $$
-   greetings := SELECT 'hello ' || name || '! You are number ' || rank;
-   word_count := length(greetings);
+    BEGIN
+       greetings := (SELECT 'hello ' || name || '! You are number ' || rank);
+       word_count := length(greetings);
+    END;
 $$
 LANGUAGE plpgsql;
+
 ```{{execute}}
 
 Remember that if we left the language as SQL it would only return the final value and we couldn't really do the assignment of 
-values to parameters. So we change the language to Pl/PGSQL. Now we get access to the **:=** [assignment operator}(https://www.postgresql.org/docs/11/plpgsql-statements.html)
+values to parameters. So we change the language to Pl/PGSQL. Now we get access to the **:=** [assignment operator}(https://www.postgresql.org/docs/11/plpgsql-statements.html). 
+
+Because we are using PL/PGSQL we also need to wrap out code in BEGIN and END; statements. Finally, the := operator can only be used
+for assignment of a single value or a single row we need to wrap our select statement in ( ) to coerce to a single value.
+
+### Using this new and improved function:
+
+When we use this function:
+
+'''
+select brilliance();
+'''{{execute}}
+
+Notice we get a different type of result:
+
+```
+workshop=> select brilliance();
+              brilliance              
+--------------------------------------
+ ("hello Jorge! You are number 7",29)
+(1 row)
+
+```
+
+We get a single column result with a name matching the function name. For the value we get an array containing our two values.
+You can think of this as PostgreSQL coercing all our OUT variables into an array. It would continue appending to 
+the array for every OUT or INOUT variable we declared. Technically what happened is the our result is actually created an 
+anonymous record type to hold the output. 
 
 
+Let's make it a bit nicer to read:
+
+'''
+select * from brilliance();
+'''{{execute}}
+
+Which should give you a result like this:
+
+```
+workshop=> select * from brilliance();
+           greetings           | word_count 
+-------------------------------+------------
+ hello Jorge! You are number 7 |         29
+(1 row)
+
+```
+
+Now we get a row result but the column names match the OUT variable names. Again if we add more OUT variables the result 
+would just have more columns. 
 
 ## Different Data Types to Return
+
+So far all we have returning simple values that match base types in SQL. The list of what we can actually return includes:
+
+DIFFERENCE BETWEEN RECORD, SETOF RECORDS, TABLE
+
+1. 
+1. 
+
 
 ## Wrap Up
 We just finished the basic skeleton of a function: declaration, function name, parameters, return type, code block, and 
