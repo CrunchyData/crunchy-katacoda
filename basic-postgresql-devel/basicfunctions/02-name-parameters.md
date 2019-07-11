@@ -118,9 +118,15 @@ select brilliance(rank => 1);
 
 **NOTE** No two functions can have the same name UNLESS they have  different parameter signatures. 
 For example, you can't have two functions named _myfunction_ unless one is myfunction() 
-and the other is myfunction(myparam varchar). What this also means is that you can overload a function to 
-do different behavior depending on the types passed in. Keep this in mind if you run into an error or trying to determine 
-how to architect your functions. 
+and the other is myfunction(myparam varchar). You could actually have functions:
+1.  myfunction() 
+1.  myfunction(varchar)
+1.  myfunction(int) 
+
+As long as the parameters are different (order does not matter) they can co-exist. What this also means is that you can 
+overload a function to  do different behavior depending on the types passed in.As we saw above, having default values
+along with over-ridden function names can sometimes cause issues for the users of the functions.
+Keep this in mind if you run into an error or trying to determine how to architect your functions. 
 
 
 Though we covered the basics of adding parameters to your functions we will return to this as we move on to the next section. 

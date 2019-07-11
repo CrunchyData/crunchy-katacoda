@@ -17,7 +17,7 @@ use the RETURNS {type}AS statement with your function, it's type must match the 
 
 An INOUT parameter means it will be used to pass data in and then return data through this parameter name as well
 
-For our function let's rid of the RETURNS {type} AS statement and add another OUT parameter. We have to drop our function first
+For our function let's get rid of the RETURNS {type} AS statement and add another OUT parameter. We have to drop our function first
 because Postgresql does NOT consider OUT parameters as a change in signature but by adding the OUTs we are changing the 
 return type. 
 

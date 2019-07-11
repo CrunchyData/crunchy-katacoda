@@ -5,7 +5,7 @@ of programming language, need in order to work.
 
 ## Basic Pieces of Every Function
 
-Just like functions in other languages, PostgreSQL functions has certain structure and syntax. Let's avoid dealing 
+Just like functions in other languages, PostgreSQL functions have certain structure and syntax. Let's avoid dealing 
 with parameters for the time being and just make the simplest function possible. We are just going to make a simple 
 function that returns, get ready for it, the string "hello world".
 
