@@ -44,9 +44,9 @@ operator per the SQL standard.
 
 Let's go ahead and use our cool new function!
 
-'''
+```
 select brilliance('student');
-'''{{execute}}
+```{{execute}}
 
 Go ahead and change the name to anything else you want to try. 
 
@@ -72,7 +72,8 @@ Time to exercise our function again:
 
 ```
 select brilliance('student', 1);
-```{execute}}
+```{{execute}}
+
 
 
 ## Default Values for Parameters
@@ -94,6 +95,7 @@ LANGUAGE sql;
 
 And now if we call our function we will get those values if we don't specify a value. Before we do this we need to drop our
 original function - think about why?....
+
 
 ```
 DROP FUNCTION brilliance();
