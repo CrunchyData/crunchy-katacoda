@@ -12,14 +12,17 @@ PostgreSQL allows you to specify the "direction" data flows into a function base
 default all parameters are specified as IN parameters, meaning data is only passed into the function with the parameter. 
 
 If you declare a parameter as OUT then data will be returned. You can have more than one OUT parameter in a function. Using a 
-RETURNS <type> AS statement when you have OUT parameters is optional. If you 
-use the RETURNS <type> AS statement with your function, it's type must match the type of our OUT parameters. 
+RETURNS {type} AS statement when you have OUT parameters is optional. If you 
+use the RETURNS {type}AS statement with your function, it's type must match the type of our OUT parameters. 
 
 An INOUT parameter means it will be used to pass data in and then return data through this parameter name as well
 
-For our function let's rid of the RETURNS <type> AS statement and add another OUT parameter
+For our function let's rid of the RETURNS {type} AS statement and add another OUT parameter. We have to drop our function first
+because Postgresql does NOT consider OUT parameters as a change in signature but by adding the OUTs we are changing the 
+return type. 
 
 ```
+DROP FUNCTION brilliance(varchar, int);
 CREATE OR REPLACE FUNCTION 
 brilliance(name varchar = 'Jorge', rank int = 7, out greetings varchar, out word_count int) 
 AS
@@ -100,9 +103,9 @@ return anything you can use to define a column in a table, even your custom defi
 Quite often you are going to want to return a row in a table or perhaps a whole table (or use them as OUT parameters):
 
 1. RETURNS RECORD - A record can be thought of as a single row in an arbitrary table. 
-1. RETURNS <tablename> - If you want a row to obey the schema of a table you can just pass in the table name.
+1. RETURNS {tablename} - If you want a row to obey the schema of a table you can just pass in the table name.
 1. RETURNS SETOF RECORD - By adding the SETOF to the statement you can now return multiple records (rows)
-1. RETURNS SETOF <tablename> - And by extension, this will return multiple rows with a schema that obeys the table schema
+1. RETURNS SETOF {tablename} - And by extension, this will return multiple rows with a schema that obeys the table schema
 
 Specific to the RETURNS X AS, you can actually define a table in the place of X. For example:
 
@@ -111,14 +114,6 @@ Specific to the RETURNS X AS, you can actually define a table in the place of X.
 CREATE FUNCTION my-little-table()
 RETURNS TABLE (id int, name text, quarter tsrange)
 As $$
-```
-
-## Clean up
-
-To get rid of our functions we can just do:
-
-```
-DROP FUNCTION brilliance;
 ```
 
 
