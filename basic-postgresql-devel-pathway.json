@@ -2,21 +2,21 @@
   "title": "CrunchyData Basic PostgreSQL for Developers",
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/runcontainers/",
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/runcontainers/",
       "course_id": "runcontainers",
       "title": "Quick Intro. To PostgreSQL in Containers"
     }, {
-      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/qftextintro/",
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/qftextintro/",
       "course_id": "qftextintro",
       "title": "Quick Intro To Full Text Search in PostgreSQL"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/qjsonintro/",
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/qjsonintro/",
       "course_id": "qjsonintro",
       "title": "Quick Intro To JSON in PostgreSQL"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel/basicfunctions",
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/basicfunctions",
       "course_id": "basicfunctions",
       "title": "Basics of Writing PostgreSQL Functions"
     }
