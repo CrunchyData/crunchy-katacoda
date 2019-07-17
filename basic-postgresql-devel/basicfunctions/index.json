@@ -20,11 +20,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
-    "terminals": [
-      {"name": "Terminal 2", "target": "host01"}
-    ]
+    "showdashboards": true,
+    "uilayout": "terminal-iframe",
+    "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
   },
   "backend": {
     "imageid": "crunchydata-single1"
