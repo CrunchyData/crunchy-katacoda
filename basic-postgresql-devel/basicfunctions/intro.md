@@ -1,6 +1,6 @@
 # Getting Started With Functions in PostgreSQL
 
-This class gives you a basic introduction to writing functions to add functionality to PostgreSQL. We are not going to 
+This class gives you a basic introduction to writing functions which can be used to add functionality to PostgreSQL. We are not going to 
 cover functions in depth, but instead this class will prepare you for some of the core concepts needed in other scenarios.
 
 

@@ -5,9 +5,9 @@ the instructional pages, the final page, the shell scripts to run when the scena
 what the scenario layout will look like in terms of terminals and web pages.
 
 ## Here is how the site "works"
-1. homepage-pathway.json controls what shows up on the home page on crunchydata.katacoda.com. It lists all the courses on our site
-    * first item is the url of the course which is "https://crunchydata.katacoda.com/<name of the pathway minus the name pathway>"
-        An example "external_link": "https://crunchydata.katacoda.com/workshops/" means there will be a workshops-pathway.json
+1. homepage-pathway.json controls what shows up on the home page on learn.crunchydata.com. It lists all the courses on our site
+    * first item is the url of the course which is "https://learn.crunchydata.com/<name of the pathway minus the name pathway>"
+        An example "external_link": "https://learn.crunchydata.com/workshops/" means there will be a workshops-pathway.json
         Inside that JSON file will be the layout for which scenarios will be in the course.
     * The title of the Course you want to show up to the end user
     * And then the action - which should be "Start Course" if you have content in the directory

@@ -2,7 +2,7 @@ web:
   build: .
   environment:
     VIRTUAL_HOST: 'learn.crunchydata.com,crunchydata.katacoda.com'
-    CTA: 'https://crunchydata.katacoda.com'
+    CTA: 'https://learn.crunchydata.com'
     KATACODA_HOST: 'https://katacoda.com'
     KATACODA_USER: 'crunchydata'
   restart: always

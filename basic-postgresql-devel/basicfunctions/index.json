@@ -5,7 +5,9 @@
   "time": "15 minutes",
   "details": {
     "steps": [
-      {"title": "Our First Function", "text": "01-first-function.md"}
+      {"title": "Our First Function", "text": "01-first-function.md"},
+      {"title": "Function Names and Parameters", "text": "02-name-parameters.md"},
+      {"title": "Different Return Types", "text": "03-return-types.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
