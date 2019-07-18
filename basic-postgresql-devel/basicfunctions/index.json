@@ -25,6 +25,7 @@
     "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
   },
   "backend": {
-    "imageid": "crunchydata-single1"
+    "imageid": "crunchydata-single1",
+    "port": "5050"
   }
 }
