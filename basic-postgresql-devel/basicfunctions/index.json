@@ -20,7 +20,7 @@
     }
   },
   "environment": {
-    "showdashboards": true,
+    "showdashboard": true,
     "uilayout": "terminal",
     "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
   },
