@@ -21,7 +21,7 @@
   },
   "environment": {
     "showdashboards": true,
-    "uilayout": "terminal-iframe",
+    "uilayout": "terminal",
     "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
   },
   "backend": {
