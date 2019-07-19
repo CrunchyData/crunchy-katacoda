@@ -26,13 +26,9 @@ SELECT * FROM pg_replication_slots;
 ```{{execute T1}}
 Let's also create a dedicated replication role instead of using a superuser account.
 ```
-CREATE ROLE replica_user WITH LOGIN REPLICATION;
+CREATE ROLE replica_user WITH LOGIN REPLICATION PASSWORD 'password';
 ```{{execute T1}}
-And then set a password for it
-```
-\password replica_user
-```{{execute T1}}
-Just set the password to `password` for now. If you set it to anything else, the commands in any following steps may have to be adjusted.
+We normally recommend setting all role passwords using the `\password` command in psql.
 
 The `REPLICATION` property gives this role the ability to connect to the special replication database and nothing more.
 

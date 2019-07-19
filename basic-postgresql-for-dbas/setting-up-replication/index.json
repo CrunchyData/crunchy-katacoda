@@ -5,7 +5,9 @@
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Setting Up Replication", "text": "10-create-slots.md"}
+      {"title": "Creating Replication Slots", "text": "10-create-slots.md"},
+      {"title": "Running Base Backup", "text": "20-pgbasebackup.md"},
+      {"title": "Setup Replica Data Directory", "text": "30-recoveryconf.md"}
     ],
     "intro": {
       "code": "set-env.sh",
@@ -20,7 +22,6 @@
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
     "terminals": [
-      {"name": "postgres_terminal", "target": "host01"}
     ]
   },
   "backend": {
