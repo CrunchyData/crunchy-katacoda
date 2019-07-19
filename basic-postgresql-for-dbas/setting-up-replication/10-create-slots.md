@@ -8,6 +8,11 @@ To check and make sure this is the case, let's log into the database and look. A
 ```
 psql
 ```{{execute T1}}
+The following queries may give output that is wider than the available terminal. To make output like this easier to read in psql, you can turn on Expanded display, which causes the output to be more vertical.
+```
+\x
+```{{execute T1}}
+This is a toggle command that can be enabled/disabled simply by entering it again.
 
 ```
 SELECT * FROM pg_hba_file_rules;
