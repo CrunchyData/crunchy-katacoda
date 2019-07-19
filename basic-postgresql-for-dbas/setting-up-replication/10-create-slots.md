@@ -8,7 +8,7 @@ To check and make sure this is the case, let's log into the database and look. A
 ```
 psql
 ```{{execute T1}}
-If the output of any of the following commands is hard to read, you can use the `\x` command in psql to turn on/off expanded display mode, which can make output winder than the terminal size easier to read. This is a toggle command that can be enabled/disabled simply by entering it again. Please be sure that if you use this option, and you see `MORE` at the bottom of any query results, you hit Space until all output has been given, or `Q` to cancel, before moving on to the next command.
+If the output of any of the following commands is hard to read, you can use the `\x` command in psql to turn on/off expanded display mode, which can make output winder than the terminal size easier to read. This is a toggle command that can be enabled/disabled simply by entering it again. Please be sure that if you use this option, and you see `MORE` at the bottom of any query results, you click in the terminal area and then hit Space until all output has been given, or `Q` to cancel, before moving on to the next command.
 
 ```
 SELECT * FROM pg_hba_file_rules;
