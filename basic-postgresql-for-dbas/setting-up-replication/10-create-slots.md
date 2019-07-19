@@ -1,7 +1,7 @@
 First let us check to make sure that we have a proper entry in our pg_hba.conf file so that our replica can connect to the primary. It should look like this since we will be running the replica on the same system as the primary:
 ```
 # TYPE  DATABASE       USER           ADDRESS         METHOD
-host    replication    replication    127.0.0.1/32    md5
+host    replication    replica_user   127.0.0.1/32    md5
 ```
 To check and make sure this is the case, let's log into the database and look. A root role and database has already been created, so you should just be able to type `psql` and log right in. See the first part of this tutorial, `Setting Up PostgreSQL`, for how that was done.
 
@@ -24,11 +24,20 @@ We can the status of any existing slots by querying the system catalogs
 ```
 SELECT * FROM pg_replication_slots;
 ```{{execute T1}}
+Let's also create a dedicated replication role instead of using a superuser account.
+```
+CREATE ROLE replica_user WITH LOGIN REPLICATION;
+```{{execute T1}}
+And then set a password for it
+```
+\password replica_user
+```{{execute T1}}
+Just set the password to `password` for now. If you set it to anything else, the commands in any following steps may have to be adjusted.
 
-Log out of the database so in the next step we can create our base backup
+The `REPLICATION` property gives this role the ability to connect to the special replication database and nothing more.
 
-
-
-
-
+Quit psql for now
+```
+\q
+```{{execute T1}}
 
