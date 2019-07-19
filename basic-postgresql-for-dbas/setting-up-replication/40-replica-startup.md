@@ -34,7 +34,11 @@ CREATE TABLE testing (
 ```
 INSERT INTO testing (id) values (generate_series(1,10));
 ```{{execute T1}}
-Now disconnect from the primary, and connect to the replica running on the alternate port
+Now disconnect from the primary
+```
+\q
+```{{execute T1}}
+and connect to the replica running on the alternate port
 ```
 psql -p 5444
 ```{{execute T1}}
