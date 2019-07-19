@@ -15,8 +15,8 @@ host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 EOF
 
-cp /var/lib/pgsql/11/data/pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf.orig
-cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
+/usr/bin/cp /var/lib/pgsql/11/data/pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf.orig
+/usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
 
 sudo systemctl enable postgresql-11
 sudo systemctl start postgresql-11
