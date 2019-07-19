@@ -1,11 +1,5 @@
 Typically you would use the relevant service setup (systemd, init.d, etc) to start up your replica at this point, but since we're running on the same system, we're going to use the `pg_ctl` binary directly. This is what most services use under the hood to control PostgreSQL. It's not in the default path on RHEL based systems, so its full path must always be used.
 
-First let's change to become the postgres system user
-
-```
-sudo -iu postgres
-```{{execute T1}}
-
 Next we can use the `pg_ctl` command to start up our replica. Further details on this binary's options can be found here - https://www.postgresql.org/docs/current/app-pg-ctl.html
 ```
 /usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica start

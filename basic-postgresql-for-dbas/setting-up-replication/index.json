@@ -7,7 +7,8 @@
     "steps": [
       {"title": "Creating Replication Slots", "text": "10-create-slots.md"},
       {"title": "Running Base Backup", "text": "20-pgbasebackup.md"},
-      {"title": "Setup Replica Data Directory", "text": "30-recoveryconf.md"}
+      {"title": "Setup Replica Data Directory", "text": "30-recoveryconf.md"},
+      {"title": "Starting Up The Replica", "text": "40-replica-startup.md"}
     ],
     "intro": {
       "code": "set-env.sh",
