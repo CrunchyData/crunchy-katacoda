@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {"title": "Using pg_dumpall", "text": "10-pg-dumpall.md"},
-      {"title": "Using pg_dump", "text": "20-pg-dumpall.md"},
+      {"title": "Using pg_dump", "text": "20-pg-dump.md"},
       {"title": "Creating A New Cluster", "text": "30-init-db.md"},
       {"title": "Using pg_restore", "text": "40-pg-restore.md"}
     ],
