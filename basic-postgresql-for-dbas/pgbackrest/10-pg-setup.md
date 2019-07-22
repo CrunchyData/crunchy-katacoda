@@ -1,4 +1,4 @@
-PGBackrest is available in the PGDG Yum repositories. These have already been set up in this scenario, so it's just a matter of installing the package
+pgBackrest is available in the PGDG Yum repositories. These have already been set up in this scenario, so it's just a matter of installing the package
 
 ```
 yum install pgbackrest
