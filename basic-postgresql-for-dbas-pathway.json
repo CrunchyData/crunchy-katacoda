@@ -13,8 +13,11 @@
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/dump-restore/",
       "title": "PG Dump & Restore",
       "course_id": "dump-restore"
+    }, {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/pgbackrest/",
+      "title": "PG Dump & Restore",
+      "course_id": "pgbackrest"
     }
-
   ]
 }
 

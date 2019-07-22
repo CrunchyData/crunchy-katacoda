@@ -1,3 +1,3 @@
 # Final Notes 
 
-We've now successfully created a working replica from running PostgreSQL database!
+We've now successfully used pg_dump and pg_restore to export and import a database!
