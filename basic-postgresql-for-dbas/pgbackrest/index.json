@@ -7,7 +7,7 @@
     "steps": [
       {"title": "Setting up PostgreSQL to use PGBackRest", "text": "10-pg-setup.md"},
       {"title": "Setting up PGBackrest", "text": "20-backrest-setup.md"},
-      {"title": "Running PGBackrest", "text": "30-running-backrest.md"},
+      {"title": "Running Backups", "text": "30-running-backup.md"},
       {"title": "Restoring with PGBackrest", "text": "40-backrest-restore.md"}
     ],
     "intro": {
