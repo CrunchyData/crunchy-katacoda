@@ -9,7 +9,12 @@
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/setting-up-replication/",
       "title": "Setting Up PostgreSQL Replication",
       "course_id": "setting-up-replication"
+    }, {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/dump-restore/",
+      "title": "PG Dump & Restore",
+      "course_id": "dump-and-restore"
     }
+
   ]
 }
 

@@ -1,0 +1,31 @@
+  {
+  "title": "PG Dump & Restore",
+  "description": "PG Dump & Restore",
+  "difficulty": "beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Using pg_dumpall", "text": "10-pg-dumpall.md"},
+      {"title": "Using pg_dump", "text": "20-pg-dumpall.md"},
+      {"title": "Creating A New Cluster", "text": "30-init-db.md"},
+      {"title": "Using pg_restore", "text": "40-pg-restore.md"}
+    ],
+    "intro": {
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
