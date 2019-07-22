@@ -2,17 +2,17 @@
   "title": "CrunchyData Workshops",
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/workshops/replication/",
+      "external_link": "https://learn.crunchydata.com/workshops/replication/",
       "course_id": "replication",
       "title": "PostgreSQL Replication"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/workshops/pitr/",
+      "external_link": "https://learn.crunchydata.com/workshops/pitr/",
       "course_id": "pitr",
       "title": "PostgreSQL Point in Time Backup and Recovery"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/workshops/appdev-wkshp/",
+      "external_link": "https://learn.crunchydata.com/workshops/appdev-wkshp/",
       "course_id": "appdev-wkshp",
       "title": "PostgreSQL for Application Developers"
     }

@@ -3,32 +3,32 @@
   "private": true,
   "courses": [
     {
-      "external_link": "https://crunchydata.katacoda.com/comingsoon/",
+      "external_link": "https://learn.crunchydata.com/comingsoon/",
       "title": "Basic PostgreSQL for DBAs",
       "action": "Coming Soon"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-devel",
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel",
       "title": "Basic PostgreSQL for Developers",
       "action": "Start Course"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/postgis",
+      "external_link": "https://learn.crunchydata.com/postgis",
       "title": "PostGIS",
       "action": "Start Course"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "external_link": "https://learn.crunchydata.com/comingsoon",
       "title": "Advanced Concepts",
       "action": "Coming Soon"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/comingsoon",
+      "external_link": "https://learn.crunchydata.com/comingsoon",
       "title": "PostgreSQL for Kubernetes/OpenShift",
       "action": "Coming Soon"
     },
     {
-      "external_link": "https://crunchydata.katacoda.com/workshops/",
+      "external_link": "https://learn.crunchydata.com/workshops/",
       "title": "Workshops",
       "action": "Start Course"
     }
