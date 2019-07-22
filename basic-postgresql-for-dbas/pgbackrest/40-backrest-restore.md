@@ -3,7 +3,7 @@ If we need to restore our backups at any time, say due to a dropped table, pgbac
 We'll need to know the time before our table was dropped for this example, so make note of that now. It is important to represent the time as reckoned by PostgreSQL and to include timezone offsets. This reduces the possibility of unintended timezone conversions and an unexpected recovery result. The time will be stored in an environment variable so it can be reused later.
 ```
 export RESTORETIME=$(psql -Atc "select current_timestamp")
-echo $RESTOETIME
+echo $RESTORETIME
 ```{{execute T1}}
 In practice finding the exact time that the table was dropped is a lot harder than in this scenario. It may not be possible to find the exact time, but some forensic work should be able to get you close
 
@@ -39,6 +39,6 @@ sudo -u postgres chmod 700 /var/lib/pgsql/11/br_restore
 ```
 pgbackrest restore --stanza=main --db-path=/var/lib/pgsql/11/br_restore
 ```{{execute T1}}
-If this is done, it is critically important to *TURN OFF THE ARCHIVE COMMAND*. Otherwise, if your target destination also has write access to the pgbackrest repository, you will have two locations writing there and likely corrupt the entire backup. As stated earlier, the easiest way to disable the archive_command on a linux system is to set it to `/bin/true`.
+If this is done, it is critically important to ***TURN OFF THE ARCHIVE COMMAND***. Otherwise, if your target destination also has write access to the pgbackrest repository, you will have two locations writing there and likely corrupt the entire backup. As stated earlier, the easiest way to disable the archive_command on a linux system is to set it to `/bin/true`.
 
 The Restore section of the pgbackrest userguide has much more thorough explanations of these restore situations - https://pgbackrest.org/user-guide-centos7.html#restore

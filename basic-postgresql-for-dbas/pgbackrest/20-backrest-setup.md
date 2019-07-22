@@ -13,7 +13,7 @@ EOF
 
 The global section is setting our pgbackrest repository that will be the common location for any stanzas that are create. This is most useful when you have a dedicated backup system. The log level is also slightly increased from the default to give slightly more feedback when running commands manually.
 
-Each stanza's settings are then placed under a `[stanza-name]` heading. In this case, it contains the path to our database's data directory and our retenion policy. Here it is keeping 2 full backups and 7 incremental backups. When the next *successful* backup exceeds this number, pgbackrest will automatically expire older backups.
+Each stanza's settings are then placed under a `[stanza-name]` heading. In this case, it contains the path to our database's data directory and our retenion policy. Here it is keeping 2 full backups. When the next *successful* backup exceeds this number, pgbackrest will automatically expire older backups.
 
 With the configuration in place, the stanza can now be created in our repository. You'll typically be wanting to run the backups as the postgres system user, not root. The archive_command is run as the postgres system user, so it needs to be able to write to the repository. And then this allows the backups to be run as the postgres user as well, without requiring root.
 ```
