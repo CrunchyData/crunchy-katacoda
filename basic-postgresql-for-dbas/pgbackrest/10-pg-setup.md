@@ -1,7 +1,7 @@
 pgBackrest is available in the PGDG Yum repositories. These have already been set up in this scenario, so it's just a matter of installing the package
 
 ```
-yum install pgbackrest
+yum install -y pgbackrest
 ```{{execute T1}}
 Next some settings in the postgresql.conf must be updated to ensure WAL archiving is working. `archive_mode` must be turned on and the `archive_command` must be set to use backrest's `archive-push` command. A stanza name for the pgbackrest repo must also be given and that will be set up in the next step. Since we're changing these values on a running system, the ALTER SYSTEM command can be used
 ```

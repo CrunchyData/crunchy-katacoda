@@ -1,6 +1,6 @@
 If we need to restore our backups at any time, say due to a dropped table, pgbackrest allows that to be done very efficiently. And with Point-In-Time recovery, we can restore the database to a specific time we know that it was in a good state.
 
-We'll need to know the time before our table was dropped for this example, so make note of that now. It is important to represent the time as reckoned by PostgreSQL and to include timezone offsets. This reduces the possibility of unintended timezone conversions and an unexpected recovery result. The time will be stored in an environment variable so it can be reused later.
+We'll need to know the time before our table was dropped for this example, so make note of that now. It is important to represent the time as reckoned by PostgreSQL and to include timezone offsets. This reduces the possibility of unintended timezone conversions and an unexpected recovery result. The time will be stored in an environment variable for this scenario so it can be reused later.
 ```
 export RESTORETIME=$(psql -Atc "select current_timestamp")
 echo $RESTORETIME

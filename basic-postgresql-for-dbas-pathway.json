@@ -3,19 +3,23 @@
   "courses": [ 
    {
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/setting-up-pg/",
-      "title": "Setting Up PostgreSQL",
+      "title": "1 - Setting Up PostgreSQL",
       "course_id": "setting-up-pg"
     }, {
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/setting-up-replication/",
-      "title": "Setting Up PostgreSQL Replication",
+      "title": "2 - Setting Up PostgreSQL Replication",
       "course_id": "setting-up-replication"
     }, {
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/dump-restore/",
-      "title": "PG Dump & Restore",
+      "title": "3 - PG Dump & Restore",
       "course_id": "dump-restore"
     }, {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/pgbasebackup/",
+      "title": "4 - PGBasebackup",
+      "course_id": "pgbasebackup"
+    }, {
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/pgbackrest/",
-      "title": "pgBackRest ",
+      "title": "5 - pgBackRest ",
       "course_id": "pgbackrest"
     }
   ]
