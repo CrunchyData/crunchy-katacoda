@@ -13,5 +13,4 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   sleep 1
 done
 
-
 PGPASSWORD="password" psql -h localhost -U groot workshop
