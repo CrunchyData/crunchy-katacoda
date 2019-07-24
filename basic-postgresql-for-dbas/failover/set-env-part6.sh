@@ -72,9 +72,6 @@ retention-full=2
 [main]
 pg1-path=/var/lib/pgsql/11/data
 pg1-port=5432
-recovery-option=standby_mode=on
-recovery-option=primary_conninfo=host=127.0.0.1 port=5432 user=replica_user password=password
-recovery-option=primary_slot_name=training_replica
 
 [new-primary]
 pg1-path=/var/lib/pgsql/11/replica
