@@ -1,50 +1,27 @@
-# Getting Started With Functions in PostgreSQL
+# Basic Introduction to PGAdmin4
 
-This class gives you a basic introduction to writing functions which can be used to add functionality to PostgreSQL. We are not going to 
-cover functions in depth, but instead this class will prepare you for some of the core concepts needed in other scenarios.
+This class gives you a basic introduction to using [PGAdmin4](https://www.pgadmin.org/) - a GUI for working with your PostgreSQL database.
 
+From the project site:
 
-## Functions Are Everywhere in PostgreSQL
-PostgreSQL is quite well know for its flexibility and extensibility. One of the ways that it achieves this ability is because
-almost everything in PostgreSQL is a function. For example, all the base datatypes are actually functions that translate
-from the underlying binary types to the human readable forms. Another example is the **+** operators. It is actually a function
-written in C that takes arguments from both sides of the operator and returns the result. 
+> pgAdmin is the leading Open Source management tool for Postgres, the world’s most advanced Open Source database. pgAdmin 4 is designed to meet the needs of both novice and experienced Postgres users alike, providing a powerful graphical interface that simplifies the creation, maintenance and use of database objects.
 
-Here is a list of all the places PostgreSQL uses functions:
-- Functions
-- Operators
-- Data types
-- Index methods
-- Casts
-- Triggers
-- Aggregates
-- Ordered-set Aggregates
-- Window Functions 
+In this scenario we will just get you started using the tool. We will cover topics such as :
+1. Connecting to a database
+1. Navigating in the interface
+1. Creating, editing, and executing some SQL
+1. Creating a table
+1. Creating and editing functions
 
-Stored procedure and triggers are the most common places you will use functions. 
-
-## Languages to Use When Writing Functions
-
-PostgreSQL has a wide array of programming languages you can use to write functions. 
-
-You [can use](https://www.postgresql.org/docs/11/external-pl.html):
-- SQL
-- PL/pgSQL: a procedural language included in PostgreSQL maintained by the PostgreSQL foundation (similar to Oracle's PL/SQL)
-_ We will be using mostly SQL with some pgSQL as our main languages for this scenario_
-- PL/Tcl  
-- PL/Perl
-- PL/Python: Python 2 and 3, with 2 still being the default (unfortunately)
-- PL/V8 (JavaScript)
-- PL/Java
-- PL/R
-- PL/Ruby
-- PL/Lua
-- PL/Shell
-
+We have already have spun up a PostgreSQL instance with a database. Inside that database we have created a spatially enabled table for storm event locations in the United States.
 
 Here are the details on the database we are connecting to:
 1. Username: groot
 1. Password: password (same password for the postgres user as well)
 1. A database named: workshop
+
+The credentials for PgAdmin4 are:
+1. username=admin
+2. password=password
 
  Let's get started
