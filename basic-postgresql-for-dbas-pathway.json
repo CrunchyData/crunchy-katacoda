@@ -21,7 +21,12 @@
       "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/pgbackrest/",
       "title": "5 - pgBackRest ",
       "course_id": "pgbackrest"
+    }, {
+      "external_link": "https://crunchydata.katacoda.com/basic-postgresql-for-dbas/failover/",
+      "title": "6 - Failover ",
+      "course_id": "failover"
     }
+
   ]
 }
 
