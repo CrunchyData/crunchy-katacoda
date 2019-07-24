@@ -1,15 +1,13 @@
 {
-  "title": "Basic PGAdmin4",
-  "description": "Introductory Material on Using PGAdmin4",
-  "difficulty": "Beginner",
-  "time": "10 minutes",
+  "title": "Basic Functions For Developers",
+  "description": "Introductory Material On Functions in PostgreSQL",
+  "difficulty": "Intermediate",
+  "time": "15 minutes",
   "details": {
     "steps": [
-      {"title": "Connecting", "text": "01-connecting.md"},
-      {"title": "Navigation", "text": "02-navigation.md"},
-      {"title": "Viewing SQL", "text": "03-viewing-SQL.md"},
-      {"title": "Creating and Modifying Tables", "text": "04-tables.md"},
-      {"title": "Creating and Modifying Functions", "text": "05-functions.md"}
+      {"title": "Our First Function", "text": "01-first-function.md"},
+      {"title": "Function Names and Parameters", "text": "02-name-parameters.md"},
+      {"title": "Different Return Types", "text": "03-return-types.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
@@ -22,12 +20,13 @@
     }
   },
   "environment": {
-    "showdashboard": true,
     "uilayout": "terminal",
-    "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
   },
   "backend": {
-    "imageid": "crunchydata-single1",
-    "port": "5050"
+    "imageid": "crunchydata-single1"
   }
 }
