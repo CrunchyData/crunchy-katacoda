@@ -5,7 +5,7 @@ For the remainder of this scenario, and when you run any of these commands on yo
 sudo -iu postgres
 ```{{execute T1}}
 
-The following is a typical pg_basebackup command use for replica creation. Remember the password for our replica user is `password`. 
+PostgreSQL comes with a tool called `pg_basebackup` that can be used for making filesystem level copies of a full database cluster. We'll be going over more uses of this tool in a future scenario of this training. The following is a typical `pg_basebackup` command used for replica creation. Remember the password for our replica user is `password`. 
 ```
 pg_basebackup -h 127.0.0.1 -U replica_user -D /var/lib/pgsql/11/replica -R -Xs -P -S training_replica -v
 ```{{execute T1}}

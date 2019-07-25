@@ -8,7 +8,7 @@ Now that we have our own user we can log into the database with, we'll continue 
 SELECT name, setting, context FROM pg_settings WHERE name IN ('shared_buffers', 'work_mem', 'archive_mode', 'archive_command');
 ```{{execute T1}}
 
-We can also see the current value of any setting here as well, similar to how we used the `SHOW` command earlier. The meanings of the `context` column can be found in the documentation - https://www.postgresql.org/docs/11/view-pg-settings.html. For the settings we checked above, we can see that `archive_command` and `work_mem` only require a reload while `archive_mode` and `shared_buffers` require a restart. And `work_mem` is even more unique in that each individual role can change that setting for themselves for the duration of their session.
+We can also see the current value of any setting here as well, similar to how we used the `SHOW` command earlier. The meanings of the `context` column can be found in the documentation - https://www.postgresql.org/docs/current/view-pg-settings.html. For the settings we checked above, we can see that `archive_command` and `work_mem` only require a reload while `archive_mode` and `shared_buffers` require a restart. And `work_mem` is even more unique in that each individual role can change that setting for themselves for the duration of their session.
 
 Starting with PostgreSQL 9.4, you can also change `postgresql.conf` settings from within the database without having to manually edit the file itself. This is done with the ALTER SYSTEM command. Any changes done by this command are written to a separate file called `postgresql.auto.conf`, so if you make use of ALTER SYSTEM always be sure to check both of these files when manually reviewing them. `postgresql.auto.conf` always overrides the settings in `postgresql.conf`. An example for enabling WAL archiving is given below. We'll go over these settings more in a future step.
 
@@ -17,7 +17,7 @@ ALTER SYSTEM SET archive_mode = 'on';
 ALTER SYSTEM SET archive_command = '/bin/true';
 ```{{execute T1}}
 
-Settings changed with ALTER SYSTEM that require a restart still require that restart to be done. If you need to restart the database, the best way to do that in a production environment on EL7 is with systemd
+Settings changed with ALTER SYSTEM that require a restart or reload still require that to be done. If you need to restart the database, the best way to do that in a production environment on EL7 is with systemd
 ```
 \q
 sudo systemctl restart postgresql-11

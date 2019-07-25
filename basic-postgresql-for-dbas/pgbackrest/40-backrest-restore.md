@@ -17,7 +17,7 @@ systemctl stop postgresql-11
 ```{{execute T1}}
 Note that the last backup is always used by default when running the restore command. If the last backup happened after the desired point in time, the `--set` command can be given to pgbackrest to tell it to use an earlier backup that still exists in the repository. Also by default, the restore location must be empty. But if we're restoring to an existing cluster, the `--delta` option can be used to just overwrite what has changed since the last backup. This can GREATLY speed up recovery times.
 ```
-sudo -u postgres pgbackrest --stanza=main --delta --type=time "--target=$RESTORETIME" --target-action=promote restore
+sudo -Hiu postgres pgbackrest --stanza=main --delta --type=time "--target=$RESTORETIME" --target-action=promote restore
 ```{{execute T1}}
 The `--time` option tells backrest that this PITR is based on a specific point in time and the `--target-action` option tells PostgreSQL what action is desired once that point in time is reached. By default, pgBackRest restores backups in recovery mode, so in this case we want to promote the database out of recovery mode and return to being our primary database.
 
@@ -33,8 +33,8 @@ psql -d training -c "SELECT * FROM example2"
 
 It's also possible to restore your backups to a different location than the original location. This is useful for disaster recovery situations where you cannot roll back the entire database.
 ```
-sudo -u postgres mkdir /var/lib/pgsql/11/br_restore
-sudo -u postgres chmod 700 /var/lib/pgsql/11/br_restore
+sudo -Hiu postgres mkdir /var/lib/pgsql/11/br_restore
+sudo -Hiu postgres chmod 700 /var/lib/pgsql/11/br_restore
 ```{{execute T1}}
 ```
 pgbackrest restore --stanza=main --db-path=/var/lib/pgsql/11/br_restore

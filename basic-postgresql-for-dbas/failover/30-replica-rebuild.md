@@ -5,7 +5,7 @@ However, for very large databases, this could take quite a long time. A quicker 
 First a new backup must be taken after the failover. Since we're running the primary & replica on the same system, the backrest setup is a little odd in that we've had to create a different stanza for the replica. For more normal pgBackRest setups where the primary & replica are different systems, please see the User Guide - https://pgbackrest.org/user-guide-index.html
 
 ```
-sudo -u postgres pgbackrest --stanza=new-primary backup
+sudo -Hiu postgres pgbackrest --stanza=new-primary backup
 ```{{execute T1}}
 
 Now that new backup can be restored to the location of the old primary using the `--delta` option which will cause it to only have to copy over the files which have changed. For a very large database it still may take a bit of time for all the checksum comparisons of files to complete, but if this is done soon after the failover, it will take much, much less time than a full copy of all data files. Without the `--delta` option, the target of a pgBackRest restore must be an empty folder. 

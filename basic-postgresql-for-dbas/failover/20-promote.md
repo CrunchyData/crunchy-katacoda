@@ -1,6 +1,6 @@
 With the primary confirmed to be down and not able to come back up on its own anymore, the replica can now be promoted to be the new primary. And that's as easy as running the following command as the postgres system user.
 ```
-sudo -u postgres /usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica promote
+sudo -Hiu postgres /usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica promote
 ```{{execute T1}}
 If you're doing a planned failover, this should be fairly quick and your replica will be turned into the primary within a second or 2. If this is an unplanned failover, there may be some WAL files that still need to be replayed before the database is in a consistent state to come up as a standalone system. Monitor the replica's log files to see its progress. If the promotion was successful, messages similar to the following should be in the logs
 ```
