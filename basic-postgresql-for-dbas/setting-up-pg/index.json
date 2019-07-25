@@ -12,7 +12,7 @@
       {"title": "postgresql.conf Part 1 - Making changes", "text": "50-postgresql-conf-part1.md"},
       {"title": "postgresql.conf Part 2 - Connections & Memory", "text": "51-postgresql-conf-part2.md"},
       {"title": "postgresql.conf Part 3 - Replication & Write Ahead Log (WAL)", "text": "52-postgresql-conf-part3.md"},
-      {"title": "postgresql.conf Part 4 - Logging", "text": "53-postgresql-conf-part4.md"},
+      {"title": "postgresql.conf Part 4 - Logging", "text": "53-postgresql-conf-part4.md"}
     ],
     "intro": {
       "code": "set-env.sh",
