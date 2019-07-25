@@ -9,12 +9,11 @@ Some of these settings will require a restart of the database to change, so it i
 
 `shared_buffers` - Controls how much memory the server uses for shared memory buffers. 8GB is a good starting point, even with very high availability. If it cannot be set that high, 25% of total memory is a good starting point. https://www.postgresql.org/docs/11/runtime-config-resource.html. Further information on tuning this setting can be found on this blog series: https://www.keithf4.com/a-small-database-does-not-mean-small-shared_buffers/ 
 
-`work_mem` - Specifies the amount of memory to be used by internal sort operations and hash tables before writing to temporary disk files. 2-5MB is a good starting point. Note that individual queries can use multiple instances of this value, hence why it generally seems low. https://www.postgresql.org/docs/11/runtime-config-resource.html#GUC-WORK-MEM. The PostgreSQL Wiki has a great writeup on how all the memory settings relate to each other and how to better tune this setting - https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server
+`work_mem` - Specifies the amount of memory to be used by internal sort operations and hash tables before writing to temporary disk files. 2-5MB is a good starting point. Note that individual queries can use multiple instances of this value, hence why it generally seems low. https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-WORK-MEM. The PostgreSQL Wiki has a great writeup on how all the memory settings relate to each other and how to better tune this setting - https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server
 
-`maintenance_work_mem` (1GB good starting point)
+`maintenance_work_mem` - Specifies the max amount of memory to be used by maintenance operations such as vacuuming and index/constraint creation. 1GB is generally a good starting point and often the ideal setting in most situations. Can be adjusted on a per session basis to improve one-off maintenance task performance. https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAINTENANCE-WORK-MEM
 
-`effective_cache_size` (50% RAM good starting point)
+`effective_cache_size` - Sets the query planner's assumption about the effective size of the disk cache that is available to a single query. 50% RAM good starting point, possibly higher if PostgreSQL is the only service running on the server. https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-EFFECTIVE-CACHE-SIZE
 
-`hot_standby` = on (setting for replica)
 
 
