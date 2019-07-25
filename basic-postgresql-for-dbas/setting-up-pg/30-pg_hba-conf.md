@@ -23,9 +23,9 @@ host    replication    replica_user    192.168.1.201/32    md5
 ```
 The first column controls the connection type, be it TCP, SSL, or local socket. `host` means it will be a TCP/IP based connection
 
-The second column controls the databases this rule will apply to. `replication` refers to a special database that exists within PostgreSQL to allow streaming replication. Any database can be listed here to control specific access or wildcards can also be used. The special value `all` matches all valid databaes.
+The second column controls the databases this rule will apply to. `replication` refers to a special database that exists within PostgreSQL to allow streaming replication. Any database(s) can be listed here to control specific access. The special value `all` matches all valid databaes.
 
-The third column controls which roles this rule will apply to. `replica_user` refers to a role with that name that was given the special REPLICATION privilege for this purpose. Again wildcards can be used here as well as the special `all` value.
+The third column controls which roles this rule will apply to. `replica_user` refers to a role with that name that was given the special REPLICATION privilege for this purpose. Again the special `all` value can be used here.
 
 The fourth column specifies the client machine address(es) that this record matches. This can be a hostname, a CIDR formatted IP address range or certain special keywords covered in the documention. If hostnames are being used, ensure reverse name resolution is working properly and performant. Recommend using IP address ranges if possible.
 
