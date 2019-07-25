@@ -1,4 +1,4 @@
-There are two commands used to do perform data dumps in PostgreSQL. The pg_hba.conf file has been configured in this environment to allow all the commands that are run to connect without requiring a password. For your own environment, you'll have to use whichever credentials allow you to connect and read the necessary information. 
+There are two commands used to perform data dumps in PostgreSQL. The pg_hba.conf file has been configured in this environment to allow all the commands that are run to connect without requiring a password. For your own environment, you'll have to use whichever credentials allow you to connect and read the necessary information. 
 
 The first, `pg_dumpall`, is a very simplistic and only does plaintext dumps of the entire instance. 
 

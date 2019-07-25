@@ -11,7 +11,7 @@ grep "started streaming WAL from primary" /var/lib/pgsql/11/replica/log/*
 
 If there are no errors in the log and the above line shows up successfully, then the replica has connected to the primary and streaming replication is working!
 
-Further things you can do to check replication status are to run the following on the primary server:
+Further things you can do to check replication status are contained in the following system catalogs that should be queried from the primary:
 ```
 psql
 ```{{execute T1}}

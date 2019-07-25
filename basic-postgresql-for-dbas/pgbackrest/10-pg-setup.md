@@ -1,3 +1,5 @@
+`pg_basebackup` is included with PostgreSQL and is great for many filesystem backup scenarios. However, it can be lacking in many advanced features that enterprise backup solutions require; incrementals & differentials, retention management, parallelism, and more. pgBaseBackup is a third-party tool that aims to provide these advanced features and much more!
+
 pgBackrest is available in the PGDG Yum repositories. These have already been set up in this scenario, so it's just a matter of installing the package
 
 ```

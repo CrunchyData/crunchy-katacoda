@@ -1,6 +1,6 @@
   {
-  "title": "PG Dump & Restore",
-  "description": "PG Dump & Restore",
+  "title": "PGBackRest",
+  "description": "PGBackRest",
   "difficulty": "beginner",
   "time": "20 minutes",
   "details": {

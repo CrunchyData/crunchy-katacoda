@@ -1,4 +1,4 @@
-This scenario has had the same replica setup already done that was shown in Part 2 of this training program. If you'd like more information on how replicas are set up, please run Part 2. The primary is running on the default port of 5432 and the replica is running on port 5444. You can see the running clusters by observing some ps output.
+This scenario has had the same replica setup already done that was shown in the `Replication` scenario of this training program. If you'd like more information on how replicas are set up, please refer to that previous scenario . The primary is running on the default port of 5432 and the replica is running on port 5444. You can see the running clusters by observing some ps output.
 
 ```
 ps aux | grep postgres

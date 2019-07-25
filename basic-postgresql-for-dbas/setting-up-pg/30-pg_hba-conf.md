@@ -19,17 +19,17 @@ Note that this shows the actual file's contents, not what may be active within t
 
 An example for adding an entry to allow a password protected connection for replication would be as follows:
 ```
-host    replication    replication    192.168.1.201/32    md5
+host    replication    replica_user    192.168.1.201/32    md5
 ```
 `host` means it will be a TCP/IP based connection
 
-The second column `replication` refers to a special database that exists within PostgreSQL to allow streaming replication
+The second column `replication` refers to a special database that exists within PostgreSQL to allow streaming replication. Any database can be listed here to control specific access or wildcards can also be used. The special value `all` matches all valid databaes.
 
-The third column `replication` refers to a role with that name that was given the special REPLICATION privilege for this purpose.
+The third column `replica_user` refers to a role with that name that was given the special REPLICATION privilege for this purpose. Again wildcards can be used here as well as the special `all` value.
 
 The fourth column can be any CIDR formatted IP address location. Any IP addresses that match this will be allowed to connect as long as the database, role & method also match
 
-The fifth column refers to the authentication method. Here `md5` refers to a hashed password method.
+The fifth column refers to the authentication method. Here `md5` refers to a hashed password method. There are many, many different methods possible and the above documentation link goes over all of them.
 
 Reloading the database can be done in two ways. While logged into the database, any superuser can call the `pg_reload_conf()` function
 ```

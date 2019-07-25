@@ -1,4 +1,4 @@
-Since we're running our replica on the same system as our primary, we'll have to change the port that it runs on. You normally wouldn't need to do this when the replica is running on a separate system. You can either do this manually in the demo terminal, or run the following `sed` command.
+Since we're running our replica on the same system as our primary, we'll have to change the port that it runs on. You normally wouldn't need to do this when the replica is running on a separate system. You can either do this manually in the demo terminal, or run the following `sed` command. Change it to run on port `5444`.
 
 ```
 sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/replica/postgresql.conf

@@ -2,11 +2,15 @@ First the roles must be created so that any database privileges can be properly 
 ```
 psql -h localhost -p 5888 -d postgres -f /home/training/globals.sql -a
 ```{{execute T1}}
-Once that is complete, the database itself can now be restored using `pg_restore`. It can be restored into any already existing database by just passing it via the `-d` option. So first create the database by logging in as a role that has that privilege. You can use the `-c` option to `psql` to pass in any SQL commands you'd like to run.
+Once that is complete, the database itself can now be restored using `pg_restore`. 
+
+https://www.postgresql.org/docs/current/app-pgrestore.html
+
+It can be restored into any already existing database by just passing it via the `-d` option. So first create the database by logging in as a role that has that privilege. You can use the `-c` option to `psql` to pass in any SQL commands you'd like to run.
 ```
 psql -h localhost -p 5888 -U postgres -c "CREATE DATABASE training"
 ```{{execute T1}}
-Then tell pg_restore which database to restore into using the `-d` option
+Then tell `pg_restore` which database to restore into using the `-d` option
 ```
 pg_restore -h localhost -p 5888 -U postgres -d training -v /home/training/training.pgr
 ```{{execute T1}}
@@ -23,6 +27,6 @@ psql -d training -p 5888 -h localhost
 \dt
 ```{{execute T1}}
 
-The major advantage of using pg_dump for backups is that they are much smaller due to compression and only containing the definitions of indexes. Also the filtering of specific objects can make data recovery in an emergency much quicker than having to restore an entire backup. 
+The major advantage of using `pg_dump` for backups is that they are much smaller due to compression and only containing the definitions of indexes. Also the filtering of specific objects can make data recovery in an emergency much quicker than having to restore an entire backup. 
 
-The disadvantages come into play when regular, full backups of the database are needed, or restoration of the entire database. Incremental backups are not possibly and during restoration, all indexes and constraints must be rebuild and verified. This means a full restore can take an extremely long time. In that case, file-based backups are a much better option and the next scenario will review out to use PGBackRest to do this.
+The disadvantages come into play when regular, full backups of the database are needed, or restoration of the entire database. Incremental backups are not possibly and during restoration, all indexes and constraints must be rebuilt and verified. This means a full restore can take an extremely long time. In that case, file-based backups are a much better option and the next scenarios will review some options for doing this.

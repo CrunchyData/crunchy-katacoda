@@ -1,8 +1,5 @@
 
-TODO: CREATE A TRAINING USER ON SYSTEM WITH SUDO PRIVILEGES TO PROVIDE A MORE REALISTIC SCENARIO
-
-
-As we discussed in the previous step, the default setup for the cluster provided by EL7 based systems is to allow peer based authentication. Back in our root user terminal, let's see what happens if we try and log into the database using just the `psql` command with no additional options
+As we discussed in the previous step, the default setup for the cluster provided by EL7 based systems is to allow peer based authentication. Back in our root user terminal, let's see what happens if we try and log into the database using just the `psql` command with no additional options.
 ```
 clear
 psql
@@ -38,6 +35,6 @@ And it works! We're now taking advantage of the `peer` authentication method to 
 
 We can also set the password for our own role (or other roles if you're a superuser) using the `\password` command. It is recommended to use this method vs setting the password during role creation or using the ALTER ROLE command since this keeps the password from getting put in the clear into the history buffer or the logs.
 
-This step was given in this manner since this is often an issue we see when people are first setting up PostgreSQL and cannot figure out why they can't log in as their normal system user. Going through this process hopefully helps you better understand how psql works in any environment.
+This step was given in this manner since this is an often seen issue when people are first setting up PostgreSQL and cannot figure out why they can't log in as their normal system user. Going through this process hopefully helps you better understand how psql works in any environment.
 
 

@@ -19,7 +19,7 @@ Note that the last backup is always used by default when running the restore com
 ```
 sudo -u postgres pgbackrest --stanza=main --delta --type=time "--target=$RESTORETIME" --target-action=promote restore
 ```{{execute T1}}
-The `--time` option tells backrest that this PITR is based on a specific point in time and the `--target-action` option tells PostgreSQL what action is desired once that point in time is reached. In this case we want the database to come out of recovery mode and return to being our primary database. o
+The `--time` option tells backrest that this PITR is based on a specific point in time and the `--target-action` option tells PostgreSQL what action is desired once that point in time is reached. By default, pgBackRest restores backups in recovery mode, so in this case we want to promote the database out of recovery mode and return to being our primary database.
 
 Start postgres back up again and our table should be back now
 ```
