@@ -6,6 +6,7 @@ CREATE TABLE cities (
     population   int
 ) PARTITION BY LIST (initcap(name));
 ```{{execute T1}}
+```
 CREATE TABLE cities_west
     PARTITION OF cities (
     CONSTRAINT city_id_nonzero CHECK (city_id != 0)
