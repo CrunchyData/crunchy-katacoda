@@ -15,7 +15,7 @@ CREATE TABLE measurement (
     unitsales       int
 ) PARTITION BY RANGE (logtime);    
 ```{{execute T1}}
-We'll go over the `IDENTITY` property later. How the partitioning is split is entirely controlled by the constraints set on its children. This means the range can be the same for each child or different, as long as there is no overlap. Currently all child tables must be created manually as there is no automated table creation. Naming is also completely arbitrary, but it helps to give the tables names that make sense for their content.
+How the partitioning is split is entirely controlled by the constraints set on its children, not from the parent. This means the range can be the same for each child or different, as long as there is no overlap. Currently all child tables must be created manually as there is no automated table creation. Naming is also completely arbitrary, but it helps to give the tables names that make sense for their content.
 ```
 CREATE TABLE measurement_20060201   PARTITION OF measurement
    (PRIMARY KEY (city_id)) FOR VALUES FROM ('2006-02-01') TO ('2006-02-02');

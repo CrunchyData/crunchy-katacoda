@@ -23,9 +23,11 @@ CREATE TABLE users_p7 PARTITION OF users ( primary key (username) ) FOR VALUES W
 ```
 \d+ users_p1
 ```{{execute T1}}
-Let's add some data into this partition set to see how it gets split up
+Let's add some data into this partition set to see how it gets split up. First click the copy command below, followed by the list of random words.
 ```
 \copy users (username) from stdin;
+```{{execute T1}}
+```
 proffers
 babbles
 cents
