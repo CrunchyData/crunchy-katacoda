@@ -1,0 +1,31 @@
+  {
+  "title": "Setting Up PostgreSQL Replication",
+  "description": "Setting Up PostgreSQL Replication",
+  "difficulty": "beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Creating Replication Slots", "text": "10-create-slots.md"},
+      {"title": "Running Base Backup", "text": "20-pgbasebackup.md"},
+      {"title": "Setup Replica Data Directory", "text": "30-recoveryconf.md"},
+      {"title": "Starting Up The Replica", "text": "40-replica-startup.md"}
+    ],
+    "intro": {
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
