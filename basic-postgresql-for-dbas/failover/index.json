@@ -1,0 +1,30 @@
+  {
+  "title": "PGBasebackup ",
+  "description": "PGBasebackup",
+  "difficulty": "beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Stopping the Primary", "text": "10-stop-primary.md"},
+      {"title": "Promoting Replica", "text": "20-promote.md"},
+      {"title": "Rebuilding Replica", "text": "30-replica-rebuild.md"}
+    ],
+    "intro": {
+      "code": "set-env-part6.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
