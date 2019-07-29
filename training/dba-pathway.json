@@ -1,37 +1,12 @@
 {
-  "title": "DBA Workshop",
+  "title": "PostgreSQL Administration Workshop",
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "setting-up-pg",
-      "title": "1 - Setting Up PostgreSQL",
-      "course_id": "setting-up-pg"
-    }, {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "setting-up-replication",
-      "title": "2 - Setting Up PostgreSQL Replication",
-      "course_id": "setting-up-replication"
-    }, {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "dump-restore",
-      "title": "3 - PG Dump & Restore",
-      "course_id": "dump-restore"
-    }, {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "pgbasebackup",
-      "title": "4 - PGBasebackup",
-      "course_id": "pgbasebackup"
-    }, {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "pgbackrest",
-      "title": "5 - pgBackRest ",
-      "course_id": "pgbackrest"
-    }, {
-      "pathway_id": "crunchydata/basic-postgresql-for-dbas",
-      "id": "failover",
-      "title": "6 - Failover ",
-      "course_id": "failover"
+      "pathway_id": "crunchydata/pg-administration",
+      "id": "pg-administration",
+      "title": "PostgreSQL Administration",
+      "course_id": "pg-administration"
     }
   ]
 }

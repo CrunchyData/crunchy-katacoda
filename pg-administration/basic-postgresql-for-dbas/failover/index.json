@@ -10,7 +10,7 @@
       {"title": "Rebuilding Replica", "text": "30-replica-rebuild.md"}
     ],
     "intro": {
-      "code": "set-env-part6.sh",
+      "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""
     },
