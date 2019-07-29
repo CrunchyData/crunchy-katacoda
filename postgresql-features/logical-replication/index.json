@@ -1,13 +1,13 @@
   {
-  "title": "PGBasebackup ",
-  "description": "PGBasebackup",
-  "difficulty": "beginner",
+  "title": "Partitioning in PostgreSQL",
+  "description": "Partitioning in PostgreSQL",
+  "difficulty": "intermediate",
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Stopping the Primary", "text": "10-stop-primary.md"},
-      {"title": "Promoting Replica", "text": "20-promote.md"},
-      {"title": "Rebuilding Replica", "text": "30-replica-rebuild.md"}
+      {"title": "Setup", "text": "10-setup.md"},
+      {"title": "Publication", "text": "20-publication.md"},
+      {"title": "Subscription", "text": "30-subscription.md"}
     ],
     "intro": {
       "code": "set-env.sh",
@@ -22,6 +22,7 @@
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
     "terminals": [
+      {"name": "subscriber_terminal", "target": "host01"}
     ]
   },
   "backend": {
