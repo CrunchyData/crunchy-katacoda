@@ -1,0 +1,19 @@
+{
+    "title": "PostgreSQL Administration",
+    "courses": [
+        {
+            "action" : "Start Course",
+            "external_link" : "https://learn.crunchydata.com/pg-administration/basic-postgresql-for-dbas/",
+            "course_id" : "basic-postgresql-for-dbas",
+            "title": "Administration Basics"
+        }, {
+            "action" : "Start Course",
+            "external_link" : "https://learn.crunchydata.com/pg-administration/postgresql-features/",
+            "course_id" : "postgresql-features",
+            "title": "PostgreSQL Features"
+        }
+    ]
+}
+
+ 
+        
