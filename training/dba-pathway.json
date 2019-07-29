@@ -3,10 +3,50 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata/pg-administration",
-      "id": "pg-administration",
-      "title": "PostgreSQL Administration",
-      "course_id": "pg-administration"
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/setting-up-pg",
+      "course_id": "setting-up-pg",
+      "title": "1 - Setting Up PostgreSQL"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/",
+      "course_id": "",
+      "title": ""
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/setting-up-replication",
+      "course_id": "setting-up-replication",
+      "title": "2 - Setting Up PostgreSQL Replication"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/dump-restore",
+      "course_id": "dump-restore",
+      "title": "3 - PG Dump & Restore"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/pgbasebackup",
+      "course_id": "pgbasebackup",
+      "title": "4 - PGBasebackup"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/pgbackrest",
+      "course_id": "pgbackrest",
+      "title": "5 - pgBackRest"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas/failover",
+      "course_id": "failover",
+      "title": "6 - Failover"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/postgresql-features/native-partitioning",
+      "course_id": "native-partitioning",
+      "title": "Native Partitioning"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/postgresql-features/logical-replication",
+      "course_id": "logical-replication",
+      "title": "Logical Replication"
     }
   ]
 }

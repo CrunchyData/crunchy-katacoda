@@ -19,11 +19,11 @@
       "course_id": "pgbasebackup"
     }, {
       "external_link": "https://learn.crunchydata.com/pg-administration/courses/basic-postgresql-for-dbas/pgbackrest/",
-      "title": "5 - pgBackRest ",
+      "title": "5 - pgBackRest",
       "course_id": "pgbackrest"
     }, {
       "external_link": "https://learn.cruncydata.com/pg-administration/courses/basic-postgresql-for-dbas/failover/",
-      "title": "6 - Failover ",
+      "title": "6 - Failover",
       "course_id": "failover"
     }
 
