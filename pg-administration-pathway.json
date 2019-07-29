@@ -8,7 +8,7 @@
             "title": "Administration Basics"
         }, {
             "action" : "Start Course",
-            "external_link" : "https://learn.crunchydata.com/pg-administration/postgresql-features/",
+            "external_link" : "https://learn.crunchydata.com/pg-administration/courses/postgresql-features/",
             "course_id" : "postgresql-features",
             "title": "PostgreSQL Features"
         }
