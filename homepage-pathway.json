@@ -3,13 +3,13 @@
   "private": true,
   "courses": [
     {
-      "external_link": "https://learn.crunchydata.com/basic-postgresql-for-dbas/",
-      "title": "Basic PostgreSQL for DBAs",
+      "external_link": "https://learn.crunchydata.com/pg-administration/",
+      "title": "PostgreSQL Administration",
       "action": "Start Course"
     },
     {
       "external_link": "https://learn.crunchydata.com/basic-postgresql-devel",
-      "title": "Basic PostgreSQL for Developers",
+      "title": "PostgreSQL for Application Developers",
       "action": "Start Course"
     },
     {
