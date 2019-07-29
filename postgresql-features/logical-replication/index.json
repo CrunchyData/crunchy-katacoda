@@ -1,6 +1,6 @@
   {
-  "title": "Partitioning in PostgreSQL",
-  "description": "Partitioning in PostgreSQL",
+  "title": "Logical Replication in PostgreSQL",
+  "description": "Logical Replication in PostgreSQL",
   "difficulty": "intermediate",
   "time": "20 minutes",
   "details": {
