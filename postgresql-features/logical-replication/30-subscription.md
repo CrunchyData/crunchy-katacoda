@@ -13,27 +13,34 @@ As stated before, schema changes are not replicated, so the tables receiving sub
 Our setup is rather simple, so just recreating the tables manually is easy. For larger setups, it's more useful to use the `--schema-only` option to `pg_dump` to dump out the structure of the desired objects and restore them to the subscriber.
 ```
 psql -p 5444
-CREATE TABLE user_login  (user_id bigint PRIMARY KEY, username text, last_login timestamptz DEFAULT now());
-CREATE TABLE forum_posts  (post_id bigint PRIMARY KEY, post text, post_time timestamptz DEFAULT now(), update_time timestamptz DEFAULT now());
 
+CREATE TABLE user_login  (user_id bigint PRIMARY KEY, username text, last_login timestamptz DEFAULT now());
+
+CREATE TABLE forum_posts  (post_id bigint PRIMARY KEY, post text, post_time timestamptz DEFAULT now(), update_time timestamptz DEFAULT now());
+```{{execute T2}}
+```
 CREATE SUBSCRIPTION forum_post_sub CONNECTION 'dbname=root host=127.0.0.1 user=replica_user password=12345' PUBLICATION forum_posts_pub;
+
 CREATE SUBSCRIPTION user_login_sub CONNECTION 'dbname=root host=127.0.0.1 user=replica_user password=12345' PUBLICATION forum_users_pub;
 ```{{execute T2}}
 This creates replication slots for this subscription back on the publisher database...
 ```
+-- run on publisher
 SELECT * FROM pg_replication_slots;
 ```{{execute T1}}
 ...and pulls all the currently existing data for the tables that are part of that publication. 
 ```
+-- run on subscriber
 SELECT count(*) from user_login;
 SELECT count(*) from forum_posts;
 ```{{execute T2}}
 
 From this point onward, any data changes to those tables will be replicated.
 ```
--- new user login
+-- new user login on publisher
 INSERT INTO user_login (user_id,username) values (21, 'someuser21');
--- new post
+
+-- new post on publisher
 INSERT INTO forum_posts (post_id,post) values (101, 'somepost101'); 
 ```{{execute T1}}
 Check replica again
@@ -43,6 +50,7 @@ SELECT count(*) from forum_posts;
 ```{{execute T2}}
 And let's see that our deletes for users are not being replicated
 ```
+-- run on publisher
 DELETE FROM user_login WHERE user_id < 10;
 DELETE FROM forum_posts WHERE post_id < 20; 
 ```{{execute T1}}
