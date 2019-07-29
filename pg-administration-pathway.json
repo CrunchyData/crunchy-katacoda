@@ -3,7 +3,7 @@
     "courses": [
         {
             "action" : "Start Course",
-            "external_link" : "https://learn.crunchydata.com/pg-administration/basic-postgresql-for-dbas/",
+            "external_link" : "https://learn.crunchydata.com/pg-administration/courses/basic-postgresql-for-dbas/",
             "course_id" : "basic-postgresql-for-dbas",
             "title": "Administration Basics"
         }, {
