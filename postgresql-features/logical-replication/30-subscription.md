@@ -16,7 +16,7 @@ psql -p 5444
 CREATE TABLE user_login  (user_id bigint PRIMARY KEY, username text, last_login timestamptz DEFAULT now());
 CREATE TABLE forum_posts  (post_id bigint PRIMARY KEY, post text, post_time timestamptz DEFAULT now(), update_time timestamptz DEFAULT now());
 
-CREATE SUBSCRIPTION forum_post_sub CONNECTION 'dbname=root host=127.0.0.1 user=replica_user password=12345' PUBLICATION fourm_posts_pub;
+CREATE SUBSCRIPTION forum_post_sub CONNECTION 'dbname=root host=127.0.0.1 user=replica_user password=12345' PUBLICATION forum_posts_pub;
 CREATE SUBSCRIPTION user_login_sub CONNECTION 'dbname=root host=127.0.0.1 user=replica_user password=12345' PUBLICATION forum_users_pub;
 ```{{execute T2}}
 This creates a replication slot for this subscription back on the publisher database...
