@@ -9,11 +9,6 @@
       "title": "1 - Setting Up PostgreSQL"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/",
-      "course_id": "",
-      "title": ""
-    },{
-      "pathway_id": "crunchydata",
       "id": "pg-administration/basic-postgresql-for-dbas/setting-up-replication",
       "course_id": "setting-up-replication",
       "title": "2 - Setting Up PostgreSQL Replication"
