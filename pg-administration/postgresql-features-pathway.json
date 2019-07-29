@@ -2,11 +2,11 @@
   "title": "PostgreSQL Features",
   "courses": [ 
    {
-      "external_link": "https://learn.crunchydata.com/pg-administration/postgresql-features/native-partitioning/",
+      "external_link": "https://learn.crunchydata.com/pg-administration/courses/postgresql-features/native-partitioning/",
       "title": "Native Partitioning",
       "course_id": "native-partitioning"
     }, {
-      "external_link": "https://learn.crunchydata.com/pg-administration/postgresql-features/logical-replication/",
+      "external_link": "https://learn.crunchydata.com/pg-administration/courses/postgresql-features/logical-replication/",
       "title": "Logical Replication",
       "course_id": "logical-replication"
     }
