@@ -9,10 +9,6 @@
       "external_link": "https://crunchydata.katacoda.com/postgresql-features/logical-replication/",
       "title": "Logical Replication",
       "course_id": "logical-replication"
-    }, {
-      "external_link": "https://crunchydata.katacoda.com/postgresql-features/index-types/",
-      "title": "Index Types",
-      "course_id": "index-types"
     }
   ]
 }

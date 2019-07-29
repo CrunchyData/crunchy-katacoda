@@ -30,5 +30,5 @@ GRANT SELECT ON TABLE user_login TO replica_user;
 GRANT SELECT ON TABLE forum_posts TO replica_user;
 ```{{execute T1}}
 
-The tables are now ready for a logical replication subscriber. It's also possibly to create a publication that automatically includes all current tables and any tables that may be created in the future in the current database. We won't be doing the latter in this demo, but the 
+The tables are now ready for a logical replication subscriber. It is also possibly to create a publication that automatically includes all current tables and any tables that may be created in the future in the current database. 
 
