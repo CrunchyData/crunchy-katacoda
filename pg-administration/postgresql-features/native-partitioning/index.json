@@ -1,0 +1,33 @@
+  {
+  "title": "Partitioning in PostgreSQL",
+  "description": "Partitioning in PostgreSQL",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Range Partitioning", "text": "10-range.md"},
+      {"title": "List Partitioning", "text": "20-list.md"},
+      {"title": "Hash Partitioning", "text": "30-hash.md"},
+      {"title": "Constraint Exclusion / Partition Prunning", "text": "40-pruning.md"},
+      {"title": "Index Inheritance", "text": "50-indexes.md"},
+      {"title": "Partition Management", "text": "60-partman.md"}
+    ],
+    "intro": {
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

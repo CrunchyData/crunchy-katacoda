@@ -1,0 +1,31 @@
+  {
+  "title": "Logical Replication in PostgreSQL",
+  "description": "Logical Replication in PostgreSQL",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "Setup", "text": "10-setup.md"},
+      {"title": "Publication", "text": "20-publication.md"},
+      {"title": "Subscription", "text": "30-subscription.md"}
+    ],
+    "intro": {
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "subscriber_terminal", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
