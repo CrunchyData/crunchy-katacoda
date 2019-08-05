@@ -42,5 +42,5 @@ cd /tmp
 wget https://github.com/CrunchyData/crunchy-demo-data/releases/download/v0.3/crunchy_demo_data_v0.3.zip
 mkdir /data
 chmod 777 /data
-unzip crunchy_demo_data_v0.2.zip -d /data
-rm -f crunchy_demo_data_v0.2.zip
+unzip crunchy_demo_data_v0.3.zip -d /data
+rm -f crunchy_demo_data_v0.3.zip
