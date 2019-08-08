@@ -1,17 +1,25 @@
-# Function Declarations and Parameters
+# Navigating Around Your Database Using PgAdmin4
 
-While our function is amazing, perhaps we do want to do a bit of editing to it. Maybe accept some parameters or change 
-the code. 
+Now that we have our shiny new connection to our server let's explore how to use PgAdmin to nagivate around.
 
-## Create versus Replace
+## Top Level
 
-Functions are immutable, there is no way to edit them in place. So while we used CREATE in our first example, the 
-recommended pattern is to instead say "CREATE or REPLACE FUNCTION"
+Go ahead and click on the Workshop server in the left nav bar. Your right hand pane should transform to something that looks 
+like this (without the red highlight boxes):
 
-This tells PostgreSQL if this function doesn't exist then create it otherwise, replace the one that is there. From now on 
-we are going to use this so we can keep iterating on our function. 
+![Top Level View](basicpgadmin/assets/02-top-level.png)
 
-## Parameterising Our Function
+The top highlighted area shows you statistics on your current server for all the current sessions connected to the server. 
+The bottom area shows you all the current running Postgres processes (PID = process ID), and if applicable, information 
+about the database and user who is associated with the process.
+
+The blue dashed box along the top highlights other tabs that apply to the current item selected in the left nav. 
+
+In this case there is not much interesting information on those tabs so we will late until later to explore them.    
+
+## Finding Our Database
+
+Alright time to dig in and find our actual database which is named workshop. 
 
 You know the next step in our function right? Of course we need to get it so say "Hello [your name]". Let's start with the 
 simplest way possible
