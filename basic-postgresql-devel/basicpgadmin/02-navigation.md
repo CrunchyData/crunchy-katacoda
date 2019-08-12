@@ -15,11 +15,11 @@ about the database and user who is associated with the process.
 
 The blue dashed box along the top highlights other tabs that apply to the current item selected in the left nav. 
 
-In this case there is not much interesting information on those tabs so we will late until later to explore them.    
+In this case, there is not much interesting information on those tabs so we will late until later to explore them.    
 
 ## Finding Our Database
 
-Alright time to dig in and find our actual database which is named workshop. 
+Alright time to dig in and find our actual database which is named "workshop". 
 
 You know the next step in our function right? Of course we need to get it so say "Hello [your name]". Let's start with the 
 simplest way possible
