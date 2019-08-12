@@ -33,7 +33,7 @@ fi
 echo "Pull Docker Images"
 docker pull crunchydata/crunchy-postgres:centos7-11.4-2.4.1
 docker pull crunchydata/crunchy-postgres-gis:centos7-11.4-2.4.1
-docker pull crunchydata/crunchy-pgadmin4:centos7-11.4-2.4.1
+docker pull crunchydata/crunchy-pgadmin4:centos7-11.2-2.3.1
 docker pull crunchydata/crunchy-pgpool:centos7-11.4-2.4.1 
 docker pull thesteve0/postgres-appdev
 
