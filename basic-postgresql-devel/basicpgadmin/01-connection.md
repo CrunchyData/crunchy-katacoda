@@ -34,7 +34,7 @@ While there are quite a few boxes and tabs in this dialog, only a few of them ar
 
 On the general tab, the only field required is _Name_. This name represents the name YOU want to use to identify this PostgreSQL server in the PgAdmin interface. You could call it monkey if you want - it doesn't **require** any relation to a name in the real world. 
 
-For today's exercise let's name it "Workshop"
+For today's exercise let's name it **"Workshop"**
 
 In the comment field you can put in some information about this server connection. The information can be brought up in the interface later and can help you remember facts about this server.
 
@@ -50,7 +50,7 @@ In the Host name/address field you put the IP address, DNS name, or network name
 For today's exercise we are running PgAdmin and PostgreSQL in containers with a host network so we are going to use the 
 container name for our server, which is _pgsql_.  
 
-Put pgsql in the address box.
+Put **pgsql** in the address box.
 
 Note: you can also run PgAdmin4 on your local machine, which means you would use the address that you use to connect from 
 your local machine to the DB server. 
