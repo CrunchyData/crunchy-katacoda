@@ -24,7 +24,7 @@
   "environment": {
     "showdashboard": true,
     "uilayout": "terminal",
-    "dashboards": [{"name": "PgAdmin4", "port": "5050"}]
+    "dashboards": [{"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}]
   },
   "backend": {
     "imageid": "crunchydata-single1",
