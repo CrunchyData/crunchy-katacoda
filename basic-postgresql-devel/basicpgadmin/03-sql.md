@@ -24,8 +24,7 @@ To execute this query either:
 
 ![Icon for Query](basicpgadmin/assets/03-execute-query.png)
 
-Once the query is done executing you will see a nice tabular view of the data on the bottom of the right pane. The column 
-names and data values will be displayed as well. 
+Once the query is done executing you will see a nice tabular view of the data on the bottom of the right pane. The column names and data values will be displayed as well. 
 
 ## Wrap Up
 
