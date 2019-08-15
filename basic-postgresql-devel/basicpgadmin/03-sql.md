@@ -14,24 +14,51 @@ To bring up an empty query box on your database:
 
 In the right pane you now have a right text area to write a query or multiple queries. For now just write:
 
-```SELECT * from se_locations;```{{copy}}
+```SELECT * FROM se_locations;```{{copy}}
 
-to select all the records of storm event locations.
+to select all the records of storm event locations. **Hint** you can hit {ctrl}-{space} to get name completion in the editor. 
+Try it for the table name, type "se_lo" and then hit {ctrl}-{space}. 
 
 To execute this query either:
 1. Press F5 on your keyboard 
 1. Click on the lightning icon on the top of the query area
 
-![Icon for Query](basicpgadmin/assets/03-execute-query.png)
+![Execute Query](basicpgadmin/assets/03-execute-query.png)
 
 Once the query is done executing you will see a nice tabular view of the data on the bottom of the right pane. The column names and data values will be displayed as well. 
 
+![Data Table](basicpgadmin/assets/03-data-table.png)
+
+**Note** You can not edit data in this table view.
+
+### Other ways to bring up a query
+
+The other ways to bring up a query are:
+1. Right click on the table and select the "Query Tool..." menu option ![Right click query](basicpgadmin/assets/03-right-query.png)
+1. Right click on the table and select  "Scripts" > "Select Script" . This creates a query with all the columns listed and 
+the table fully schema qualified. 
+![Right Click scripts](basicpgadmin/assets/03-right-script.png)
+
+If you had SQL files saved on your local machine you can bring them into the editor by click on the disk icon right under 
+the "Dashboard" right pane menu. This will allow you to load a file from your local machine. 
+
+## Editing data in the table
+If you want to edit data in the table, you can 
+1. Click on the table
+1. Click on the little table icon in the top of the left nav
+
+![Data Table](basicpgadmin/assets/03-edit-table.png)
+
+To edit a value, just double click on the cell and when you are done, click save. 
+
 ## Wrap Up
 
-With that we have concluded our basic introduction to PostgreSQL functions. We did not actually go into specifics of PL/PGSQL
-or PL/Python nor did we cover any of the more advanced ways of working with function results like Lateral Joins and such.
-Those will be topics for later classes. 
+Now we have seen how to bring up a SQL Query and use it to query our database. 
 
-The main goal was really to get you to understand the basic structure of functions, how to pass data in and out, and get
-your hands dirty. Hopefully you now have a good foundation for diving into [more of](https://www.postgresql.org/docs/current/plpgsql.html) 
-the [core documentation](https://www.postgresql.org/docs/current/extend.html).
+While we only used one table in the query dialog, you can actually use as many tables as you have permissions to use in 
+the database.
+
+*NOTE* You can actually have multiple SQL statements in the editor. If you select a line in the editor, that is the SQL 
+that will be executed when you click the lightning icon. If no lines are selected then the last statement is executed. 
+
+Let's do one more section on creating objects in the database.
