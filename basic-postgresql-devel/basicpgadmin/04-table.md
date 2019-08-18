@@ -35,7 +35,7 @@ typing serial and it will narrow the list.
 ### Adding a second column
 
 To add a second column go ahead and click on the plus icon again. This time we can do all our work on the line so there is no 
-need to click the pencil icon. Just name the column discussion and make it _text_  
+need to click the pencil icon. Just name the column _discussion_ and make it _text_  
 
 And with that we are done, you can click on the **Save** icon on the bottom.
 
