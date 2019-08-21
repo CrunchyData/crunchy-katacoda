@@ -39,11 +39,11 @@ The other ways to bring up a query are:
 the table fully schema qualified. 
 ![Right Click scripts](basicpgadmin/assets/03-right-script.png)
 
-If you had SQL files saved on your local machine you can bring them into the editor by click on the disk icon right under 
-the "Dashboard" right pane menu. This will allow you to load a file from your local machine. 
+If you had SQL files saved on your local machine you can bring them into the editor by click on the folder icon right under 
+the "Dashboard" right pane menu. This will allow you to load a file from your local machine. If you want to save the contents of the editor to your local machine you would click on the disc icon.
 
 ## Editing data in the table
-If you want to edit data in the table, you can 
+If you want to edit data in the table, you can: 
 1. Click on the table
 1. Click on the little table icon in the top of the left nav
 

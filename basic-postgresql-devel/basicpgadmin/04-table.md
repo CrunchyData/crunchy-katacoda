@@ -41,7 +41,7 @@ And with that we are done, you can click on the **Save** icon on the bottom.
 
 You can now inspect your table in the left nav and see that all the objects under the table were automatically created for you. 
 
-You can also now go in and edit the able definition by right clicking on the table and then selecting **Properties**.
+You can also now go in and edit the table definition by right clicking on the table and then selecting **Properties**.
 
 This brings back  the same dialog as above allowing you to edit the definition of the table.
 

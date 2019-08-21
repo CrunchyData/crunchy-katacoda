@@ -15,7 +15,7 @@ about the database and user who is associated with the process.
 
 The blue dashed box along the top highlights other tabs that apply to the current item selected in the left nav. 
 
-In this case, there is not much interesting information on those tabs so we will late until later to explore them.    
+In this case, there is not much interesting information on those tabs so we will wait until later to explore them.    
 
 ## Finding Our Database
 
@@ -30,18 +30,18 @@ You should see two databases, postgres and workshop (capitalization matters in P
  
 ![Top Level View](basicpgadmin/assets/02-db-top.png)
 
-The left side now allows you to see navigate to all the objects in your database. The right side is now just showing you the stats 
+The left side now allows you to see and navigate to all the objects in your database. The right side is now just showing you the stats 
 for this database, not the whole server. 
 
 ### Finding Our Tables (and Schemas)
 
-Your most common thing to view or edit will probably be tables so let's go find our tables. Before we go they let's quickly 
+Your most common thing to view or edit will probably be tables so let's go find our tables. Before we go let's quickly 
 talk about PostgreSQL schemas. In PostgreSQL, [https://www.postgresql.org/docs/11/ddl-schemas.html](schema) is a way to namespace 
 database objects. You can also think of schemas as directories in an operating system. You can use them to avoid naming collisions
 between objects like tables, to do more differentiated permissions, and 3rd party apps can place their objects in the database 
 without causing problems.
 
-All PostgreSQL databases have a public database by default. f you create an object without a schema qualification it will be 
+By default, all PostgreSQL databases have a public database. If you create an object without a schema qualification it will be 
  created in the public schema. If you create a schema for your username name then objects you create will be placed in your 
  schema by default.  If you are interested in the mechanics behind this read the documentation link above. 
  
@@ -57,7 +57,7 @@ All PostgreSQL databases have a public database by default. f you create an obje
  Now you can see all the different objects that can be contained within a schema. 
  
  To find our tables go ahead and expand the table item in the left navigation tree. You will see four tables, one created 
- by the initialization script _testtable_ and three loaded in this scenario, storm details for the United States. 
+ by the initialization script, named _testtable_, and three others with storm information for the United States. 
  
  Go ahead and click on _se_details_ and then click on the top SQL tab. You should now see the DDL statements to create this 
  table.
