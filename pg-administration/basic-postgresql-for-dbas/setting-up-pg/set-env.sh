@@ -2,7 +2,7 @@
 
 #runs in foreground
 
-sleep 2;
+sleep 1;
 sudo -iu training
 
 clear
