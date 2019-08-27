@@ -2,3 +2,4 @@
 
 #runs in foreground
 
+sudo -iu training
