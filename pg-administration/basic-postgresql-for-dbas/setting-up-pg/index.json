@@ -16,6 +16,7 @@
       {"title": "postgresql.conf Part 4 - Logging", "text": "53-postgresql-conf-part4.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""

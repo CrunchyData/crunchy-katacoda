@@ -4,17 +4,18 @@ Thankfully the PostgreSQL community provides an RPM repo that contains the lates
 
     http://www.postgresql.org/download/linux/redhat
 
-From here, select your desired version and the relevant RPM distro. In this case we want PostgreSQL 11 and CentOS7 64bit (x86_64).
+From here, select your desired version and the relevant RPM distro. In this case we want PostgreSQL 11 and CentOS7 64bit (x86_64). This will give you the relevant command to run to install the repo. 
+```
+sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+```{{execute T1}}
+Confirm that this ok and PostgreSQL is now ready to install!
 
 Note there was a recent change regarding how the community repo is organized. Previously each major version had its own repo, but now changed to one universal repo per distro. If you're managing existing systems, it's important to make note of this change for future updates.
-```
-sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-```{{execute T1}}
 Next install the necessary package(s)
 ```
 sudo yum install postgresql11-server postgresql11-contrib
 ```{{execute T1}}
-Note that if you just need the client programs (`psql`, `pg_dump`, `pg_restore`, etc), the `postgresql##` package can provide that without installing the whole server environment. The server package will pull this dependency.
+If you just need the client programs (`psql`, `pg_dump`, `pg_restore`, etc), the `postgresql##` package can provide that without installing the whole server environment. The server package will pull this dependency.
 
 The `postgresql##-contrib` package provides a suite of extra tools that are maintained by the core team. Even if you don't know whether you'll need them, it's recommended to install the package so they are readily available. Some popular examples are `pg_stat_statements`, `auto_explain`, and `dblink`. More can be found here: 
 
