@@ -5,6 +5,7 @@
   "time": "20 minutes",
   "details": {
     "steps": [
+      {"title": "Setting Up Package Repository", "text": "05-setup-repo.md"},
       {"title": "Setting Up The Default PG Instance", "text": "10-db-init.md"},
       {"title": "Initial Login", "text": "20-initial-login.md"},
       {"title": "PostgreSQL Host Based Authentication (pg_hba.conf)", "text": "30-pg_hba-conf.md"},
