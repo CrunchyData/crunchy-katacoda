@@ -11,6 +11,7 @@
       {"title": "Starting Up The Replica", "text": "40-replica-startup.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""

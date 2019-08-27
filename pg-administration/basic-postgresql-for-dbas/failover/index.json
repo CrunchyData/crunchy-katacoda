@@ -10,6 +10,7 @@
       {"title": "Rebuilding Replica", "text": "30-replica-rebuild.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""

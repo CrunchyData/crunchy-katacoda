@@ -9,6 +9,7 @@
       {"title": "Restoring a pg_basebackup", "text": "20-basebackup-restore.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""
