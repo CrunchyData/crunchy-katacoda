@@ -21,12 +21,11 @@ In this case, there is not much interesting information on those tabs so we will
 
 Alright time to dig in and find our actual database which is named "workshop". 
 
-To open the connection, click on the little arrow next to the elephant with the word Workshop after it, then click on little 
-arrow next to **Databases**. 
+>To open the connection, click on the little arrow next to the elephant with the word Workshop after it, then click on little arrow next to **Databases**. 
 
-You should see two databases, postgres and workshop (capitalization matters in PostgreSQL). The postgres database is gold
- in color which means you are connected, while our workshop database is grey and has an red X through it, meaning we are not connected. 
- Let's go ahead and click on the **workshop** icon. 
+You should see two databases, postgres and workshop (capitalization matters in PostgreSQL). The postgres database is gold in color which means you are connected, while our workshop database is grey and has an red X through it, meaning we are not connected. 
+
+ > Let's go ahead and click on the **workshop** icon. 
  
 ![Top Level View](basicpgadmin/assets/02-db-top.png)
 
@@ -35,8 +34,9 @@ for this database, not the whole server.
 
 ### Finding Our Tables (and Schemas)
 
-Your most common thing to view or edit will probably be tables so let's go find our tables. Before we go let's quickly 
-talk about PostgreSQL schemas. In PostgreSQL, [https://www.postgresql.org/docs/11/ddl-schemas.html](schema) is a way to namespace 
+Your most common thing to view or edit will probably be tables so let's go find our tables. 
+
+Before we go let's quickly talk about PostgreSQL schemas. In PostgreSQL, [https://www.postgresql.org/docs/11/ddl-schemas.html](schema) is a way to namespace 
 database objects. You can also think of schemas as directories in an operating system. You can use them to avoid naming collisions
 between objects like tables, to do more differentiated permissions, and 3rd party apps can place their objects in the database 
 without causing problems.
@@ -59,8 +59,7 @@ By default, all PostgreSQL databases have a public database. If you create an ob
  To find our tables go ahead and expand the table item in the left navigation tree. You will see four tables, one created 
  by the initialization script, named _testtable_, and three others with storm information for the United States. 
  
- Go ahead and click on _se_details_ and then click on the top SQL tab. You should now see the DDL statements to create this 
- table.
+ > Go ahead and click on _se_details_ and then click on the top SQL tab. You should now see the DDL statements to create this table.
  
 ![Top Level View](basicpgadmin/assets/02-se-table.png)
  

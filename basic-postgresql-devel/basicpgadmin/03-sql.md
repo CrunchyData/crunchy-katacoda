@@ -8,16 +8,18 @@ There are several ways to create a SQL query, most of which involve a right-clic
 
 To bring up an empty query box on your database:
 1. Make sure your database or one of it sub-objects is selected in the left nav
-2. click on the lighting icon on the top of the left nav area
+2. Click on the lighting icon on the top of the left nav area
 
 ![Icon for Query](basicpgadmin/assets/03-lightning.png)
 
-In the right pane you now have a right text area to write a query or multiple queries. For now just write:
+In the right pane you now have a right text area to write a query or multiple queries. 
 
-```SELECT * FROM se_locations;```{{copy}}
+> For now just write:
+>
+> ```SELECT * FROM se_locations;```{{copy}}
 
-to select all the records of storm event locations. **Hint** you can hit {ctrl}-{space} to get name completion in the editor. 
-Try it for the table name, type "se_lo" and then hit {ctrl}-{space}. 
+to select all the records of storm event locations. **Hint** you can hit <kbd>ctrl</kbd>+<kbd>space</kbd> to get name completion in the editor. 
+Try it for the table name, type "se_lo" and then hit <kbd>ctrl</kbd>+<kbd>space</kbd>. 
 
 To execute this query either:
 1. Press F5 on your keyboard 
@@ -49,7 +51,13 @@ If you want to edit data in the table, you can:
 
 ![Data Table](basicpgadmin/assets/03-edit-table.png)
 
-To edit a value, just double click on the cell and when you are done, click save. 
+To edit a value, just double click on the cell and when you are done, click save.
+
+### Closing a Panel
+
+To close a panel either:
+1. Right click on the panel and select "Remove Panel"
+2. Click on the **x** found on the  far right side on the same line as the table titles. This will close the active panel. 
 
 ## Wrap Up
 

@@ -1,7 +1,7 @@
 {
-  "title": "Basic Functions For Developers",
-  "description": "Introductory Material On Functions in PostgreSQL",
-  "difficulty": "Intermediate",
+  "title": "Intro. PgAdmin4",
+  "description": "Using PgAdmin4 for Interacting With your PostgreSQL",
+  "difficulty": "beginner",
   "time": "15 minutes",
   "details": {
     "steps": [
