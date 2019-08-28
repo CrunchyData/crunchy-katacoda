@@ -12,6 +12,12 @@ In this scenario we will just get you started using the tool. We will cover topi
 1. Creating, editing, and executing some SQL
 1. Creating a table
 
+We assume you understand basic database concepts such as creating a table with data definition langauge (DDL) or simple SQL queries. If not, there may be some terminology you do not understand in the class but you should still be able to complete the class without major problems.
+
+We use a blockquote for commands that you should do in your sessions.
+
+> They look like this.
+
 We have already have spun up a PostgreSQL instance with a database. Inside that database we have created a spatially enabled table for storm event locations in the United States.
 
 Here are the details on the **database** we are connecting to:

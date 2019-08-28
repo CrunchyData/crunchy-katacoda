@@ -50,7 +50,9 @@ In the Host name/address field you put the IP address, DNS name, or network name
 For today's exercise we are running PgAdmin and PostgreSQL in containers with a host network so we are going to use the 
 container name for our server, which is _pgsql_.  
 
-Put **pgsql** in the address box.
+> Put **pgsql** in the address box.
+
+
 
 Note: you can also run PgAdmin4 on your local machine, which means you would use the address that you use to connect from 
 your local machine to the DB server. 
@@ -60,8 +62,8 @@ is _postgres_ so we leave that alone as well.
 
 The next crucial piece of information is Username and Password. This is the username and password you use to connect to your 
 PostgreSQL server. We are going to connect as a normal, unprivileged user: 
-* username: groot 
-* password: password
+>* username: groot 
+>* password: password
 
 For convenience you can save the password on the PgAdmin server - check it if you want.
 
