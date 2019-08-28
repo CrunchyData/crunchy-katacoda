@@ -14,7 +14,7 @@ what the scenario layout will look like in terms of terminals and web pages.
 2.
 
 ## Setting up a future workshop
-1. Go to https:://dashboard.katacoda.com
+1. Go to https://dashboard.katacoda.com
 2. Log in using the account and credentials that you used to log in to katacoda
 3.
 

@@ -6,6 +6,10 @@
       "course_id": "runcontainers",
       "title": "Quick Intro. To PostgreSQL in Containers"
     }, {
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/basicpgadmin",
+      "course_id": "basicpgadmin",
+      "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
+    }, {
       "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/qftextintro/",
       "course_id": "qftextintro",
       "title": "Quick Intro To Full Text Search in PostgreSQL"
