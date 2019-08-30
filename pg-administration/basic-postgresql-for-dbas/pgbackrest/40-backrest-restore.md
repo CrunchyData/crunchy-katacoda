@@ -13,7 +13,7 @@ psql -d training -c "DROP TABLE example2"
 ```{{execute T1}}
 We're now in disaster recovery mode, so we'll want to shut down our primary database to minimize any further possible data loss and new data getting added that we would lose anyway when rolling back.
 ```
-systemctl stop postgresql-11
+sudo systemctl stop postgresql-11
 ```{{execute T1}}
 Note that the last backup is always used by default when running the restore command. If the last backup happened after the desired point in time, the `--set` command can be given to pgbackrest to tell it to use an earlier backup that still exists in the repository. Also by default, the restore location must be empty. But if we're restoring to an existing cluster, the `--delta` option can be used to just overwrite what has changed since the last backup. This can GREATLY speed up recovery times.
 ```
@@ -23,7 +23,7 @@ The `--time` option tells backrest that this PITR is based on a specific point i
 
 Start postgres back up again and our table should be back now
 ```
-systemctl start postgresql-11
+sudo systemctl start postgresql-11
 ```{{execute T1}}
 ```
 psql -d training -c "SELECT * FROM example2"
@@ -37,7 +37,7 @@ sudo -Hiu postgres mkdir /var/lib/pgsql/11/br_restore
 sudo -Hiu postgres chmod 700 /var/lib/pgsql/11/br_restore
 ```{{execute T1}}
 ```
-pgbackrest restore --stanza=main --db-path=/var/lib/pgsql/11/br_restore
+sudo -Hiu postgres pgbackrest restore --stanza=main --db-path=/var/lib/pgsql/11/br_restore
 ```{{execute T1}}
 If this is done, it is critically important to ***TURN OFF THE ARCHIVE COMMAND***. Otherwise, if your target destination also has write access to the pgbackrest repository, you will have two locations writing there and likely corrupt the entire backup. As stated earlier, the easiest way to disable the archive_command on a linux system is to set it to `/bin/true`.
 

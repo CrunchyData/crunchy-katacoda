@@ -1,6 +1,6 @@
 A minimal `/etc/pgbackrest.conf` file is created by the package installation. We will be configuring a global section for settings that are common to all stanzas. And then some stanza specific settings. It's also possible to group settings into sections for specific commands as well. You can either run the command below or manually edit the config file yourself 
 ```
-cat > /etc/pgbackrest.conf << EOF
+sudo bash -c "cat > /etc/pgbackrest.conf << EOF
 [global]
 repo1-path=/var/lib/pgbackrest
 log-level-console=info
@@ -8,7 +8,7 @@ log-level-console=info
 [main]
 pg1-path=/var/lib/pgsql/11/data
 retention-full=2
-EOF
+EOF"
 ```{{execute T1}}
 
 The `global` section has settings for the pgbackrest repository that will be common for any stanzas that are created. This is very useful when you have a dedicated backup system for many databases that should have some common settings such as the repository location and logging levels. The log level is also slightly increased from the default to give slightly more feedback when running commands manually.
