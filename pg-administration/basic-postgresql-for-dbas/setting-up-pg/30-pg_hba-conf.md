@@ -37,11 +37,11 @@ SELECT * FROM pg_reload_conf();
 ```{{execute T2}}
 Or from the system command line, any users with access to control PostgreSQL via systemd can issue a reload. So on our original root terminal, issue the reload
 ```
-systemctl reload postgresql-11
+sudo systemctl reload postgresql-11
 ```{{execute T1}}
 If there are any errors encountered in the pg_hba.conf, the changes will not be applied. You can check the PostgreSQL logs for either a successful SIGHUP or any error messages
 ```
-tail /var/lib/pgsql/11/data/log/postgresql-*.log
+sudo bash -c "tail /var/lib/pgsql/11/data/log/postgresql-*.log"
 ```{{execute}}
 
 
