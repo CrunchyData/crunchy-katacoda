@@ -1,9 +1,12 @@
 #!/usr/bin/bash
 
-#runs in foreground
+# Runs in the background
 
 adduser training
 echo "training" | passwd training --stdin
+usermod -aG wheel training
+echo "training ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 
 cat > pg_hba.conf << EOF
 # TYPE  DATABASE       USER           ADDRESS         METHOD
@@ -25,27 +28,23 @@ EOF
 chown postgres:postgres /var/lib/pgsql/11/data/pg_hba.conf.orig
 /usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
 
-sudo systemctl enable postgresql-11
-sudo systemctl start postgresql-11
+systemctl enable postgresql-11
+systemctl start postgresql-11
 
-sudo -u postgres psql -U postgres -c "CREATE ROLE root WITH LOGIN SUPERUSER"
-sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN"
+sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN SUPERUSER"
 
-sudo -u postgres psql -U postgres -c "CREATE DATABASE root"
 sudo -u postgres psql -U postgres -c "CREATE DATABASE training"
 sudo -u postgres psql -U postgres -c "ALTER DATABASE training OWNER TO training"
 
-sudo -u postgres psql -U training -c "CREATE TABLE example1 (id bigint, stuff text)"
-sudo -u postgres psql -U training -c "INSERT INTO example1 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
-sudo -u postgres psql -U training -c "CREATE TABLE example2 (id bigint, stuff text)"
-sudo -u postgres psql -U training -c "INSERT INTO example2 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
-sudo -u postgres psql -U training -c "ALTER TABLE example1 OWNER TO training" 
-sudo -u postgres psql -U training -c "ALTER TABLE example2 OWNER TO training" 
+sudo -u training psql -c "CREATE TABLE example1 (id bigint, stuff text)"
+sudo -u training psql -c "INSERT INTO example1 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
+sudo -u training psql -c "CREATE TABLE example2 (id bigint, stuff text)"
+sudo -u training psql -c "INSERT INTO example2 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
+sudo -u training psql -c "ALTER TABLE example1 OWNER TO training" 
+sudo -u training psql -c "ALTER TABLE example2 OWNER TO training" 
 
 
-psql -c "ALTER SYSTEM SET archive_mode = 'on'"
-psql -c "ALTER SYSTEM SET archive_command = '/bin/true'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_mode = 'on'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_command = '/bin/true'"
 
-sudo systemctl restart postgresql-11
-
-clear
+systemctl restart postgresql-11

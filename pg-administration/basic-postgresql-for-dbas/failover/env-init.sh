@@ -1,9 +1,11 @@
 #!/usr/bin/bash
 
-#runs in foreground
+# Runs in the background
 
 adduser training
 echo "training" | passwd training --stdin
+usermod -aG wheel training
+echo "training ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 cat > pg_hba.conf << EOF
 # TYPE  DATABASE       USER           ADDRESS         METHOD
@@ -25,29 +27,27 @@ EOF
 chown postgres:postgres /var/lib/pgsql/11/data/pg_hba.conf.orig
 /usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
 
-sudo systemctl enable postgresql-11
-sudo systemctl start postgresql-11
+systemctl enable postgresql-11
+systemctl start postgresql-11
 
-sudo -u postgres psql -U postgres -c "CREATE ROLE root WITH LOGIN SUPERUSER"
-sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN"
+sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN SUPERUSER"
 
-sudo -u postgres psql -U postgres -c "CREATE DATABASE root"
 sudo -u postgres psql -U postgres -c "CREATE DATABASE training"
 sudo -u postgres psql -U postgres -c "ALTER DATABASE training OWNER TO training"
 
-sudo -u postgres psql -U training -c "CREATE TABLE example1 (id bigint, stuff text)"
-sudo -u postgres psql -U training -c "INSERT INTO example1 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
-sudo -u postgres psql -U training -c "CREATE TABLE example2 (id bigint, stuff text)"
-sudo -u postgres psql -U training -c "INSERT INTO example2 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
-sudo -u postgres psql -U training -c "ALTER TABLE example1 OWNER TO training" 
-sudo -u postgres psql -U training -c "ALTER TABLE example2 OWNER TO training" 
+sudo -u training psql -c "CREATE TABLE example1 (id bigint, stuff text)"
+sudo -u training psql -c "INSERT INTO example1 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
+sudo -u training psql -c "CREATE TABLE example2 (id bigint, stuff text)"
+sudo -u training psql -c "INSERT INTO example2 (id, stuff) VALUES (generate_series(1,20), 'stuff'||generate_series(1,20))"
+sudo -u training psql -c "ALTER TABLE example1 OWNER TO training" 
+sudo -u training psql -c "ALTER TABLE example2 OWNER TO training" 
 
-sudo -u postgres psql -c "CREATE ROLE replica_user WITH LOGIN REPLICATION PASSWORD 'password'"
+sudo -u training psql -c "CREATE ROLE replica_user WITH LOGIN REPLICATION PASSWORD 'password'"
 
-psql -c "ALTER SYSTEM SET archive_mode = 'on'"
-psql -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=main %p'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_mode = 'on'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=main %p'"
 
-psql -c "SELECT * FROM pg_create_physical_replication_slot('training_replica')"
+sudo -u training psql -c "SELECT * FROM pg_create_physical_replication_slot('training_replica')"
 
 systemctl restart postgresql-11
 
@@ -57,9 +57,9 @@ sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/replica/postgresql.conf
 
 sudo -u postgres /usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica start
 
-psql -p 5444 -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=new-primary %p'"
+sudo -u training psql -p 5444 -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=new-primary %p'"
 
-psql -p 5444 -c "SELECT pg_reload_conf()"
+sudo -u training psql -p 5444 -c "SELECT pg_reload_conf()"
 
 yum install -y pgbackrest
 
@@ -84,5 +84,3 @@ EOF
 
 sudo -u postgres pgbackrest --stanza=main stanza-create --log-level-console=error
 sudo -u postgres pgbackrest --stanza=new-primary stanza-create --log-level-console=error
-
-clear

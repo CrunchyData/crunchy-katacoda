@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#runs in foreground
+# Runs in the background
 
 adduser training
 echo "training" | passwd training --stdin

@@ -1,6 +1,11 @@
 #!/usr/bin/bash
 
-#runs in foreground
+# Runs in the background
+
+adduser training
+echo "training" | passwd training --stdin
+usermod -aG wheel training
+echo "training ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 cat > pg_hba.conf << EOF
 # TYPE  DATABASE       USER           ADDRESS         METHOD
@@ -19,16 +24,15 @@ EOF
 chown postgres:postgres /var/lib/pgsql/11/data/pg_hba.conf.orig
 /usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
 
-sudo systemctl enable postgresql-11
-sudo systemctl start postgresql-11
+systemctl enable postgresql-11
+systemctl start postgresql-11
 
-sudo -u postgres psql -U postgres -c "CREATE ROLE root WITH LOGIN SUPERUSER"
+sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN SUPERUSER"
 
-sudo -u postgres psql -U postgres -c "CREATE DATABASE root"
+sudo -u postgres psql -U postgres -c "CREATE DATABASE training"
+sudo -u postgres psql -U postgres -c "ALTER DATABASE training OWNER TO training"
 
-psql -c "ALTER SYSTEM SET archive_mode = 'on'"
-psql -c "ALTER SYSTEM SET archive_command = '/bin/true'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_mode = 'on'"
+sudo -u training psql -c "ALTER SYSTEM SET archive_command = '/bin/true'"
 
-sudo systemctl restart postgresql-11
-
-clear
+systemctl restart postgresql-11
