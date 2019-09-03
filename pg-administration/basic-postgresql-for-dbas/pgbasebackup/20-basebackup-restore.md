@@ -15,10 +15,10 @@ sudo -Hiu postgres tar xvzf /var/lib/pgsql/11/backups/pg_wal.tar.gz -C /var/lib/
 ```{{execute T1}}
 We can immediately start this database up if desired then as well. Just make sure to change the port number since we already have a cluster running on the default port. Another important thing to do if starting up a filesystem backup if it's in addition to your existing system is to disable WAL archiving so it doesn't corrupt any existing WAL file repositories.
 ```
-sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/mydb/postgresql.conf
+sudo sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/mydb/postgresql.conf
 ```{{execute T1}}
 ```
-sed -i "/archive_command/c\archive_command = '/bin/true'" /var/lib/pgsql/11/mydb/postgresql.conf
+sudo sed -i "/archive_command/c\archive_command = '/bin/true'" /var/lib/pgsql/11/mydb/postgresql.conf
 ```{{execute T1}}
 Once that's done, we can just use `pg_ctl` to start it up
 ```

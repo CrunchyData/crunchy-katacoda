@@ -3,7 +3,7 @@ First let us check to make sure that we have a proper entry in our pg_hba.conf f
 # TYPE  DATABASE       USER           ADDRESS         METHOD
 host    replication    replica_user   127.0.0.1/32    md5
 ```
-To check and make sure this is the case, let's log into the database and look. A root role and database has already been created, so you should just be able to type `psql` and log right in. See the first part of this tutorial, `Setting Up PostgreSQL`, for how that was done.
+To check and make sure this is the case, let's log into the database and look. A training role and database has already been created, so you should just be able to type `psql` and log right in. See the first part of this tutorial, `Setting Up PostgreSQL`, for how that was done.
 
 ```
 psql

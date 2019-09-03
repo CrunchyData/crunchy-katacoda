@@ -2,8 +2,7 @@
 
 #runs in foreground
 
-adduser training
-echo "training" | passwd training --stdin
+sleep 1;
+sudo -iu training
 
-rm -rf /var/lib/pgsql/11/data/*
 clear

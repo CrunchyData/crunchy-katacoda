@@ -1,7 +1,7 @@
 
 The pg_hba.conf file, by default located in the data directory, is how connection authentication is managed in PostgreSQL. This covers the incoming connections only, not specific object access within the database itself (the latter is covered via the GRANTs system).
 
-Secure connections via SSL and third-party access management via LDAP/Kerberos/etc is also managed via this file. The full capabilities of what can be done via this file can be found in the documentation - https://www.postgresql.org/docs/current/auth-pg-hba-conf.html
+Secure connections via SSL and third-party access management via GSSAPI/Certificate/etc is also managed via this file. The full capabilities of what can be done via this file can be found in the documentation - https://www.postgresql.org/docs/current/auth-pg-hba-conf.html
 
 The file is always evaluated from the top down and as soon as a match is found, further evaluation is halted. So be careful with the ordering of entries to ensure the proper rules are evaluated in the desired order.
 
@@ -37,11 +37,11 @@ SELECT * FROM pg_reload_conf();
 ```{{execute T2}}
 Or from the system command line, any users with access to control PostgreSQL via systemd can issue a reload. So on our original root terminal, issue the reload
 ```
-systemctl reload postgresql-11
+sudo systemctl reload postgresql-11
 ```{{execute T1}}
 If there are any errors encountered in the pg_hba.conf, the changes will not be applied. You can check the PostgreSQL logs for either a successful SIGHUP or any error messages
 ```
-tail /var/lib/pgsql/11/data/log/postgresql-*.log
+sudo bash -c "tail /var/lib/pgsql/11/data/log/postgresql-*.log"
 ```{{execute}}
 
 
