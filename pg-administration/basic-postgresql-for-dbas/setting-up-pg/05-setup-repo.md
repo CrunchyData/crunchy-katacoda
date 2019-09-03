@@ -2,7 +2,7 @@ The first step to getting PostgreSQL running on a brand new system is to set the
 
 Thankfully the PostgreSQL community provides an RPM repo that contains the latest version of not only postgres but many other popular third-party related tools as well (pgadmin, pgbouncer, pgbackrest, pg_partman, etc).
 
-    http://www.postgresql.org/download/linux/redhat
+http://www.postgresql.org/download/linux/redhat
 
 From here, select your desired version and the relevant RPM distro. In this case we want PostgreSQL 11 and CentOS7 64bit (x86_64). This will give you the relevant command to run to install the repo. 
 ```
