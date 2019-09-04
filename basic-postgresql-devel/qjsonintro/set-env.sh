@@ -10,8 +10,8 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
 done
 
 echo 'loading wikipedia data'
-PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/wikipedia/wikipedia.ddl.sql workshop
-PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY wikipedia (county, state, json_content, response_attr) from '\''/data/crunchy_demo_data/wikipedia/wikipedia_copy.txt'\'' WITH CSV QUOTE '\''^'\'' '
+PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/natural_events/natural_events.ddl.sql workshop
+PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY natural_events from '\''./natural_events.csv'\'' WITH DELIMITER '\''|'\'' '
 echo 'finished wikipedia boundaries'
 
 clear
