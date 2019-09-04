@@ -11,9 +11,6 @@ done
 
 echo 'loading wikipedia data'
 PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/natural_events/natural_events.ddl.sql workshop
-PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY natural_events from '\''./natural_events.csv'\'' WITH DELIMITER '\''|'\'' '
+PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY natural_events from '\''/data/crunchy_demo_data/natural_events/natural_events.csv'\'' WITH DELIMITER '\''|'\'' '
 echo 'finished wikipedia boundaries'
-
-clear
-
 : 'ready to go!'
