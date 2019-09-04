@@ -1,12 +1,5 @@
-We'll now be restoring both of the dumps that were created to a brand new database that will be created in the `training` user's home directory. First let's ensure that user has full access to the files we created there
-```
-chown -R training:training /home/training
-```{{execute T1}}
-Now let's change to the training user to show that all further commands can be run by a non-root user
-```
-sudo -iu training
+We'll now be restoring both of the dumps that were created to a brand new database that will be created in the `training` user's home directory. You'll notice that none of the commands we run require sudo. Any user with access to the postgres binaries can manage a full database cluster in their home directory!
 
-```{{execute T1}}
 First create a folder to contain a new database instance that the dumps will be restored to. PostgreSQL also requires that this folder not be world accessible.
 ```
 mkdir /home/training/mydb

@@ -11,6 +11,7 @@
       {"title": "Using pg_restore", "text": "40-pg-restore.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""
