@@ -39,9 +39,9 @@ Remember that the password is the word 'password'.
 
 Now if you do:
 
-`\d wikipedia`{{execute}}
+`\d natural_events`{{execute}}
 
-PostgreSQL will show you a full description of the wikipedia table. To see all the \ commands in PostgreSQL just do 
+PostgreSQL will show you a full description of the natural events  table. To see all the \ commands in PostgreSQL just do 
 `\?` (though don't do it right now).
 
 You will see one JSONB column named *json_content*. Again we are using JSONB because it allows for indexing and search
@@ -54,16 +54,15 @@ You will also see that we created a GIN index on the JSONB column. [GIN](https:/
 is the appropriate index type for JSON content.
 
 ```
-"wikipedia_json_content_indx" gin (json_content)
+"natural_events_json_content_indx" gin (json_content)
 ```
 
 
 ## Querying JSONB
 
-Eventhough the JSON response from Wikipedia does not have a deep structure, we can still do 
-some basic but interesting queries. 
+Eventhough the JSON data is not deeply structured, we can still do interesting queries. 
 
-The first thing to understand that there are two major JSONB operator types - ones that return JSON and other that return text. 
+But first you NEED to understand there are  two major JSONB operator types - ones that return JSON and other that return text. 
 For example, this operator `->` gets a JSON object field by a key and returns JSON:
 
 ```javascript
@@ -82,70 +81,42 @@ This matters because when an object is returned as JSON you can pass it to anoth
 For example our JSON has this structure (starting at the top)
 
 ```javascript
-
 {
-    "batchcomplete" : true,
-    "warnings" :
-    {
-        "main":
-        {
-            "warnings":
-            "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/mailman/listinfo/mediawiki-api-announce> for notice of API deprecations and breaking changes. Use [[Special:ApiFeatureUsage]] to see usage of deprecated features by your application."
-        }
-    ,
-        "revisions":
-        {
-            "warnings":
-            "Because \"rvslots\" was not specified, a legacy format has been used for the output. This format is deprecated, and in the future the new format will always be used."
-        }
-    }
-    ...
+	"id": "EONET_4313",
+	"link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events/EONET_4313",
+	"title": "Wildfire - Sardinia, Italy ",
+	"sources ": [{
+		"id ": "PDC ",
+		"url ": "http://emops.pdc.org/emops/?hazard_id=95355"
+	}],
+	"categories": [{
+		"id": 8,
+		"title": "Wildfires"
+	}],
+	"geometries ": [{
+		"date ": "2019 - 07 - 31 T18: 09: 00 Z ",
+		"type ": "Point ",
+		"coordinates ": [8.9824, 40.09573]
+	}],
+	"description": ""
+}
+   
 ```
 
 
 
-We can use this syntax to get the text value of the revision warnings:
+> We can use this syntax to get the text value of the title of the data set:
 
-```select json_content -> 'warnings' -> 'revisions' ->> 'warnings'  from wikipedia limit 1; ```{{execute}}
+```select json_content ->> 'title' from natural_events limit 1; ```{{execute}}
 
-Or we can use the JSON path operator
+> Or we can use the JSON path operator:
 
-```select json_content #>> '{warnings,revisions,warnings}' from wikipedia limit 5;```{{execute}}
+```select json_content #>> '{title}' from natural_events limit 1;```{{execute}}
+
+> But if we change the operator to return JSON you will see the answer is in quotes: to indicate it is JSON:
+
+```select json_content #>> '{title}' from natural_events limit 1;```{{execute}}
 
 
-#### A more advanced query
-
-Let's pretend we don't have the state and county already in the table but we want to query for Rockland County. If we look at 
-the JSONB we see there is a normalization field that contains county names:
-
-```javascript
-{
-...   
-"query":
-    {
-        "normalized":
-        [{"fromencoded": false, "from": "Autauga_County,_Alabama", "to": "Autauga County, Alabama"}],
-        "pages":
-        [{
-        ...
-        
-```
-
-So we can use that field in our where clause. Because it is in a JSON array nested deep in our structure we need to actually do
-a subquery:
-
-```
-with normalized_to AS (
-  select id, jsonb_array_elements(json_content #> '{query, normalized}') ->> 'to' as to_elements from wikipedia
-) select wikipedia.id, to_elements from wikipedia, normalized_to where normalized_to.to_elements ilike 'rockland%' AND normalized_to.id = wikipedia.id;
-
-```
-
-## Final Notes on Working with JSON in PostgreSQL
-
-Now we have seen how you can query and select different parts of your document. We didn't even cover 
-[containment](https://www.postgresql.org/docs/11/datatype-json.html#JSON-CONTAINMENT) or other
-[fun operations](https://www.postgresql.org/docs/11/datatype-json.html). There is a 
-[full page](https://www.postgresql.org/docs/11/functions-json.html) of JSON functions and operators, 
-go ahead and start playing with them right now in this class if you want. One other fun thing to keep in mind you can also create 
-indexes directly on a tree within the JSONB document, which is recommended if you are going within that document tree a lot.
+## Wrap up
+Now that we have written a basic query and discussed JSONB let's move on to more exciting queries.
