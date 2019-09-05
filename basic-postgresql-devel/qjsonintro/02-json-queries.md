@@ -42,15 +42,7 @@ Volcanoes are cool (as long as you are not too close) so let's find all the even
 select json_content from natural_events where (json_content #> '{"categories",0}') @> '{"title":"Volcanoes"}' limit 5;
 ```{{execute}}       
 
-## Wrap up
+## Section Wrap up
 In this section we got to play around with how to use JSON operators in SELECT queries. For the final section we are going to update some JSON values in the documents. 
 
-## Final Notes on Working with JSON in PostgreSQL
-
-Now we have seen how you can query and select different parts of your document. We didn't even cover 
-[containment](https://www.postgresql.org/docs/11/datatype-json.html#JSON-CONTAINMENT) or other
-[fun operations](https://www.postgresql.org/docs/11/datatype-json.html). There is a 
-[full page](https://www.postgresql.org/docs/11/functions-json.html) of JSON functions and operators, 
-go ahead and start playing with them right now in this class if you want. One other fun thing to keep in mind you can also create 
-indexes directly on a tree within the JSONB document, which is recommended if you are going within that document tree a lot.
 

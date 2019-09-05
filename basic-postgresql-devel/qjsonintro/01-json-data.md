@@ -118,5 +118,5 @@ For example our JSON has this structure (starting at the top)
 ```select json_content #>> '{title}' from natural_events limit 1;```{{execute}}
 
 
-## Wrap up
+## Section Wrap up
 Now that we have written a basic query and discussed JSONB let's move on to more exciting queries.
