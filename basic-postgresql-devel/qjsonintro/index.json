@@ -5,7 +5,9 @@
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "JSON(B) data", "text": "01-json-data.md"}
+      {"title": "JSON(B) Data", "text": "01-json-data.md"},
+      {"title": "JSON(B) Queries", "text": "02-json-queries.md"},
+      {"title": "JSON(B) Update", "text": "03-json-update.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
