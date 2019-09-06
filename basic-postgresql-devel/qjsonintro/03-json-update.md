@@ -5,7 +5,7 @@
 > Let's modify our query where we found all the distinct Title values and now include the counts in each category:   
 
 ```
-select distinct(json_content #>> '{"categories",0,"title"}'), count(id) from natural_events GROUP BY json_content #>> '{"categories",0,"title"}';
+select json_content #>> '{"categories",0,"title"}' as title, count(id) from natural_events GROUP BY json_content #>> '{"categories",0,"title"}';
 ```{{execute}}
               
 We can see there is a category that has _"Severe Storms"_. That seems a bit excessive, how about we call them just _"Bad Weather"_. 
@@ -22,7 +22,7 @@ We are basically setting the JSON value equal to the JSON value with the title u
 > Check out your new results:
 
 ```
-select distinct(json_content #>> '{"categories",0,"title"}'), count(id) from natural_events GROUP BY json_content #>> '{"categories",0,"title"}';
+select json_content #>> '{"categories",0,"title"}' as title, count(id) from natural_events GROUP BY json_content #>> '{"categories",0,"title"}';
 ```{{execute}}
 
 ## Final Notes on Working with JSON in PostgreSQL

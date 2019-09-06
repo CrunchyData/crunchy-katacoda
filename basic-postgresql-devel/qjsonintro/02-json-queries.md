@@ -15,16 +15,18 @@ Let's say we wanted to explore the different event categories. This exploration 
 
 ### Navigate down a tree
 Let's start by just looking at some of the data in the field. 
-> Our data sits in the an attribute, then in an array, then in another attribute:
+> Our data sits in an attribute, then in an array, then in another attribute:
 
 ```
 select json_content #>> '{"categories",0,"title"}' from natural_events limit 10;   
 
 ```{{execute}}
 
-We just used the JSON path operator to get the _categories_ attribute, then go to the _0th_ element in the array, then go to the _title_ attribute and return it's value as text.
+We just used the JSON path operator to get the _categories_ attribute, then go to the _0th_ element in the array, then go to the _title_ attribute and return it's value as text.   
 
-### Use a grouping query
+_Editorial side note:_ This example provides a nice example of why you may not want to store your data in JSON. Notice how many repeats we have- remember that when using JSON or JSONB, every one of those is stored as a complete string, much less efficient than having a normalized structure. In addition to extra disk space (which is cheap) the bigger "cost" will be longer search time and longer retrieval times. 
+
+### Getting a distinct set
 
 > Well how about we look to see all the distinct values the _title_ attribute can take. This is as simple as getting distinct values for any normal database value:
 

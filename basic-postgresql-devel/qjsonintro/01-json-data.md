@@ -14,18 +14,16 @@ While it is very convenient to dump arbitrary key-value pairs (or JSON for that 
 pattern of handling data should only be used in limited cases. Using these data types for most of your data has several 
 potential drawbacks
 
-1. JSON data storage can be an order of magnitude times larger given that you are repeating the attributes  
-for every row. And while disks are cheap, retrieving more data from disk will always be a performance penalty. Indexing more 
+1. JSON data storage can be several orders of magnitude times larger given that you are repeating the attributes for every row. And while disks are cheap, retrieving more data from disk will always be a performance penalty. Indexing more 
 data will always be more expensive as well.  
-1. You lose the ability of the database to "enforce" that the proper data type, such as integer or float, is being stored 
-in the database
+1. You lose the ability of the database to "enforce" that the proper data type, such as integer or float, is being stored in the database
 1. You lose the ability to have the database keep track and manage relations between different data. This can quickly lead
 to data orphans or data being out of sync
 
 Make sure the benefits of using these datatypes outweighs the cost before using them.
 
 Our recommended pattern is to process the JSON and, as much as possible, store them in a well defined 
-schema. Again you are free to do what you want, but this is our recommendation.
+schema.  With PostgreSQL you can have the **best** of both worlds - well defined DB columns with your JSON right next to it. Again you are free to do what you want, but this is our recommendation.
 
 With that, on to the JSONB
 
@@ -115,7 +113,7 @@ For example our JSON has this structure (starting at the top)
 
 > But if we change the operator to return JSON you will see the answer is in quotes: to indicate it is JSON:
 
-```select json_content #>> '{title}' from natural_events limit 1;```{{execute}}
+```select json_content #> '{title}' from natural_events limit 1;```{{execute}}
 
 
 ## Section Wrap up
