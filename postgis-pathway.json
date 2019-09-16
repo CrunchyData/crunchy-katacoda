@@ -2,26 +2,26 @@
   "title": "CrunchyData PostGIS",
   "courses": [
     {
+      "external_link": "https://learn.crunchydata.com/postgis/qpostgisintro/",
+      "course_id": "qpostgisintro",
+      "title": "0 - Quick Intro. To PostGIS"
+    },{
       "external_link": "https://learn.crunchydata.com/postgis/geometries/",
       "course_id": "geometries",
-      "title": "Geometries"
+      "title": "1 - Geometries"
     },{
       "external_link": "https://learn.crunchydata.com/postgis/projection/",
       "course_id": "projection",
-      "title": "Projection"
+      "title": "2 - Projection"
     },{
       "external_link": "https://learn.crunchydata.com/postgis/spatial_relationships/",
       "course_id": "spatial_relationships",
-      "title": "Spatial Relationships"
+      "title": "3 - Spatial Relationships"
     },{
       "external_link": "https://learn.crunchydata.com/postgis/joins/",
       "course_id": "joins",
-      "title": "Spatial Joins"
-    },
-    {
-      "external_link": "https://learn.crunchydata.com/postgis/qpostgisintro/",
-      "course_id": "qpostgisintro",
-      "title": "Quick Intro. To PostGIS"
+      "title": "4 - Spatial Joins"
     }
+
   ]
 }
