@@ -3,19 +3,19 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata/qjsonintro",
+      "pathway_id": "crunchydata/basic-postgresql-devel/qjsonintro",
       "id": "qjsonintro",
       "course_id": "qjsonintro",
       "title": "Basic Introduction to JSON"
     },
     {
-      "pathway_id": "crunchydata/qftextinfo",
+      "pathway_id": "crunchydata/basic-postgresql-devel/qftextinfo",
       "id": "qftextinfo",
       "course_id": "qftextinfo",
       "title": "Basic Introduction to Full Text Search"
     },
     {
-      "pathway_id": "crunchydata/basicfunctions",
+      "pathway_id": "crunchydata/basic-postgresql-devel/basicfunctions",
       "id": "basicfunctions",
       "course_id": "basicfunctions",
       "title": "Basic Introduction to JSON"
