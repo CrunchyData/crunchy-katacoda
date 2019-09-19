@@ -10,8 +10,8 @@
     },
     {
       "pathway_id": "crunchydata/basic-postgresql-devel",
-      "id": "qftextinfo",
-      "course_id": "qftextinfo",
+      "id": "qftextintro",
+      "course_id": "qftextintro",
       "title": "Basic Introduction to Full Text Search"
     },
     {
