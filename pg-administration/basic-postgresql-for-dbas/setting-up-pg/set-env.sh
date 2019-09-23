@@ -12,4 +12,3 @@ until [ $CURRENT_USER == "training" ]; do
 
 done
 
-clear
