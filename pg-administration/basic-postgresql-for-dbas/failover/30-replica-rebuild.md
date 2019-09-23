@@ -4,6 +4,12 @@ However, for very large databases, this could take quite a long time. A quicker 
 
 First a new backup must be taken after the failover. Since we're running the primary & replica on the same system, the backrest setup is a little odd in that we've had to create a different stanza for the replica. For more normal pgBackRest setups where the primary & replica are different systems, please see the User Guide - https://pgbackrest.org/user-guide-index.html
 
+First let's create the new stanza and ensure it's working properly
+```
+sudo -Hiu postgres pgbackrest --stanza=new-primary stanza-create 
+sudo -Hiu postgres pgbackrest --stanza=new-primary check
+```{{execute T1}}
+And now run the backup
 ```
 sudo -Hiu postgres pgbackrest --stanza=new-primary backup
 ```{{execute T1}}

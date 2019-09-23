@@ -83,4 +83,3 @@ recovery-option=primary_slot_name=training_replica
 EOF
 
 sudo -u postgres pgbackrest --stanza=main stanza-create --log-level-console=error
-sudo -u postgres pgbackrest --stanza=new-primary stanza-create --log-level-console=error
