@@ -11,3 +11,4 @@ until [ $CURRENT_USER == "training" ]; do
     sleep 1;
 done
 
+clear
