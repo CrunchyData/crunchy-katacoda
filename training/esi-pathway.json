@@ -1,0 +1,36 @@
+{
+  "title": "Express Scripts Application Developer  Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "qjsonintro",
+      "course_id": "qjsonintro",
+      "title": "Basic Introduction to JSON"
+    },
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "qftextintro",
+      "course_id": "qftextintro",
+      "title": "Basic Introduction to Full Text Search"
+    },
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "basicpgadmin",
+      "course_id": "basicpgadmin",
+      "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
+    },
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "basicfunctions",
+      "course_id": "basicfunctions",
+      "title": "Basic Introduction to Functions in PostgreSQL"
+    },
+    {
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "runcontainers",
+      "course_id": "runcontainers",
+      "title": "Quick Intro. To PostgreSQL in Containers"
+    }
+  ]
+}
