@@ -1,0 +1,33 @@
+{
+  "title": "Quick Introduction to Pl/R in PostgreSQL",
+  "description": "Working with the R programming language as an embedded language in PostgreSQL",
+  "difficulty": "intermediate",
+  "time": "15 minutesd",
+  "details": {
+    "steps": [
+      {"title": "PL/R, Intro to R in PostgreSQL", "text": "01-r-intro.md"},
+      {"title": "More detailed work", "text": "02-r-analysis.md"}
+
+
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
