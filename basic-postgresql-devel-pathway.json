@@ -23,9 +23,11 @@
       "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/basicfunctions",
       "course_id": "basicfunctions",
       "title": "Basics of Writing PostgreSQL Functions"
+    }, {
+      "external_link": "https://learn.crunchydata.com/basic-postgresql-devel/qplr/",
+      "course_id": "qplr",
+      "title": "Quick Intro To using R in PostgreSQL"
     }
-
-
   ]
 
 }
