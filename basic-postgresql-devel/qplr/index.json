@@ -5,7 +5,7 @@
   "time": "15 minutesd",
   "details": {
     "steps": [
-      {"title": "PL/R, Intro to R in PostgreSQL", "text": "01-r-intro.md"}
+      {"title": "PL/R, Intro to R in PostgreSQL", "text": "01-r-intro.md"},
       {"title": "More detailed work", "text": "02-r-analysis.md"}
 
 
