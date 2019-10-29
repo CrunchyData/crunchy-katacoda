@@ -49,7 +49,7 @@ at the terminal.
 Now to do 2x2 you just do:
 
 
-`2x2`{{execute}}
+`2*2`{{execute}}
 
 and hit enter. Wow, amazing right ;)
 
