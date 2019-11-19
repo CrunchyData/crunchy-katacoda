@@ -13,7 +13,7 @@ RETURNS TEXT as $$
     return(toString(result))
 $$ LANGUAGE 'plr';
 
-```
+```{{execute}}
 
 And now let's exercise our function:
 
@@ -49,7 +49,7 @@ $$
      probab. = result$p.value)
     return(data.frame(output))
 $$;
-```
+```{{execute}}
 
 And now we call it like this:
 ```
@@ -57,7 +57,7 @@ WITH get_aggs AS (
   select array_agg(aland) as aland_vector, array_agg(awater) as awater_vector from county_geometry
 ) SELECT r_corr_output.* from get_aggs, r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) as r_corr_output;
 
-```
+```{{execute}}
 
 This is using a common table expression (CTE) and a lateral join to create the nicely formatted output.
 
