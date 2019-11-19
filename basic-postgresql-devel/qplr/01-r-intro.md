@@ -1,8 +1,8 @@
 # Using R **Inside** Postgresql
 
 R is a FOSS statistical language that is well know in the data analysis and statistical fields. It is a specialized 
-programming language that is focused on statistical work and visualization. It does have a syntax that  is different than 
-most other programming languages and it really good at doing matrix and vector calculations.Analysis that would take 
+programming language that is focused on statistical work and visualization. It does have a syntax that is different than 
+most other programming languages and it really good at doing matrix and vector calculations. Analysis that would take 
 the inclusion of numerous specialized libraries and many lines of code are simple and concise in R.
 
 For example, here is how you tell R to calculate correlation between cost of a car and years the car lasts
@@ -18,8 +18,10 @@ it is quite easy to get summary statistics on the model as well.
 
 Having this language embedded within your database is **extremely** powerful. We have can have our analysis routines living 
 right next to the data. No need to move it across the wire and then run the analysis. Now we also can use R in functions 
-(stored procedures and by extension, trigger). This means we as the data scientist can write the linear regression as a fucntion 
-that is triggered to update the results everytime there is a new data entry. Then we can expose that to application developers 
+(stored procedures and by extension, trigger). This means we as the data scientist can write the linear regression as
+ a function 
+that is triggered to update the results every time there is a new data entry. Then we can expose that to application
+ developers 
 as a simple function that they can call in their sql like:
 
 
@@ -75,11 +77,13 @@ language.
 #### What this means for development.
 
 Our proposed workflow for development, which will we do below, is to allow the language to be trusted **only** in the development 
-environment. In this was developers can make their own functions, iterate them, and get them working correctly. Then, when it's 
-time to go to production, someone with DB superuser privileges transfers the function to the production database. This will involve
+environment. In this way developers can make their own functions, iterate them, and get them working correctly. Then
+, when it's 
+time to go to production, someone with DB superuser privileges can transfer the function to the production database
+. This will involve
 tracking changes to function and having a migration procedure but the extra work is well worth it given the alternative. 
 
-Again - make the language trusted in your development environment NOT your production environment.
+Again - make the language trusted in your development environment **NOT** your production environment.
 
 Here is the overview documentation on [stored functions](https://www.postgresql.org/docs/11/xfunc.html) and here is the 
 reference doc on how to create a [stored function](https://www.postgresql.org/docs/11/sql-createfunction.html) 
