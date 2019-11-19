@@ -13,7 +13,7 @@ RETURNS TEXT as $$
     return(toString(result))
 $$ LANGUAGE 'plr';
 
-```
+```{{execute}}
 
 And now let's exercise our function:
 
@@ -49,17 +49,31 @@ $$
      probab. = result$p.value)
     return(data.frame(output))
 $$;
-```
+```{{execute}}
 
 And now we call it like this:
 ```
 WITH get_aggs AS (                                                                              
-  select array_agg(aland) as aland_vector, array_agg(awater) as awater_vector from county_geometry
-) SELECT r_corr_output.* from get_aggs, r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) as r_corr_output;
+  select array_agg(aland) AS aland_vector, array_agg(awater) AS awater_vector FROM county_geometry
+) SELECT r_corr_output.* FROM get_aggs, r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) AS r_corr_output;
 
-```
+```{{execute}}
 
-This is using a common table expression (CTE) and a lateral join to create the nicely formatted output.
+This is using a common table expression (CTE). With a CTE we get a much nicer subquery syntax. We start the statement
+ with "WITH get_aggs AS (" which is basically saying that next section in the ( ) can be used later in the query as a
+ table named get_aggs.  We do this first call to get our 
+
+The second select statement then treats our function call as a table. 
+ 
+`SELECT r_corr_output.* FROM get_aggs, r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) AS r_corr_output;` 
+
+Remember, everything after the FROM is table declarations, so 
+
+`from ... r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) as r_corr_output;`     
+
+Is saying "call the function and name its results as r_corr_output". Once we have our function results with a table
+ like structyre  we can call it like any other table in the beginning part of our SELECT statement.
+
 
 ## Final Notes
 

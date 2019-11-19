@@ -120,7 +120,7 @@ RETURNS INTEGER as $$
     return(result)
 $$ LANGUAGE 'plr';
 
-```
+```{{execute}}
 
 1. We name our function *two_times_two*
 1. We are not accepting any input, hence the () 
