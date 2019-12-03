@@ -1,0 +1,15 @@
+{
+  "title": "Crunchy Data Basic PostgreSQL for Developers",
+  "courses": [
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
+      "course_id": "runcontainers",
+      "title": "Quick Intro. To PostgreSQL in Containers"
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/basicpgadmin",
+      "course_id": "basicpgadmin",
+      "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
+    }
+  ]
+}
