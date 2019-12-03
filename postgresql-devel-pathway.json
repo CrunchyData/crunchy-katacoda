@@ -1,0 +1,19 @@
+{
+    "title": "PostgreSQL Administration",
+    "courses": [
+        {
+            "action" : "Start Course",
+            "external_link" : "https://learn.crunchydata.com/postgresql-devel/courses/basics/",
+            "course_id" : "basics",
+            "title": "PostgreSQL Basics for Developers"
+        }, {
+            "action" : "Start Course",
+            "external_link" : "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/",
+            "course_id" : "beyond-basics",
+            "title": "Beyond PostgreSQL Basics for Developers"
+        }
+    ]
+}
+
+ 
+        
