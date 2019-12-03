@@ -1,0 +1,25 @@
+{
+  "title": "Crunchy Data Beyond Basic PostgreSQL for Developers",
+  "courses": [
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/beyond-basics/qftextintro/",
+      "course_id": "qftextintro",
+      "title": "Quick Intro To Full Text Search in PostgreSQL"
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/beyond-basics/qjsonintro/",
+      "course_id": "qjsonintro",
+      "title": "Quick Intro To JSON in PostgreSQL"
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/beyond-basics/basicfunctions",
+      "course_id": "basicfunctions",
+      "title": "Basics of Writing PostgreSQL Functions"
+    }, {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/beyond-basics/qplr/",
+      "course_id": "qplr",
+      "title": "Quick Intro To using R in PostgreSQL"
+    }
+  ]
+
+}
