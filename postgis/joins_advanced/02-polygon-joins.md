@@ -22,7 +22,8 @@ in our graduate education query:
 
 ```
 SELECT 
-  n.name, n.boroname 
+   100.0 * Sum(t.edu_graduate_dipl) / Sum(t.edu_total) AS graduate_pct,
+   n.name, n.boroname
 FROM nyc_neighborhoods n 
 JOIN nyc_census_tracts t 
 ON ST_Contains(n.geom, ST_Centroid(t.geom)) 
@@ -35,19 +36,20 @@ LIMIT 10;
 Note that the query takes longer to run now, because the ST_Centroid
 function has to be run on every census tract.
 
-    graduate_pct |        name         | boroname  
-
-> --------------+---------------------+----------- 
->   48.0 | Carnegie Hill | Manhattan
->   44.2 | Morningside Heights | Manhattan 
->   42.1 | Greenwich Village | Manhattan 
->   42.0 | Upper West Side | Manhattan 
->   41.4 | Tribeca | Manhattan 
->   40.7 | Battery Park | Manhattan 
->   39.5 | Upper East Side | Manhattan 
->   39.3 | North Sutton Area | Manhattan 
->   37.4 | Cobble Hill | Brooklyn 
->   37.4 | Murray Hill | Manhattan
+```
+graduate_pct |        name         | boroname  
+--------------+---------------------+----------- 
+   48.0 | Carnegie Hill | Manhattan
+   44.2 | Morningside Heights | Manhattan 
+   42.1 | Greenwich Village | Manhattan 
+   42.0 | Upper West Side | Manhattan 
+   41.4 | Tribeca | Manhattan 
+   40.7 | Battery Park | Manhattan 
+   39.5 | Upper East Side | Manhattan 
+   39.3 | North Sutton Area | Manhattan 
+   37.4 | Cobble Hill | Brooklyn 
+   37.4 | Murray Hill | Manhattan
+```
 
 Avoiding double counting changes the results!
 

@@ -1,7 +1,7 @@
 More Spatial Joins
 ==================
 
-In the [geometry functions](TODO) we saw the **ST_Centroid(geometry)** and
+In the [geometry functions](https://learn.crunchydata.com/postgis/geom_functions/) we saw the **ST_Centroid(geometry)** and
 **ST_Union(\[geometry\])** functions, and some simple examples. In this
 section we will do some more elaborate things with them.
 
@@ -92,19 +92,20 @@ We sum up the statistics we are interested, then divide them together at
 the end. In order to avoid divide-by-zero errors, we don't bother
 bringing in tracts that have a population count of zero.
 
+```
     graduate_pct |       name        | boroname  
-
-> --------------+-------------------+----------- 
->     47.6 | Carnegie Hill | Manhattan>
->     42.2 | Upper West Side | Manhattan 
->     41.1 | Battery Park | Manhattan
->     39.6 | Flatbush | Brooklyn 
->     39.3 | Tribeca | Manhattan 
->     39.2 | North Sutton Area | Manhattan 
->     38.7 | Greenwich Village | Manhattan 
->     38.6 | Upper East Side | Manhattan 
->     37.9 | Murray Hill | Manhattan 
->     37.4 | Central Park | Manhattan
+   --------------+-------------------+-----------    
+     47.6 | Carnegie Hill | Manhattan>
+     42.2 | Upper West Side | Manhattan 
+     41.1 | Battery Park | Manhattan
+     39.6 | Flatbush | Brooklyn 
+     39.3 | Tribeca | Manhattan 
+     39.2 | North Sutton Area | Manhattan 
+     38.7 | Greenwich Village | Manhattan 
+     38.6 | Upper East Side | Manhattan 
+     37.9 | Murray Hill | Manhattan 
+     37.4 | Central Park | Manhattan
+```    
 
 > **Note**
 > 
