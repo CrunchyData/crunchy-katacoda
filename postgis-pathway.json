@@ -21,6 +21,14 @@
       "external_link": "https://learn.crunchydata.com/postgis/joins/",
       "course_id": "joins",
       "title": "4 - Spatial Joins"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/geography/",
+      "course_id": "geography",
+      "title": "5 - Geography"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/geom_functions/",
+      "course_id": "geom_functions",
+      "title": "6 - Geometry Constructing Functions"
     }
 
   ]
