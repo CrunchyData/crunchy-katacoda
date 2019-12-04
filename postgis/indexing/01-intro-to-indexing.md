@@ -38,7 +38,11 @@ Now, watch the "Timing" meter at the lower right-hand corner of the
 pgAdmin query window and run the following. Our query searches through
 every single census block in order to identify the Broad Street entry.
 
+<<<<<<< HEAD
 ```
+=======
+``` {.sql}
+>>>>>>> New Spatial Indexing section added
 SELECT blocks.blkid
  FROM nyc_census_blocks blocks
  JOIN nyc_subway_stations subways
@@ -56,7 +60,11 @@ test computer.
 
 Now add the spatial index back in and run the query again.
 
+<<<<<<< HEAD
 ```
+=======
+``` {.sql}
+>>>>>>> New Spatial Indexing section added
 CREATE INDEX nyc_census_blocks_geom_idx 
   ON nyc_census_blocks 
   USING GIST (geom);
