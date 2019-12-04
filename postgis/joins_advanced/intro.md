@@ -1,4 +1,4 @@
-# Introduction to PostGIS Geometries
+# More Spatial Joins
 This scenario is going more examples and considerations when using spatial joins in PostGIS. If you have not completed the basics of [spatial joins](https://learn.crunchydata.com/postgis/joins/) please go ahead and do so now.  
  
 The database has already been started and the spatial data has already been loaded. This scenario will use data from New York City (NYC). If you want to dig in deeper on the data please go ahead and do [this scenario](TODO link to paul's scenario) first. Data from this scenario will be used in all the other exercises as well.
