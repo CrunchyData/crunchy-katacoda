@@ -1,0 +1,32 @@
+  {
+  "title": "Spatial Indexing",
+  "description": "Learning about Spatial Indexing in PostGIS",
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "How Spatial Indexes Work", "text": "01-intro-to-indexing.md"},
+      {"title": "Index-Only Queries", "text": "02-index-only-queries.md"},
+      {"title": "Analyzing and Vacuuming Indexes", "text": "03-analyzing-and-vacuuming.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
