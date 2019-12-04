@@ -218,11 +218,6 @@ called `geography_columns`.
 SELECT * FROM geography_columns;
 ```{{execute}}
 
-> **Note**
-> 
-> Some columns were omitted from the above output.
-
-
 Casting to Geometry
 -------------------
 
