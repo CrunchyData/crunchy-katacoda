@@ -1,0 +1,32 @@
+  {
+  "title": "More On Spatial Joins",
+  "description": "More examples and in depth on spatial joins",
+  "difficulty": "intermediate",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "Another Example", "text": "01-another-example.md"},
+      {"title": "Polygon to Polygon Joins", "text": "02-polygon-joins.md"},
+      {"title": "Large Radius Joins", "text": "03-radius-joins.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
