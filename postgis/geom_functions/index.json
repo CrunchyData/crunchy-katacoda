@@ -8,8 +8,7 @@
       {"title": "ST_Centroid / ST_PointOnSurface", "text": "01-centroid.md"},
       {"title": "ST_Buffer", "text": "02-buffer.md"},
       {"title": "ST_Intersection", "text": "03-intersection.md"},
-      {"title": "ST_Union", "text": "04-union.md"},
-      {"title": "Summary", "text": "summary.md"}
+      {"title": "ST_Union", "text": "04-union.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
@@ -18,7 +17,7 @@
       "credits": ""
     },
     "finish": {
-      "text": "finish.md"
+      "text": "summary.md"
     },
     "assets": {
       "client": [
