@@ -29,6 +29,10 @@
       "external_link": "https://learn.crunchydata.com/postgis/geom_functions/",
       "course_id": "geom_functions",
       "title": "6 - Geometry Constructing Functions"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/indexing/",
+      "course_id": "spatial_indexing",
+      "title": "7 - Spatial Indexing"
     }
 
   ]

@@ -38,7 +38,7 @@ Now, watch the "Timing" meter at the lower right-hand corner of the
 pgAdmin query window and run the following. Our query searches through
 every single census block in order to identify the Broad Street entry.
 
-``` {.sql}
+```
 SELECT blocks.blkid
  FROM nyc_census_blocks blocks
  JOIN nyc_subway_stations subways
@@ -56,7 +56,7 @@ test computer.
 
 Now add the spatial index back in and run the query again.
 
-``` {.sql}
+```
 CREATE INDEX nyc_census_blocks_geom_idx 
   ON nyc_census_blocks 
   USING GIST (geom);
@@ -78,7 +78,7 @@ How Spatial Indexes Work
 ------------------------
 
 Standard database indexes create a hierarchical tree based on the values
-of the column being indexed. Spatial indexes are a little different \--
+of the column being indexed. Spatial indexes are a little different --
 they are unable to index the geometric features themselves and instead
 index the bounding boxes of the features.
 
