@@ -6,8 +6,8 @@
   "details": {
     "steps": [
       {"title": "Another Example", "text": "01-another-example.md"},
-      {"title": "Polygon to Polygon Joins", "text": "02-real-world-objects.md"},
-      {"title": "Large Radius Joins", "text": "03-input-output.md"}
+      {"title": "Polygon to Polygon Joins", "text": "02-polygon-joins.md"},
+      {"title": "Large Radius Joins", "text": "03-radius-joins.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
