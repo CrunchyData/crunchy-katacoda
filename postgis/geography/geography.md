@@ -39,9 +39,7 @@ SELECT ST_Distance(
   ST_GeometryFromText('POINT(2.5559 49.0083)', 4326)     -- Paris (CDG)
   );
 ```{{execute}}
-```
-121.898285970107
-```
+
 Aha! 121! But, what does that mean?
 
 The units for spatial reference 4326 are degrees. So our answer is 121
@@ -61,23 +59,20 @@ true paths over a sphere -- a portion of a great circle.
 Starting with version 1.5, PostGIS provides this functionality through
 the `geography` type.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+> **Note**
+> 
+> Different spatial databases have different approaches for "handling
+> geographics"
+> 
+> -   Oracle attempts to paper over the differences by transparently doing
+>     geographic calculations when the SRID is geographic.
+> -   SQL Server uses two spatial types, "STGeometry" for Cartesian data
+>     and "STGeography" for geographics.
+> -   Informix Spatial is a pure Cartesian extension to Informix, while
+>     Informix Geodetic is a pure geographic extension.
+> -   Similar to SQL Server, PostGIS uses two types, "geometry" and
+>    "geography".
 
-Different spatial databases have different approaches for "handling
-geographics"
-
--   Oracle attempts to paper over the differences by transparently doing
-    geographic calculations when the SRID is geographic.
--   SQL Server uses two spatial types, "STGeometry" for Cartesian data
-    and "STGeography" for geographics.
--   Informix Spatial is a pure Cartesian extension to Informix, while
-    Informix Geodetic is a pure geographic extension.
--   Similar to SQL Server, PostGIS uses two types, "geometry" and
-    "geography".
-:::
 
 Using the `geography` instead of `geometry` type, let's try again to
 measure the distance between Los Angeles and Paris. Instead of
@@ -90,9 +85,6 @@ SELECT ST_Distance(
   ST_GeographyFromText('POINT(2.5559 49.0083)')     -- Paris (CDG)
   );
 ```{{execute}}
-```
-9124665.26917268
-```
 
 A big number! All return values from `geography` calculations are in
 meters, so our answer is 9124km.
@@ -122,9 +114,6 @@ SELECT ST_Distance(
   ST_GeographyFromText('POINT(-22.6056 63.9850)')                        -- Iceland (KEF)
 );
 ```{{execute}}
-```
-502454.906643729
-```
 
 So the closest approach to Iceland (as measured from its international
 airport) on the LAX-CDG route is a relatively small 502km.
@@ -147,11 +136,6 @@ ST_Distance(
   ST_GeographyFromText('Point(139.733 35.567)'))    -- NRT (Tokyo/Narita) 
     AS geography_distance; 
 ```{{execute}}
-```
- geometry_distance | geography_distance 
--------------------+--------------------
- 258.146005837336  | 8833954.76996256
-```
 
 Using Geography
 ---------------
@@ -233,20 +217,11 @@ called `geography_columns`.
 ``` {.sql}
 SELECT * FROM geography_columns;
 ```{{execute}}
-```
-        f_table_name      | f_geography_column | srid |   type   
---------------------------+--------------------+------+---------- 
- nyc_subway_stations_geog |               geog |    0 | Geometry
-                 airports |               geog | 4326 | Point
-```
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+> **Note**
+> 
+> Some columns were omitted from the above output.
 
-Some columns were omitted from the above output.
-:::
 
 Casting to Geometry
 -------------------
@@ -269,12 +244,6 @@ geographies?
 SELECT code, ST_X(geog::geometry) AS longitude FROM airports;
 ```{{execute}}
 
-    code | longitude 
-
-> ------+----------- LAX \| -118.4079
->
-> :   CDG \| 2.5559 KEF \| -21.8628
->
 By appending `::geometry` to our geography value, we convert the object
 to a geometry with an SRID of 4326. From there we can use as many
 geometry functions as strike our fancy. But, remember -- now that our
