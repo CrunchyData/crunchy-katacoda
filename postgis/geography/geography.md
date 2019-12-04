@@ -272,7 +272,7 @@ The conclusion?
 
 **If your data is geographically compact** (contained within a state,
 county or city), **use the geometry type with a Cartesian projection**
-that makes sense with your data. See the <http://spatialreference.org>
+that makes sense with your data. See the <http://epsg.io>
 site and type in the name of your region for a selection of possible
 reference systems.
 
