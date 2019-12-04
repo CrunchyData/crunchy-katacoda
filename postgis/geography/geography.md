@@ -48,7 +48,7 @@ degrees. But (again), what does that mean?
 On a sphere, the size of one "degree square" is quite variable,
 becoming smaller as you move away from the equator. Think of the
 meridians (vertical lines) on the globe getting closer to each other as
-you go towards the poles. So, a distance of 121 degrees doesn\'t *mean*
+you go towards the poles. So, a distance of 121 degrees doesn't *mean*
 anything. It is a nonsense number.
 
 In order to calculate a meaningful distance, we must treat geographic
@@ -106,7 +106,7 @@ Working with geographic coordinates on a Cartesian plane (the purple
 line) yields a *very* wrong answer indeed! Using great circle routes
 (the red lines) gives the right answer. If we convert our LAX-CDG flight
 into a line string and calculate the distance to a point in Iceland
-using `geography` we\'ll get the right answer (recall) in meters.
+using `geography` we'll get the right answer (recall) in meters.
 
 ``` {.sql}
 SELECT ST_Distance(
@@ -210,7 +210,7 @@ INSERT INTO airports VALUES ('KEF', 'POINT(-22.6056 63.9850)');
 ```{{execute}}
 
 In the table definition, the `GEOGRAPHY(Point)` specifies our airport
-data type as points. The new geography fields don\'t get registered in
+data type as points. The new geography fields don't get registered in
 the `geometry_columns` view. Instead, they are registered in a view
 called `geography_columns`.
 
@@ -233,7 +233,7 @@ back and forth from geography to geometry.
 
 The PostgreSQL syntax convention for casting is to append `::typename`
 to the end of the value you wish to cast. So, `2::text` with convert a
-numeric two to a text string \'2\'. And `'POINT(0 0)'::geometry` will
+numeric two to a text string '2'. And `'POINT(0 0)'::geometry` will
 convert the text representation of point into a geometry point.
 
 The `ST_X(point)` function only
@@ -307,24 +307,19 @@ point.
 
 **Footnotes**
 
-[^1]: The buffer and intersection functions are actually wrappers on top
+1.  The buffer and intersection functions are actually wrappers on top
     of a cast to geometry, and are not carried out natively in spherical
     coordinates. As a result, they may fail to return correct results
     for objects with very large extents that cannot be cleanly converted
-    to a planar representation.
-
-    For example, the `ST_Buffer(geography,distance)` function transforms the geography object into a
+    to a planar representation. <br/><br/>For example, the `ST_Buffer(geography,distance)` function transforms the geography object into a
     "best" projection, buffers it, and then transforms it back to
     geographics. If there is no "best" projection (the object is too
     large), the operation can fail or return a malformed buffer.
-
-[^2]: The buffer and intersection functions are actually wrappers on top
+2.  The buffer and intersection functions are actually wrappers on top
     of a cast to geometry, and are not carried out natively in spherical
     coordinates. As a result, they may fail to return correct results
     for objects with very large extents that cannot be cleanly converted
-    to a planar representation.
-
-    For example, the `ST_Buffer(geography,distance)` function transforms the geography object into a
+    to a planar representation. <br/><br/>For example, the `ST_Buffer(geography,distance)` function transforms the geography object into a
     "best" projection, buffers it, and then transforms it back to
     geographics. If there is no "best" projection (the object is too
     large), the operation can fail or return a malformed buffer.
