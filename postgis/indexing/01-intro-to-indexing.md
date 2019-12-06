@@ -1,4 +1,4 @@
-Spatial Indexing {#indexing}
+Spatial Indexing
 ================
 
 Recall that spatial index is one of the three key features of a spatial
@@ -33,20 +33,11 @@ DROP INDEX nyc_census_blocks_geom_idx;
 > system. For more information, see the PostgreSQL
 > [documentation](http://www.postgresql.org/docs/7.4/interactive/sql-dropindex.html).
 
-
 Now, watch the "Timing" meter at the lower right-hand corner of the
 pgAdmin query window and run the following. Our query searches through
 every single census block in order to identify the Broad Street entry.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ```
-=======
-``` {.sql}
->>>>>>> New Spatial Indexing section added
-=======
-```
->>>>>>> Added new indexing section in pathway
 SELECT blocks.blkid
  FROM nyc_census_blocks blocks
  JOIN nyc_subway_stations subways
@@ -64,15 +55,7 @@ test computer.
 
 Now add the spatial index back in and run the query again.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ```
-=======
-``` {.sql}
->>>>>>> New Spatial Indexing section added
-=======
-```
->>>>>>> Added new indexing section in pathway
 CREATE INDEX nyc_census_blocks_geom_idx 
   ON nyc_census_blocks 
   USING GIST (geom);
@@ -86,7 +69,6 @@ CREATE INDEX nyc_census_blocks_geom_idx
 > when creating your index, you have likely neglected to add the
 > `USING GIST` clause.
 
-
 On my test computer the time drops to **9 ms**. The larger your table,
 the larger the relative speed improvement of an indexed query will be.
 
@@ -98,7 +80,7 @@ of the column being indexed. Spatial indexes are a little different --
 they are unable to index the geometric features themselves and instead
 index the bounding boxes of the features.
 
-![image](./assets/bbox.png)
+![Bounding boxes intersecting with yellow star](./assets/bbox.png)
 
 In the figure above, the number of lines that intersect the yellow star
 is **one**, the red line. But the bounding boxes of features that
@@ -120,4 +102,8 @@ sub-rectangles, and sub-sub rectangles, etc. It is a self-tuning index
 structure that automatically handles variable data density and object
 size.
 
-![image](./assets/index-01.png)
+![R-tree hierarchy](./assets/index-01.png)
+
+**Footnotes**
+
+1. <http://postgis.net/docs/support/rtree.pdf>
