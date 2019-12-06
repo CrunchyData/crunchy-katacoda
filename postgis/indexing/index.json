@@ -1,11 +1,11 @@
-  {
+{
   "title": "Spatial Indexing",
   "description": "Learning about Spatial Indexing in PostGIS",
   "difficulty": "beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "How Spatial Indexes Work", "text": "01-intro-to-indexing.md"},
+      {"title": "", "text": "01-intro-to-indexing.md"},
       {"title": "Index-Only Queries", "text": "02-index-only-queries.md"},
       {"title": "Analyzing and Vacuuming Indexes", "text": "03-analyzing-and-vacuuming.md"}
     ],

@@ -63,8 +63,8 @@ Function List
 -------------
 
 [geometry_a &&
-geometry_b](http://postgis.net/docs/ST_Geometry_Overlap.html): Returns
-TRUE if A's bounding box overlaps B\'s.
+geometry_b](http://postgis.net/docs/geometry_overlaps.html): Returns
+TRUE if A's bounding box overlaps B's.
 
 [geometry_a =
 geometry_b](http://postgis.net/docs/ST_Geometry_EQ.html): Returns TRUE
@@ -74,7 +74,3 @@ if A's bounding box is the same as B's.
 geometry_b)](http://postgis.net/docs/ST_Intersects.html): Returns TRUE
 if the Geometries/Geography "spatially intersect" - (share any portion
 of space) and FALSE if they don't (they are Disjoint).
-
-**Footnotes**
-
-[^1]: <http://postgis.net/docs/support/rtree.pdf>
