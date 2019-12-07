@@ -111,7 +111,7 @@ func redirectMiddleware(h http.HandlerFunc) http.HandlerFunc {
 			h.ServeHTTP(w, req)
 		} else {
 			target := "https://" + req.Host + req.URL.Path
-			
+
 			if len(req.URL.Query()) > 0 {
 				for k, _ := range req.URL.Query() {
 					if(string(k[0]) != ":") { //Remove vestigo parameters
@@ -132,31 +132,51 @@ func redirectMiddleware(h http.HandlerFunc) http.HandlerFunc {
 
 
 func main() {
+	var env = os.Getenv("ENV")
 	templateBox = rice.MustFindBox("templates")
 	templateBox.Walk("", newTemplate)
 
 	router := vestigo.NewRouter()
-
-	router.Get("/", redirectMiddleware(index))
 	router.Get("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))).ServeHTTP)
-	router.Get("/:course", redirectMiddleware(course))
-	router.Get("/:course/", redirectMiddleware(course))
-	router.Get("/:course/courses/:subcourse", redirectMiddleware(subcourse))
-	router.Get("/:course/courses/:subcourse/", redirectMiddleware(subcourse))
-	router.Get("/comingsoon", redirectMiddleware(comingsoon))
-	router.Get("/comingsoon/", redirectMiddleware(comingsoon))
-	router.Get("/training", redirectMiddleware(traininghome))
-	router.Get("/training/", redirectMiddleware(traininghome))
-	router.Get("/training/:course", redirectMiddleware(trainingcourse))
-	router.Get("/training/:course/", redirectMiddleware(trainingcourse))
-	router.Get("/training/:course/:scenario", redirectMiddleware(trainingscenario))
-	router.Get("/:course/:scenario", redirectMiddleware(scenario))
-	router.Get("/:course/:scenario/", redirectMiddleware(scenario))
-	router.Get("/:course/courses/:subcourse/:scenario", redirectMiddleware(subcoursescenario))
-	router.Get("/:course/courses/:subcourse/:scenario/", redirectMiddleware(subcoursescenario))
+
+	if(env == "dev") {
+		router.Get("/", index)
+		router.Get("/:course", course)
+		router.Get("/:course/", course)
+		router.Get("/:course/courses/:subcourse", subcourse)
+		router.Get("/:course/courses/:subcourse/", subcourse)
+		router.Get("/comingsoon", comingsoon)
+		router.Get("/comingsoon/", comingsoon)
+		router.Get("/training", traininghome)
+		router.Get("/training/", traininghome)
+		router.Get("/training/:course", trainingcourse)
+		router.Get("/training/:course/", trainingcourse)
+		router.Get("/training/:course/:scenario", trainingscenario)
+		router.Get("/:course/:scenario", scenario)
+		router.Get("/:course/:scenario/", scenario)
+		router.Get("/:course/courses/:subcourse/:scenario", subcoursescenario)
+		router.Get("/:course/courses/:subcourse/:scenario/", subcoursescenario)
+
+	} else {
+		router.Get("/", redirectMiddleware(index))
+		router.Get("/:course", redirectMiddleware(course))
+		router.Get("/:course/", redirectMiddleware(course))
+		router.Get("/:course/courses/:subcourse", redirectMiddleware(subcourse))
+		router.Get("/:course/courses/:subcourse/", redirectMiddleware(subcourse))
+		router.Get("/comingsoon", redirectMiddleware(comingsoon))
+		router.Get("/comingsoon/", redirectMiddleware(comingsoon))
+		router.Get("/training", redirectMiddleware(traininghome))
+		router.Get("/training/", redirectMiddleware(traininghome))
+		router.Get("/training/:course", redirectMiddleware(trainingcourse))
+		router.Get("/training/:course/", redirectMiddleware(trainingcourse))
+		router.Get("/training/:course/:scenario", redirectMiddleware(trainingscenario))
+		router.Get("/:course/:scenario", redirectMiddleware(scenario))
+		router.Get("/:course/:scenario/", redirectMiddleware(scenario))
+		router.Get("/:course/courses/:subcourse/:scenario", redirectMiddleware(subcoursescenario))
+		router.Get("/:course/courses/:subcourse/:scenario/", redirectMiddleware(subcoursescenario))
+	}
 
 	http.Handle("/", router)
-
 	log.Print("Listening on 0.0.0.0:3000...")
 	log.Fatal(http.ListenAndServe("0.0.0.0:3000", nil))
 }
