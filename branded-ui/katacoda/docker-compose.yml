@@ -5,4 +5,5 @@ web:
     CTA: 'https://learn.crunchydata.com'
     KATACODA_HOST: 'https://katacoda.com'
     KATACODA_USER: 'crunchydata'
+    ENV: 'prod'
   restart: always
