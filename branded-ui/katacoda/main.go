@@ -140,6 +140,10 @@ func main() {
 	router.Get("/static/*", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))).ServeHTTP)
 
 	if(env == "dev") {
+		router.SetGlobalCors(&vestigo.CorsAccessControl{
+			AllowOrigin:      []string{"*"},
+		})
+		
 		router.Get("/", index)
 		router.Get("/:course", course)
 		router.Get("/:course/", course)
