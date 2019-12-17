@@ -3,8 +3,8 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "crunchydata",
-      "id": "/postgresql-devel/beyond-basics",
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics/qjsonintro",
+      "id": "qjsonintro",
       "course_id": "qjsonintro",
       "title": "Basic Introduction to JSON"
     }
