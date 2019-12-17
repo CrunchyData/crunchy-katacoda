@@ -4,7 +4,7 @@
   "courses": [
     {
       "pathway_id": "crunchydata",
-      "id": "/postgresql-devel/beyond-basics/qjosnintro",
+      "id": "/postgresql-devel/beyond-basics",
       "course_id": "qjsonintro",
       "title": "Basic Introduction to JSON"
     }
