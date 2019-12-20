@@ -125,7 +125,7 @@ nav > img.logo {
 /* Masterheader */
 
 .masterheader {
-  background: linear-gradient(60deg, #008CD0, #0058A4);
+  background: linear-gradient(60deg, #279DD9, #1169B2);
   color: #fff;
   min-height: 250px;
   padding: 3rem 0;
@@ -167,5 +167,13 @@ p.lead.intro {
   padding: 15px 0;
   left: 0;
   position: absolute;
+  width: 100%;
+}
+
+/* Katacoda */
+
+div#katacoda-dashboard,
+div#katacoda-terminal {
+  height: 100%;
   width: 100%;
 }
