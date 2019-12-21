@@ -75,7 +75,7 @@ button.primary-btn.btn, .primary-btn.btn {
   -webkit-box-shadow: 0px 3px 15px 0px rgba(230,230,230,1);
   -moz-box-shadow: 0px 3px 15px 0px rgba(230,230,230,1);
   box-shadow: 0px 3px 15px 0px rgba(230,230,230,1);
-  padding: 15px !important;
+  padding: 1% !important;
   word-wrap: break-word;
 }
 
@@ -89,7 +89,7 @@ button.primary-btn.btn, .primary-btn.btn {
 
 #course-pathway .panel h4 {
   line-height: initial;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   margin: 0;
 }
@@ -139,7 +139,7 @@ button.primary-btn.btn, .primary-btn.btn {
 }
 
 #embedded-terminal .row .col {
-  padding: 1rem 2.5rem;
+  padding: 1rem 1%;
 }
 
 #step-progress #step-progress-text {
@@ -154,6 +154,7 @@ button.primary-btn.btn, .primary-btn.btn {
 
 #course-title h3 {
   padding: 0;
+  font-size: 1.6rem;
   font-weight: 500;
 }
 
