@@ -7,11 +7,8 @@ The majority of the PostGIS Scenarios come from [this repository](https://github
 License
 -------
 
-This content is licensed under the [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).)
+This content is licensed under the [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Sponsors
-
-[![Crunchy Data](/hugo/static/images/crunchy_logo.png)](https://www.crunchydata.com/)
-
 
 [Crunchy Data](https://www.crunchydata.com/) is pleased to sponsor many [open-source projects](https://github.com/CrunchyData/) to help promote support the PostgreSQL community and software ecosystem.
