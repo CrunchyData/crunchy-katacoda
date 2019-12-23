@@ -1,0 +1,179 @@
+@import url("../vendor/fontawesome/css/all.min.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+@font-face {
+  font-family: 'Fort';
+  src: url('../fonts/Fort-Light.eot');
+  src: url('../fonts/Fort-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Fort-Light.woff2') format('woff2'), url('../fonts/Fort-Light.woff') format('woff'), url('../fonts/Fort-Light.ttf') format('truetype'), url('../fonts/Fort-Light.svg#Fort-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fort';
+  src: url('../fonts/Fort-Extrabold.eot');
+  src: url('../fonts/Fort-Extrabold.eot?#iefix') format('embedded-opentype'), url('../fonts/Fort-Extrabold.woff2') format('woff2'), url('../fonts/Fort-Extrabold.woff') format('woff'), url('../fonts/Fort-Extrabold.ttf') format('truetype'), url('../fonts/Fort-Extrabold.svg#Fort-Extrabold') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fort';
+  src: url('../fonts/Fort-Black.eot');
+  src: url('../fonts/Fort-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Fort-Black.woff2') format('woff2'), url('../fonts/Fort-Black.woff') format('woff'), url('../fonts/Fort-Black.ttf') format('truetype'), url('../fonts/Fort-Black.svg#Fort-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fort';
+  src: url('../fonts/Fort-Medium.eot');
+  src: url('../fonts/Fort-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Fort-Medium.woff2') format('woff2'), url('../fonts/Fort-Medium.woff') format('woff'), url('../fonts/Fort-Medium.ttf') format('truetype'), url('../fonts/Fort-Medium.svg#Fort-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body, h1, h2, h3, h4, h5, h6, article section.page h1:first-of-type {
+    font-family: Fort, sans-serif !important;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 60px;
+  font-size: 14px;
+  color: #404040;
+  background-color: #fff;
+} 
+
+code {
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+
+/* Navigation */
+
+nav {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+nav > img.logo {
+  height: 2.25rem;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  z-index: 1;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+.navbar-nav a:active,
+.navbar-nav .active,
+.navbar-nav a:hover,
+.navbar-nav a:focus {
+  color: #008CD0 !important;
+}
+
+.navbar-nav .dropdown-menu {
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+  margin-top: 1.35rem;
+  padding: 0.5rem 1rem;
+  width: 21rem;
+}
+
+.navbar-nav .dropdown-item {
+  padding: 0.5rem 0;
+  font-size: 14px;
+  transition: color 0.25s ease-in-out;
+  white-space: normal;
+}
+
+.navbar-nav .dropdown-item:not(:last-child) {
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:active,
+.navbar-nav .dropdown-item:focus {
+  background-color: transparent;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  border: none !important;
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  vertical-align: top;
+  content: "\f078";
+}
+
+/* Masterheader */
+
+.masterheader {
+  background: linear-gradient(60deg, #279DD9, #1169B2);
+  color: #fff;
+  min-height: 250px;
+  padding: 3rem 0;
+}
+
+.masterheader a {
+  color: #FFE200;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.masterheader h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.masterheader h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.masterheader h3 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+p.lead.intro {
+  padding-top: 60px;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #010101;
+  bottom: 0;
+  font-size: 12px;
+  height: 20px;
+  padding: 15px 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* Katacoda */
+
+div#katacoda-dashboard,
+div#katacoda-terminal {
+  height: 100%;
+  width: 100%;
+}
