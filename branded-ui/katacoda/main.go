@@ -141,9 +141,9 @@ func main() {
 
 	if(env == "dev") {
 		router.SetGlobalCors(&vestigo.CorsAccessControl{
-			AllowOrigin:      []string{"*"},
+			AllowOrigin: []string{"*"},
 		})
-		
+
 		router.Get("/", index)
 		router.Get("/:course", course)
 		router.Get("/:course/", course)
@@ -162,6 +162,10 @@ func main() {
 		router.Get("/:course/courses/:subcourse/:scenario/", subcoursescenario)
 
 	} else {
+		router.SetGlobalCors(&vestigo.CorsAccessControl{
+			AllowOrigin: []string{"https://katacoda.com"},
+		})
+		
 		router.Get("/", redirectMiddleware(index))
 		router.Get("/:course", redirectMiddleware(course))
 		router.Get("/:course/", redirectMiddleware(course))
