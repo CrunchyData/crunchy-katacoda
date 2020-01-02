@@ -1,20 +1,20 @@
 {{ template "templates/header.html" . }}
-{{ template "templates/banner.html" . }}
+{{ template "templates/navigation.html" . }}
 
 <section class="text-center">
-  <div>
-    <div>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
       <div id="katacoda-terminal"
         data-katacoda-id="{{.Site.KatacodaUser}}/courses/{{ .Training.Name }}/{{ .Name }}"
         data-katacoda-ctatext="Continue Learning" data-katacoda-ctaurl="http://{{.Site.VirtualHost}}/{{ .Training.Name }}/"
-        data-katacoda-color="#226aa6"
-        data-katacoda-secondary="#c00"
+        data-katacoda-color="linear-gradient(60deg, #279DD9, #1169B2)"
+        data-katacoda-secondary="linear-gradient(60deg, #279DD9, #1169B2)"
         data-katacoda-background="#fff"
-        data-katacoda-font="Open Sans"
+        data-katacoda-font="Fort"
+        data-katacoda-fontheader="Fort"
+        data-katacoda-externalcss="http://{{.Site.VirtualHost}}/static/css/katacoda.css"
         style="height: calc(100vh - 114px);">
-
       </div>
-
     </div>
   </div>
 </section>
