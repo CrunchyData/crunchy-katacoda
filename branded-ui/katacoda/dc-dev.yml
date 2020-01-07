@@ -2,10 +2,9 @@ web:
   build: .
   environment:
     VIRTUAL_HOST: 'example-portal.katacoda.com'
-    KATACODA_HOST: 'http://localhost:3000'
-    KATACODA_USER: 'portal'
+    KATACODA_HOST: 'https://katacoda.com'
+    KATACODA_USER: 'crunchydata'
+    ENV: 'dev'
   ports:
     - 8080:3000
   restart: always
-
-  

@@ -11,16 +11,19 @@ The example system in this scenario enables peer authentication by default. This
 ```
 \du
 ```{{execute postgres_terminal}}
+
 You can also see the current contents of the pg_hba.conf file from within the database if you are on at least PG10. 
 ```
 SELECT * FROM pg_hba_file_rules;
 ```{{execute T2}}
+
 Note that this shows the actual file's contents, not what may be active within the database. Putting pg_hba.conf changes in place requires reloading the database, which we will do shortly.
 
 An example for adding an entry to allow a password protected connection for replication would be as follows:
 ```
 host    replication    replica_user    192.168.1.201/32    md5
 ```
+
 The first column controls the connection type, be it TCP, SSL, or local socket. `host` means it will be a TCP/IP based connection
 
 The second column controls the databases this rule will apply to. `replication` refers to a special database that exists within PostgreSQL to allow streaming replication. Any database(s) can be listed here to control specific access. The special value `all` matches all valid databaes.
@@ -35,10 +38,12 @@ Reloading the database can be done in two ways. While logged into the database, 
 ```
 SELECT * FROM pg_reload_conf();
 ```{{execute T2}}
+
 Or from the system command line, any users with access to control PostgreSQL via systemd can issue a reload. So on our original root terminal, issue the reload
 ```
 sudo systemctl reload postgresql-11
 ```{{execute T1}}
+
 If there are any errors encountered in the pg_hba.conf, the changes will not be applied. You can check the PostgreSQL logs for either a successful SIGHUP or any error messages
 ```
 sudo bash -c "tail /var/lib/pgsql/11/data/log/postgresql-*.log"
