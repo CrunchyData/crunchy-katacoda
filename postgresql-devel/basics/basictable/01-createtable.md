@@ -71,4 +71,3 @@ Let start analyzing business scenario using nouns to identify tables and verbs t
     
       - Employee End Date -- date nullable
     
- Let's get started. --- need button for ne
