@@ -12,6 +12,7 @@ Analyzing above scenario using nouns to identify tables and verbs to identify re
 * Employee (This table captures information of employees working at the company)
 
 ** Employee Id – number, auto generate, Primary Key, Unique and not null
+
   - Employee (This table captures information of employees working at
     the company)
     
