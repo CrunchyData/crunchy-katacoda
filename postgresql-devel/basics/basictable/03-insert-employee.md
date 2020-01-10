@@ -1,8 +1,8 @@
 # Insert Employee table
 
-Let's insert data in employee table according to business scenario and understand how uniqueness serial columns work and uniqueness enforced. 
+Let's insert data in employee table according to business scenario and understand how serial columns work and uniqueness is enforced. 
 
-Let's insert John Smith, Mary Smith, Arnold Jackson and Jeffery Westman
+Let's insert John Smith, Mary Smith, Arnold Jackson and Jeffery Westman, hire_date of today. Curretn_date is postgres funtion that give current date.
 
 ```postgresql
 INSERT INTO public.employee( employee_ssn, employee_first_name,employee_last_name, employee_hire_date)
@@ -20,41 +20,50 @@ SELECT * FROM public.employee;
 ``` 
 {{execute}}
 
-As you can see the employee_id fields have number values populated and auto incremented.
+As you can see the employee_id fields have integer values populated auto incremented. I hope you understand how serial columns work.
 
-Now the question arises can we insert value
--- Below will insert successfully but does not set next val of sequence
-to 7, this will cause sub
+Now the question arises can we manually insert values in serial column. Let's try
 
+```postgresql
 INSERT INTO public.employee( employee_id, employee_ssn,
 employee_first_name, employee_last_name, employee_hire_date)
-
 VALUES ( 6, '111111115', 'Bob', 'Box', current_date);
+-- review the data 
+SELECT * FROM public.employee;
+``` 
+{{execute}}
 
--- below value will be of 5
+We can see the value_id of 6 is inserted, if you insert the value manually Postgres internally dose not increment sequence object assoicated to serial. Let's continue inserting and see when the error occurs. 
 
+```postgresql
 INSERT INTO public.employee( employee_ssn, employee_first_name,
 employee_last_name, employee_hire_date)
-
 VALUES ( '111111116', 'Best', 'CEO', current_date);
+-- review the data 
+SELECT * FROM public.employee;
+``` 
+{{execute}}
 
--- below will error out, because the sequence is at 6 and we manually
-inserted employee_id of 6
+Let's insert and see if the error occurs because of the manual insert. 
 
+```postgresql
 INSERT INTO public.employee( employee_ssn, employee_first_name,
 employee_last_name, employee_hire_date)
-
 VALUES ( '111111117', 'Test', 'CFO', current_date);
+-- review the data 
+SELECT * FROM public.employee;
+``` 
+{{execute}}
 
--- let's insert again, this time it will be successful, sequence
-incremented automatically even though insert failed, now the nextval of
+Let's insert again, this time it will be successful, sequence incremented automatically even though insert failed, now the nextval of
 the sequence is 7
 
+```postgresql
 INSERT INTO public.employee( employee_ssn, employee_first_name,
 employee_last_name, employee_hire_date)
-
 VALUES ( '111111117', 'Test', 'CFO', current_date);
-
-Let’s select data from employee table
-
+-- review the data 
 SELECT * FROM public.employee;
+``` 
+{{execute}}
+
