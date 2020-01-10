@@ -1,11 +1,30 @@
 {
-  "title": "Full Text Search in PostgreSQL",
-  "description": "A quick intro to some of the features in PostgreSQL Full Text Search",
+  "title": "Introduction to Using the Command Line with PostgreSQL",
+  "description": "A quick intro to working with Postgres using the command line interface",
   "difficulty": "beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "Full-text Search", "text": "01-full-text-search.md"}
+      {
+        "title": "The psql Command", 
+        "text": "01-intro-psql.md"
+      },
+      {
+        "title": "Psql Meta-commands and Options", 
+        "text": "02-metacommands.md"
+      },
+      {
+        "title": "Psql: Running Queries", 
+        "text": "03-run-query.md"
+      },
+      {
+        "title": "Psql: Query Results", 
+        "text": "04-formatting.md"
+      },
+      {
+        "title": "Psql and Scripting", 
+        "text": "05-scripting.md"
+      }
     ],
     "intro": {
       "courseData": "env-init.sh",
