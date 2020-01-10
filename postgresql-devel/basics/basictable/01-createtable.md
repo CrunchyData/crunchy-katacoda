@@ -14,6 +14,10 @@ Select * form test_table;
 
 ```{{execute}}
 
+
+Business Scenario Tables
+------------------------
+
 Let start analyzing business scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
 
   - Employee (This table captures information of employees working at
