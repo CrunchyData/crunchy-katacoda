@@ -1,5 +1,20 @@
 
-Analyzing business scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
+Introduction
+------------
+
+Before we start playing with our business scenario lets create table with table with a field name. Go ahead and execute the following SQL statement in the console.
+
+```postgresql
+CREATE TABLE test_table (name varchar);
+
+INSERT INTO test_table VALUES 
+  ('TestTable 1');
+  
+Select * form test_table;
+
+```{{execute}}
+
+Let start analyzing business scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
 
   - Employee (This table captures information of employees working at
     the company)
