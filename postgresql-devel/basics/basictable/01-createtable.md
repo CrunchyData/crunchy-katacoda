@@ -9,9 +9,6 @@ A company employees John Smith, Mary Smith, Arnold Jackson and Jeffery Westman t
 
 Analyzing above scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
 
-* Employee (This table captures information of employees working at the company)
-
-** Employee Id – number, auto generate, Primary Key, Unique and not null
 
   - Employee (This table captures information of employees working at
     the company)
@@ -28,7 +25,8 @@ Analyzing above scenario using nouns to identify tables and verbs to identify re
       - Employee Start Date – date and not null
     
       - Employee Termination Date – date nullable
-    - Department (This table captures information of department in the
+
+  - Department (This table captures information of department in the
     company)
     
       - Department Id – number auto generate, Primary Key, Unique and
@@ -63,4 +61,3 @@ Analyzing above scenario using nouns to identify tables and verbs to identify re
       - Employee End Date -- date nullable
     
       - 
-
