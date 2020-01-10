@@ -1,0 +1,32 @@
+{
+  "title": "Intro. PgAdmin4",
+  "description": "Using PgAdmin4 for Interacting With your PostgreSQL",
+  "difficulty": "beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {"title": "Connect To Your Database", "text": "01-connection.md"},
+      {"title": "Navigating in Your Database", "text": "02-navigation.md"},
+      {"title": "Examining and Editing SQL", "text": "03-sql.md"},
+      {"title": "Adding a Table", "text": "04-table.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uilayout": "terminal",
+    "dashboards": [{"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1",
+    "port": "5050"
+  }
+}
