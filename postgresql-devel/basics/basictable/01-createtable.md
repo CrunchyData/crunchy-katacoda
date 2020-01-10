@@ -12,7 +12,8 @@ INSERT INTO test_table VALUES
   
 Select * form test_table;
 
-```{{execute}}
+```
+{{execute}}
 
 
 Business Scenario Tables
