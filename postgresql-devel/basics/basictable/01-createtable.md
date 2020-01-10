@@ -12,7 +12,21 @@ Analyzing above scenario using nouns to identify tables and verbs to identify re
 * Employee (This table captures information of employees working at the company)
 
 ** Employee Id – number, auto generate, Primary Key, Unique and not null
-
+  - Employee (This table captures information of employees working at
+    the company)
+    
+      - Employee Id – number, auto generate, Primary Key, Unique and not
+        null
+    
+      - Employee SSN – 10 character, unique and not null
+    
+      - Employee First Name – 35 characters and not null
+    
+      - Employee Last Name -- 50 characters and not null
+    
+      - Employee Start Date – date and not null
+    
+      - Employee Termination Date – date nullable
 o	Employee SSN – 10 character, unique and not null
 o	Employee First Name – 35 characters and not null
 o	Employee Last Name -- 50 characters and not null
