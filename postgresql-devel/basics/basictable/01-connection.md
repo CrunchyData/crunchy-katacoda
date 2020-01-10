@@ -1,7 +1,9 @@
-# Connecting to our Database
+# Create table in PostgreSQL
 
-If you look at the second tab in our learning interface it says PgAdmin4. Go ahead and click that tab which should spawn a new browser window or tab. You may have to wait a few seconds while the PGAdmin4 interface gets rendered.  You should now be able 
-to login using username _admin_ and password _password_.
+Goal of this tutorial is to introduce you to basic concepts of create table using simple business scenario
+* Create simple tables with basic data types
+*	Create basic constraints primary key, foreign key and check constraint
+
 
 ## First screen
 
