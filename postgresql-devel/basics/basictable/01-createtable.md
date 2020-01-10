@@ -28,6 +28,7 @@ Analyzing above scenario using nouns to identify tables and verbs to identify re
       - Employee Start Date – date and not null
     
       - Employee Termination Date – date nullable
+      
 o	Employee SSN – 10 character, unique and not null
 o	Employee First Name – 35 characters and not null
 o	Employee Last Name -- 50 characters and not null
