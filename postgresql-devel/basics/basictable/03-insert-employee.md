@@ -1,6 +1,6 @@
 # Insert Employee table
 
-Let's insert data in employee table according to business scenario and unserstand how uniqueness serial columns work and uniqueness enforced and 
+Let's insert data in employee table according to business scenario and understand how uniqueness serial columns work and uniqueness enforced. 
 
 Let's insert John Smith, Mary Smith, Arnold Jackson and Jeffery Westman
 
@@ -13,12 +13,14 @@ VALUES ( '111111114', 'Jeffery', 'Westman', current_date);
 ``` 
 {{execute}}
 
-Please note above insert does not have employee_id field, then what values were assigned to employee_id. Let’s review data from employee table 
+Please note above insert does not have employee_id field, then what values got assigned to employee_id field. Let’s review data from employee table.
 
 ```postgresql
 SELECT * FROM public.employee;
 ``` 
 {{execute}}
+
+As you can see the employee_id fields have number values populated and auto incremented.
 
 Now the question arises can we insert value
 -- Below will insert successfully but does not set next val of sequence
