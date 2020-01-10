@@ -17,7 +17,7 @@ employee_termination_datetime timestamp with time zone
 ```
 {{execute}}
 
-Let’s check the table definition
+Let’s check the table definition, \d in psql means telling postgres to display table definition.
 
 ```postgresql
 \d employee
@@ -35,7 +35,7 @@ Let's review the columns, data type and other information for each field.
         nextval('employee_employee_id_seq'::regclass)
     
       - Created a Primary Key constraint of name employee_id_pk, this
-        constraint is the combination of NOT NULL and UNIQUE constraint.
+        constraint is the combination of NOT NULL (must contain a value) and UNIQUE constraint.
         A primary key constraint indicates that a column, or group of
         columns, can be used as a unique identifier for rows in the
         table. This requires that the values be both unique and not
