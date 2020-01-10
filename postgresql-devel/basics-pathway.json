@@ -11,5 +11,11 @@
       "course_id": "basicpgadmin",
       "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
     }
+    ,
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/intropsql",
+      "course_id": "intropsql",
+      "title": "Introduction to Using the Command Line with PostgreSQL"
+    }
   ]
 }
