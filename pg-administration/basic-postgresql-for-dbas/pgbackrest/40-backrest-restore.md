@@ -1,6 +1,6 @@
-If we need to restore our backups at any time, say due to a dropped table, pgbackrest allows that to be done very efficiently. And with Point-In-Time recovery, we can restore the database to a specific time we know that it was in a good state.
+If we need to restore our backups at any time, say due to a dropped table, pgBackRest allows that to be done very efficiently. And with Point-In-Time recovery, we can restore the database to a specific time when we know that it was in a good state.
 
-We'll need to know the time before our table was dropped for this example, so we'll make note of that now using an environment variable to be used later. It is important to represent the time as reckoned by PostgreSQL and to include timezone offsets. This reduces the possibility of unintended timezone conversions and an unexpected recovery result. 
+We'll need to know the time before our table was dropped for this example, so we'll make note of that now using an environment variable to be used later. It is important to represent the time as reckoned by PostgreSQL and to include timezone offsets. This reduces the possibility of unintended timezone conversions and an unexpected recovery result.
 ```
 export RESTORETIME=$(psql -Atc "select current_timestamp")
 echo $RESTORETIME
@@ -15,7 +15,7 @@ We're now in disaster recovery mode, so we'll want to shut down our primary data
 ```
 sudo systemctl stop postgresql-11
 ```{{execute T1}}
-Note that the last backup is always used by default when running the restore command. If the last backup happened after the desired point in time, the `--set` command can be given to pgbackrest to tell it to use an earlier backup that still exists in the repository. Also by default, the restore location must be empty. But if we're restoring to an existing cluster, the `--delta` option can be used to just overwrite what has changed since the last backup. This can GREATLY speed up recovery times.
+Note that the last backup is always used by default when running the restore command. If the last backup happened after the desired point in time, the `--set` command can be given to pgBackRest to tell it to use an earlier backup that still exists in the repository. Also by default, the restore location must be empty. But if we're restoring to an existing cluster, the `--delta` option can be used to just overwrite what has changed since the last backup. This can GREATLY speed up recovery times.
 ```
 sudo -Hiu postgres pgbackrest --stanza=main --delta --type=time "--target=$RESTORETIME" --target-action=promote restore
 ```{{execute T1}}
@@ -39,6 +39,6 @@ sudo -Hiu postgres chmod 700 /var/lib/pgsql/11/br_restore
 ```
 sudo -Hiu postgres pgbackrest restore --stanza=main --db-path=/var/lib/pgsql/11/br_restore
 ```{{execute T1}}
-If this is done, it is critically important to ***TURN OFF THE ARCHIVE COMMAND***. Otherwise, if your target destination also has write access to the pgbackrest repository, you will have two locations writing there and likely corrupt the entire backup. As stated earlier, the easiest way to disable the archive_command on a linux system is to set it to `/bin/true`.
+If this is done, it is critically important to ***TURN OFF THE ARCHIVE COMMAND***. Otherwise, if your target destination also has write access to the pgBackRest repository, you will have two locations writing there and likely corrupt the entire repository. As stated earlier, the easiest way to disable the archive_command on a linux system is to set it to `/bin/true`.
 
-The Restore section of the pgbackrest userguide has much more thorough explanations of these restore situations - https://pgbackrest.org/user-guide-centos7.html#restore
+The Restore section of the pgBackRest user guide has much more thorough explanations of these restore situations - https://pgbackrest.org/user-guide-centos7.html#restore
