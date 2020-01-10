@@ -1,14 +1,14 @@
-{
-  "title": "Intro. PgAdmin4",
-  "description": "Using PgAdmin4 for Interacting With your PostgreSQL",
+ {
+  "title": "Introduction to Basic Create Table in PostgreSQL",
+  "description": "Learning about creating tables in PostgreSQL",
   "difficulty": "beginner",
-  "time": "15 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "Connect To Your Database", "text": "01-connection.md"},
-      {"title": "Navigating in Your Database", "text": "02-navigation.md"},
-      {"title": "Examining and Editing SQL", "text": "03-sql.md"},
-      {"title": "Adding a Table", "text": "04-table.md"}
+      {"title": "Introduction to Business Scenario", "text": "01-introduction-and-metadata.md"},
+      {"title": "Create Employee Table", "text": "02-real-world-objects.md"},
+      {"title": "Geometry Input and Output", "text": "03-input-output.md"},
+      {"title": "Additional Exercises", "text": "04-exercises.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
@@ -21,12 +21,13 @@
     }
   },
   "environment": {
-    "showdashboard": true,
     "uilayout": "terminal",
-    "dashboards": [{"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}]
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
   },
   "backend": {
-    "imageid": "crunchydata-single1",
-    "port": "5050"
+    "imageid": "crunchydata-single1"
   }
 }
