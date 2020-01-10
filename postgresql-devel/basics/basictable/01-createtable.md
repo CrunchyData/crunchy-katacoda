@@ -10,7 +10,9 @@ A company employees John Smith, Mary Smith, Arnold Jackson and Jeffery Westman t
 Analyzing above scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
 
 * Employee (This table captures information of employees working at the company)
+
 ** Employee Id – number, auto generate, Primary Key, Unique and not null
+
 o	Employee SSN – 10 character, unique and not null
 o	Employee First Name – 35 characters and not null
 o	Employee Last Name -- 50 characters and not null
