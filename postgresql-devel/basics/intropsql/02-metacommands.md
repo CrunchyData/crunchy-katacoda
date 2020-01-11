@@ -6,7 +6,9 @@ The `psql` shell comes with meta-commands, which begin with an unquoted backslas
 
 An example of one is `\?`, which will bring up help information.
 
-```\?```{{execute}}
+```
+\?
+```{{execute}}
 
 Press the spacebar to scroll through the list, or press `q` any time to return to the command line.
 
@@ -16,11 +18,15 @@ You should see the list of available meta-commands, including the one you just u
 
 `\d` with the name of a table will display table metadata, e.g. columns, data types, attributes, constraints.
 
-```\dt se_details```{{execute}}
+```
+\dt se_details
+```{{execute}}
 
 `\d` used without any parameters will show a list of all available tables. If `+` is appended, you'll also see extended information such as the table's size on disk.
 
-```\d+```{{execute}}
+```
+\d+
+```{{execute}}
 
 There are more in the `\d` set of meta-commands that you can use. Examples of more common ones are `\dn` (all schemas), `\dv` (all available views), `\du` (all users), `\df` (all functions).
 
@@ -32,9 +38,13 @@ One useful option is `--help`, which displays help information about `psql`, and
 
 Let's log out of PostgreSQL first (by entering `\q`, or typing `CTRL`+`d`), and then run `psql` again.
 
-```\q```{{execute}}
+```
+\q
+```{{execute}}
 
-```psql --help```{{execute}}
+```
+psql --help
+```{{execute}}
 
 Some options have equivalent meta-commands. For example, `psql --help` is the same as running `\h` within the `psql` shell.
 
@@ -42,4 +52,6 @@ Some options have equivalent meta-commands. For example, `psql --help` is the sa
 
 <!--Another is `-l`, which lists all databases and then exits. This is helpful for when you just want to look at the avaiable databases without connecting to the server.
 
-```psql -l```{{execute}}-->
+```
+psql -l
+```{{execute}}-->
