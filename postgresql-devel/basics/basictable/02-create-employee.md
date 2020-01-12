@@ -1,8 +1,7 @@
 # Create Employee table
 
-Create Employee Table, please note we have not given any schema name, if
-the schema name is not given generally table will be created in public
-schema.
+Let's create Employee Table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review how Postgres describes the table structure.
+
 
 ```postgresql
 CREATE TABLE employee(
@@ -23,6 +22,10 @@ Let’s check the table definition, \d in psql means telling postgres to display
 \d employee
 ``` 
 {{execute}}
+
+
+Please note we have not given any schema name, if the schema name is not given generally table will be created in public
+schema.
 
 Let's review the columns, data type and other information for each field.
 
