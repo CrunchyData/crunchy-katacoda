@@ -1,6 +1,6 @@
 # Create Employee table
 
-Let's create Employee Table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review how Postgres describes the table structure.
+Let's create Employee table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review how Postgres describes the table structure.
 
 
 ```postgresql
