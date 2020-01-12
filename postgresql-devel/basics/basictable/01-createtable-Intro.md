@@ -2,7 +2,9 @@
 Introduction
 ------------
 
-Before we start playing with our business scenario lets create table with table with a field name. Go ahead and execute the following SQL statement in the console.
+Before we start working on our business scenario lets create test table with one field. To create a new table in PostgreSQL, you use the CREATE TABLE statement. So we will create table, insert a row and check the data.
+
+Go ahead and execute the following SQL statement in the console.
 
 ```postgresql
 CREATE TABLE test_table (name varchar);
