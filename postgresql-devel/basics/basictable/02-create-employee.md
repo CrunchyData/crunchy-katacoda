@@ -35,8 +35,7 @@ Let's review the columns, data type and other information for each field.
         but is simply shorthand notation that tells Postgres to create
         an auto incremented, unique identifier for the specified column
         of type Integer and it autoincrements by 1. You can see
-        nextval('employee_employee_id_seq'::regclass)
-    
+        nextval('employee_employee_id_seq'::regclass)    
       - Created a Primary Key constraint of name employee_id_pk, this
         constraint is the combination of NOT NULL (must contain a value) and UNIQUE constraint.
         A primary key constraint indicates that a column, or group of
