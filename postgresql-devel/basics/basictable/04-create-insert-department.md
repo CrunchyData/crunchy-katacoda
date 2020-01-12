@@ -33,6 +33,16 @@ Let's review the depatment table structure.
         a unique constraint or primary key is defined for a table. You
         can see "department_number_pk" PRIMARY KEY, btree
         (department_number)
+        
+  - department_name
+    
+      - is of data type character varying(n), where n is a positive
+        integer, in this case defined to be 50.    
+      - Created a unique constraint of name department_ak and not null.
+        Here again PostgreSQL automatically creates a unique index when
+        a unique constraint is defined for a table. You can see
+        "department_ak" UNIQUE CONSTRAINT, btree (department_name)
+
   
 Let’s insert data in department table and understand how Indentity columns work. 
 
