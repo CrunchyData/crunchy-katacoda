@@ -1,6 +1,6 @@
 ## Running queries in `psql`
 
-Once you're in the `psql` shell (i.e. logged in), you can run SQL commands.
+Once you're in the `psql` shell (i.e. logged in), you can run SQL queries.
 
 Let's connect to the database again:
 
