@@ -17,9 +17,21 @@ Taking the example above: instead of having to scroll through the entire result 
 Running this command without a value (i.e. `\pset pager on` or `off`) toggles the pager use on or off.
 
 ```
-SELECT state FROM se_details;
+SELECT  state,
+        month_name,
+        event_type
+FROM se_details;
 ```{{execute}}
 
-`\pset` also has other options you can use to format the results display. Try `\pset border 1` and `\pset border 2` to see how the display changes.
+`\pset` also has other options you can use to format the results display. Try running `\pset border 0` and `\pset border 2` to see how each one changes the display
+when executing the query above.
+
+```
+\pset border 0
+```{{execute}}
+
+```
+\pset border 2
+```{{execute}}
 
 Note: There is also an option to set these preferences in a [startup file](https://www.postgresql.org/docs/current/app-psql.html#id-1.9.4.18.10), which can be run each time `psql` starts.

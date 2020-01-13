@@ -10,6 +10,12 @@ In your interactive terminal, you're currently logged in as root user, as indica
 
 ![Terminal prompt](./assets/01_-_command_line_prompt.PNG)
 
+> **Note**
+>
+> Depending on the system you're using and the shell (i.e. program you're in),
+> the prompt might look a little different. You'll see this below when you're
+> in the `psql` shell.
+
 We want to connect to the PostgreSQL database as **groot**, so we'll enter the `psql` command, accompanied by some flags:
 
 ```

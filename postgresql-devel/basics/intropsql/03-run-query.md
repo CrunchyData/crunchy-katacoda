@@ -2,7 +2,7 @@
 
 Once you're in the `psql` shell (i.e. logged in), you can run SQL commands.
 
-Let's log back in and try running a simple query:
+Let's connect to the database again:
 
 ```
 psql -h localhost -U groot -d workshop
