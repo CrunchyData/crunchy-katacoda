@@ -44,4 +44,4 @@ psql -h localhost -U groot -d workshop -f test_create_and_copy.sql
 
 > **Note**
 > 
-> We won't cover this in the course, but `psql` can also be used in shell scripts > so that you can combine `psql` with other commands. This means that you can do > a lot of work (including a series of complex tasks) in an efficient way.
+> We won't cover this in the course, but `psql` can also be used in shell scripts so that you can combine `psql` with other commands. This means that you can do a lot of work (including a series of complex tasks) in an efficient way.
