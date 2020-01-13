@@ -31,4 +31,10 @@ Then we can run `psql` to execute the SQL in this file.
 psql -h localhost -U groot -d workshop -f test_create_and_copy.sql
 ```{{execute}}
 
+The `SELECT` statement in the file shows that `new_test_table` was actually created and contains data, but for good measure, let's use `\d+` to see changes made on the database level:
+
+`\d+`{{execute}}
+
+In addition to `new_test_table`, you should also be seeing the `cp_se_details` table.
+
 We won't cover this in the course, but `psql` can also be used in shell scripts so that you can combine `psql` with other commands. This means that you can do a lot of work (including a series of complex tasks) in an efficient way.
