@@ -12,7 +12,7 @@ You can use the `\pset` command to customize the way results are displayed.
 
 Taking the example above: instead of having to scroll through the entire result set, you can instead have the terminal take you directly to the end:
 
-```\pset pager```{{execute}}
+`\pset pager`{{execute}}
 
 Running this command without a value (i.e. `\pset pager on` or `off`) toggles the pager use on or off.
 

@@ -15,9 +15,7 @@ and copy only data from the month of June.
 
 Let's say we were working outside of the `psql` shell, doing some other work on the command line:
 
-```
-\q
-```{{execute}}
+`\q`{{execute}}
 
 We want to check the contents of the script first. We can use the `cat` command (UNIX and Linux) to
 read the contents of the file and display them as output in the terminal.
@@ -34,4 +32,3 @@ psql -h localhost -U groot -d workshop -f test_create_and_copy.sql
 ```{{execute}}
 
 We won't cover this in the course, but `psql` can also be used in shell scripts so that you can combine `psql` with other commands. This means that you can do a lot of work (including a series of complex tasks) in an efficient way.
- 
