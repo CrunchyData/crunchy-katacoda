@@ -8,7 +8,7 @@ An example of one is `\?`, which will bring up help information about commands a
 
 `\?`{{execute}}
 
-> **Tip**
+> **Tip**  
 > Press the spacebar to scroll through the list, or press `q` any time to return  > to the `psql` prompt.
 
 You should see the list of available meta-commands, including the one you just used. You'll see that the `\?` command can also include parameters that allow you to look up specific topics, e.g. `\? options` will bring up help information on psql options (flags).

@@ -10,7 +10,7 @@ Remember that you can press `q` any time to return to the `psql` prompt.
 
 You can use the `\pset` command to customize the way results are displayed. 
 
-Taking the example above: instead of having to scroll through the entire result set, you can instead have the terminal take you directly to the end:
+Instead of having to scroll through the entire result set, you can instead have the terminal take you directly to the end:
 
 `\pset pager`{{execute}}
 
