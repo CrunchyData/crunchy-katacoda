@@ -6,6 +6,8 @@ We'll get started by connecting to a database.
 
 ### Connect to the `workshop` database  
 
+The database contains storm events data, which is public domain data from the National Weather Service.
+
 In your interactive terminal, you're currently logged in as root user, as indicated by the command line prompt:
 
 ![Terminal prompt](./assets/01_-_command_line_prompt.PNG)
