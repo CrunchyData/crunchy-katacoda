@@ -8,10 +8,7 @@
       {"title": "Introduction to Business Scenario", "text": "intro.md"},
       {"title": "Introduction to create table", "text": "01-createtable-Intro.md"},
       {"title": "Create Employee Table", "text": "02-create-employee.md"},
-      {"title": "Insert Employee Data", "text": "03-insert-employee.md},
-      {"title": "Create Department table and insert data", "text": "04-create-insert-department.md"},
-      {"title": "Create Employee Department table and insert data", "text": "05-create-insert-emp-dept-asc.md"},
-      {"title": "Create Employee Salary history table and insert data", "text": "06-create-insert-emp-salary-hist.md"}
+      {"title": "Insert Employee Data", "text": "03-insert-employee.md}
     ],
     "intro": {
       "courseData": "env-init.sh",
