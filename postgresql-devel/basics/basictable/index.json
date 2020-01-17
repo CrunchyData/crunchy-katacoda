@@ -9,7 +9,8 @@
       {"title": "Create Employee table", "text": "02-create-employee.md"},
       {"title": "Insert data in Employee", "text": "03-insert-employee.md"},
       {"title": "Create Department Table", "text": "04-create-insert-department.md"},
-      {"title": "Create Employee Department Association Table", "text": "05-create-insert-emp-dept-asc.md"}
+      {"title": "Create Employee Department Association Table", "text": "05-create-insert-emp-dept-asc.md"},
+      {"title": "Create Employee Salary History Table", "text": "06-create-insert-emp-salary-hist.md"}
        ],
     "intro": {
       "courseData": "env-init.sh",
