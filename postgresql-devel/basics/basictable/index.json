@@ -5,11 +5,12 @@
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "Introduction to Geometries and Metadata", "text": "01-introduction-and-metadata.md"},
-      {"title": "Real World Objects", "text": "02-real-world-objects.md"},
-      {"title": "Geometry Input and Output", "text": "03-input-output.md"},
-      {"title": "Additional Exercises", "text": "04-exercises.md"}
-    ],
+      {"title": "Introduction to Creating table and Business scenario", "text": "01-createtable-Intro.md"},
+      {"title": "Create Employee table", "text": "02-create-employee.md"},
+      {"title": "Insert data in Employee", "text": "03-insert-employee.md"},
+      {"title": "Create Department Table", "text": "04-create-insert-department.md"},
+      {"title": "Create Employee Department Association Table", "text": "05-create-insert-emp-dept-asc.md"}
+       ],
     "intro": {
       "courseData": "env-init.sh",
       "code": "set-env.sh",
