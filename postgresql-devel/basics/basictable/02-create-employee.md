@@ -31,7 +31,7 @@ Let's review the columns, data type and other information for each field.
         but is simply shorthand notation that tells Postgres to create
         an auto incremented, unique identifier for the specified column
         of type Integer and it autoincrements by 1. You can see
-        nextval('employee_employee_id_seq'::regclass)    
+        nextval('employee_employee_id_seq'::regclass) in default column. 
       - Created a Primary Key constraint of name employee_id_pk, this
         constraint is the combination of NOT NULL (must contain a value) and UNIQUE constraint.
         A primary key constraint indicates that a column, or group of
@@ -41,17 +41,17 @@ Let's review the columns, data type and other information for each field.
     
       - PostgreSQL automatically creates a unique index when a unique
         constraint or primary key is defined for a table. You can see
-        "employee_id_pk" PRIMARY KEY, btree (employee_id)
+        "employee_id_pk" PRIMARY KEY, btree (employee_id) in indexes section.
 
   - employee_ssn
     
-      - is of data type character varying(n), where n is a positive
-        integer, in this case defined to be 10.
+      - is of data type character varying(n) - varchar, where n is a positive
+        integer, in this case defined to be 10. Character variable length of limit 10.
     
       - Created a unique constraint of name employee_ak and not null.
-        Here again PostgreSQL automatically creates a unique index when
+        PostgreSQL enforces uniquenes using a unique index when
         a unique constraint is defined for a table. You can see
-        "employee_ak" UNIQUE CONSTRAINT, btree (employee_ssn) as well.
+        "employee_ak" UNIQUE CONSTRAINT, btree (employee_ssn) in index section.
 
   - employee_first_name and employee_last_name
     
@@ -65,13 +65,13 @@ Let's review the columns, data type and other information for each field.
         treated as semantically insignificant and disregarded when
         comparing two values of type character.
     
-      - Not null constraint.
+      - Not null constraint, value in this field is required.
 
   - employee_hire_date
     
-      - is of data type date (no time of day) of 4 bytes
+      - is of data type date (no time of day) of 4 bytes to store a date value.
     
-      - Not null constraint.
+      - Not null constraint, value in this field is required.
 
   - employee_termination_date
     
@@ -85,5 +85,5 @@ Let's review the columns, data type and other information for each field.
         indicated by the system’s TimeZone parameter and is converted to
         UTC using the offset for the timezone zone.
     
-      - This is nullable column
+      - This is nullable column,  value in this field is not required.
 
