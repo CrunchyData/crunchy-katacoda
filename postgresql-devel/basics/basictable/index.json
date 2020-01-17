@@ -1,14 +1,14 @@
  {
-  "title": "Introduction to Basic Create Table in PostgreSQL",
+  "title": "Introduction to creating tables in PostgreSQL",
   "description": "Learning about creating tables in PostgreSQL",
   "difficulty": "beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "Introduction to Business Scenario", "text": "intro.md"},
-      {"title": "Introduction to create table", "text": "01-createtable-Intro.md"},
-      {"title": "Create Employee Table", "text": "02-create-employee.md"},
-      {"title": "Insert Employee Data", "text": "03-insert-employee.md}
+      {"title": "Introduction to Geometries and Metadata", "text": "01-introduction-and-metadata.md"},
+      {"title": "Real World Objects", "text": "02-real-world-objects.md"},
+      {"title": "Geometry Input and Output", "text": "03-input-output.md"},
+      {"title": "Additional Exercises", "text": "04-exercises.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
