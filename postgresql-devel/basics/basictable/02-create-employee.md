@@ -11,17 +11,13 @@ employee_first_name CHAR (35) NOT NULL,
 employee_last_name CHAR (50) NOT NULL,
 employee_hire_date date NOT NULL,
 employee_termination_datetime timestamp with time zone
-);
-
-```
-{{execute}}
+); ```{{execute}}
 
 Let’s check the table definition, \d in psql means telling postgres to display table definition.
 
 ```postgresql
 \d employee
-``` 
-{{execute}}
+``` {{execute}}
 
 
 Please note we have not given any schema name, if the schema name is not given generally table will be created in public
