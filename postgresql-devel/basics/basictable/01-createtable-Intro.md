@@ -12,7 +12,7 @@ CREATE TABLE test_table (name varchar);
 INSERT INTO test_table VALUES 
   ('TestTable 1');
   
-Select * form test_table;
+Select * from test_table;
 
 ```{{execute}}
 
