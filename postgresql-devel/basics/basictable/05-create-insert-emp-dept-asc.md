@@ -17,14 +17,12 @@ REFERENCES department (department_number) );
 
 create index department_number_idx on employee_department_asc
 (department_number );
-``` 
-{{execute}}
+``` {{execute}}
 
 Let's review the table structure 
 ```postgresql
 \d employee_department_asc
-``` 
-{{execute}}
+``` {{execute}}
 
   - employee_id is of data type integer and not null constraint.
   - department_number is of data type integer and not null constraint.
@@ -83,8 +81,7 @@ VALUES ((select employee_id FROM public.employee where
 employee_first_name ='Jeffery' and employee_last_name = 'Westman'),
 (SELECT department_number FROM public.department where department_name
 = 'ACCOUNTING'),current_date);
-``` 
-{{execute}}
+``` {{execute}}
 
 Let’s check data in the table and make sure data looks good, by joining
 emmploye , department and employe_department_asc table.
@@ -96,7 +93,6 @@ FROM public.employee inner join public.employee_department_asc on
 employee.employee_id =employee_department_asc.employee_id
 inner join public.department on employee_department_asc.department_number =department.department_number;
 
-``` 
-{{execute}}
+``` {{execute}}
 
-let move on.
+I hope you are understanding the flow so let's move on.
