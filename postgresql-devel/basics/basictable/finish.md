@@ -1,12 +1,6 @@
 # Final Notes 
 
-I hope you feel more comfortable beginning to use PgAdmin4 to interact with your PostgreSQL database. If you 
-are uncomfortable with the command line or perhaps you are debugging some complicated SQL, PgAdmin4 can really
-be your friend. 
-
-We really just showed a limited amount of the functionality in the GUI. As you probably noticed there is a lot 
-you can do when right click on objects or click on the alternative tabs for an object. I **STRONGLY** recommend
-that you keep playing around. 
+Need to complete this
 
 The container used in this class is available 
 [in Dockerhub](https://cloud.docker.com/u/thesteve0/repository/docker/thesteve0/postgres-appdev). 
