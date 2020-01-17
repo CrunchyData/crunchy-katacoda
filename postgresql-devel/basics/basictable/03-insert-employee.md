@@ -10,15 +10,13 @@ VALUES ( '111111111', 'John', 'Smith', current_date),
 VALUES ( '111111112', 'Mary', 'Smith', current_date),
 VALUES ( '111111113', 'Arnold', 'Jackson', current_date),
 VALUES ( '111111114', 'Jeffery', 'Westman', current_date);
-``` 
-{{execute}}
+``` {{execute}}
 
 Please note above insert does not have employee_id field, then what values got assigned to employee_id field. Let’s review data from employee table.
 
 ```postgresql
 SELECT * FROM public.employee;
-``` 
-{{execute}}
+``` {{execute}}
 
 As you can see the employee_id fields have integer values populated auto incremented. I hope you understand how serial columns work.
 
@@ -30,8 +28,7 @@ employee_first_name, employee_last_name, employee_hire_date)
 VALUES ( 6, '111111115', 'Bob', 'Box', current_date);
 -- review the data 
 SELECT * FROM public.employee;
-``` 
-{{execute}}
+``` {{execute}}
 
 We can see the value_id of 6 is inserted, if you insert the value manually Postgres internally dose not increment sequence object assoicated to serial. Let's continue inserting and see when the error occurs. 
 
@@ -41,8 +38,7 @@ employee_last_name, employee_hire_date)
 VALUES ( '111111116', 'Best', 'CEO', current_date);
 -- review the data 
 SELECT * FROM public.employee;
-``` 
-{{execute}}
+``` {{execute}}
 
 Let's insert and see if the error occurs because of the manual insert. 
 
@@ -50,10 +46,9 @@ Let's insert and see if the error occurs because of the manual insert.
 INSERT INTO public.employee( employee_ssn, employee_first_name,
 employee_last_name, employee_hire_date)
 VALUES ( '111111117', 'Test', 'CFO', current_date);
--- review the data 
+-- Let's review data 
 SELECT * FROM public.employee;
-``` 
-{{execute}}
+``` {{execute}}
 
 Let's insert again, this time it will be successful, sequence incremented automatically even though insert failed, now the nextval of
 the sequence is 7
@@ -64,6 +59,5 @@ employee_last_name, employee_hire_date)
 VALUES ( '111111117', 'Test', 'CFO', current_date);
 -- review the data 
 SELECT * FROM public.employee;
-``` 
-{{execute}}
+``` {{execute}}
 
