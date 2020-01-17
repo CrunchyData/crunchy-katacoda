@@ -13,15 +13,13 @@ CONSTRAINT employee_salary_pk primary key (employee_id,
 employee_salary_start_date),
 constraint employee_id_fk1 foreign key (employee_id) REFERENCES
 employee (employee_id));
-``` 
-{{execute}}
+``` {{execute}}
 
 Let's review the table structure.
 
 ```postgresql
 \d employee_salary_hist
-``` 
-{{execute}}
+``` {{execute}}
 
   - employee_id is of data type integer and not null constraint.
   - employee_salary_start_date is of data type date and not null
@@ -62,8 +60,7 @@ union
 select 3, '2016-03-01'::date , 40000.00, null
 union
 select 4, '2016-03-01'::date , 40000.00, null
-```
-{{execute}}
+``` {{execute}}
 
 
 ### Test Check Constraint ###
@@ -73,5 +70,4 @@ We will try to insert a row with salary of 100 dollars.
 ``` INSERT INTO public.employee_salary_hist(
 	employee_id, employee_salary_start_date, employee_salary_amount, employee_salary_end_date)
 select 6, '2016-03-01'::date , 100.00, '2017-02-28'::date
-```
-{{execute}}
+``` {{execute}}
