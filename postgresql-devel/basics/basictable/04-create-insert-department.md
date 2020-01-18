@@ -44,7 +44,7 @@ Let’s insert data in department table and understand how Indentity columns wor
 
 ```postgresql
 insert into department ( department_name)
- ('SALES'),
+values ('SALES'),
 ('PAYROLL'),
 ('RESEARCH'),
 ('MARKETING'),
