@@ -23,13 +23,13 @@ Let's review the depatment table structure.
         that value to insert into the identity column instead of using
         the system-generated value.
       - GENERATED AS IDENTITY constraint also uses the SEQUENCE object
-        internally.
+        internally. To be more compliant with the SQL standard, Postgres 10 introduced the syntax using generated as identity.
       - Created a Primary Key constraint of name department_number_pk,
         this constraint is the combination of NOT NULL and UNIQUE
         constraint. PostgreSQL automatically creates a unique index when
         a unique constraint or primary key is defined for a table. You
         can see "department_number_pk" PRIMARY KEY, btree
-        (department_number)
+        (department_number) in index section.
         
   - department_name    
       - is of data type character varying(n), where n is a positive
@@ -43,12 +43,12 @@ Let's review the depatment table structure.
 Let’s insert data in department table and understand how Indentity columns work. 
 
 ```postgresql
-insert into public.department ( department_name)
-values ('SALES').
-values ('PAYROLL'),
-values ('RESEARCH'),
-values ('MARKETING'),
-values ('GRAPHICS');
+insert into department ( department_name)
+ ('SALES'),
+('PAYROLL'),
+('RESEARCH'),
+('MARKETING'),
+('GRAPHICS');
 
 Select * from department;
 ``` {{execute}}
@@ -56,25 +56,25 @@ Select * from department;
 Let's insert value in department_value manaually and review the data.
 
 ```postgresql
-insert into public.department ( department_number,department_name)
+insert into department ( department_number,department_name)
 values (6, 'APPLICATION DEVELOPMENT');
 Select * from department;
 ``` {{execute}}
 
-Below insert will will error again here the value of the identity was not set when we inserted row manually. 
+Below insert will error again here the value of the identity was not set when we inserted row manually. 
 
 ```postgresql
-insert into public.department ( department_name)
+insert into department ( department_name)
 values ('OPERATIONS');
 ``` {{execute}}
 
 Let's insert without the department_number and see if department_number identity auto increments.
 
 ```postgresql
-insert into public.department ( department_name)
+insert into department ( department_name)
 values ('OPERATIONS');
 
-insert into public.department ( department_name)
+insert into department ( department_name)
 values ('ACCOUNTING');
 ``` {{execute}}
 
