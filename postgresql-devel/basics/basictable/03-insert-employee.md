@@ -46,9 +46,9 @@ Let's insert and see if the error occurs because of the manual insert.
 INSERT INTO employee( employee_ssn, employee_first_name,
 employee_last_name, employee_hire_date)
 VALUES ( '111111117', 'Test', 'CFO', current_date);
--- Let's review data 
-SELECT * FROM employee;
 ``` {{execute}}
+
+You can see the error message, "ERROR:  duplicate key value violates unique constraint "employee_id_pk" "
 
 Let's insert again, this time it will be successful, sequence incremented automatically even though insert failed, now the nextval of
 the sequence is 7
