@@ -72,12 +72,12 @@ values ('OPERATIONS');
 
 Let's insert without the department_number and see if department_number identity auto increments. 
 
-Here we will see ERROR:  duplicate key value violates unique constraint "department_number_pk" DETAIL:  Key (department_number)=(6) already exists.
-
 ```postgresql
 insert into department ( department_name)
 values ('ACCOUNTING');
 ``` {{execute}}
+
+You can see ERROR:  duplicate key value violates unique constraint "department_number_pk" DETAIL:  Key (department_number)=(6) already exists.
 
 Let's review data in detpartment table.
 
@@ -89,7 +89,10 @@ Let's see how uniqueness for department_name works.  Let's try inserting departm
 
 ```postgresql
 insert into department ( department_name)
-values ('OPERATIONS');
+values ('ACCOUNTING');
 ``` {{execute}}
+
+You can see ERROR:  duplicate key value violates unique constraint "department_ak"
+DETAIL:  Key (department_name)=(ACCOUNTING) already exists.
 
 Let's move forward.
