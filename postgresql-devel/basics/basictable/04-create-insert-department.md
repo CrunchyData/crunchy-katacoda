@@ -61,15 +61,18 @@ values (6, 'APPLICATION DEVELOPMENT');
 Select * from department;
 ``` {{execute}}
 
-Below insert will error again here the value of the identity was not set when we inserted row manually. Here we will see ERROR:  duplicate key value violates unique constraint "department_number_pk"
-DETAIL:  Key (department_number)=(6) already exists.
+Below insert will error again here the value of the identity was not set when we inserted row manually.
+
+
 
 ```postgresql
 insert into department ( department_name)
 values ('OPERATIONS');
 ``` {{execute}}
 
-Let's insert without the department_number and see if department_number identity auto increments. You will see duplicate error. 
+Let's insert without the department_number and see if department_number identity auto increments. 
+
+Here we will see ERROR:  duplicate key value violates unique constraint "department_number_pk" DETAIL:  Key (department_number)=(6) already exists.
 
 ```postgresql
 insert into department ( department_name)
@@ -81,6 +84,7 @@ Let's review data in detpartment table.
 ```postgresql
 select * from department;
 ``` {{execute}}
+
 Let's see how uniqueness for department_name works.  Let's try inserting department Operations.
 
 ```postgresql
