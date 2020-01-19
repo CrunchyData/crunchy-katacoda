@@ -63,8 +63,6 @@ Select * from department;
 
 Below insert will error again here the value of the identity was not set when we inserted row manually.
 
-
-
 ```postgresql
 insert into department ( department_name)
 values ('OPERATIONS');
@@ -77,7 +75,7 @@ insert into department ( department_name)
 values ('ACCOUNTING');
 ``` {{execute}}
 
-You can see ERROR:  duplicate key value violates unique constraint "department_number_pk" DETAIL:  Key (department_number)=(6) already exists.
+
 
 Let's review data in detpartment table.
 
