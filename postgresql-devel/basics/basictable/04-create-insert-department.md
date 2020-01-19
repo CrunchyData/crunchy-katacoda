@@ -37,10 +37,10 @@ Let's review the depatment table structure.
       - Created a unique constraint of name department_ak and not null.
         Here again PostgreSQL automatically creates a unique index when
         a unique constraint is defined for a table. You can see
-        "department_ak" UNIQUE CONSTRAINT, btree (department_name)
+        "department_ak" UNIQUE CONSTRAINT, btree (department_name) in Index section.
 
   
-Let’s insert data in department table and understand how Indentity columns work. 
+Let’s insert data in department table and understand how indentity columns work. You can see it assigned auto incremented number to department_number.
 
 ```postgresql
 insert into department ( department_name)
@@ -53,7 +53,7 @@ values ('SALES'),
 Select * from department;
 ``` {{execute}}
 
-Let's insert value in department_value manaually and review the data.
+Let's insert value in department_value manually and review the data. Identity also behaves same way as Serial. 
 
 ```postgresql
 insert into department ( department_number,department_name)
@@ -68,12 +68,9 @@ insert into department ( department_name)
 values ('OPERATIONS');
 ``` {{execute}}
 
-Let's insert without the department_number and see if department_number identity auto increments.
+Let's insert without the department_number and see if department_number identity auto increments. You will see duplicate error. 
 
 ```postgresql
-insert into department ( department_name)
-values ('OPERATIONS');
-
 insert into department ( department_name)
 values ('ACCOUNTING');
 ``` {{execute}}
@@ -82,6 +79,12 @@ Let's review data in detpartment table.
 
 ```postgresql
 select * from department;
+``` {{execute}}
+Let's see how uniqueness for department_name works.  Let's try inserting department Operations.
+
+```postgresql
+insert into department ( department_name)
+values ('OPERATIONS');
 ``` {{execute}}
 
 Let's move forward.
