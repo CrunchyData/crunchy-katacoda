@@ -11,7 +11,7 @@ A company employees John Smith, Mary Smith, Arnold Jackson and Jeffery Westman t
 Let start analyzing business scenario using nouns to identify tables and verbs to identify relationships between tables. Below is the data model picture. 
 
 
-![Data model](basictable/assets/Basicteabletutorial.png)
+![Data_model](basictable/assets/Basicteabletutorial.png)
 
 
 
