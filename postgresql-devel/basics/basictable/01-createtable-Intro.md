@@ -1,14 +1,18 @@
 
 
-Before we start working on our business scenario lets create test table with one field. 
+Before we start working on our business scenario lets review what documentation states regarding create table 
 
-To create a new table in PostgreSQL, you use the CREATE TABLE statement. 
+- To create a new table in PostgreSQL, you use the CREATE TABLE statement. 
 
-**Create table
-**Insert a row**
-**Review data**
+- CREATE TABLE will create a new, initially empty table in the current database. The table will be owned by the user issuing the command.
 
-Go ahead and execute the following SQL statement in the console.
+- The name of the table must be distinct from the name of any other table, sequence, index, view, or foreign table in the same schema.
+
+- A constraint is an SQL object that helps define the set of valid values in the table in various ways.
+
+Let's create test table with one field, Insert a row and Review data. 
+
+Execute the following SQL statement in the console.
 
 ```postgresql
 CREATE TABLE test_table (name varchar);
@@ -24,7 +28,7 @@ Select * from test_table;
 Business Scenario Tables
 ------------------------
 
-Let start analyzing business scenario using nouns to identify tables and verbs to identify relationships between tables. Below are  identified tables and fields.  
+Based on our data model let's elow are  identified tables and fields.  
 
   - Employee (This table captures information of employees working at
     the company)
