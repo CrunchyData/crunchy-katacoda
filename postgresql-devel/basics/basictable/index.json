@@ -7,7 +7,7 @@
     "steps": [
       {"title": "Introduction to Creating table", "text": "01-createtable-Intro.md"},
       {"title": "Create Employee table", "text": "02-create-employee.md"},
-      {"title": "Insert data in Employee", "text": "03-insert-employee.md"},
+      {"title": "Insert data in Employee table", "text": "03-insert-employee.md"},
       {"title": "Create Department Table and Insert data", "text": "04-create-insert-department.md"},
       {"title": "Create Employee Department Association Table and Insert data", "text": "05-create-insert-emp-dept-asc.md"},
       {"title": "Create Employee Salary History Table and Insert data", "text": "06-create-insert-emp-salary-hist.md"}
