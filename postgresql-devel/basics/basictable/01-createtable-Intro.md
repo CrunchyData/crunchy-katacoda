@@ -3,7 +3,8 @@
 Before we start working on our business scenario lets create test table with one field. 
 
 To create a new table in PostgreSQL, you use the CREATE TABLE statement. 
-**Create table**
+
+**Create table
 **Insert a row**
 **Review data**
 
