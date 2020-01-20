@@ -26,7 +26,7 @@ schema.
 Let's review the columns, data type and other information for each field.
 
   - Employee_id
-    
+
       - is of datatype SERIAL (Integer). Serial is not a true data type
         but is simply shorthand notation that tells Postgres to create
         an auto incremented, unique identifier for the specified column
@@ -37,8 +37,7 @@ Let's review the columns, data type and other information for each field.
         A primary key constraint indicates that a column, or group of
         columns, can be used as a unique identifier for rows in the
         table. This requires that the values be both unique and not
-        null.
-    
+        null.    
       - PostgreSQL automatically creates a unique index when a unique
         constraint or primary key is defined for a table. You can see
         "employee_id_pk" PRIMARY KEY, btree (employee_id) in indexes section.
@@ -47,7 +46,6 @@ Let's review the columns, data type and other information for each field.
     
       - is of data type character varying(n) - varchar, where n is a positive
         integer, in this case defined to be 10. Character variable length of limit 10.
-    
       - Created a unique constraint of name employee_ak and not null.
         PostgreSQL enforces uniquenes using a unique index when
         a unique constraint is defined for a table. You can see
@@ -64,13 +62,11 @@ Let's review the columns, data type and other information for each field.
         are stored and displayed that way. However, trailing spaces are
         treated as semantically insignificant and disregarded when
         comparing two values of type character.
-    
       - Not null constraint, value in this field is required.
 
   - employee_hire_date
     
       - is of data type date (no time of day) of 4 bytes to store a date value.
-    
       - Not null constraint, value in this field is required.
 
   - employee_termination_date
@@ -84,6 +80,5 @@ Let's review the columns, data type and other information for each field.
         in the input string, then it is assumed to be in the time zone
         indicated by the system’s TimeZone parameter and is converted to
         UTC using the offset for the timezone zone.
-    
       - This is nullable column,  value in this field is not required.
 
