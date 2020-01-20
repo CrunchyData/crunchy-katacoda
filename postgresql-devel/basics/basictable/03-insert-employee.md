@@ -1,4 +1,3 @@
-# Insert Employee table
 
 Let's insert data in employee table according to business scenario and understand how serial columns work and uniqueness is enforced. 
 
