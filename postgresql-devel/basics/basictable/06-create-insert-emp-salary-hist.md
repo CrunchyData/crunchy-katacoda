@@ -1,4 +1,4 @@
-# Create and Insert Employee Salary Association table
+
 
 Let's create employee salary association table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review the table structure.
 
