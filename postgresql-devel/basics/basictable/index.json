@@ -5,7 +5,7 @@
   "time": "10 minutes",
   "details": {
     "steps": [
-      {"title": "Introduction to Creating table and Business scenario", "text": "01-createtable-Intro.md"},
+      {"title": "Introduction to Creating table", "text": "01-createtable-Intro.md"},
       {"title": "Create Employee table", "text": "02-create-employee.md"},
       {"title": "Insert data in Employee", "text": "03-insert-employee.md"},
       {"title": "Create Department Table and Insert data", "text": "04-create-insert-department.md"},
