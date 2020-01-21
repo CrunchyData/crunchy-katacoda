@@ -1,12 +1,12 @@
 
-Let's create employee department association table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review the table structure.
+Let's create employee department association table, this table demonstrates the foreign key functionality. This table has references to employee and department table.
 
 ```postgresql
 Create table employee_department_asc (
 employee_id integer not null,
 department_number integer not null,
 employee_department_start_date date not null,
-employee_department_end_date date null,public
+employee_department_end_date date null,
 CONSTRAINT employee_department_pk primary key (employee_id,
 department_number),
 constraint employee_id_fk foreign key (employee_id) REFERENCES
@@ -49,6 +49,4 @@ Let's review the table structure
         index. You can see "department_number_idx" btree
         (department_number)
 
-
-
-I hope you are understanding the flow so let's move on.
+Let's continue.
