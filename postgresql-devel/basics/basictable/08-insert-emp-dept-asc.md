@@ -1,54 +1,46 @@
-Let’s insert data in department table and understand how indentity columns work. You can see it assigned auto incremented number to department_number.
+Let insert data in employee_department_asc, according to requirement John works in Sales, Mary works in Research and Arnold and Jeffery
+work in Accounting.
 
 ```postgresql
-insert into department ( department_name)
-values ('SALES'),
-('PAYROLL'),
-('RESEARCH'),
-('MARKETING'),
-('GRAPHICS');
+INSERT INTO employee_department_asc(
+employee_id, department_number, employee_department_start_date)
+VALUES ((select employee_id FROM employee where
+employee_first_name ='John' and employee_last_name = 'Smith'),
+(SELECT department_number FROM department where department_name
+= 'SALES'),current_date);
 
-Select * from department;
+INSERT INTO employee_department_asc(
+employee_id, department_number, employee_department_start_date)
+VALUES ((select employee_id FROM employee where
+employee_first_name ='Mary' and employee_last_name = 'Smith'),
+(SELECT department_number FROM department where department_name
+= 'RESEARCH'),current_date);
+
+INSERT INTO employee_department_asc(
+employee_id, department_number, employee_department_start_date)
+VALUES ((select employee_id FROM employee where
+employee_first_name ='Arnold' and employee_last_name = 'Jackson'),
+(SELECT department_number FROM department where department_name
+= 'ACCOUNTING'),current_date);
+
+INSERT INTO employee_department_asc(
+employee_id, department_number, employee_department_start_date)
+VALUES ((select employee_id FROM employee where
+employee_first_name ='Jeffery' and employee_last_name = 'Westman'),
+(SELECT department_number FROM department where department_name
+= 'ACCOUNTING'),current_date);
 ``` {{execute}}
 
-Let's insert value in department_value manually and review the data. Identity also behaves same way as Serial. 
+Let’s check data in the table and make sure data looks good, by joining
+emmploye , department and employe_department_asc table.
 
 ```postgresql
-insert into department ( department_number,department_name)
-values (6, 'APPLICATION DEVELOPMENT');
-Select * from department;
+SELECT employee.employee_id,employee_department_asc.department_number, department_name,
+employee_ssn, employee_first_name, employee_last_name,employee_hire_date, employee_termination_datetime
+FROM employee inner join employee_department_asc on
+employee.employee_id =employee_department_asc.employee_id
+inner join department on employee_department_asc.department_number =department.department_number;
+
 ``` {{execute}}
-
-Below insert will error again here the value of the identity was not set when we inserted row manually.
-
-```postgresql
-insert into department ( department_name)
-values ('OPERATIONS');
-``` {{execute}}
-
-Let's insert without the department_number and see if department_number identity auto increments. 
-
-```postgresql
-insert into department ( department_name)
-values ('ACCOUNTING');
-``` {{execute}}
-
-
-
-Let's review data in detpartment table.
-
-```postgresql
-select * from department;
-``` {{execute}}
-
-Let's see how uniqueness for department_name works.  Let's try inserting department Operations.
-
-```postgresql
-insert into department ( department_name)
-values ('ACCOUNTING');
-``` {{execute}}
-
-You can see ERROR:  duplicate key value violates unique constraint "department_ak"
-DETAIL:  Key (department_name)=(ACCOUNTING) already exists.
 
 Let's move forward.
