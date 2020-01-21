@@ -1,5 +1,9 @@
 Let insert data in employee_department_asc, according to requirement John works in Sales, Mary works in Research and Arnold and Jeffery
-work in Accounting.
+work in Accounting. 
+
+This table has foreign kep reference to Employee and depatment table. We cannot insert a row into the employee_department_asc without referencing to a valid employee_id in the Employee table and a valid department_number in Department table.
+
+Below insert statement is using select statement to associate department_number and employee_id based on the employee_first_name, employee_last_name and department_name.
 
 ```postgresql
 INSERT INTO employee_department_asc(
@@ -31,8 +35,7 @@ employee_first_name ='Jeffery' and employee_last_name = 'Westman'),
 = 'ACCOUNTING'),current_date);
 ``` {{execute}}
 
-Let’s check data in the table and make sure data looks good, by joining
-emmploye , department and employe_department_asc table.
+Let’s check data in the table and make sure data looks good, by joining emmploye, department and employe_department_asc table.
 
 ```postgresql
 SELECT employee.employee_id,employee_department_asc.department_number, department_name,
@@ -42,5 +45,12 @@ employee.employee_id =employee_department_asc.employee_id
 inner join department on employee_department_asc.department_number =department.department_number;
 
 ``` {{execute}}
+
+Let's try to insert data where employee does not exist in the employee table. 
+
+```postgresql
+INSERT INTO employee_department_asc(
+employee_id, department_number, employee_department_start_date)
+VALUES (10,'ACCOUNTING',current_date);
 
 Let's move forward.
