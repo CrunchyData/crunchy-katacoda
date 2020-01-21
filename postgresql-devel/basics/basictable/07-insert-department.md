@@ -1,5 +1,5 @@
 
-Let’s insert data in department table and understand how indentity columns work. You can see it assigned auto incremented number to department_number.
+Let’s insert data in department table and understand how indentity columns work. Department_number is column has the GENERATED AS IDENTITY constraint, PostgreSQL generates a value for it.
 
 ```postgresql
 insert into department ( department_name)
@@ -34,15 +34,13 @@ insert into department ( department_name)
 values ('ACCOUNTING');
 ``` {{execute}}
 
-
-
 Let's review data in detpartment table.
 
 ```postgresql
 select * from department;
 ``` {{execute}}
 
-Let's see how uniqueness for department_name works.  Let's try inserting department Operations.
+Let's see how uniqueness for department_name works.  Let's try inserting department Accounting.
 
 ```postgresql
 insert into department ( department_name)
