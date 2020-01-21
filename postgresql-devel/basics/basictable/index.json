@@ -7,10 +7,13 @@
     "steps": [
       {"title": "Introduction to Creating table", "text": "01-createtable-Intro.md"},
       {"title": "Create Employee table", "text": "02-create-employee.md"},
-      {"title": "Insert data in Employee table", "text": "03-insert-employee.md"},
-      {"title": "Create Department Table and Insert data", "text": "04-create-insert-department.md"},
-      {"title": "Create Employee Department Association Table and Insert data", "text": "05-create-insert-emp-dept-asc.md"},
-      {"title": "Create Employee Salary History Table and Insert data", "text": "06-create-insert-emp-salary-hist.md"}
+      {"title": "Create Department Table", "text": "03-create-department.md"},
+      {"title": "Create Employee Department Association Table", "text": "04-create-emp-dept-asc.md"},     
+      {"title": "Create Employee Salary History Table", "text": "05-create-emp-salary-hist.md"},
+      {"title": "Insert data in Employee table", "text": "06-insert-employee.md"},
+      {"title": "Insert data in Department table", "text": "07-insert-department.md"},
+      {"title": "Insert data in Employee Department Association Table", "text": "08-insert-emp-dept-asc.md"},
+      {"title": "Insert data in Salary History Table and ", "text": "09-insert-employee-salary-hist.md"}
        ],
     "intro": {
       "courseData": "env-init.sh",
