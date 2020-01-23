@@ -1,5 +1,7 @@
 
-Let's create Employee table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review how Postgres describes the table structure.
+Based on the data model let's create Employee table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. 
+
+Once we create the table we will review how Postgres describes the table structure, column data types and constraints.
 
 
 ```postgresql
@@ -18,15 +20,11 @@ Let’s check the table definition, \d in psql means telling postgres to display
 \d employee
 ``` {{execute}}
 
-
-Please note we have not given any schema name, if the schema name is not given generally table will be created in public
-schema.
-
 Let's review the columns, data type and other information for each field.
 
   - Employee_id
 
-      - is of datatype SERIAL (Integer). Serial is not a true data type
+      - is of datatype **SERIAL** (Integer). Serial is not a true data type
         but is simply shorthand notation that tells Postgres to create
         an auto incremented, unique identifier for the specified column
         of type Integer and it autoincrements by 1. You can see
@@ -43,7 +41,7 @@ Let's review the columns, data type and other information for each field.
 
   - employee_ssn
     
-      - is of data type character varying(n) - varchar, where n is a positive
+      - is of data type character varying(n) - **varchar**, where n is a positive
         integer, in this case defined to be 10. Character variable length of limit 10.
       - Created a unique constraint of name employee_ak and not null.
         PostgreSQL enforces uniquenes using a unique index when
@@ -52,7 +50,7 @@ Let's review the columns, data type and other information for each field.
 
   - employee_first_name and employee_last_name
     
-      - is of data type character (n), where n is a positive integer, in
+      - is of data type **char** character (n), where n is a positive integer, in
         this case defined to be 35 and 50 respectively. If the string to
         be stored is shorter than the declared length, values of type
         character will be space-padded; values of type character varying
@@ -65,12 +63,12 @@ Let's review the columns, data type and other information for each field.
 
   - employee_hire_date
     
-      - is of data type date (no time of day) of 4 bytes to store a date value.
+      - is of data type **date** (no time of day) of 4 bytes to store a date value.
       - Not null constraint, value in this field is required.
 
   - employee_termination_date
     
-      - is of data type timestamp both date and time (time zone) of 8
+      - is of data type **timestamp** both date and time (time zone) of 8
         bytes. For timestamp with time zone, the internally stored value
         is always in UTC (Universal Coordinated Time, traditionally
         known as Greenwich Mean Time, GMT). An input value that has an
