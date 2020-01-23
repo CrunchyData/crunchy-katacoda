@@ -1,6 +1,6 @@
 # Create table in PostgreSQL
 
-Goal of this tutorial is to introduce you to basic concepts of create table using simple business scenario. In this tutorial we will learn to :-
+Goal of this tutorial is to introduce you to basic concepts of create table using simple business scenario. In this tutorial you will learn to :-
 
 * Create simple tables with basic data types.
 *	Create basic constraints primary key, foreign key and check constraint.
@@ -14,8 +14,8 @@ Below is the data model picture that depicts the business scenario. Normally peo
 ![Data_model](assets/Basicteabletutorial.png)
 
 
+In this tutorial, you'll use psql to interact with a PostgreSQL database.  You'll use the following credentials to connect to the workshop database:
 
-Here are the details on the **database** we are connecting to:
 1. Username: groot
 1. Password: password (same password for the postgres user as well)
 1. A database named: workshop
