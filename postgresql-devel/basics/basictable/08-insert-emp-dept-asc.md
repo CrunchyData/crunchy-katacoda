@@ -1,7 +1,7 @@
 Let insert data in employee_department_asc, according to requirement John works in Sales, Mary works in Research and Arnold and Jeffery
 work in Accounting. 
 
-This table has foreign kep reference to Employee and depatment table. We cannot insert a row into the employee_department_asc without referencing to a valid employee_id in the Employee table and a valid department_number in Department table.
+This table has foreign key reference to Employee and depatment table. We cannot insert a row into the employee_department_asc without referencing to a valid employee_id in the Employee table and a valid department_number in Department table.
 
 Below insert statement is using select statement to associate department_number and employee_id based on the employee_first_name, employee_last_name and department_name.
 
