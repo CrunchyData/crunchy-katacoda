@@ -1,5 +1,10 @@
 
-Let's create employee department association table, this table demonstrates the foreign key functionality. This table has references to employee and department table.
+Let's create employee department association table, this table demonstrates the foreign key functionality. 
+
+A foreign key constraint specifies that the values in a column (or a group of columns) must match the values appearing in some row of another table. We say this maintains the referential integrity between two related tables.
+
+We want to ensure that the employee_department_asc table only contains records of employee and department that actually exist. So we define a foreign key constraint in the employee_department_asc table that references the employee and department table.
+
 
 ```postgresql
 Create table employee_department_asc (
@@ -23,11 +28,11 @@ Let's review the table structure
 \d employee_department_asc
 ``` {{execute}}
 
-  - employee_id is of data type integer and not null constraint.
-  - department_number is of data type integer and not null constraint.
-  - employee_department_start_date is of data type date and not null
+  - employee_id is of data type **INTEGER** and not null constraint.
+  - department_number is of data type **INTEGER** and not null constraint.
+  - employee_department_start_date is of data type **DATE** and not null
     constraint.
-  - employee_department_end_date is of data type date and null
+  - employee_department_end_date is of data type **DATE** and null
     constraint.
   - Constraints
       - employee_department_pk is a composite primary Key constraint
