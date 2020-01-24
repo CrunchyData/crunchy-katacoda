@@ -49,8 +49,11 @@ inner join department on employee_department_asc.department_number =department.d
 Let's try to insert data where employee does not exist in the employee table. 
 
 ```postgresql
-INSERT INTO employee_department_asc(
-employee_id, department_number, employee_department_start_date)
-VALUES (10,'ACCOUNTING',current_date);
+INSERT INTO employee_department_asc( employee_id, department_number, employee_department_start_date) 
+VALUES (10,7,current_date);
+``` {{execute}}
+
+You will get error message "ERROR:  insert or update on table "employee_department_asc" violates foreign key constraint "employee_id_fk"
+DETAIL:  Key (employee_id)=(10) is not present in table "employee"."
 
 Let's move forward.
