@@ -58,4 +58,4 @@ VALUES ( '111111117', 'Test', 'CFO', current_date);
 SELECT * FROM employee;
 ``` {{execute}}
 
-Let's contimue.
+Let's continue.
