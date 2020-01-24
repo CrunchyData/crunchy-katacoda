@@ -1,6 +1,10 @@
 
 
-Let's create employee salary association table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. Once we create the table we will review the table structure.
+Let's create employee salary history table, this table demonstrates the foreign key functionality and check constraint. 
+
+A check constraint is the most generic constraint type. It allows you to specify that the value in a certain column must satisfy a Boolean (truth-value) expression. For instance, employee_salary_amount > 1000.
+
+Once we create the table we will review the table structure.
 
 ```postgresql
 create table employee_salary_hist (
@@ -21,12 +25,12 @@ Let's review the table structure.
 \d employee_salary_hist
 ``` {{execute}}
 
-  - employee_id is of data type integer and not null constraint.
-  - employee_salary_start_date is of data type date and not null
+  - employee_id is of data type **INTEGER** and not null constraint.
+  - employee_salary_start_date is of data type **DATE** and not null
     constraint.
-  - employee_salary_amount is of data type numeric of length 13 and
+  - employee_salary_amount is of data type **NUMERIC** of length 13 and
     capture 2 digits after the decimal point.
-  - employee_salary_end_date is of data type date and null
+  - employee_salary_end_date is of data type **DATE** and null
     constraint.
   - Constraints    
       - employee_salary_pk is a composite primary Key constraint with
@@ -43,6 +47,6 @@ Let's review the table structure.
         two related tables.    
       - Check constraint to make sure salary > 1000
 
-Now that we have created all the tables, let's now undertand how all hte constraints work by inserting data in tables.
+Now that we have created all the tables, let's now undertand how all constraints work by inserting data in tables.
 
 Let' move forward.
