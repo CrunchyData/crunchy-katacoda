@@ -1,12 +1,12 @@
 # Final Notes 
 
-Need to complete this
+I hope you feel more comfortable beginning to create tables in PostgreSQL database. I feel I have just covered the basics.  So please refer to PostgreSQL documentation, which has lot more examples and explanation.
 
-The container used in this class is available 
-[in Dockerhub](https://cloud.docker.com/u/thesteve0/repository/docker/thesteve0/postgres-appdev). 
-As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. All the 
-[data from the](https://github.com/CrunchyData/crunchy-demo-data/releases/tag/v0.1) workshop was intentionally chosen 
-from public domain or permissive licenses so that you can use it for commercial and non-commercial purposes. Feel free 
-to download it and play some more at your own pace on your own machine.
-  
-And with that, we are finished.
+## Acknowledgement ##
+I would like to acknowledge Crunchy Team for dedicated effort towards open source. Lot of Internet contributors that I have learnt a lot over the years. 
+
+The container used in this class is available in Dockerhub. As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. All the data from the workshop was intentionally chosen from public domain or permissive licenses so that you can use it for commercial and non-commercial purposes. Feel free to download it and play some more at your own pace on your own machine.
+
+And with that, we are finished. We wish you **Happy Learning**
+
+
