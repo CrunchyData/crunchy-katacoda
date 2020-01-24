@@ -1,6 +1,10 @@
 # Final Notes 
 
-I hope you feel more comfortable beginning to create tables in PostgreSQL database. I feel I have just covered the basics.  So please refer to PostgreSQL documentation, which has lot more examples and explanation.
+I hope you feel more comfortable beginning to create tables in PostgreSQL database. I feel I have just covered the basics.  So please refer to PostgreSQL documentation, which has lot more examples and explanation. Below is the summary :-
+
+- Create table with basic data types like *char, varchar, date, timestamp, Serial and Identity*
+- Constraints like *Not null, Primary Key , Foreign Key and Check*
+- Inserted data try to understand how data types and constraints work
 
 ## Acknowledgement ##
 I would like to acknowledge Crunchy Team for dedicated effort towards open source. Lot of Internet contributors that I have learnt a lot over the years. 
