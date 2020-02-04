@@ -23,4 +23,4 @@ Settings changed with ALTER SYSTEM that require a restart or reload still requir
 sudo systemctl restart postgresql-11
 ```{{execute T1}}
 
-Let's move on to reviewing some important settings. We'll be briefly going over each setting but also provide a link to its documentation for more information.
+Let's move on to reviewing some important settings. We'll be briefly going over each setting along with a link to its documentation for more information.

@@ -1,0 +1,37 @@
+  {
+  "title": "Geometry Constructing Functions",
+  "description": "Understanding geometry constucting functions in PostGIS",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {"title": "ST_Centroid / ST_PointOnSurface", "text": "01-centroid.md"},
+      {"title": "ST_Buffer", "text": "02-buffer.md"},
+      {"title": "ST_Intersection", "text": "03-intersection.md"},
+      {"title": "ST_Union", "text": "04-union.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "summary.md"
+    },
+    "assets": {
+      "client": [
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

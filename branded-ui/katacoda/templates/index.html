@@ -1,25 +1,33 @@
 {{ template "templates/header.html" . }}
-{{ template "templates/banner.html" . }}
+{{ template "templates/navigation.html" . }}
 
 <header class="masterheader">
-  <div class="container">
+  <div class="container text-center">
     <h1>PostgreSQL Interactive Learning Portal</h1>
-    <h2>Learn PostgreSQL by example with interactive courses designed by our experts!</h2>
-    <h3>Brought to you by <a href="https://www.crunchydata.com">Crunchy Data</a></h3>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2>Learn PostgreSQL by example with interactive courses designed by our experts!</h2>
+        <h3>Brought to you by <a href="https://www.crunchydata.com">Crunchy Data</a></h3>
+      </div>
+    </div>
   </div>
 </header>
 
 <section class="text-center">
-  <div class="container">
-    <div class="row">
-      <div id="katacoda-dashboard"
-        data-katacoda-id="{{.Site.KatacodaUser}}/homepage/dashboard"
-        data-katacoda-color="#226aa6"
-        data-katacoda-secondary="#c00"
-        data-katacoda-background="#fff"
-        data-katacoda-font="Open Sans"
-        data-katacoda-fontheader="Open Sans" style="height:1000px;">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div id="katacoda-dashboard"
+          data-katacoda-id="{{.Site.KatacodaUser}}/homepage/dashboard"
+          data-katacoda-color="linear-gradient(60deg, #279DD9, #1169B2)"
+          data-katacoda-secondary="#fff"
+          data-katacoda-font="Fort"
+          data-katacoda-fontheader="Fort" style="height:40rem;"
+          data-katacoda-externalcss="http://{{.Site.VirtualHost}}/static/css/katacoda.css">
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+{{ template "templates/javascript-includes.html" . }}

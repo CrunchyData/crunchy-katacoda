@@ -10,17 +10,33 @@
       "course_id": "geometries",
       "title": "1 - Geometries"
     },{
+      "external_link": "https://learn.crunchydata.com/postgis/geography/",
+      "course_id": "geography",
+      "title": "2 - Geography"
+    },{
       "external_link": "https://learn.crunchydata.com/postgis/projection/",
       "course_id": "projection",
-      "title": "2 - Projection"
+      "title": "3 - Projection"
     },{
       "external_link": "https://learn.crunchydata.com/postgis/spatial_relationships/",
       "course_id": "spatial_relationships",
-      "title": "3 - Spatial Relationships"
+      "title": "4 - Spatial Relationships"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/geom_functions/",
+      "course_id": "geom_functions",
+      "title": "5 - Geometry Constructing Functions"
     },{
       "external_link": "https://learn.crunchydata.com/postgis/joins/",
       "course_id": "joins",
-      "title": "4 - Spatial Joins"
+      "title": "6 - Spatial Joins"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/joins_advanced/",
+      "course_id": "joins_advanced",
+      "title": "7 - Advanced Spatial Joins"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/indexing/",
+      "course_id": "indexing",
+      "title": "8 - Spatial Indexing"
     }
 
   ]
