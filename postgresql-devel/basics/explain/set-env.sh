@@ -13,4 +13,12 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   sleep 1
 done
 
+echo 'loading storm data'
+PGPASSWORD="password" psql -h localhost -U groot -f /data/crunchy_demo_data/storms/stormevents.ddl.sql workshop
+PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\COPY se_details from '\''/data/crunchy_demo_data/storms/StormEvents_details-ftp_v1.0_d2018_c20190130.csv'\'' WITH CSV HEADER'
+PGPASSWORD="password" psql -h localhost -U groot -d workshop -c '\copy se_fatalities from '\''/data/crunchy_demo_data/storms/StormEvents_fatalities-ftp_v1.0_d2018_c20190130.csv'\'' with CSV HEADER';
+
+echo 'finished storm data'
+
+
 PGPASSWORD="password" psql -h localhost -U groot workshop
