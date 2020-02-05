@@ -12,7 +12,3 @@ Run the above two commands a few more times. If you cause more than 2 fulls to b
 ```
 sudo -Hiu postgres pgbackrest info
 ```{{execute T1}}
-
-
-
-
