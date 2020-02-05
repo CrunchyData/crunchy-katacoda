@@ -2,6 +2,7 @@
 
 [Crunchy Data Learning Portal](https://learn.crunchydata.com/) Content for Katacoda includes a series of self driven training modules for a variety of PostgreSQL topics including:
 
+
 * PostgreSQL Administration
 * PostgreSQL for Application Developers
 * PostGIS
@@ -20,8 +21,10 @@ This content is licensed under the [Creative Commons Attribution-ShareAlike 4.0]
 ## Maintainers
 -------
 
+
 ![Crunchy Data](https://github.com/CrunchyData/crunchy-katacoda/assets/avatar.png)
 
 The Crunchy Data Learning Portal Content is maintaind by a team at Crunchy Data. 
 
 [Crunchy Data](https://www.crunchydata.com/) is pleased to sponsor many [open-source projects](https://github.com/CrunchyData/) to help promote support the PostgreSQL community and software ecosystem.
+

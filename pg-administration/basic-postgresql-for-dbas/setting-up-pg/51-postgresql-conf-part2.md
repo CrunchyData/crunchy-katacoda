@@ -1,7 +1,7 @@
 
-These last sections of this scenario are all explanation and no futher commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
+These last sections of this scenario are all explanation with no futher commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
 
-Some of these settings will require a restart of the database to change, so it is good to try and set these to your desired values when first setting up your clusters. The values given are what we would recommend for most common scenarios. And EL7 does set some of our recommendations by default, but not all systems do.
+Some of these settings will require a restart of the database to change, so it is good to try and set these to your desired values when first setting up your clusters. The values given are what we would recommend for most common scenarios. EL7 does set some of our recommendations by default, but not all systems do.
 
 `listen_addresses` - Sets the IP address(es) that PostgreSQL listens on. Defaults to localhost only for security. Recommend setting to server IP. `*` = all IPs. https://www.postgresql.org/docs/current/runtime-config-connection.html
 
@@ -13,7 +13,7 @@ Some of these settings will require a restart of the database to change, so it i
 
 `maintenance_work_mem` - Specifies the max amount of memory to be used by maintenance operations such as vacuuming and index/constraint creation. 1GB is generally a good starting point and often the ideal setting in most situations. Can be adjusted on a per session basis to improve one-off maintenance task performance. https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-MAINTENANCE-WORK-MEM
 
-`effective_cache_size` - Sets the query planner's assumption about the effective size of the disk cache that is available to a single query. 50% RAM good starting point, possibly higher if PostgreSQL is the only service running on the server. https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-EFFECTIVE-CACHE-SIZE
+`effective_cache_size` - Sets the query planner's assumption about the effective size of the disk cache that is available to a single query. 50% RAM is a good starting point, possibly higher if PostgreSQL is the only service running on the server. https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-EFFECTIVE-CACHE-SIZE
 
 
 
