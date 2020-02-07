@@ -8,13 +8,13 @@ For our first query let's just return the ids from the Storm Details table (se_d
 
 ```sql92 
 select event_id from se_details limit 5;
-``` 
+```{{execute}} 
 
-Now let's see how the Query Planner analysed this query (without the limit):
+Now let's see how the Query Planner analyzed this query (without the limit):
 
 ```sql92
 EXPLAIN select event_id from se_details;
-```
+```{{execute}}
 
 Your output should look like this (without the red numbers)
 
