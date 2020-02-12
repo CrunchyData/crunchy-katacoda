@@ -30,12 +30,6 @@ You should know everything up to Actual time from the last scenario. This time t
 
 (6) This is the total time, in milliseconds, it took for the query to execute. The difference is timing between total node time and the total execution time is the start up and shutdown of the executor. This does **not** include the planning time or the time it takes to return the data to the client. 
 
-
-
- 
-
-
-
 ## Wrap Up
 
-
+With that we have a good enough foundation to move on and start takling real queries. If you want to play some more while you are here, you can again do a `select *` in your query and see what it does to the timing. Now let's move on to doing some more interesting queries.
