@@ -1,53 +1,52 @@
 
-Let’s insert data in department table and understand how indentity columns work. Department_number is column has the GENERATED AS IDENTITY constraint, PostgreSQL generates a value for it.
+## Insert data into Department table
 
-```postgresql
-insert into department ( department_name)
+Let's take a look at how indentity columns work. The `department_number` column in the Department table has the GENERATED AS IDENTITY constraint, which means PostgreSQL generates a value for the identity column.
+
+```
+INSERT INTO department ( department_name)
 values ('SALES'),
 ('PAYROLL'),
 ('RESEARCH'),
 ('MARKETING'),
 ('GRAPHICS');
 
-Select * from department;
-``` {{execute}}
+SELECT * from department;
+```{{execute}}
 
-Let's insert value in department_value manually and review the data. Identity also behaves same way as Serial. 
+Let's insert a row manually and review the data. Identity behaves in the same way as the serial type.
 
-```postgresql
-insert into department ( department_number,department_name)
+```
+INSERT department ( department_number,department_name)
 values (6, 'APPLICATION DEVELOPMENT');
-Select * from department;
-``` {{execute}}
+SELECT * from department;
+```{{execute}}
 
-Below insert will error again here the value of the identity was not set when we inserted row manually.
+This insert will error out here since the value of the identity is not also manually specified, so it ends up conflicting with an existing identity value:
 
-```postgresql
-insert into department ( department_name)
+```
+INSERT INTO department ( department_name)
 values ('OPERATIONS');
-``` {{execute}}
+```{{execute}}
 
-Let's insert without the department_number and see if department_number identity auto increments. 
+Let's try the insert without the `department_number` again and see if identity value auto increments:
 
-```postgresql
-insert into department ( department_name)
+```
+INSERT INTO department ( department_name)
 values ('ACCOUNTING');
-``` {{execute}}
+```{{execute}}
 
-Let's review data in detpartment table.
+Let's review the data currently in the Department table:
 
-```postgresql
-select * from department;
-``` {{execute}}
+```select * from department;```{{execute}}
 
-Let's see how uniqueness for department_name works.  Let's try inserting department Accounting.
+To see how uniqueness for `department_name` works. Let's try to insert an 'Accounting' row:
 
-```postgresql
-insert into department ( department_name)
+```
+INSERT INTO department ( department_name)
 values ('ACCOUNTING');
-``` {{execute}}
+```{{execute}}
 
-You can see ERROR:  duplicate key value violates unique constraint "department_ak"
-DETAIL:  Key (department_name)=(ACCOUNTING) already exists.
+The message `ERROR: duplicate key value violates unique constraint "department_ak" DETAIL: Key (department_name)=(ACCOUNTING) already exists` displays.
 
 Let's move forward.
