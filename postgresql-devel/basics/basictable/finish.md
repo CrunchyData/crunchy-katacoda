@@ -1,5 +1,3 @@
-# Final Notes 
-
 # Final Notes
 
 We hope you feel more comfortable beginning to create tables in a PostgreSQL database. We have only covered the basics, so please feel free to refer to the official [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-createtable.html), which has lot more examples and explanation. 
