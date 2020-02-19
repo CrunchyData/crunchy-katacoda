@@ -24,7 +24,6 @@
     "showdashboard": true,
     "uilayout": "terminal",
     "dashboards": [
-      {"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}
     ]
   },
   "backend": {
