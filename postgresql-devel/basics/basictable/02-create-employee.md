@@ -1,10 +1,10 @@
+## Create the Employee table
 
-Based on the data model let's create Employee table, to create a new table in PostgreSQL, you use the CREATE TABLE statement, table name and field name, field datatype and constriants. 
+Following the data model, we'll create an Employee table. Remember, to create a new table in PostgreSQL, you use the `CREATE TABLE` statement, and define the table name, field name(s), field data type(s), and constraints.
 
-Once we create the table we will review how Postgres describes the table structure, column data types and constraints.
+Once we create the table, we will review how Postgres describes the table structure, column data types and constraints.
 
-
-```postgresql
+```
 CREATE TABLE employee(
 employee_id serial CONSTRAINT employee_id_pk PRIMARY KEY,
 employee_ssn VARCHAR (10) constraint employee_ak UNIQUE NOT NULL,
@@ -12,70 +12,28 @@ employee_first_name CHAR (35) NOT NULL,
 employee_last_name CHAR (50) NOT NULL,
 employee_hire_date date NOT NULL,
 employee_termination_datetime timestamp with time zone
-); ```{{execute}}
+);
+```{{execute}}
 
-Let’s check the table definition, \d in psql means telling postgres to display table definition.
+Let’s check the table definition using the `\d` psql command. This command tells Postgres to display the table definition.
 
-```postgresql
-\d employee
-``` {{execute}}
+```\d employee```{{execute}}
 
-Let's review the columns, data type and other information for each field.
+Let's go through the columns, data types, and other information for each field:
 
-  - Employee_id
-
-      - is of datatype **SERIAL** (Integer). Serial is not a true data type
-        but is simply shorthand notation that tells Postgres to create
-        an auto incremented, unique identifier for the specified column
-        of type Integer and it autoincrements by 1. You can see
-        nextval('employee_employee_id_seq'::regclass) in default column. 
-      - Created a Primary Key constraint of name employee_id_pk, this
-        constraint is the combination of NOT NULL (must contain a value) and UNIQUE constraint.
-        A primary key constraint indicates that a column, or group of
-        columns, can be used as a unique identifier for rows in the
-        table. This requires that the values be both unique and not
-        null.    
-      - PostgreSQL automatically creates a unique index when a unique
-        constraint or primary key is defined for a table. You can see
-        "employee_id_pk" PRIMARY KEY, btree (employee_id) in indexes section.
-
-  - employee_ssn
-    
-      - is of data type character varying(n) - **varchar**, where n is a positive
-        integer, in this case defined to be 10. Character variable length of limit 10.
-      - Created a unique constraint of name employee_ak and not null.
-        PostgreSQL enforces uniquenes using a unique index when
-        a unique constraint is defined for a table. You can see
-        "employee_ak" UNIQUE CONSTRAINT, btree (employee_ssn) in index section.
-
-  - employee_first_name and employee_last_name
-    
-      - is of data type **char** character (n), where n is a positive integer, in
-        this case defined to be 35 and 50 respectively. If the string to
-        be stored is shorter than the declared length, values of type
-        character will be space-padded; values of type character varying
-        will simply store the shorter string. Values of type character
-        are physically padded with spaces to the specified width n and
-        are stored and displayed that way. However, trailing spaces are
-        treated as semantically insignificant and disregarded when
-        comparing two values of type character.
-      - Not null constraint, value in this field is required.
-
-  - employee_hire_date
-    
-      - is of data type **date** (no time of day) of 4 bytes to store a date value.
-      - Not null constraint, value in this field is required.
-
-  - employee_termination_date
-    
-      - is of data type **timestamp** both date and time (time zone) of 8
-        bytes. For timestamp with time zone, the internally stored value
-        is always in UTC (Universal Coordinated Time, traditionally
-        known as Greenwich Mean Time, GMT). An input value that has an
-        explicit time zone specified is converted to UTC using the
-        appropriate offset for that time zone. If no time zone is stated
-        in the input string, then it is assumed to be in the time zone
-        indicated by the system’s TimeZone parameter and is converted to
-        UTC using the offset for the timezone zone.
-      - This is nullable column,  value in this field is not required.
-
+- `employee_id`
+    - This field is of data type `SERIAL` (Integer). Serial is technically not a "true" data type but simply shorthand notation that tells Postgres to create a unique identifier for the specified column of type Integer, auto increment by 1. You'll see that the Default column in the table definition contains `nextval('employee_employee_id_seq'::regclass)` for this field.
+    - We also created a PRIMARY KEY constraint named `employee_id_pk`. The primary key constraint is a combination of NOT NULL (i.e. must contain a value) and UNIQUE constraints. A primary key constraint indicates that a column, or group of columns, can be used as a unique identifier for rows in the table.
+    - Postgres automatically creates a unique index when a unique constraint or primary key is defined for a table. You'll see `"employee_id_pk" PRIMARY KEY, btree (employee_id)` in the Indexes section.
+- `employee_ssn`
+    - This field is of data type character varying(n) - `varchar`, where **n** is a positive integer. In this example, we have specified a variable length with a limit of 10 characters.
+    - We created a unique constraint named `employee_ak` and specified not null. Postgres enforces uniqueness using a unique index when a unique constraint is defined for a table. `"employee_ak" UNIQUE CONSTRAINT, btree (employee_ssn)` is included in the Indexes section as well.
+- `employee_first_name` and `employee_last_name`
+    - These fields have a data type `char`: character (n), where n is a positive integer. In this example, the fields have a fixed length of 35 and 50 respectively. If the string to be stored is shorter than the declared length, `char` values will be space-padded; `varchar` will simply store the shorter string. `char values are padded with spaces to the specified width **n** and are stored and displayed that way. However, trailing spaces are treated as semantically insignificant and disregarded when comparing two values of type character
+    - NOT NULL constraints have been added, so these fields must have values.
+- `employee_hire_date`
+    - This field has a data type `date` (no time of day), which takes 4 bytes to store a date value.
+    - There is a NOT NULL constraint, so a value is required.
+- `employee_termination_date`
+    - This field has a data type `timestamp` which stores both date and time (time zone) using up 8 bytes. For `timestamp with time zone`, the internally stored value is always in UTC (Universal Coordinated Time, traditionally known as Greenwich Mean Time, GMT). An input value that has an explicit time zone specified is converted to UTC using the appropriate offset for that time zone. If no time zone is stated in the input string, then it is assumed to be in the time zone indicated by the system’s TimeZone parameter and is converted to UTC using the offset for the timezone zone.
+    - Since this is nullable column, values in this field are not required.
