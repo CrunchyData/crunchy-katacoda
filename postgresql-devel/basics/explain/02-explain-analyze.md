@@ -30,6 +30,40 @@ You should know everything up to Actual time from the last scenario. This time t
 
 (6) This is the total time, in milliseconds, it took for the query to execute. The difference is timing between total node time and the total execution time is the start up and shutdown of the executor. This does **not** include the planning time or the time it takes to return the data to the client. 
 
+
+## Protecting inserts, updates, and deletes
+
+As mentioned above, when you do an EXPLAIN ANALYZE it actually carries out the action, which, for inserts, updates, and deletes will actually alter your data. To prevent this from happening you need to wrap the entire EXPLAIN ANALYZE in a transaction. The entire flow is show in the console output captured below:
+
+```sql
+workshop=> select count(*) from se_details;
+ count
+-------
+ 62356
+(1 row)
+
+workshop=> BEGIN;
+BEGIN
+workshop=> EXPLAIN ANALYZE INSERT INTO se_details (event_id, source) VALUES (1000000, 'from Steve');
+                                             QUERY PLAN
+----------------------------------------------------------------------------------------------------
+ Insert on se_details  (cost=0.00..0.01 rows=1 width=470) (actual time=0.031..0.031 rows=0 loops=1)
+   ->  Result  (cost=0.00..0.01 rows=1 width=470) (actual time=0.004..0.004 rows=1 loops=1)
+ Planning Time: 0.024 ms
+ Execution Time: 0.055 ms
+(4 rows)
+
+workshop=> ROLLBACK;
+ROLLBACK
+workshop=> select count(*) from se_details;
+ count
+-------
+ 62356
+(1 row)
+
+```
+
+
 ## Wrap Up
 
 With that we have a good enough foundation to move on and start takling real queries. If you want to play some more while you are here, you can again do a `select *` in your query and see what it does to the timing. Now let's move on to doing some more interesting queries.
