@@ -1,16 +1,17 @@
 # Final Notes 
 
-I hope you feel more comfortable beginning to create tables in PostgreSQL database. I feel I have just covered the basics.  So please refer to PostgreSQL documentation, which has lot more examples and explanation. Below is the summary :-
+# Final Notes
 
-- Create table with basic data types like *char, varchar, date, timestamp, Serial and Identity*
-- Constraints like *Not null, Primary Key , Foreign Key and Check*
-- Inserted data try to understand how data types and constraints work
+We hope you feel more comfortable beginning to create tables in a PostgreSQL database. We have only covered the basics, so please feel free to refer to the official [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-createtable.html), which has lot more examples and explanation. 
 
-## Acknowledgement ##
-I would like to acknowledge Crunchy Team for dedicated effort towards open source. Lot of Internet contributors that I have learnt a lot over the years. 
+To summarize what we did:
 
-The container used in this class is available in Dockerhub. As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. All the data from the workshop was intentionally chosen from public domain or permissive licenses so that you can use it for commercial and non-commercial purposes. Feel free to download it and play some more at your own pace on your own machine.
+- Used `CREATE TABLE` with basic data types like char, varchar, date, timestamp, serial, and identity
+- Used constraints such as Not Null, Primary Key, Foreign Key, and Check
+- Inserted data to understand how data types and constraints work
 
-And with that, we are finished. We wish you **Happy Learning**
+The container used in this class is available in [Dockerhub](https://hub.docker.com/r/thesteve0/postgres-appdev). As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. Feel free to download the image and play some more at your own pace on your own machine.
+
+And with that, we are finished. We wish you Happy Learning!
 
 
