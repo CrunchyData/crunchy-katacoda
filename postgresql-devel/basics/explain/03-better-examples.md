@@ -63,7 +63,7 @@ and again your output should look something like this:
 So there are actually 3 nodes in this query. The yellow and red nodes are both children of the green node (nested loop). 
 To do the join the query planner has to match the event_id between both tables. Since we don't have an index on event_id in the se_fatalities table PostgreSQL will need to do a sequential scan on the se_fatalities table to get event ids. You can see that the yellow node returns 802 records, the total number records in the se_fatalities table. The query planner chose to do a sequential scan here because it needs a set of event_id to use in the join and se_fatalities gives us a smaller list to compare. 
 
-All of those records are then fed one at a time into the red node to test both of the equality conditions. This is why the red node has 802 loops. We get an index scan on this node because the query engine can at use the index on state and event_id to check the join and 'NEW YORK' meets the equality condition. 
+All of those records are then fed one at a time into the red node to test both of the equality conditions. This is why the red node has 802 loops. We get an index scan on this node because the query engine can use the index on state and event_id to check the join and 'NEW YORK' both meet the equality condition. 
 
 In reality, both nodes are running in parallel so that the red node does not have to wait for the yellow node to finish before it starts check the equality conditions. As the sequential scan pulls a row it feeds it directly into the index scan
 
