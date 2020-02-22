@@ -6,8 +6,9 @@
   "details": {
     "steps": [
       {"title": "Understand Explain Output", "text": "01-explain-basic.md"},
-      {"title": "Using Explain to Tune Your Query", "text": "02-explain-tune.md"},
-      {"title": "What Does Explain Analyze Do", "text": "03-explain-analyze.md"}
+      {"title": "Using Explain to Get Actual Results", "text": "02-explain-analyze.md"},
+      {"title": "More In Depth Examples", "text": "03-better-examples.md"},
+      {"title": "Other Tools you can use With Analyze", "text": "04-other-tools.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
@@ -23,7 +24,6 @@
     "showdashboard": true,
     "uilayout": "terminal",
     "dashboards": [
-      {"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}
     ]
   },
   "backend": {
