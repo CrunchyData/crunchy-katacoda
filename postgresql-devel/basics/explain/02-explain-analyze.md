@@ -1,16 +1,16 @@
 # Seeing the Results of the Executed Plan
 
-While it is helpful to see the plans of the query planner, it is even more insightful to see the results of the query execution. To get that information we need to add the word analyze after EXPLAIN. 
+While it is helpful to see the plans of the query planner, it is even more insightful to see the timing of the query execution. To get that information we need to add the word ANALYZE after EXPLAIN. 
 
-> CAUTION: Once you add analyze, your query will actually be executed, which is low risk for selects, but will actually alter your data for write, update, and deletes. Later in this step we will wrap data altering commands in a transaction to protect the integrity of our data while still getting actual performance numbers. 
+> CAUTION: Once you add ANALYZE, your query will actually be executed, which is low risk for selects, but will actually alter your data for write operations, like updates and deletes. Later in this step we will wrap data altering commands in a transaction to avoid changing our data while still getting actual performance numbers. 
 
 ## Using EXPLAIN ANALYZE
 
-Let's go ahead and do the same query as the previous page only this time ue EXPLAIN ANALYZE
+Let's go ahead and do the same query as the previous page only this time let's use EXPLAIN ANALYZE
 
-```sql92
-EXPLAIN ANALYZE select event_id from se_details;
-```  
+```
+EXPLAIN ANALYZE select * from se_details;
+```{{execute}}  
 
 You should get a result that looks like this:
 
@@ -18,13 +18,13 @@ You should get a result that looks like this:
 
 You should know everything up to Actual time from the last scenario. This time the new numbers are much more straightforward. Let's use the red numbers to go through the new items. 
 
-(1) The first number in actual time is the startup time in milliseconds before the node can execute. So we can see there is a short time before the node executes
+(1) The first number in actual time is the startup time in milliseconds before the node can execute. We can see that there is a short time before the node executes
 
-(2) The second number is the actual time in milliseconds the node took to execute per loop. In this case we only have one loop so the total time it took to sequential scan the table
+(2) The second number is the actual time in milliseconds the node took to execute per loop. In this case we only have one loop so this is the total time it took to sequential scan the table.
 
-(3) This is the total number of rows actually returned. In our case the planner estimate exactly matches the actual number. We will see later that these numbers rarely match up.
+(3) This is the average number of rows actually returned by the node, per loop. In our case we have only one loop and the planner estimate exactly matches the actual number. We will see later that these numbers rarely match up as the estimate is based on statistics that PostgreSQL has periodically updated about the table.
 
-(4) Again this is the actual number of loops that were executed. 
+(4) This is the actual number of loops that were executed. 
 
 (5) This is the time the query planner took, in milliseconds, to formulate how it was going to do the query
 
@@ -33,7 +33,8 @@ You should know everything up to Actual time from the last scenario. This time t
 
 ## Protecting inserts, updates, and deletes
 
-As mentioned above, when you do an EXPLAIN ANALYZE it actually carries out the action, which, for inserts, updates, and deletes will actually alter your data. To prevent this from happening you need to wrap the entire EXPLAIN ANALYZE in a transaction. The entire flow is show in the console output captured below:
+As mentioned above, when you do an EXPLAIN ANALYZE it actually carries out the action, which, for inserts, updates, and deletes will actually alter your data. To prevent this from happening you can
+ to wrap the entire EXPLAIN ANALYZE in a transaction. The entire flow is show in the console output captured below:
 
 ```sql
 workshop=> select count(*) from se_details;
@@ -66,4 +67,4 @@ workshop=> select count(*) from se_details;
 
 ## Wrap Up
 
-With that we have a good enough foundation to move on and start takling real queries. If you want to play some more while you are here, you can again do a `select *` in your query and see what it does to the timing. Now let's move on to doing some more interesting queries.
+With that we now have a good enough foundation to move on and start working with real queries. If you want to play some more while you are here, you can again do a `select event_id...` in your query and see what it does to the timing. Now let's move on to doing some more interesting queries.

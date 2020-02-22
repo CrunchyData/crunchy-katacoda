@@ -1,15 +1,19 @@
 # Other tools to help you with Explain output
 https://explain.depesz.com/
 
-If you still feel like reading EXPLAIN output is not the easiest, never fear, there are other tools available to help you visualize and work with the output. In this session we will cover one of the most popular web-based tools that is often referenced by many in the PostgreSQL community. 
+If you still feel like reading EXPLAIN output is not the easiest, never fear, there are other tools available to help you visualize and work with the output. In this section we will cover one of the most popular web-based tools that is often referenced by many in the PostgreSQL community. 
 
 ## Web tool for analyzing EXPLAIN results
 
-The site we are going to use today is [https://explain.depesz.com/](https://explain.depesz.com/). It is run by two community members for free to the PostgreSQL community. By default, it's visualization on the site will be shared publicly but you can turn that off and you can also obfuscate variable names. One of the nice features of the map is that it will provide a permalink to the output that you can share with others it they are helping you or are you on team.
+The site we are going to use today is [https://explain.depesz.com/](https://explain.depesz.com/). It is run by two community members for free to the PostgreSQL community. By default, it's visualization on the site will be shared publicly but you can turn that off and you can also obfuscate variable names. One of the nice features of the map is that it will provide a permalink to the output that you can share with others to view your EXPLAIN results.
  
- Go ahead and click the link and it will open in a new tab.
+ Go ahead and click the link above and it will open in a new tab.
+
+### Filling in the form
  
- If you want go ahead and put a name in the *title* . Then you are going to copy the explain output from our last exercise into the box where it says to paste your query. Here is the output if you no longer have the results in your console window:
+ If you want, go ahead and put a name in the *title* . 
+  
+ Now you are going to copy the explain output from our last exercise into the box where it says to paste your query. Here is the output if you no longer have the results in your console window:
  
  ```                                                              QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -36,23 +40,23 @@ Above the output you will see a grey menu bar which contains a 'help' option. We
 
 Let's still do a quick run through of the main part of the output.
 
-* The exclusive column is how long that node took on it's own. Note that for our loop the output actually does the multipliocation for us. Also note that this column gives us new information for the parent node. It actually subtracts the child processing steps and gives us the time for the node alone.
+* The exclusive column is how long that node took on it's own. Note that for our loop, the output actually does the multiplication of row x execution time for us. Also note that this column gives us new information for the parent node. It actually subtracts the child processing steps and gives us the time for the node alone.
 
-* The inclusive column is the same as the last number in the "actual time" output for each node, except for loops it does the multiplication
+* The inclusive column is the same as the last number we get in our textual output for "actual time" output of each node. For loops the output shows the multiplication
 
 * Rows X is the ratio of "actual rows returned/estimated rows to be returned". Best case is what we see in our results, 1. Either much larger or smaller numbers indicate the planner is getting bad information and you may want to run ANALYZE; on your table or database
 
-* The next two columns, rows and loops, are the same as what we see in the output
+* The next two columns, rows and loops, are the same as what we see in the textual output
 
-* Node is the node in the tree, like we discussed before. Note that if you mouse over a parent node, all the child nodes will get a star in front of them and if you click on the parent node it will collapse all it's children nodes. If you click on the link for the node name, such as "Nested Loop", it will bring you to a web page explaining the concept with a small example.
+* Node is the node in the tree, like we discussed before. Note that if you mouse over a parent node, all the child nodes will get a star in front of them and if you click on the parent node it will collapse all its child nodes. If you click on the link for the node name, such as "Nested Loop", it will bring you to a web page explaining the concept with a small example.
 
-The red cells indicate the longest inclusive time, which makes sense in this case since the parent node should be the longest running. The orange cells indicate that our index scan is our longest running step. If we wanted to try and improve our query performance this might be a good place to start. For example, we see the index scan is only using the primary key of the se_details column and not the index we created on the state column. If this was a very important query to us and for some strange reason ~ 1 ms was not fast enough for us, we might make a compound index on the primary key and the state column.
+The red cells indicate the longest inclusive time, which makes sense in this case since the parent node should be the longest running. The orange cells indicate that our index scan is our longest running step. If we wanted to try and improve our query performance this might be a good place to start. For example, we see the index scan is only using the primary key of the se_details column and not the index we created on the state column. If this was a very important query to us, and for some strange reason ~ 1 ms was not fast enough for us, we might make a compound index on the primary key and the state column.
 
 Finally, you can see right above the output there is a blue HTML tab with a source and stats table in grey. If you click on the stats tab in grey you get a nice view of the stats broken down by node and by table. It's a quick and easy way to see where your query is spending most of it's time.
 
 ### A query that really benefits from the graphical interface
 
-So while our output was not so complicated to require the graphical interface, let's make our query do a bunch more work and see what happens. How about finding the average age and counts of fatalities in U.S. states I have lived in for more than 2 weeks, sorted by age:
+So while our output was not so complicated to require the graphical interface, let's make our query do a bunch more work and see what happens. How about finding the average age and counts of fatalities in U.S. states I have lived in for more than 2 weeks, sorted by average age:
 
 ```sql
  EXPLAIN ANALYZE select avg(f.fatality_age), count(d.state), least(d.state) as state
@@ -63,7 +67,7 @@ Now take that output and put it in the web site:
 
 ![More Complicatd Query](basics/explain/assets/04-web-output-more.png)
 
-Having the exclusive column allows us to see that, for this query, the join is still the most expensive part of the operation. But it also allows us to quickly glean some of the more important information without having to try and visually parse through all the detailed statistics.
+Having the exclusive column allows us to see that, for this query, the join is still the most expensive part of the operation. But it also allows us to quickly glean some of the more important information without having to try and visually parse through all the detailed textual statistics.
 
 ## Wrap Up
 
