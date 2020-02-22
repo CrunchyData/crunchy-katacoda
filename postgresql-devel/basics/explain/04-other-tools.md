@@ -15,7 +15,8 @@ The site we are going to use today is [https://explain.depesz.com/](https://expl
   
  Now you are going to copy the explain output from our last exercise into the box where it says to paste your query. Here is the output if you no longer have the results in your console window:
  
- ```                                                              QUERY PLAN
+ ``` 
+                                                             QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------------------------
  Nested Loop  (cost=0.29..3956.64 rows=25 width=30) (actual time=0.258..1.237 rows=14 loops=1)
    ->  Seq Scan on se_fatalities f  (cost=0.00..16.02 rows=802 width=21) (actual time=0.004..0.066 rows=802 loops=1)
