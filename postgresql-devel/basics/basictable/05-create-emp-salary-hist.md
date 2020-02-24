@@ -19,10 +19,10 @@ employee (employee_id));```{{execute}}
 
 ```\d employee_salary_hist```{{execute}}
 
-- employee_id is of data type INTEGER and not null constraint.
-- employee_salary_start_date is of data type DATE and not null constraint.
-- employee_salary_amount is of data type NUMERIC of length 13 and capture 2 digits after the decimal point.
-- employee_salary_end_date is of data type DATE and null constraint.
+- `employee_id` is of data type INTEGER and not null constraint.
+- `employee_salary_start_date` is of data type DATE and not null constraint.
+- `employee_salary_amount` is of data type NUMERIC of length 13 and capture 2 digits after the decimal point.
+- `employee_salary_end_date` is of data type DATE and null constraint.
 
 Constraints:
 
