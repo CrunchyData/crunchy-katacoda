@@ -1,5 +1,5 @@
 
-## Insert data into Salary History table
+
 
 The salary history table has a foreign key reference to Employee table. This implies that we cannot insert a row into employee_salary_hist without referencing a valid employee_id in the Employee table, and salary amount must be greater than 1000.
 
