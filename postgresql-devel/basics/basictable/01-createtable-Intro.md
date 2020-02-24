@@ -1,6 +1,5 @@
 
 
-## Introduction to creating tables
 
 Before we start to create tables based on our business scenario, let's review some brief points:
 
