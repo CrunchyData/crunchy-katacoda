@@ -1,4 +1,4 @@
-## Create the Employee Salary History table
+
 
 The Employee Salary History table will demonstrate the foreign key and check constraint functionality.
 
