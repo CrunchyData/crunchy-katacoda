@@ -1,5 +1,4 @@
 
-## Create the Employee Department Association table
 
 The employee department association table will demonstrate the foreign key functionality.
 
