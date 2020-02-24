@@ -1,5 +1,5 @@
 
-## Insert data into Department table
+
 
 Let's take a look at how indentity columns work. The `department_number` column in the Department table has the GENERATED AS IDENTITY constraint, which means PostgreSQL generates a value for the identity column.
 
