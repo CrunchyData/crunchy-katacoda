@@ -1,4 +1,4 @@
-# Insert data into Employee Department Association table
+
 
 According to the business scenario, John works in Sales, Mary works in Research, and Arnold and Jeffery work in Accounting.
 
