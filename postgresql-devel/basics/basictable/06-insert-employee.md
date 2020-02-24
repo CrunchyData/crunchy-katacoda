@@ -51,7 +51,8 @@ employee_last_name, employee_hire_date)
 VALUES ( '111111117', 'Test', 'CFO', current_date);
 ```{{execute}}
 
-You'll see that the row is not inserted, and the following  error message displays: 'ERROR: duplicate key value violates unique constraint "employee_id_pk"'.
+You'll see that the row is not inserted, and the following  error message displays:
+`'ERROR: duplicate key value violates unique constraint "employee_id_pk"'.`
 
 Let's try the same insert again. This time, it is successful: even though the last insert failed, the sequence was still incremented automatically, so this id is stored as 7.
 
