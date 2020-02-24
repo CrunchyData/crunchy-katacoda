@@ -1,5 +1,4 @@
 
-## Create the Department table
 
 Let's go ahead and create the Department table:
 
