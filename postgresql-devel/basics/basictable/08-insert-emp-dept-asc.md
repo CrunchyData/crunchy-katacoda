@@ -53,6 +53,6 @@ INSERT INTO employee_department_asc( employee_id, department_number, employee_de
 VALUES (10,7,current_date);
 ```{{execute}}
 
-You'll see the error message '"ERROR: insert or update on table "employee_department_asc" violates foreign key constraint "employee_id_fk" DETAIL: Key (employee_id)=(10) is not present in table "employee".'
+You'll see the error message `"ERROR: insert or update on table "employee_department_asc" violates foreign key constraint "employee_id_fk" DETAIL: Key (employee_id)=(10) is not present in table "employee".`
 
 Let's move forward.
