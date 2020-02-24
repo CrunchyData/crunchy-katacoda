@@ -1,4 +1,4 @@
-## Create the Employee table
+
 
 Following the data model, we'll create an Employee table. Remember, to create a new table in PostgreSQL, you use the `CREATE TABLE` statement, and define the table name, field name(s), field data type(s), and constraints.
 
