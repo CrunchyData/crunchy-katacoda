@@ -1,0 +1,10 @@
+{
+  "title": "Crunchy Data Basic PostgreSQL for Developers",
+  "courses": [
+    {
+      "external_link": "https://learn.crunchydata.com/kube/courses/basics/introop",
+      "course_id": "introop",
+      "title": "Introduction to the Crunchy Postgres Operator"
+    }
+  ]
+}

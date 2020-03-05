@@ -1,0 +1,31 @@
+{
+  "title": "Introduction to Using the Command Line with PostgreSQL",
+  "description": "A quick intro to working with Postgres using the command line interface",
+  "private": true,
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "The psql Command", 
+        "text": "01-intro-psql.md"
+      }
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "crunchydata-k8s-centos"
+  }
+}
