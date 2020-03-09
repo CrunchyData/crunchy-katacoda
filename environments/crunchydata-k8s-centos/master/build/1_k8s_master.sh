@@ -7,7 +7,6 @@ sudo yum install -y docker-ce docker-ce-cli containerd.io
 systemctl enable --now docker
 systemctl start docker
 
-
 echo '127.0.0.1 master' >> /etc/hosts
 hostname master && echo master > /etc/hostname
 hostnamectl set-hostname master
@@ -42,4 +41,19 @@ echo Pulling Images;
 sudo kubeadm config images pull; 
 sudo docker pull weaveworks/weave-kube:2.5.1
 sudo docker pull weaveworks/weave-npc:2.5.1
+
+# Operator Work Now - we should go all the way through and actually put the operator into the cluster
+# This means we will need to spin up the cluster install and then shut it down cleanly
+echo Setting up the operator
+sudo yum install -y ansible
+cd /home/cent
+git clone https://github.com/CrunchyData/postgres-operator.git
+cd postgres-operator/ansible
+
+
+# Now we need to update the inventory file
+# TODO what kind of storage do we have
+# TODO we should put our inventory file in 2_scripts.sh
+# Also need to make sure we turn of TLS
+
 

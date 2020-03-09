@@ -1,6 +1,6 @@
 {
-  "title": "Introduction to Using the Command Line with PostgreSQL",
-  "description": "A quick intro to working with Postgres using the command line interface",
+  "title": "Introduction to Using Crunchy PostgreSQL Operator",
+  "description": "A quick intro to working with Crunchy PostgreSQL Operator",
   "private": true,
   "difficulty": "beginner",
   "time": "10 minutes",
