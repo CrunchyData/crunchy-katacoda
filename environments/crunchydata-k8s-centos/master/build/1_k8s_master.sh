@@ -48,8 +48,9 @@ echo Setting up the operator
 sudo yum install -y ansible
 cd /home/cent
 git clone https://github.com/CrunchyData/postgres-operator.git
-git checkout v4.2.2
 cd postgres-operator/ansible
+git checkout v4.2.2
+
 ansible-playbook -i inventory --tags=install main.yml
 
 source ~/.bashrc
