@@ -1,10 +1,11 @@
- #!/bin/bash
+#!/bin/bash
 
 echo "Installing required packages"
 
 echo 'prepping to add rpms'
 
-rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+sudo rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+sudo rpm --import https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
 
 
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -14,14 +15,14 @@ if [ "$?" -ne 0 ]; then
 fi
 
 
-yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 if [ "$?" -ne 0 ]; then
     echo "Unable to install Postgres Repo"
     exit 1
 fi
 
 echo 'installing RPMs'
-yum install -y postgresql11 postgresql11-server postgresql12 postgresql12-server postgresql12-contrib pgbackrest postgresql11-contrib postgis25_11 R unzip nano
+sudo yum install -y postgresql11 postgresql11-server postgresql12 postgresql12-server postgresql12-contrib pgbackrest postgresql11-contrib postgis25_11 R unzip nano
 if [ "$?" -ne 0 ]; then
     echo "Unable to install Postgres"
     exit 1
