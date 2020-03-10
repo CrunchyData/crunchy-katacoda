@@ -48,12 +48,9 @@ echo Setting up the operator
 sudo yum install -y ansible
 cd /home/cent
 git clone https://github.com/CrunchyData/postgres-operator.git
+git checkout v4.2.2
 cd postgres-operator/ansible
+ansible-playbook -i inventory --tags=install main.yml
 
-
-# Now we need to update the inventory file
-# TODO what kind of storage do we have
-# TODO we should put our inventory file in 2_scripts.sh
-# Also need to make sure we turn of TLS
-
+source ~/.bashrc
 
