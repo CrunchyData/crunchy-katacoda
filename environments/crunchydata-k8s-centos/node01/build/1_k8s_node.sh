@@ -58,3 +58,12 @@ sudo docker pull crunchydata/pgo-event:centos7-4.2.2
 sudo docker pull crunchydata/pgo-scheduler:centos7-4.2.2
 sudo docker pull crunchydata/pgo-backrest-repo:centos7-4.2.2
 sudo docker pull crunchydata/pgo-backrest-restore:centos7-4.2.2
+sudo docker pull crunchydata/pgo-backrest:centos7-4.2.2
+sudo docker pull crunchydata/pgo-backrest-repo-sync:centos7-4.2.2
+sudo docker pull crunchydata/pgo-client:centos7-4.2.2
+sudo docker pull crunchydata/pgo-load:centos7-4.2.2
+sudo docker pull crunchydata/pgo-rmdata:centos7-4.2.2
+sudo docker pull crunchydata/pgo-sqlrunner:centos7-4.2.2
+sudo docker pull crunchydata/crunchy-admin:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-postgres-ha:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-postgres-gis-ha:centos7-12.2-4.2.2
