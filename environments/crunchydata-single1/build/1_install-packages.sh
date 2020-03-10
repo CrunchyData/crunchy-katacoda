@@ -2,7 +2,7 @@
 
 echo "Installing required packages"
 
-echo 'prepping to add rpms'
+echo 'adding rpms'
 
 sudo rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
 sudo rpm --import https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
