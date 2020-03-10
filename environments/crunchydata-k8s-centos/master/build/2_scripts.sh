@@ -21,13 +21,31 @@ items:
     kind: ServiceAccount
     metadata:
       name: weave-net
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
       namespace: kube-system
-  - apiVersion: rbac.authorization.k8s.io/v1beta1
+  - apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
       name: weave-net
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
     rules:
@@ -42,7 +60,7 @@ items:
           - list
           - watch
       - apiGroups:
-          - extensions
+          - networking.k8s.io
         resources:
           - networkpolicies
         verbs:
@@ -50,24 +68,25 @@ items:
           - list
           - watch
       - apiGroups:
-          - 'networking.k8s.io'
+          - ''
         resources:
-          - networkpolicies
+          - nodes/status
         verbs:
-          - get
-          - list
-          - watch
-      - apiGroups:
-        - ''
-        resources:
-        - nodes/status
-        verbs:
-        - patch
-        - update
-  - apiVersion: rbac.authorization.k8s.io/v1beta1
+          - patch
+          - update
+  - apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
     metadata:
       name: weave-net
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
     roleRef:
@@ -78,20 +97,29 @@ items:
       - kind: ServiceAccount
         name: weave-net
         namespace: kube-system
-  - apiVersion: rbac.authorization.k8s.io/v1beta1
+  - apiVersion: rbac.authorization.k8s.io/v1
     kind: Role
     metadata:
       name: weave-net
-      namespace: kube-system
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
+      namespace: kube-system
     rules:
       - apiGroups:
           - ''
-        resources:
-          - configmaps
         resourceNames:
           - weave-net
+        resources:
+          - configmaps
         verbs:
           - get
           - update
@@ -101,13 +129,22 @@ items:
           - configmaps
         verbs:
           - create
-  - apiVersion: rbac.authorization.k8s.io/v1beta1
+  - apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
       name: weave-net
-      namespace: kube-system
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
+      namespace: kube-system
     roleRef:
       kind: Role
       name: weave-net
@@ -116,16 +153,27 @@ items:
       - kind: ServiceAccount
         name: weave-net
         namespace: kube-system
-  - apiVersion: extensions/v1beta1
+  - apiVersion: apps/v1
     kind: DaemonSet
     metadata:
       name: weave-net
+      annotations:
+        cloud.weave.works/launcher-info: |-
+          {
+            "original-request": {
+              "url": "/k8s/v1.10/net.yaml?k8s-version=v1.16.0",
+              "date": "Mon Oct 28 2019 18:38:09 GMT+0000 (UTC)"
+            },
+            "email-address": "support@weave.works"
+          }
       labels:
         name: weave-net
       namespace: kube-system
     spec:
-      # Wait 5 seconds to let pod connect before rolling next pod
       minReadySeconds: 5
+      selector:
+        matchLabels:
+          name: weave-net
       template:
         metadata:
           labels:
@@ -141,8 +189,7 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
-              image: 'weaveworks/weave-kube:2.5.1'
-              imagePullPolicy: Always
+              image: 'docker.io/weaveworks/weave-kube:2.6.0'
               readinessProbe:
                 httpGet:
                   host: 127.0.0.1
@@ -168,7 +215,6 @@ items:
                   mountPath: /lib/modules
                 - name: xtables-lock
                   mountPath: /run/xtables.lock
-                  readOnly: false
             - name: weave-npc
               env:
                 - name: HOSTNAME
@@ -176,9 +222,7 @@ items:
                     fieldRef:
                       apiVersion: v1
                       fieldPath: spec.nodeName
-              image: 'weaveworks/weave-npc:2.5.1'
-              imagePullPolicy: Always
-#npc-args
+              image: 'docker.io/weaveworks/weave-npc:2.6.0'
               resources:
                 requests:
                   cpu: 10m
@@ -187,7 +231,6 @@ items:
               volumeMounts:
                 - name: xtables-lock
                   mountPath: /run/xtables.lock
-                  readOnly: false
           hostNetwork: true
           hostPID: true
           restartPolicy: Always
