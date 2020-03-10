@@ -51,7 +51,26 @@ git clone https://github.com/CrunchyData/postgres-operator.git
 cd postgres-operator/ansible
 git checkout v4.2.2
 
-ansible-playbook -i inventory --tags=install main.yml
+echo "Pull recent docker images"
+# not including upgrade,pgbasebackup-restore
+sudo docker pull crunchydata/crunchy-backrest-restore:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-collect:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgrestore:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgadmin4:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-backup:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgbadger:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgbasebackup-restore:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgbouncer:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgdump:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-pgpool:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-grafana:centos7-12.2-4.2.2
+sudo docker pull crunchydata/crunchy-prometheus:centos7-12.2-4.2.2
 
-source ~/.bashrc
+sudo docker pull crunchydata/postgres-operator:centos7-4.2.2
+sudo docker pull crunchydata/pgo-apiserver:centos7-4.2.2
+sudo docker pull crunchydata/pgo-event:centos7-4.2.2
+sudo docker pull crunchydata/pgo-scheduler:centos7-4.2.2
+sudo docker pull crunchydata/pgo-backrest-repo:centos7-4.2.2
+sudo docker pull crunchydata/pgo-backrest-restore:centos7-4.2.2
+
 

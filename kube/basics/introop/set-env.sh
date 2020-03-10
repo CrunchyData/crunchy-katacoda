@@ -1,4 +1,7 @@
 #!/usr/bin/bash
 
+cd /home/cent/postgres-operator/ansible
 
-#nothing for now
+ansible-playbook -i inventory --tags=install main.yml
+
+source ~/.bashrc
