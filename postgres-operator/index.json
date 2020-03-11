@@ -28,6 +28,6 @@
     ]
   },
   "backend": {
-    "imageid": "crunchydata-single1"
+    "imageid": "crunchydata-k8s-centos"
   }
 }
