@@ -40,6 +40,7 @@ As an example of using this feature, if you wanted to get the results of the
 
 ```shell
 pgo test hacluster -o json
+```
 
 ### Checking Connectivity to the PostgreSQL Operator
 
