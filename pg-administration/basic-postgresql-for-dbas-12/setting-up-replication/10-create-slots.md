@@ -14,9 +14,12 @@ If the output of any of the following commands is hard to read, you can use the 
 SELECT * FROM pg_hba_file_rules;
 ```{{execute T1}}
 
-Now, let's create a replication slot for our replica to use. A replication slot is a method in PostgreSQL for the primary server to be aware of where any replicas are within its WAL stream. If a replica disconnects, the primary will retain all WAL files necessary to allow the replica to reconnect and fully resync. Without a replication slot, the primary would normally clean up any WAL files that have had their contents checkpointed. The streaming replica protocal directly uses the primary's WAL files to feed to any replicas, so if they disconnect for a long period of time, they may not be able to resync if the primary has cleaned up its own WAL. With a slot, the primary will not clean up its own WAL stream until all known replicas have confirmed they have received that WAL. This also means it's critically important for disk usage on the primary to monitor your replication status.
+Now, let's create a replication slot for our replica to use. A replication slot is a method in PostgreSQL for the primary server to be aware of where any replicas are within its WAL stream. If a replica disconnects, the primary will retain all WAL files necessary to allow the replica to reconnect and fully resync. Without a replication slot, the primary would normally clean up any WAL files that have had their contents checkpointed. The streaming replica protocal directly uses the primary's WAL files to feed to any replicas, so if they disconnect for a long period of time, they may not be able to resync if the primary has cleaned up its own WAL. With a slot, the primary will not clean up its own WAL stream until all known replicas have confirmed they have received that WAL. This also means it's *critically* important for disk usage on the primary to monitor your replication status.
 
 https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION-SLOTS
+
+An alternative, and recommended method to using replication slots is to archive your WAL files to a backup location that all replicas can access. In addition to providing a means for replicas that disconnect to catch up again, it provides point-in-time recovery (PITR) for your physical backups. We will go over this in the pgBackRest scenario. 
+
 ```
 SELECT * FROM pg_create_physical_replication_slot('training_replica');
 ```{{execute T1}}

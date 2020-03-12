@@ -2,11 +2,11 @@ Typically you would use the relevant service setup (systemd, init.d, etc) to sta
 
 Next we can use the `pg_ctl` command to start up our replica. Further details on this binary's options can be found here - https://www.postgresql.org/docs/current/app-pg-ctl.html
 ```
-/usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica start
+/usr/pgsql-12/bin/pg_ctl -D /var/lib/pgsql/12/replica start
 ```{{execute T1}}
-To see if things started up ok, check the replica's logs located in `/var/lib/pgsql/11/replica/log`. The line containing what we're looking for is contained in the grep statement below. 
+To see if things started up ok, check the replica's logs located in `/var/lib/pgsql/12/replica/log`. The line containing what we're looking for is contained in the grep statement below. 
 ```
-grep "started streaming WAL from primary" /var/lib/pgsql/11/replica/log/*
+grep "started streaming WAL from primary" /var/lib/pgsql/12/replica/log/*
 ```{{execute T1}}
 
 If there are no errors in the log and the above line shows up successfully, then the replica has connected to the primary and streaming replication is working!
