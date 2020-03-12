@@ -1,3 +1,31 @@
+cat <<EOFPARENT > /opt/create-pv.sh
+cat <<EOF > /tmp/pv.yml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: volname
+spec:
+  capacity:
+    storage: volsize
+  accessModes:
+    - ReadWriteOnce
+    - ReadOnlyMany
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: volpath
+EOF
+
+for i in `seq 20`; do
+   cat /tmp/pv.yml | sed "s/volname/pv$i/g" | sed "s/volsize/50Gi/g" | sed "s#volpath#/opt/vol/pv$i#" | kubectl apply -f -
+   mkdir -p "/opt/vol/pv$i"
+   chmod 777 "/opt/vol/pv$i"
+   ssh node01 'mkdir -p "/opt/vol/pv$i; chmod 777 "/opt/vol/pv$i"'
+done
+EOFPARENT
+
+chmod +x /opt/create-pv.sh
+
 cat <<EOF > /opt/launch-kubeadm.sh
 #!/bin/sh
 rm $HOME/.kube/config
@@ -9,6 +37,7 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f /opt/weave-kube
+/opt/create-pv.sh
 EOF
 
 chmod +x /opt/launch-kubeadm.sh
