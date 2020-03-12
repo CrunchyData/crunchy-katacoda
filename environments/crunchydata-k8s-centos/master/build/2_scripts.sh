@@ -16,11 +16,11 @@ spec:
     path: volpath
 EOF
 
-for i in `seq 20`; do
-   cat /tmp/pv.yml | sed "s/volname/pv$i/g" | sed "s/volsize/50Gi/g" | sed "s#volpath#/opt/vol/pv$i#" | kubectl apply -f -
-   mkdir -p "/opt/vol/pv$i"
-   chmod 777 "/opt/vol/pv$i"
-   ssh node01 'mkdir -p "/opt/vol/pv$i; chmod 777 "/opt/vol/pv$i"'
+for i in \`seq 20\`; do
+   cat /tmp/pv.yml | sed "s/volname/pv\$i/g" | sed "s/volsize/50Gi/g" | sed "s#volpath#/opt/vol/pv\$i#" | kubectl apply -f -
+   mkdir -p "/opt/vol/pv\$i"
+   chmod 777 "/opt/vol/pv\$i"
+   ssh node01 'mkdir -p "/opt/vol/pv\$i; chmod 777 "/opt/vol/pv\$i"'
 done
 EOFPARENT
 
