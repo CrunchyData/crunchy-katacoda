@@ -7,7 +7,6 @@ if [ "$?" -ne 0 ]; then
     echo "Unable to install Postgres Repo"
     exit 1
 fi
-sudo yum
 
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
