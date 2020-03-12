@@ -1,9 +1,16 @@
-set -e 
+set -e
+sudo rpm --import https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
+sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+if [ "$?" -ne 0 ]; then
+    echo "Unable to install Postgres Repo"
+    exit 1
+fi
 sudo yum remove -y docker docker-common
 
 sudo yum install -y yum-utils
+
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io unzip nano postgresql12
 systemctl enable --now docker
 systemctl start docker
 
