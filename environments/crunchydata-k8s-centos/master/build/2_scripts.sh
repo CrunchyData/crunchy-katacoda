@@ -465,6 +465,7 @@ storage1_name='hostpathstorage'
 storage1_access_mode='ReadWriteMany'
 storage1_size='1G'
 storage1_type='create'
+storage1_fs_group=26
 
 # ==================
 # Container Resource Configurations
