@@ -7,7 +7,7 @@ chmod 700 /home/training/mydb
 ```{{execute T1}}
 The following command will initialize a brand new instance in this new directory
 ```
-/usr/pgsql-11/bin/initdb --data-checksums -D /home/training/mydb
+/usr/pgsql-12/bin/initdb --data-checksums -D /home/training/mydb
 ```{{execute T1}}
 Modify the new `postgresql.conf` file to have the new instance use a different port since there is already a database running on the default. The location of the default socket file must also be changed since CentOS tries to put it in a location our training user cannot access. The following `sed` commands can do this for you
 ```
@@ -20,7 +20,7 @@ sed -i "/unix_socket_directories/c\unix_socket_directories = '/home/training/myd
 
 Since this database isn't managed via a systemd service, use the `pg_ctl` command directly to start it
 ```
-/usr/pgsql-11/bin/pg_ctl -D /home/training/mydb start
+/usr/pgsql-12/bin/pg_ctl -D /home/training/mydb start
 ```{{execute T1}}
 
 A postgresql database created with initdb by default allows `trust` connections in its `pg_hba.conf` file for all local system users. Also, whichever system user initializes the instance will automatically have a superuser role created with that name, in this case `training`. This can be seen by running the `\du` command via psql in the new instance.

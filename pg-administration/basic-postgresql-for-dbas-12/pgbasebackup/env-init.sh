@@ -23,12 +23,12 @@ host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 EOF
 
-/usr/bin/cp /var/lib/pgsql/11/data/pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf.orig
-chown postgres:postgres /var/lib/pgsql/11/data/pg_hba.conf.orig
-/usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
+/usr/bin/cp /var/lib/pgsql/12/data/pg_hba.conf /var/lib/pgsql/12/data/pg_hba.conf.orig
+chown postgres:postgres /var/lib/pgsql/12/data/pg_hba.conf.orig
+/usr/bin/cp -f pg_hba.conf /var/lib/pgsql/12/data/pg_hba.conf  
 
-systemctl enable postgresql-11
-systemctl start postgresql-11
+systemctl enable postgresql-12
+systemctl start postgresql-12
 
 sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN SUPERUSER"
 
@@ -47,4 +47,4 @@ sudo -u training psql -c "CREATE ROLE replica_user WITH LOGIN REPLICATION PASSWO
 sudo -u training psql -c "ALTER SYSTEM SET archive_mode = 'on'"
 sudo -u training psql -c "ALTER SYSTEM SET archive_command = '/bin/true'"
 
-systemctl restart postgresql-11
+systemctl restart postgresql-12

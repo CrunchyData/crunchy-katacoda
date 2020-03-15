@@ -6,7 +6,7 @@ repo1-path=/var/lib/pgbackrest
 log-level-console=info
 
 [main]
-pg1-path=/var/lib/pgsql/11/data
+pg1-path=/var/lib/pgsql/12/data
 retention-full=2
 EOF"
 ```{{execute T1}}
@@ -23,4 +23,4 @@ It's then good to run the check command to ensure pgBackRest is configured and w
 ```
 sudo -Hiu postgres pgbackrest --stanza=main check
 ```{{execute T1}}
-If either of these commands fail, you can check the pgBackRest logs located in `/var/log/pgbackrest` by default. If the issue is with the archive command, additional information as to why it's failing can also be found in the postgresql logs themselves (`/var/lib/pgsql/11/data/log`).
+If either of these commands fail, you can check the pgBackRest logs located in `/var/log/pgbackrest` by default. If the issue is with the archive command, additional information as to why it's failing can also be found in the postgresql logs themselves (`/var/lib/pgsql/12/data/log`).

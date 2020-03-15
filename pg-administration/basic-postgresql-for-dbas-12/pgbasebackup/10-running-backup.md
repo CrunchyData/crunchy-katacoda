@@ -4,10 +4,10 @@ The `pg_basebackup` command can provide a complete, filesystem-based snapshot of
 
 https://www.postgresql.org/docs/current/app-pgbasebackup.html
 
-CentOS automatically makes a location for backups in `/var/lib/pgsql/11/backups` where the postgres user has access, so that will be used here. It's also good to have a non-superuser role that can be used to connect to the database and run these backups. This role must be given the REPLICATION property in order to be able to run `pg_basebackup`. You can make a dedicated role just for backups, but in this case we're just going to use the `replica_user` role we created back in a previous scenario. Refer to the `Replication` scenario of this training if you want to see how to create these roles and set the pg_hba.conf appropriately.  If asked, the password is `password`.
+CentOS automatically makes a location for backups in `/var/lib/pgsql/12/backups` where the postgres user has access, so that will be used here. It's also good to have a non-superuser role that can be used to connect to the database and run these backups. This role must be given the REPLICATION property in order to be able to run `pg_basebackup`. You can make a dedicated role just for backups, but in this case we're just going to use the `replica_user` role we created back in a previous scenario. Refer to the `Replication` scenario of this training if you want to see how to create these roles and set the pg_hba.conf appropriately. If asked, the password is `password`.
 Run the `pg_basebackup` command to create a compressed backup of our cluster
 ```
-sudo -Hiu postgres pg_basebackup -h 127.0.0.1 -U replica_user -D /var/lib/pgsql/11/backups -Ft -z -Xs -P -v
+sudo -Hiu postgres pg_basebackup -h 127.0.0.1 -U replica_user -D /var/lib/pgsql/12/backups -Ft -z -Xs -P -v
 ```{{execute T1}}
 The `-h` option here isn't really required but it's used in the example to show that you can do your backups across a network connection as well as locally. 
 

@@ -13,7 +13,7 @@ Note the target location of the WAL extraction is the `pg_wal` folder inside the
 ```
 sudo -Hiu postgres tar xvzf /var/lib/pgsql/11/backups/pg_wal.tar.gz -C /var/lib/pgsql/11/mydb/pg_wal
 ```{{execute T1}}
-We can immediately start this database up if desired then as well. Just make sure to change the port number since we already have a cluster running on the default port. Another important thing to do if starting up a filesystem backup if it's in addition to your existing system is to disable WAL archiving so it doesn't corrupt any existing WAL file repositories.
+We can immediately start this database up if desired then as well. Just make sure to change the port number since we already have a cluster running on the default port. Another ***very important*** thing to do if starting up a filesystem backup, if not overwriting your existing database, is to disable WAL archiving so it doesn't corrupt any existing WAL file repositories (set `archive_mode` to `off` or `archive_command` to `/bin/true` before startup).
 ```
 sudo sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/mydb/postgresql.conf
 ```{{execute T1}}
