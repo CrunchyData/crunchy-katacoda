@@ -16,8 +16,9 @@ sudo -Hiu postgres pgbackrest --stanza=new-primary backup
 
 Now that new backup can be restored to the location of the old primary using the `--delta` option which will cause it to only have to copy over the files which have changed. For a very large database it still may take a bit of time for all the checksum comparisons of files to complete, but if this is done soon after the failover, it will take much, much less time than a full copy of all data files. Without the `--delta` option, the target of a pgBackRest restore must be an empty folder. 
 ```
-sudo -Hiu postgres pgbackrest restore --stanza=new-primary --db-path=/var/lib/pgsql/12/data --delta
+sudo -Hiu postgres pgbackrest restore --stanza=new-primary --db-path=/var/lib/pgsql/12/data --delta --type=standby
 ```{{execute T1}}
+
 Doing this restore with pgbackrest will add recovery options to the `postgreql.auto.conf` file. By default this would only contain the `restore_command` that tells postgres how to use pgbackrest to replay the WAL files. But if you look in the /etc/pgbackrest.conf file that was prepared for this environment, some additional restore options were set for the stanzas. 
 ```
 cat /etc/pgbackrest.conf
@@ -28,11 +29,7 @@ sudo bash -c "cat /var/lib/pgsql/12/data/postgresql.auto.conf"
 ```{{execute T1}}
 Having this prepared ahead of time can greatly decrease the downtime encoutered during replica rebuilds.
 
-We also have to place a `standby.signal` file in the data directory to tell PostgreSQL that this will be a replica. The existance of this file is what tells PostgreSQL to go into standby mode and to attempt either connecting back to a primary or begin WAL replay. The file has no contents, so a simple touch is all that is required. More information on this can be found in the documentation - https://www.postgresql.org/docs/current/runtime-config-wal.html#RUNTIME-CONFIG-WAL-ARCHIVE-RECOVERY
-
-```
-sudo -Hiu postgres touch /var/lib/pgsql/12/data/standby.signal
-```{{execute T1}}
+The `--type=standby` option is also important to tell pgBackrest to create a `standby.signal` file for us. Without that, when we start up after the restore, the database would become a standalone system instead of a replica.
 
 The rebuilt replica can now be started and should connect as a streaming replica to the new primary. Again, since we're running this pair of systems on the same server, the port number needs to be updated on the new replica since it just copied the postgresql.conf from the current primary
 ```
