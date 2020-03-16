@@ -29,9 +29,10 @@ sudo bash -c "cat /var/lib/pgsql/12/data/postgresql.auto.conf"
 Having this prepared ahead of time can greatly decrease the downtime encoutered during replica rebuilds.
 
 We also have to place a `standby.signal` file in the data directory to tell PostgreSQL that this will be a replica. The existance of this file is what tells PostgreSQL to go into standby mode and to attempt either connecting back to a primary or begin WAL replay. The file has no contents, so a simple touch is all that is required. More information on this can be found in the documentation - https://www.postgresql.org/docs/current/runtime-config-wal.html#RUNTIME-CONFIG-WAL-ARCHIVE-RECOVERY
-```{{execute T1}}
-sudo -Hiu postgres touch /var/lib/pgsql/12/data/standby.signal
+
 ```
+sudo -Hiu postgres touch /var/lib/pgsql/12/data/standby.signal
+```{{execute T1}}
 
 The rebuilt replica can now be started and should connect as a streaming replica to the new primary. Again, since we're running this pair of systems on the same server, the port number needs to be updated on the new replica since it just copied the postgresql.conf from the current primary
 ```
