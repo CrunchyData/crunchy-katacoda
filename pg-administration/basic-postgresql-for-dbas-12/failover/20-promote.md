@@ -10,7 +10,7 @@ If you're doing a planned failover, this should be fairly quick and your replica
 2019-07-23 23:20:40.205 UTC [1167] LOG:  archive recovery complete
 2019-07-23 23:20:40.246 UTC [1165] LOG:  database system is ready to accept connections
 ```
-Whenever a PostgreSQL database is promoted from a replica to a primary, an internal number called the `timeline` is incremented. You can also see this number increment reflected in the filenames of the WAL files. Also, the `standby.signal file is renamed to `standby.done`.
+Whenever a PostgreSQL database is promoted from a replica to a primary, an internal number called the `timeline` is incremented. You can also see this number increment reflected in the filenames of the WAL files. Also, the `standby.signal` file is removed for you.
 
 Also, replication slots are currently not preserved during a failover, so that will have to be created again on the new primary if desired.
 ```

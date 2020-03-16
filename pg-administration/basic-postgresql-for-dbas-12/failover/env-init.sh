@@ -76,7 +76,6 @@ pg1-port=5432
 [new-primary]
 pg1-path=/var/lib/pgsql/12/replica
 pg1-port=5444
-recovery-option=standby_mode=on
 recovery-option=primary_conninfo=host=127.0.0.1 port=5444 user=replica_user password=password
 recovery-option=primary_slot_name=training_replica
 
