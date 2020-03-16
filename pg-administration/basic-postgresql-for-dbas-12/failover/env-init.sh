@@ -23,12 +23,12 @@ host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 EOF
 
-/usr/bin/cp /var/lib/pgsql/11/data/pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf.orig
-chown postgres:postgres /var/lib/pgsql/11/data/pg_hba.conf.orig
-/usr/bin/cp -f pg_hba.conf /var/lib/pgsql/11/data/pg_hba.conf  
+/usr/bin/cp /var/lib/pgsql/12/data/pg_hba.conf /var/lib/pgsql/12/data/pg_hba.conf.orig
+chown postgres:postgres /var/lib/pgsql/12/data/pg_hba.conf.orig
+/usr/bin/cp -f pg_hba.conf /var/lib/pgsql/12/data/pg_hba.conf  
 
-systemctl enable postgresql-11
-systemctl start postgresql-11
+systemctl enable postgresql-12
+systemctl start postgresql-12
 
 sudo -u postgres psql -U postgres -c "CREATE ROLE training WITH LOGIN SUPERUSER"
 
@@ -49,13 +49,13 @@ sudo -u training psql -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive
 
 sudo -u training psql -c "SELECT * FROM pg_create_physical_replication_slot('training_replica')"
 
-systemctl restart postgresql-11
+systemctl restart postgresql-12
 
-sudo -u postgres pg_basebackup -h 127.0.0.1 -U replica_user -D /var/lib/pgsql/11/replica -R -Xs -P -S training_replica -v
+sudo -u postgres pg_basebackup -h 127.0.0.1 -U replica_user -D /var/lib/pgsql/12/replica -R -Xs -P -S training_replica -v
 
-sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/11/replica/postgresql.conf
+sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/12/replica/postgresql.conf
 
-sudo -u postgres /usr/pgsql-11/bin/pg_ctl -D /var/lib/pgsql/11/replica start
+sudo -u postgres /usr/pgsql-12/bin/pg_ctl -D /var/lib/pgsql/12/replica start
 
 sudo -u training psql -p 5444 -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=new-primary %p'"
 
@@ -70,11 +70,11 @@ log-level-console=info
 retention-full=2
 
 [main]
-pg1-path=/var/lib/pgsql/11/data
+pg1-path=/var/lib/pgsql/12/data
 pg1-port=5432
 
 [new-primary]
-pg1-path=/var/lib/pgsql/11/replica
+pg1-path=/var/lib/pgsql/12/replica
 pg1-port=5444
 recovery-option=standby_mode=on
 recovery-option=primary_conninfo=host=127.0.0.1 port=5444 user=replica_user password=password

@@ -8,11 +8,11 @@ This will be a planned failover, but the process for an unplanned failover will 
 
 As a first step, let's shut down the primary
 ```
-sudo systemctl stop postgresql-11
+sudo systemctl stop postgresql-12
 ```{{execute T1}}
 After a few moments, checking the replica's logs should show that it is unable to connect to its primary anymore. If you're doing a planned failover, it is highly recommended to wait until you start seeing these messages on the replica. This ensures it has fully caught up to the last transaction that was committed to the primary.
 ```
-sudo bash -c "tail /var/lib/pgsql/11/replica/log/*"
+sudo bash -c "tail /var/lib/pgsql/12/replica/log/*"
 ```{{execute T1}}
 The message to be looking for should be similar to
 ```
