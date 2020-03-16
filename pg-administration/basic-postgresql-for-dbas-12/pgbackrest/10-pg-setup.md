@@ -14,7 +14,7 @@ psql -c "ALTER SYSTEM SET archive_command = 'pgbackrest archive-push --stanza=ma
 ```{{execute T1}}
 Archive mode isn't typically turned on by default and changing this setting requires restarting the database to enable it
 ```
-sudo systemctl restart postgresql-11
+sudo systemctl restart postgresql-12
 ```{{execute T1}}
 You may see errors in the postgresql logs about the archive_command failing. This is normal and should resolve itself once the pgBackRest repository is set up. Do note that until the errors subside, the database will retain all WAL files generated in the `pg_wal` folder until it succeeds. In the case where the pgBackRest repo may not be available for an extended period of time, the easiest thing to do is to set `archive_command = '/bin/true'` until then. The `archive_command` itself only requires a reload of the database to change, so that allows you to at least enable `archive_mode` until it's ready.
 
