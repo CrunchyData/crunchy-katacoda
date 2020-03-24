@@ -1,6 +1,6 @@
 # Create table in PostgreSQL
 
-Goal of this tutorial is to introduce you to basic concepts of the PostgreSQL `CREATE TABLE` statement using a simple business scenario. In this tutorial you will learn to :
+The goal of this tutorial is to introduce you to basic concepts of the PostgreSQL `CREATE TABLE` statement using a simple business scenario. In this tutorial, you will learn to :
 
 - Create simple tables with basic data types.
 - Create basic constraints: primary key, foreign key and check constraint.
@@ -13,7 +13,7 @@ John works in Sales, Mary works in Research, and Arnold and Jeffery work in Acco
 
 The current payroll system captures salary history of all employees, and all salaries are greater than 1000 dollars.
 
-Below is the data model picture that depicts the business scenario. Typically, we use nouns to identify tables, and verbs for relationships, especially when modeling a business scenario like above.
+Below is the data model that depicts the business scenario. Typically, we use nouns to identify tables, and verbs for relationships, especially when modeling a business scenario like above.
 
 
 ![Data_model](assets/Basicteabletutorial.png)
@@ -25,4 +25,4 @@ In this tutorial, you'll use psql to interact with a PostgreSQL database.  You'l
 1. Password: password (same password for the postgres user as well)
 1. A database named: workshop
 
- Let's get started
+ Let's get started.
