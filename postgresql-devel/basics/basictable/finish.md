@@ -1,8 +1,8 @@
 # Final Notes
 
-We hope you feel more comfortable beginning to create tables in a PostgreSQL database. We have only covered the basics, so please feel free to refer to the official [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-createtable.html), which has lot more examples and explanation. 
+We hope you feel more comfortable beginning to create tables in a PostgreSQL database. We have only covered the basics, so please feel free to refer to the official [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-createtable.html), which has a lot more examples and explanation. 
 
-To summarize what we did:
+Let's summarize what we did:
 
 - Used `CREATE TABLE` with basic data types like char, varchar, date, timestamp, serial, and identity
 - Used constraints such as Not Null, Primary Key, Foreign Key, and Check
