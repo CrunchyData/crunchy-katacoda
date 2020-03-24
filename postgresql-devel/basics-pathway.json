@@ -20,5 +20,11 @@
       "course_id": "explain",
       "title": "Intro. to Using EXPLAIN (ANALYZE) on Your Queries"
     }
+    ,
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable",
+      "course_id": "basictable",
+      "title": "Introduction to Create Table in PostgreSQL"
+    }
   ]
 }

@@ -1,0 +1,38 @@
+ {
+  "title": "Introduction to creating tables in PostgreSQL",
+  "description": "Learning about creating tables in PostgreSQL",
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "Introduction to Creating table", "text": "01-createtable-Intro.md"},
+      {"title": "Create Employee table", "text": "02-create-employee.md"},
+      {"title": "Create Department Table", "text": "03-create-department.md"},
+      {"title": "Create Employee Department Association Table", "text": "04-create-emp-dept-asc.md"},     
+      {"title": "Create Employee Salary History Table", "text": "05-create-emp-salary-hist.md"},
+      {"title": "Insert data in Employee table", "text": "06-insert-employee.md"},
+      {"title": "Insert data in Department table", "text": "07-insert-department.md"},
+      {"title": "Insert data in Employee Department Association Table", "text": "08-insert-emp-dept-asc.md"},
+      {"title": "Insert data in Salary History Table and ", "text": "09-insert-employee-salary-hist.md"}
+       ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
