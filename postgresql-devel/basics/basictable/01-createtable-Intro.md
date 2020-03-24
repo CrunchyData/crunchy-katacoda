@@ -11,7 +11,7 @@ c) The name of the table must be **distinct** from the name of any other table, 
 
 d) A **constraint** is an SQL object that helps define the set of valid values that can be stored in the table.
 
-Let's try creating a test table with one field (i.e. column). We'll also go ahead and insert a row, and then review data.
+Let's try creating a test table with one field (i.e. column). We'll also go ahead and insert a row, and then review the data.
 
 Execute the following SQL statement in the console:
 
