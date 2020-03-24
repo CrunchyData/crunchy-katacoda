@@ -3,7 +3,7 @@
 
 Let's insert data into the Employee table according to business scenario and understand how serial columns work and uniqueness is enforced.
 
-Per business requirments, we need to insert John Smith, Mary Smith, Arnold Jackson, and Jeffery Westman (`hire_dat`e is today. `current_date` is a PostgreSQL funtion that returns the current date on the system.
+Per business requirments, we need to insert John Smith, Mary Smith, Arnold Jackson, and Jeffery Westman (`hire_date` is today. `current_date` is a PostgreSQL funtion that returns the current date on the system.
 
 ```
 INSERT INTO employee( employee_ssn, employee_first_name,employee_last_name, employee_hire_date)
@@ -13,9 +13,9 @@ VALUES ( '111111111', 'John', 'Smith', current_date),
 ( '111111114', 'Jeffery', 'Westman', current_date);
 ```{{execute}}
 
-Please note that the above insert statement does not have `employee_id` field. Since `employee_id` has a SERIAL data type, PostgreSQL will populate it with auto-incremented integer values. 
+Please note that the above INSERT statement does not have the `employee_id` field. Since `employee_id` has a SERIAL data type, PostgreSQL will populate it with auto-incremented integer values. 
 
-Let’s review data from employee table:
+Let’s review data from the Employee table:
 
 ```SELECT * FROM employee;```{{execute}}
 
