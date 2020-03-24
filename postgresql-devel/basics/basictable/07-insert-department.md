@@ -17,12 +17,12 @@ SELECT * from department;
 Let's insert a row manually and review the data. Identity behaves in the same way as the serial type.
 
 ```
-INSERT department ( department_number,department_name)
+INSERT INTO department ( department_number,department_name)
 values (6, 'APPLICATION DEVELOPMENT');
 SELECT * from department;
 ```{{execute}}
 
-This insert will error out here since the value of the identity is not also manually specified, so it ends up conflicting with an existing identity value:
+This insert will error out here since the value of the identity is not also manually specified, so it ends up duplicating an existing identity value:
 
 ```
 INSERT INTO department ( department_name)
