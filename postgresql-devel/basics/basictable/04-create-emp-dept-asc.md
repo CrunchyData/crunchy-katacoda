@@ -7,7 +7,7 @@ A FOREIGN KEY constraint specifies that the values in a column (or a group of co
 We want to ensure that the `employee_department_asc` table only contains records of employees and departments that actually exist. So, we define a foreign key constraint in the `employee_department_asc` table that references both the Employee and Department tables.
 
 ```
-Create table employee_department_asc (
+CREATE TABLE employee_department_asc (
 employee_id integer not null,
 department_number integer not null,
 employee_department_start_date date not null,
