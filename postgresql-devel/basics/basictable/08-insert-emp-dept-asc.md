@@ -2,9 +2,9 @@
 
 According to the business scenario, John works in Sales, Mary works in Research, and Arnold and Jeffery work in Accounting.
 
-The Employee Department Association table has foreign key references to the Employee and Department tables. This implies that we cannot insert a row into the employee_department_asc without referencing a valid employee_id in the Employee table and a valid department_number in theDepartment table.
+The Employee Department Association table has foreign key references to the Employee and Department tables. This implies that we cannot insert a row into the employee_department_asc table without referencing a valid employee_id in the Employee table and a valid department_number in the Department table.
 
-The insert statement below uses a select statement to associate department_number and employee_id based on employee_first_name, employee_last_name and department_name.
+The insert statement below uses a SELECT statement to associate department_number and employee_id based on employee_first_name, employee_last_name and department_name.
 
 ```
 INSERT INTO employee_department_asc(
