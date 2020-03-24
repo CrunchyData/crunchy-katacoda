@@ -27,7 +27,7 @@ employee (employee_id));```{{execute}}
 Constraints:
 
 - `employee_salary_pk` is a composite Primary Key constraint of two fields `employee_id` and `employee_salary_start_date`. PostgreSQL automatically creates a unique index when a primary key is defined for a table. You can see `"employee_salary_pk " PRIMARY KEY, btree (employee_id, employee_salary_start_date)` under Indexes.
-- The `employee_id_fk1` foreign key constraint in this table references the Employee (employee_id) table.
+- The `employee_id_fk1` foreign key constraint in this table references the Employee (`employee_id`) table.
 - A CHECK constraint is added to make sure salary > 1000.
 
 Now that we have created all the tables, let's move forward further understand how all constraints work by inserting data in tables.
