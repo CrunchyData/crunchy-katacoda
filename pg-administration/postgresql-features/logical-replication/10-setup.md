@@ -7,14 +7,14 @@ psql -c "SHOW max_wal_senders"
 ```{{execute T1}}
 Note that all settings mentioned above require a restart to put into affect when changed
 ```
-systemctl restart postgresql-12
+sudo systemctl restart postgresql-12
 ```{{execute T1}}
 Just like with standard replication, a role with the REPLICATION property must exist for the subscribers to connect with. The `replica_user` role has already been created on the demo database along with the proper pg_hba.conf entry to allow secure password authentication. Note that unlike regular replication, you must set it to allow the replica_user to connect to the database that contains the publisher, not the special `replication` database.
 ```
 psql -c "\du" 
 ```{{execute T1}}
 ```
-cat /var/lib/pgsql/12/data/pg_hba.conf
+sudo cat /var/lib/pgsql/12/data/pg_hba.conf
 ```{{execute T1}}
 
 
