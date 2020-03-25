@@ -2,7 +2,7 @@ PostgreSQL supports several types of native partitioning: Range, List, & Hash.
 
 Range partitioning works by splitting the data on 1 or more columns based on a blocks of data with bound limits, typically time or integer series.
 
-Log into postgres using the psql client. A `root` role and database has already been created to allow easy login.
+Log into postgres using the psql client. A `training` role and database has already been created to allow easy login.
 ```
 psql
 ```{{execute T1}}

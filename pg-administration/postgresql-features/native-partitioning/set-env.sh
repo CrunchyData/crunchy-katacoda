@@ -2,14 +2,13 @@
 
 #runs in foreground
 
-adduser training
-echo "training" | passwd training --stdin
+CURRENT_USER=$(whoami)
 
-sudo systemctl enable postgresql-11
-sudo systemctl start postgresql-11
-
-sudo -u postgres psql -U postgres -c "CREATE ROLE root WITH LOGIN SUPERUSER"
-
-sudo -u postgres psql -U postgres -c "CREATE DATABASE root"
+until [ $CURRENT_USER == "training" ]; do
+    sudo -iu training
+    CURRENT_USER=$(whoami)
+    echo >&2 "$(date +%Y%m%dt%H%M%S) Waiting for current user to change to training..."
+    sleep 1;
+done
 
 clear

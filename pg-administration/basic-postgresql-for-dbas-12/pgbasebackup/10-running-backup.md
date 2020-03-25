@@ -1,6 +1,6 @@
 The pg_dump/restore commands are useful for getting logical dumps of the database schema and its data out. But for large databass, dumps are not very practical for typical backup requirements. Especially from the point of a full database recovery since all indexes and constraints have to be rebuilt, taking quite a long time.
 
-The `pg_basebackup` command can provide a complete, filesystem-based snapshot of the entire database cluster. It was already used in in the earlier `Replication` scenario of this training session to create the replica. It can also be used in a very similar manner to provide a compressed backup. And while pg_dump could be configured to only dump specific objects, `pg_basebackup` is always a complete copy of the entire database as of the time that the backup stops running.
+The `pg_basebackup` command can provide a complete, filesystem-based snapshot of the entire database cluster. It was already used in the earlier `Replication` scenario of this training session to create the replica. It can also be used in a very similar manner to provide a compressed backup. And while pg_dump could be configured to only dump specific objects, `pg_basebackup` is always a complete copy of the entire database as of the time that the backup stops running.
 
 https://www.postgresql.org/docs/current/app-pgbasebackup.html
 
