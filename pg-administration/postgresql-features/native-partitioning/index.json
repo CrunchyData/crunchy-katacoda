@@ -13,6 +13,7 @@
       {"title": "Partition Management", "text": "60-partman.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""
