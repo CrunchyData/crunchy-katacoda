@@ -18,6 +18,6 @@ Note that SQL statements need to end in a semicolon. The `psql` command or other
 
 You can press `ENTER` in the `psql` shell if you want the SQL statement to continue on a new line -- `psql` won't process the statement until you add the semicolon at the end of a line.
 
-![Multiline query in terminal](assets/03_-_multiline.PNG)
+![Multiline query in terminal](assets/03_-_multiline.png)
 
 You'll see that the command line prompt starts with a `=>`, but changes to a `->` if the statement continues on to the next line (i.e. if you press enter without ending with a `;`). The prompt doesn't change back to `=>` until the statement ends and runs.
