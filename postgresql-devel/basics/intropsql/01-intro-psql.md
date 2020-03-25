@@ -10,7 +10,7 @@ The database contains storm events data, which is public domain data from the Na
 
 In your interactive terminal, you're currently logged in as root user, as indicated by the command line prompt:
 
-![Terminal prompt](assets/01_-_command_line_prompt.png)
+![Terminal prompt](assets/01_command_line_prompt.png)
 
 > **Note**
 >
@@ -32,11 +32,11 @@ Each command line flag or option begins with a `-` or `--`, and what follows aft
 
 The CLI shows a response whenever a command is run. In this case, since you are logging in to a database as the user **groot**, the command line will then prompt you for the password (enter `password`). You won't see the password displayed as you type, but the terminal is recording your keystrokes.
 
-![Terminal prompt for password](assets/01_-_password_prompt.png)
+![Terminal prompt for password](assets/01_password_prompt.png)
 
 Once you're logged in to the database server, the prompt in the terminal should change. The psql prompt indicates the database you're connected to, along with `=>`.
 
-![Postgres prompt](assets/01_-_postgres_prompt.png)
+![Postgres prompt](assets/01_postgres_prompt.png)
 
 The beauty of the command line is that there are often shortcuts or tips and tricks. For example, you could shorten the command used above even further to:
 
