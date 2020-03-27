@@ -17,7 +17,7 @@ If there are going to be multiple replicas connecting to the primary, and a fail
 recovery_target_timeline='latest'
 ```
 
-Further options for the recovery.conf file can be found here - https://www.postgresql.org/docs/current/recovery-config.html
+Further options for the recovery.conf file can be found here - https://www.postgresql.org/docs/11/recovery-config.html
 
 Please note that in version 12 of PostgreSQL, the recovery.conf file will be going away and the relevant settings will be moved to the postgresql.conf.
 
