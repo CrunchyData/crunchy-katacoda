@@ -1,6 +1,6 @@
 PostgreSQL supports several types of native partitioning: Range, List, & Hash. 
 
-Range partitioning works by splitting the data on 1 or more columns based on a blocks of data with bound limits, typically time or integer series.
+Range partitioning works by splitting the data on 1 or more columns based on blocks of data with bound limits, typically time or integer series.
 
 Log into postgres using the psql client. A `training` role and database has already been created to allow easy login.
 ```
@@ -27,7 +27,7 @@ The range is inclusive of the starting value and exclusive of the ending value. 
 ```
 CREATE TABLE measurement_default PARTITION OF measurement DEFAULT;
 ```{{execute T1}}
-Data going into the default should be monitored for since large amounts being there can be detrimental to performance. The `DEFAULT` feature is supported on all native partitioning types.
+Data going into the default partition should be monitored since large amounts being there can be detrimental to performance. The `DEFAULT` feature is supported on all native partitioning types.
 
 Use the `\d+` command in psql to see the structure of a partitioned tableset
 ```
