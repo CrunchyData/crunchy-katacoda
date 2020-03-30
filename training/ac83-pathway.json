@@ -4,37 +4,39 @@
   "courses": [
     {
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/setting-up-pg",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/setting-up-pg",
       "course_id": "setting-up-pg",
       "title": "1 - Setting Up PostgreSQL",
       "description": "1 - Setting Up PostgreSQL"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/setting-up-replication",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/setting-up-replication",
       "course_id": "setting-up-replication",
       "title": "2 - Setting Up PostgreSQL Replication",
       "description": "2 - Setting Up PostgreSQL Replication"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/dump-restore",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/dump-restore",
       "course_id": "dump-restore",
       "title": "3 - PG Dump & Restore",
       "description": "3 - PG Dump & Restore"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/pgbasebackup",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/pgbasebackup",
       "course_id": "pgbasebackup",
       "title": "4 - PGBasebackup",
       "description": "4 - PGBasebackup"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/pgbackrest",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/pgbackrest",
       "course_id": "pgbackrest",
       "title": "5 - pgBackRest",
       "description": "5 - pgBackRest"
     },{
       "pathway_id": "crunchydata",
-      "id": "pg-administration/basic-postgresql-for-dbas/failover",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/failover",
+
+
       "course_id": "failover",
       "title": "6 - Failover",
       "description": "6 - Failover"
