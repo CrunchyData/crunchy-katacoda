@@ -1,27 +1,46 @@
 cat <<EOFPARENT > /opt/create-pv.sh
-cat <<EOF > /tmp/pv.yml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volname
-spec:
-  capacity:
-    storage: volsize
-  accessModes:
-    - ReadWriteOnce
-    - ReadOnlyMany
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
-  hostPath:
-    path: volpath
-EOF
+kubectl create -f https://github.com/storageos/cluster-operator/releases/download/1.5.0/storageos-operator.yaml
 
-for i in \`seq 20\`; do
-   cat /tmp/pv.yml | sed "s/volname/pv\$i/g" | sed "s/volsize/50Gi/g" | sed "s#volpath#/opt/vol/pv\$i#" | kubectl apply -f -
-   mkdir -p "/opt/vol/pv\$i"
-   chmod 777 "/opt/vol/pv\$i"
-   ssh node01 'mkdir -p "/opt/vol/pv\$i; chmod 777 "/opt/vol/pv\$i"'
-done
+cat << EOF1 > storageos-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: "storageos-api"
+  namespace: "storageos-operator"
+  labels:
+    app: "storageos"
+type: "kubernetes.io/storageos"
+data:
+  # echo -n '<secret>' | base64
+  apiUsername: c3RvcmFnZW9z
+  apiPassword: c3RvcmFnZW9z
+EOF1
+
+kubectl create -f storageos-secret.yaml
+
+cat << EOF2 > storageos-cluster.yaml
+apiVersion: "storageos.com/v1"
+kind: StorageOSCluster
+metadata:
+  name: "example-storageos"
+  namespace: "storageos-operator"
+spec:
+  secretRefName: "storageos-api" # Reference the Secret created in the previous step
+  secretRefNamespace: "storageos-operator"  # Namespace of the Secret
+  k8sDistro: "kubernetes"
+  images:
+    nodeContainer: "storageos/node:1.5.0" # StorageOS version
+  csi:
+    enable: true
+    deploymentStrategy: deployment
+  resources:
+    requests:
+    memory: "512Mi"
+  disableTelemetry: true
+EOF2
+
+kubectl create -f storageos-cluster.yaml
+
 EOFPARENT
 
 chmod +x /opt/create-pv.sh
