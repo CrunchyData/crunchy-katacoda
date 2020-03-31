@@ -1,0 +1,57 @@
+{
+  "title": "PostgreSQL Training",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/setting-up-pg",
+      "course_id": "setting-up-pg",
+      "title": "1 - Setting Up PostgreSQL",
+      "description": "1 - Setting Up PostgreSQL"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/setting-up-replication",
+      "course_id": "setting-up-replication",
+      "title": "2 - Setting Up PostgreSQL Replication",
+      "description": "2 - Setting Up PostgreSQL Replication"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/dump-restore",
+      "course_id": "dump-restore",
+      "title": "3 - PG Dump & Restore",
+      "description": "3 - PG Dump & Restore"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/pgbasebackup",
+      "course_id": "pgbasebackup",
+      "title": "4 - PGBasebackup",
+      "description": "4 - PGBasebackup"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/pgbackrest",
+      "course_id": "pgbackrest",
+      "title": "5 - pgBackRest",
+      "description": "5 - pgBackRest"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-12/failover",
+
+
+      "course_id": "failover",
+      "title": "6 - Failover",
+      "description": "6 - Failover"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/postgresql-features/native-partitioning",
+      "course_id": "native-partitioning",
+      "title": "Native Partitioning",
+      "description": "Native Partitioning"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "postgresql-devel/beyond-basics/qjsonintro",
+      "course_id": "qjsonintro",
+      "title": "Quick Intro to JSON(B) in PostgreSQL",
+      "description": "Quick Intro to JSON(B) in PostgreSQL"
+    }
+  ]
+}

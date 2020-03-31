@@ -1,12 +1,12 @@
 # Working with JSON(B) data PostgreSQL
 
-PostgreSQL has quite advance JSON capabilites, especially with the addition of JSONB. The B in JSONB stands for binary, meaning the document is actually stored in binary format. This gives us a couple of advantages:
+PostgreSQL has some quite advance JSON capabilites, especially with the addition of JSONB. The B in JSONB stands for binary, meaning the document is actually stored in binary format. This gives us a couple of advantages:
 
 1. The document takes up less space as JSONB
 2. We can index JSONB giving us all the benefits of database indices.
 
-If you just want to store your JSON as Text Large Object that you only reproduce wholesale and never query, then go ahead 
-and make the column a JSON type, otherwise use JSONB 
+If you just want to store your JSON as a Text Large Object that you only reproduce wholesale and never query, then go ahead 
+and make the column a JSON type, otherwise use JSONB.
 
 ## A quick note
 
@@ -14,7 +14,7 @@ While it is very convenient to dump arbitrary key-value pairs (or JSON for that 
 pattern of handling data should only be used in limited cases. Using these data types for most of your data has several 
 potential drawbacks
 
-1. JSON data storage can be several orders of magnitude times larger given that you are repeating the attributes for every row. And while disks are cheap, retrieving more data from disk will always be a performance penalty. Indexing more 
+1. JSON data storage can be several orders of magnitude larger given that you are repeating the attributes for every row. And while disks are cheap, retrieving more data from disk will always be a performance penalty. Indexing more 
 data will always be more expensive as well.  
 1. You lose the ability of the database to "enforce" that the proper data type, such as integer or float, is being stored in the database
 1. You lose the ability to have the database keep track and manage relations between different data. This can quickly lead
@@ -48,7 +48,7 @@ You will see one JSONB column named *json_content*. Again we are using JSONB bec
 json_content  | jsonb   
 ```
 
-You will also see that we created a GIN index on the JSONB column. [GIN](https://www.postgresql.org/docs/11/gin-intro.html) 
+You will also see that we created a GIN index on the JSONB column. [GIN](https://www.postgresql.org/docs/current/gin-intro.html) 
 is the appropriate index type for JSON content.
 
 ```
@@ -58,7 +58,7 @@ is the appropriate index type for JSON content.
 
 ## Querying JSONB
 
-Eventhough the JSON data is not deeply structured, we can still do interesting queries. 
+Even though the JSON data is not deeply structured, we can still do interesting queries. 
 
 But first you NEED to understand there are  two major JSONB operator types - ones that return JSON and other that return text. 
 For example, this operator `->` gets a JSON object field by a key and returns JSON:
@@ -117,4 +117,4 @@ For example our JSON has this structure (starting at the top)
 
 
 ## Section Wrap up
-Now that we have written a basic query and discussed JSONB let's move on to more exciting queries.
+Now that we have written a basic query and discussed, JSONB let's move on to more exciting queries.

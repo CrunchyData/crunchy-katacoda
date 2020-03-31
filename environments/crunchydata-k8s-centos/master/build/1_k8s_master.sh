@@ -55,8 +55,10 @@ echo Setting up the operator
 sudo yum install -y ansible
 cd /home/cent
 git clone https://github.com/CrunchyData/postgres-operator.git
-cd postgres-operator/ansible
+cd postgres-operator
 git checkout v4.2.2
+cd ansible
+
 
 echo "Pull recent docker images"
 # not including upgrade,pgbasebackup-restore

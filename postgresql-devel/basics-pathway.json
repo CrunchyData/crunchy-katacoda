@@ -5,7 +5,13 @@
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/intropsql",
       "course_id": "intropsql",
       "title": "Introduction to Using the Command Line with PostgreSQL"
-    },{
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable",
+      "course_id": "basictable",
+      "title": "Introduction to Create Table in PostgreSQL"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
       "title": "Quick Intro. To PostgreSQL in Containers"
