@@ -475,16 +475,23 @@ db_user='normaluser'
 # ==================
 # Storage Settings
 # ==================
-backrest_storage='hostpathstorage'
-backup_storage='hostpathstorage'
-primary_storage='hostpathstorage'
-replica_storage='hostpathstorage'
+backrest_storage='storageos'
+backup_storage='storageos'
+primary_storage='storageos'
+replica_storage='storageos'
 
 storage1_name='hostpathstorage'
 storage1_access_mode='ReadWriteMany'
 storage1_size='1G'
 storage1_type='create'
 storage1_fs_group=26
+
+storage5_name='storageos'
+storage5_access_mode='ReadWriteOnce'
+storage5_size='1G'
+storage5_type='dynamic'
+storage5_class='fast'
+storage5_fs_group=26
 
 # ==================
 # Container Resource Configurations
