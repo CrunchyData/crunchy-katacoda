@@ -475,10 +475,10 @@ db_user='normaluser'
 # ==================
 # Storage Settings
 # ==================
-backrest_storage='storageos'
-backup_storage='storageos'
-primary_storage='storageos'
-replica_storage='storageos'
+backrest_storage='hostpathstorage'
+backup_storage='hostpathstorage'
+primary_storage='hostpathstorage'
+replica_storage='hostpathstorage'
 
 storage1_name='hostpathstorage'
 storage1_access_mode='ReadWriteMany'
@@ -549,6 +549,7 @@ export PGO_CA_CERT="${HOME?}/.pgo/pgo/client.crt"
 export PGO_CLIENT_CERT="${HOME?}/.pgo/pgo/client.crt"
 export PGO_CLIENT_KEY="${HOME?}/.pgo/pgo/client.pem"
 export PGO_APISERVER_URL='https://127.0.0.1:8443'
-export PGO_NAMESPACE=pgouser1
+export PGO_CMD='kubectl'
+export PGO_OPERATOR_NAMESPACE='pgo'
 EOF
 
