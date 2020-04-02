@@ -1,4 +1,10 @@
 set -e
+sudo rpm --import https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
+sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+if [ "$?" -ne 0 ]; then
+    echo "Unable to install Postgres Repo"
+    exit 1
+fi
 
 sudo yum install -y postgresql12
 
