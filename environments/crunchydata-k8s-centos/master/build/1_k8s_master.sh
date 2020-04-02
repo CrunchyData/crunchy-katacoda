@@ -1,53 +1,6 @@
 set -e
-sudo rpm --import https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG
-sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-if [ "$?" -ne 0 ]; then
-    echo "Unable to install Postgres Repo"
-    exit 1
-fi
-sudo yum remove -y docker docker-common
 
-sudo yum install -y yum-utils
-
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y docker-ce docker-ce-cli containerd.io unzip nano postgresql12
-systemctl enable --now docker
-systemctl start docker
-
-echo '127.0.0.1 master' >> /etc/hosts
-hostname master && echo master > /etc/hostname
-hostnamectl set-hostname master
-
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-exclude=kube*
-EOF
-
-# Set SELinux in permissive mode (effectively disabling it)
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-
-systemctl enable --now kubelet
-
-cat <<EOF >  /etc/sysctl.d/k8s.conf
-net.bridge.bridge-nf-call-ip6tables = 1
-net.bridge.bridge-nf-call-iptables = 1
-EOF
-sysctl --system
-
-sudo kubectl completion bash | sudo tee -a /etc/bash_completion.d/kubectl
-echo Pulling Images; 
-sudo kubeadm config images pull; 
-sudo docker pull weaveworks/weave-kube:2.5.1
-sudo docker pull weaveworks/weave-npc:2.5.1
+sudo yum install -y postgresql12
 
 # Operator Work Now - we should go all the way through and actually put the operator into the cluster
 # This means we will need to spin up the cluster install and then shut it down cleanly
@@ -91,6 +44,4 @@ sudo docker pull crunchydata/pgo-sqlrunner:centos7-4.2.2
 sudo docker pull crunchydata/crunchy-admin:centos7-12.2-4.2.2
 sudo docker pull crunchydata/crunchy-postgres-ha:centos7-12.2-4.2.2
 sudo docker pull crunchydata/crunchy-postgres-gis-ha:centos7-12.2-4.2.2
-
-
 

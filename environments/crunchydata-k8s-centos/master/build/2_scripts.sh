@@ -1,3 +1,5 @@
+sudo docker pull storageos/node:1.5.0
+
 cat <<EOFPARENT > /opt/create-pv.sh
 kubectl create -f https://github.com/storageos/cluster-operator/releases/download/1.5.0/storageos-operator.yaml
 
@@ -47,14 +49,14 @@ chmod +x /opt/create-pv.sh
 
 cat <<EOF > /opt/launch-kubeadm.sh
 #!/bin/sh
-rm $HOME/.kube/config
+rm \$HOME/.kube/config
 kubeadm reset -f || true
 systemctl start kubelet
 mkdir -p /root/.kube
-kubeadm init --kubernetes-version $(kubeadm version -o short) --token=96771a.f608976060d16396
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubeadm init --kubernetes-version \$(kubeadm version -o short) --token=96771a.f608976060d16396
+mkdir -p \$HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf \$HOME/.kube/config
+sudo chown \$(id -u):\$(id -g) \$HOME/.kube/config
 kubectl apply -f /opt/weave-kube
 /opt/create-pv.sh
 EOF
