@@ -12,6 +12,11 @@
       "title": "Introduction to Create Table in PostgreSQL"
     },
     {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable",
+      "course_id": "basicdatatype",
+      "title": "Introduction to Data Types"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
       "title": "Quick Intro. To PostgreSQL in Containers"
