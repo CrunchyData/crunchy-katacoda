@@ -1,19 +1,11 @@
  {
-  "title": "Introduction to creating tables in PostgreSQL",
-  "description": "Learning about creating tables in PostgreSQL",
+  "title": "Data Types",
+  "description": "Common data types encountered in PostgreSQL",
   "difficulty": "beginner",
-  "time": "10 minutes",
+  "time": "5 minutes",
   "details": {
     "steps": [
-      {"title": "Introduction to Creating table", "text": "01-createtable-Intro.md"},
-      {"title": "Create Employee table", "text": "02-create-employee.md"},
-      {"title": "Create Department Table", "text": "03-create-department.md"},
-      {"title": "Create Employee Department Association Table", "text": "04-create-emp-dept-asc.md"},     
-      {"title": "Create Employee Salary History Table", "text": "05-create-emp-salary-hist.md"},
-      {"title": "Insert data in Employee table", "text": "06-insert-employee.md"},
-      {"title": "Insert data in Department table", "text": "07-insert-department.md"},
-      {"title": "Insert data in Employee Department Association Table", "text": "08-insert-emp-dept-asc.md"},
-      {"title": "Insert data in Salary History Table and ", "text": "09-insert-employee-salary-hist.md"}
+      {"title": "Introduction to Creating table", "text": "01-test.md"}
        ],
     "intro": {
       "courseData": "env-init.sh",
