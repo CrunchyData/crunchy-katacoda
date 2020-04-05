@@ -477,10 +477,10 @@ db_user='normaluser'
 # ==================
 # Storage Settings
 # ==================
-backrest_storage='hostpathstorage'
-backup_storage='hostpathstorage'
-primary_storage='hostpathstorage'
-replica_storage='hostpathstorage'
+backrest_storage='storageos'
+backup_storage='storageos'
+primary_storage='storageos'
+replica_storage='storageos'
 
 storage1_name='hostpathstorage'
 storage1_access_mode='ReadWriteMany'
