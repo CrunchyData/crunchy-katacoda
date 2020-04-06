@@ -1,7 +1,7 @@
-sudo docker pull storageos/node:1.5.0
+sudo docker pull storageos/node:1.5.3
 
 cat <<EOFPARENT > /opt/create-pv.sh
-kubectl create -f https://github.com/storageos/cluster-operator/releases/download/1.5.0/storageos-operator.yaml
+kubectl create -f https://github.com/storageos/cluster-operator/releases/download/1.5.3/storageos-operator.yaml
 
 cat << EOF1 > storageos-secret.yaml
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
   secretRefNamespace: "storageos-operator"  # Namespace of the Secret
   k8sDistro: "kubernetes"
   images:
-    nodeContainer: "storageos/node:1.5.0" # StorageOS version
+    nodeContainer: "storageos/node:1.5.3" # StorageOS version
   csi:
     enable: true
     deploymentStrategy: deployment
