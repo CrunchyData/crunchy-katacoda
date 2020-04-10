@@ -59,6 +59,13 @@ sudo cp -i /etc/kubernetes/admin.conf \$HOME/.kube/config
 sudo chown \$(id -u):\$(id -g) \$HOME/.kube/config
 kubectl apply -f /opt/weave-kube
 /opt/create-pv.sh
+# Operator install
+cd /home/cent/postgres-operator/ansible
+ansible-playbook -i inventory --tags=install main.yml
+
+#now source the env variables for the client
+source ~/.bashrc
+
 EOF
 
 chmod +x /opt/launch-kubeadm.sh
@@ -481,12 +488,6 @@ backrest_storage='storageos'
 backup_storage='storageos'
 primary_storage='storageos'
 replica_storage='storageos'
-
-storage1_name='hostpathstorage'
-storage1_access_mode='ReadWriteMany'
-storage1_size='1G'
-storage1_type='create'
-storage1_fs_group=26
 
 storage5_name='storageos'
 storage5_access_mode='ReadWriteOnce'
