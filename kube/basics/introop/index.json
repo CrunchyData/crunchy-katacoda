@@ -25,9 +25,9 @@
     "terminals": [
       {"name": "Port-Forward Here", "target": "host01"},
       {"name": "Operator Commands Here", "target": "host01"},
-      {"name":  "Ignore Me", "target": "host02"}
+      {"name": "PSQL Commands Here", "target": "host01"}
     ],
-    "uilayout": "terminal-terminal",
+    "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
