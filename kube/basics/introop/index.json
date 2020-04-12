@@ -1,14 +1,14 @@
 {
   "title": "Introduction to Using Crunchy PostgreSQL Operator",
-  "description": "A quick intro to working with Crunchy PostgreSQL Operator",
+  "description": "A quick intro. to working with Crunchy PostgreSQL Operator",
   "private": true,
   "difficulty": "beginner",
-  "time": "10 minutes",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "The psql Command", 
-        "text": "01-intro-psql.md"
+        "title": "Creating a Cluster",
+        "text": "01-make-cluster.md"
       }
     ],
     "intro": {
@@ -22,6 +22,11 @@
     }
   },
   "environment": {
+    "terminals": [
+      {"name": "Port-Forward Here", "target": "host01"},
+      {"name": "Operator Commands Here", "target": "host01"},
+      {"name":  "Ignore Me", "target": "host02"}
+    ],
     "uilayout": "terminal-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
