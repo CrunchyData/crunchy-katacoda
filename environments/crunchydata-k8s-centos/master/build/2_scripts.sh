@@ -59,17 +59,17 @@ sudo cp -i /etc/kubernetes/admin.conf \$HOME/.kube/config
 sudo chown \$(id -u):\$(id -g) \$HOME/.kube/config
 kubectl apply -f /opt/weave-kube
 
-while true; do
-    NUM_READY=\$(kubectl get nodes 2> /dev/null | grep -v NAME | awk '{print \$2}' | grep -e ^Ready | wc -l)
-    if [ "\${NUM_READY}" == "2" ]; then
-        echo "\${NUM_READY} Kubernetes nodes"
-        break
-    else
-        echo "Waiting for 2 Kubernetes nodes: \${NUM_READY}"
-        kubectl get nodes
-    fi
-    sleep 1
-done
+# while true; do
+#    NUM_READY=\$(kubectl get nodes 2> /dev/null | grep -v NAME | awk '{print \$2}' | grep -e ^Ready | wc -l)
+#    if [ "\${NUM_READY}" == "2" ]; then
+#        echo "\${NUM_READY} Kubernetes nodes"
+#        break
+#    else
+#        echo "Waiting for 2 Kubernetes nodes: \${NUM_READY}"
+#        kubectl get nodes
+#    fi
+#    sleep 1
+# done
 
 /opt/create-pv.sh
 # Operator install
