@@ -4,7 +4,7 @@ Thankfully the PostgreSQL community provides an RPM repo that contains the lates
 
 http://www.postgresql.org/download/linux/redhat
 
-From here, select your desired version and the relevant RPM distro. In this case we want PostgreSQL 11 and CentOS7 64bit (x86_64). This will give you the relevant command to run to install the repo. 
+From here, select your desired version and the relevant RPM distro. In this case we want PostgreSQL 12 and CentOS7 64bit (x86_64). This will give you the relevant command to run to install the repo. 
 ```
 sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```{{execute T1}}
