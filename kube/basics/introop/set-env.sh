@@ -9,3 +9,5 @@
 
 #now source the env variables for the client
 #source ~/.bashrc
+
+launch.sh; kubectl wait pod -n pgo -l name=pgo-client --for=condition=ready
