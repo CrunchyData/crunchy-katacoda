@@ -15,9 +15,5 @@ In this section talk about how we could connect so easily once we set up the por
 The .bashrc and the .pgo directory
 
 ```
- "terminals": [
-      {"name": "Port-Forward Here", "target": "host01"},
-      {"name": "Operator Commands Here", "target": "host01"},
-      {"name": "PSQL Commands Here", "target": "host01"}
-    ],
+
 ```

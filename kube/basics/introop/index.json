@@ -23,6 +23,11 @@
   },
   "environment": {
     "uilayout": "terminal",
+    "terminals": [
+      {"name": "Port-Forward Here", "target": "host01"},
+      {"name": "Operator Commands Here", "target": "host01"},
+      {"name": "PSQL Commands Here", "target": "host01"}
+    ],
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
   },
   "backend": {
