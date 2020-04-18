@@ -1,5 +1,3 @@
-## Character types
-
 Postgres has three built-in character types:
 
 * `char` - fixed length
@@ -18,6 +16,18 @@ CREATE TABLE texttable (
 
 (We'll look at the `serial` type in the next step.)
 
+The `n` in `char(n)` and `varchar(n)` must be a positive integer, and 
+represents the maximum number of characters in the string. More than the 
+maximum will cause an error when attempting to save, unless the excess 
+characters are spaces.
+
+If the `n` isn't specified for `char`, it is interpreted as `char(1)`. If the 
+`n` isn't specified for `varchar` it will store strings of any length (as does 
+`text`).
+
+For `char`, the string is padded up to n characters if the length is shorter 
+than n. For `varchar`, strings shorter than n are stored as is.
+
 ### Add text values to a table
 
 Let's try adding a few rows of values:
@@ -29,17 +39,7 @@ VALUES  ('55', 'Blue'),
         ('1510', 'Magenta'),
         ('4132', 'Blue, Lavender, Magenta, Emerald')
 ;
-```{{execute}}
 
-The `n` in `char(n)` and `varchar(n)` must be a positive integer, and 
-represents the maximum number of characters in the string. More than the 
-maximum will cause an error when attempting to save, unless the excess characters are spaces.
-
-If the `n` isn't specified for `char`, it is interpreted as `char(1)`. If the `n` isn't specified for `varchar` it will store strings of any length (as does `text`).
-
-For `char`, the string is padded up to n characters if the length is shorter than n. For `varchar`, strings shorter than n are stored as is:
-
-```
 SELECT * FROM texttable;
 ```{{execute}}
 
@@ -48,5 +48,6 @@ SELECT * FROM texttable;
 The `text` type in Postgres is not part of the SQL standard.
 
 There are generally no substantial differences in performance between `char`, 
-`varchar` or `text`. `text` and `varchar` are more commonly used and preferred.
- (A constraint can be added to limit the number of characters for `text`.)
+`varchar`, or `text`. `text` and `varchar` are more commonly used and 
+preferred. (A constraint can be added to limit the number of characters for 
+`text`.)

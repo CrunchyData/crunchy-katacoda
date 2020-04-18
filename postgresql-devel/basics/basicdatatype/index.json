@@ -17,7 +17,7 @@
       {"title": "Date/Time Types", 
         "text": "04-date.md"
       },
-      {"title": "Alter Column Data Type", 
+      {"title": "Using the `ALTER` command to change data types", 
         "text": "05-alter.md"
       },
       {"title": "Final Notes", 

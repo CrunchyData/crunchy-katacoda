@@ -1,8 +1,6 @@
-## Numeric types
-
-There are several numeric types available in Postgres. They are generally 
-distinguished by numeric range and storage size (for integers), or precision 
-(for decimals).
+There are several numeric types available in Postgres. They differ from each 
+other with respect to numeric range and storage size (for integers), or 
+precision (for decimals).
 
 As in any other programming language, defining a type as numeric (as opposed to
  character/text) allows you to perform mathematical operations on stored values.
@@ -21,22 +19,24 @@ The following character types store whole numbers:
 range is too small.
 
 Serials (`smallserial`, `serial`, `bigserial`) are not _true_ types in the 
-sense that it's shorthand notation, telling Postgres that the column is 
-`integer` type, and to then create a unique 
-identifier that _autoincrements_. This is a Postgres-specific method. Another 
-way that is in standard SQL is to use an [_identity_ column](https://www.postgresql.org/docs/current/sql-createtable.html).  
+sense that they're shorthand notation, telling Postgres that the column is an 
+`integer` type, and to then create a unique identifier that _autoincrements_. 
+This is a Postgres-specific method. Another way to accomplish this result that 
+is in standard SQL is to use an [_identity_ column](https://www.postgresql.org/docs/current/sql-createtable.html).  
 
 ### Numeric vs. decimal vs. real...
 
-Use `numeric` with non-whole numbers, where **exactness** is required. Use the 
-following syntax when declaring this type:
+Use `numeric` with non-whole numbers, where **exactness** is required. Here's 
+the syntax for declaring this type:
 
-`NUMERIC(precision, scale)`
+```
+NUMERIC(precision, scale)
+```
 
-`precision` is a positive integer that specifies the total count of digits in
+* `precision` is a positive integer that specifies the total count of digits in
  the number, including numbers on both sides of the decimal.
 
-`scale` is either 0 or a positive integer that indicates the count of digits to the right of the decimal.
+* `scale` is either 0 or a positive integer that indicates the count of digits to the right of the decimal.
 
 Declaring `NUMERIC` without a specified precision nor scale will allow the column to store values of any precision and scale.
 
@@ -47,10 +47,15 @@ The `real` and `double precision` types are **approximate** numeric types. This 
 
 ### Add numeric values to a table
 
-Let's try creating a new table with numeric columns and populate it with a few values:
+Let's try creating a new table with numeric columns and populate it with a few 
+values:
 
 ```
-CREATE TABLE numtable (number1 integer, number2 numeric(16,8));
+CREATE TABLE numtable (
+    id serial,
+    number1 integer, 
+    number2 numeric(16,8)
+);
 
 INSERT INTO numtable (number1, number2)
 VALUES  (55, 110),
@@ -62,13 +67,12 @@ VALUES  (55, 110),
 SELECT * FROM numtable;
 ```{{execute}}
 
-You'll see that some of the values under `number2` were _coerced_ to the indicated scale.
-
-Note that the new values were inserted in additional rows to the table, since we used an INSERT statement (instead of an UPDATE on existing rows).
+You'll see that some of the values under `number2` were _coerced_ to the 
+indicated scale.
 
 ### Try a mathematical operation
 
-Let's try to multiply two values from `newtable`:
+Let's try to multiply two values from `texttable`:
 
 ```
 SELECT 
@@ -96,6 +100,10 @@ We do get a numeric value as a result:
 11110220
 ```
 
-### Note on numerics 
+### Note on numerics
 
-There are storage and performance implications with numeric types. For instance, calculations on `numeric` are slower than on the floating-point types `real` and `double precision`. But as mentioned above, floating-point types don't guarantee exactness. You'll have to understand your needs and weigh the options for numeric types carefully.
+There are storage and performance implications with numeric data types. For 
+instance, calculations on `numeric` are slower than on the floating-point types
+ `real` and `double precision`. But as mentioned earlier, floating-point types 
+ don't guarantee exactness. You'll have to understand your data storage and 
+ processing needs and weigh your options for numeric types carefully.

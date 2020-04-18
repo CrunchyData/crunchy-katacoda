@@ -1,5 +1,3 @@
-## Date/time types
-
 Postgres also has several options for storing date/time. 
 
 Before we dive in, let's create another table and add in a few values:
@@ -18,10 +16,11 @@ SELECT * FROM timetable;
 
 The different date/time types are:
 
-* `date` stores only the date, with no time of the day
-* `time` stores only the time of day without the date
-* `timestamp` stores both the date and time
-* `interval` stores an interval of a specified measure of time, is useful for _relative_ times
+* `date` - stores only the date, with no time of the day
+* `time` - stores only the time of day without the date
+* `timestamp` - stores both the date and time
+* `interval` - stores an interval of a specified measure of time, is useful for
+ _relative_ times
 
 These types can be defined with _options_:
 
@@ -30,25 +29,26 @@ These types can be defined with _options_:
  stored. If the precision isn't specified, the default precision is 6 (i.e. to 
  the microsecond).
 
-In `timetable`, the third row stored the microsecond part of the time value 
-under `dt_column`. `current_timestamp` is a SQL standard function that provides
- the current date and time.
+    In `timetable`, the third row stored the microsecond part of the time value 
+    under `dt_column`.
 
-If we add a new value under `now_column` which has a precision of 3, we'll see 
-the difference from `dt_column`:
+    If we add a new value under `now_column` which has a precision of 3, we'll see 
+    the difference from `dt_column`:
 
-```
-UPDATE timetable
-SET now_column = now()
-WHERE id = 1;
-```{{execute}}
+    ```
+    UPDATE timetable
+    SET now_column = now()
+    WHERE id = 1;
+    ```{{execute}}
 
-`now()` is a Postgres function that is equivalent to `current_timestamp`.
+    `current_timestamp` is a SQL standard function that provides the current date 
+    and time. `now()` is a Postgres function that is equivalent to 
+    `current_timestamp`.
 
 * `with time zone` (`time` and `timestamp` only): there's several different 
 ways to explicitly include the time zone for an input value - for example, by 
 abbreviations such as `EST` and `PST`, by using an _offset_ that indicates the 
-number of hours difference from Coordinated Universal Time (UTC), and by using 
+number of hours difference from Coordinated Universal Time (UTC), or by using 
 an area and location such as `America/New York`. `timestamptz` (which we used 
 in the new table above) is Postgres shorthand for `timestamp with time zone`.
 
@@ -80,6 +80,6 @@ SELECT
 FROM timetable;
 ```{{execute}}
 
-Some use cases for using intervals are mailing campaigns (a timed series of 
+Some use cases for using intervals are mailing campaigns (a series of timed 
 mailings going out to a group of recipients), or keeping track of when 
 customers are due to renew subscriptions.
