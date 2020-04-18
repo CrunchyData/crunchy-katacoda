@@ -1,4 +1,4 @@
-## Final Notes
+## Conclusion
 
 In this course, we dove a little bit into three kinds of Postgres' most 
 commonly used built-in data types: character, numeric, and date/time.

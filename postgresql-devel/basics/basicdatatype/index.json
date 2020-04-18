@@ -1,11 +1,28 @@
  {
-  "title": "Data Types",
-  "description": "Common data types encountered in PostgreSQL",
+  "title": "Intro to Data Types",
+  "description": "A look at a few of the most common data types encountered in PostgreSQL",
   "difficulty": "beginner",
   "time": "5 minutes",
   "details": {
     "steps": [
-      {"title": "Introduction to Creating table", "text": "01-test.md"}
+      {"title": "Data Types", 
+        "text": "01-view-types.md"
+      },
+      {"title": "Character Types", 
+        "text": "02-text.md"
+      },
+      {"title": "Numeric Types", 
+        "text": "03-numeric.md"
+      },
+      {"title": "Date/Time Types", 
+        "text": "04-date.md"
+      },
+      {"title": "Alter Column Data Type", 
+        "text": "05-alter.md"
+      },
+      {"title": "Final Notes", 
+        "text": "06-structure.md"
+      }
        ],
     "intro": {
       "courseData": "env-init.sh",
