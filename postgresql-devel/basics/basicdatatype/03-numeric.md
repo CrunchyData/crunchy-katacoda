@@ -89,7 +89,7 @@ But if we try it with numeric values from `numtable`:
 ```
 SELECT 
     (SELECT number1 FROM numtable WHERE id = 1) 
-    * (SELECT chara1 FROM numtable WHERE id = 2)
+    * (SELECT number1 FROM numtable WHERE id = 2)
 ;
 ```{{execute}}
 

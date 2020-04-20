@@ -1,7 +1,7 @@
 Postgres has three built-in character types:
 
-* `char` - fixed length
-* `varchar` - variable length with limit
+* `character` (or `char`) - fixed length
+* `character varying` (or `varchar`) - variable length with limit
 * `text` - variable unlimited length
 
 Declaring a `char` or `varchar` type when creating a new table looks like this:

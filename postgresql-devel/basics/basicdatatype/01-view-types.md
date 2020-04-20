@@ -28,15 +28,15 @@ psql -U groot -h localhost workshop
 
 You'll be prompted for the password (enter `password`).
 
-Once logged in, run this `psql` command to see the table definition for the 
-`employee` table:
+Once logged in, run this `psql` command to see information about the `employee`
+ table:
 
 ```
 \d employee
 ```{{execute}}
 
-You should see metadata for the `groot.employee` table, where _Type_ indicates the
- data type held in that column. 
+You should see some metadata for the `groot.employee` table, where _Type_ 
+indicates the data type held in that column. 
 
 And if you display the contents of the table, you should see data in each 
 column that matches up with the designated data type:

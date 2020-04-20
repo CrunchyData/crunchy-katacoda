@@ -39,6 +39,8 @@ These types can be defined with _options_:
     UPDATE timetable
     SET now_column = now()
     WHERE id = 1;
+
+    SELECT * FROM timetable;
     ```{{execute}}
 
     `current_timestamp` is a SQL standard function that provides the current date 
