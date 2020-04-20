@@ -7,8 +7,12 @@
   "details": {
     "steps": [
       {
-        "title": "Creating a Cluster",
-        "text": "01-make-cluster.md"
+        "title": "Connecting the pgo Client",
+        "text": "01-connect.md"
+      },
+      {
+        "title": "Creating PostgreSQL Clusters",
+        "text": "02-create-cluster.md"
       }
     ],
     "intro": {
@@ -24,7 +28,6 @@
   "environment": {
     "uilayout": "terminal",
     "terminals": [
-      {"name": "Port-Forward Here", "target": "host01"},
       {"name": "Operator Commands Here", "target": "host01"},
       {"name": "PSQL Commands Here", "target": "host01"}
     ],
