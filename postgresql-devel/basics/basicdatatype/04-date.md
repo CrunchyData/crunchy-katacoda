@@ -19,8 +19,8 @@ The different date/time types are:
 * `date` - stores only the date, with no time of the day
 * `time` - stores only the time of day without the date
 * `timestamp` - stores both the date and time
-* `interval` - stores an interval of a specified measure of time, is useful for
- _relative_ times
+* `interval` - stores an interval of a specified measure of time, and is useful
+ for _relative_ times
 
 These types can be defined with _options_:
 
@@ -33,7 +33,7 @@ These types can be defined with _options_:
     under `dt_column`.
 
     If we add a new value under `now_column` which has a precision of 3, we'll see 
-    the difference from `dt_column`:
+    how the fraction differs from `dt_column`:
 
     ```
     UPDATE timetable
@@ -47,12 +47,13 @@ These types can be defined with _options_:
     and time. `now()` is a Postgres function that is equivalent to 
     `current_timestamp`.
 
-* `with time zone` (`time` and `timestamp` only): there's several different 
-ways to explicitly include the time zone for an input value - for example, by 
-abbreviations such as `EST` and `PST`, by using an _offset_ that indicates the 
-number of hours difference from Coordinated Universal Time (UTC), or by using 
-an area and location such as `America/New York`. `timestamptz` (which we used 
-in the new table above) is Postgres shorthand for `timestamp with time zone`.
+* `with time zone` (`time` and `timestamp` only): `timestamptz` (which we used 
+in the new table above) is Postgres shorthand for `timestamp with time zone`. 
+There's several different ways to explicitly include the time zone for an input
+ value - for example, by abbreviations such as `EST` and `PST`, by using an 
+ _offset_ that indicates the number of hours difference from Coordinated 
+ Universal Time (UTC), or by using an area and location such as 
+ `America/New York`. 
 
     The value stored internally in Postgres is in UTC, so if an input value 
     has a time zone, it is converted to UTC using the offset for the included 
@@ -82,6 +83,6 @@ SELECT
 FROM timetable;
 ```{{execute}}
 
-Some use cases for using intervals are mailing campaigns (a series of timed 
-mailings going out to a group of recipients), or keeping track of when 
-customers are due to renew subscriptions.
+Some use cases for intervals are mailing campaigns (a series of timed mailings 
+going out to a group of recipients), or keeping track of when customers are due
+ to renew subscriptions.

@@ -2,7 +2,7 @@
   "title": "Intro to Data Types",
   "description": "A look at a few of the most common data types encountered in PostgreSQL",
   "difficulty": "beginner",
-  "time": "5 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [
       {"title": "Data Types", 
@@ -17,7 +17,7 @@
       {"title": "Date/Time Types", 
         "text": "04-date.md"
       },
-      {"title": "Using the `ALTER` command to change data types", 
+      {"title": "Using the ALTER command to change data types", 
         "text": "05-alter.md"
       },
       {"title": "Final Notes", 
