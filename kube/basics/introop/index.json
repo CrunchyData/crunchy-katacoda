@@ -13,6 +13,10 @@
       {
         "title": "Creating PostgreSQL Clusters",
         "text": "02-create-cluster.md"
+      },
+      {
+        "title": "Deleting PostgreSQL Clusters",
+        "text": "03-cluster-delete.md"
       }
     ],
     "intro": {
