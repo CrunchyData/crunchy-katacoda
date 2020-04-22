@@ -14,14 +14,14 @@ done
 cat <<EOF > employees.sql
 -- Employee table
 CREATE TABLE employee (
-    employee_id serial 
+    id serial 
         CONSTRAINT employee_id_pk PRIMARY KEY,
-    employee_ssn VARCHAR (10) 
+    ssn VARCHAR (10) 
         CONSTRAINT employee_ak UNIQUE NOT NULL,
-    employee_first_name CHAR (35) NOT NULL,
-    employee_last_name CHAR (50) NOT NULL,
-    employee_hire_date date NOT NULL,
-    employee_termination_datetime timestamp with time zone
+    first_name CHAR (35) NOT NULL,
+    last_name CHAR (50) NOT NULL,
+    hire_date date NOT NULL,
+    termination_datetime timestamp with time zone
 );
 
 -- Department table
@@ -42,7 +42,7 @@ CREATE TABLE employee_department_asc (
         CONSTRAINT employee_department_pk 
             PRIMARY KEY (employee_id, department_number),
         CONSTRAINT employee_id_fk 
-            FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
+            FOREIGN KEY (employee_id) REFERENCES employee (id),
         CONSTRAINT department_number_fk 
             FOREIGN KEY (department_number) REFERENCES department (department_number) 
 );
@@ -59,11 +59,11 @@ CREATE TABLE employee_salary_hist (
         CONSTRAINT employee_salary_pk 
             PRIMARY KEY (employee_id, employee_salary_start_date),
         CONSTRAINT employee_id_fk1 
-            FOREIGN KEY (employee_id) REFERENCES employee (employee_id)
+            FOREIGN KEY (employee_id) REFERENCES employee (id)
 );
 
 -- Add Employees
-INSERT INTO employee (employee_ssn, employee_first_name, employee_last_name, employee_hire_date)
+INSERT INTO employee (ssn, first_name, last_name, hire_date)
 VALUES  ('111111111', 'John', 'Smith', current_date),
         ( '111111112', 'Mary', 'Smith', current_date),
         ( '111111113', 'Arnold', 'Jackson', current_date),
@@ -88,8 +88,8 @@ INSERT INTO employee_department_asc (
     employee_id, department_number, employee_department_start_date
     )
 VALUES (
-        (SELECT employee_id FROM employee 
-            WHERE employee_first_name = 'John' AND employee_last_name = 'Smith'
+        (SELECT id FROM employee 
+            WHERE first_name = 'John' AND last_name = 'Smith'
         ),
         (SELECT department_number FROM department 
             WHERE department_name = 'SALES'
@@ -97,24 +97,24 @@ VALUES (
         current_date
     ),
     (
-        (SELECT employee_id FROM employee 
-            WHERE employee_first_name = 'Mary' AND employee_last_name = 'Smith'
+        (SELECT id FROM employee 
+            WHERE first_name = 'Mary' AND last_name = 'Smith'
         ),
         (SELECT department_number FROM department 
             WHERE department_name = 'RESEARCH'),
         current_date
     ),
     (
-        (SELECT employee_id FROM employee 
-            WHERE employee_first_name = 'Arnold' AND employee_last_name = 'Jackson'
+        (SELECT id FROM employee 
+            WHERE first_name = 'Arnold' AND last_name = 'Jackson'
         ),
         (SELECT department_number FROM department 
             WHERE department_name = 'ACCOUNTING'),
         current_date
     ),
     (
-        (SELECT employee_id FROM employee 
-            WHERE employee_first_name = 'Jeffrey' AND employee_last_name = 'Westman'
+        (SELECT id FROM employee 
+            WHERE first_name = 'Jeffrey' AND last_name = 'Westman'
         ),
         (SELECT department_number FROM department 
             WHERE department_name = 'ACCOUNTING'),
@@ -137,9 +137,6 @@ SELECT 3, '2016-03-01'::date , 40000.00, null
 UNION
 SELECT 4, '2016-03-01'::date , 40000.00, null
 ;
-
--- Display contents of new table
-SELECT * FROM new_test_table;
 
 EOF
 

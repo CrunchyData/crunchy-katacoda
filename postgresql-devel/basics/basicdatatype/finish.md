@@ -13,4 +13,5 @@ Here are the links to the official PostgreSQL docs, which contain more details
 about the implementation of the different data types:
 1. [Character types](https://www.postgresql.org/docs/current/datatype-character.html)
 2. [Numeric types](https://www.postgresql.org/docs/current/datatype-numeric.html)
-3. [Date/time types](https://www.postgresql.org/docs/current/datatype-datetime.html)
+3. [Boolean type](https://www.postgresql.org/docs/current/datatype-boolean.html)
+4. [Date/time types](https://www.postgresql.org/docs/current/datatype-datetime.html)

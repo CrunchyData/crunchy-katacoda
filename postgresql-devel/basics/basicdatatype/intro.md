@@ -6,9 +6,9 @@ data tables, and even add values to those tables. You'll recall that when we
 create a table, we have to define what kind of data each column will store.
 
 If you have programming experience, the concept of data types isn't new. 
-Data types in relational database management systems such as Postgres follow
-a lot of the same general principles, so this course will serve mostly as a
-refresher. 
+Data types in relational database management systems (DBMS) such as Postgres 
+follow a lot of the same general principles, so this course will serve mostly 
+as a refresher. 
 
 Since this is an introductory course, we'll focus on three of the most common 
 data types in Postgres: character types (`char`, `varchar`, and `text`), 

@@ -36,14 +36,17 @@ NUMERIC(precision, scale)
 * `precision` is a positive integer that specifies the total count of digits in
  the number, including numbers on both sides of the decimal.
 
-* `scale` is either 0 or a positive integer that indicates the count of digits to the right of the decimal.
+* `scale` is either 0 or a positive integer that indicates the count of digits 
+to the right of the decimal.
 
-Declaring `NUMERIC` without a specified precision nor scale will allow the column to store values of any precision and scale.
+Declaring `NUMERIC` without a specified precision nor scale will allow the 
+column to store values of any precision and scale.
 
 `decimal` is functionally the same as `numeric` in Postgres, and are both part 
 of the SQL standard. 
 
-The `real` and `double precision` types are **approximate** numeric types. This means that storing and outputing a value might show slight discrepancies.
+The `real` and `double precision` types are **approximate** numeric types. This
+ means that storing and outputing a value might show slight discrepancies.
 
 ### Add numeric values to a table
 
@@ -52,7 +55,7 @@ values:
 
 ```
 CREATE TABLE numtable (
-    id serial,
+    id serial PRIMARY KEY,
     number1 integer, 
     number2 numeric(16,8)
 );
@@ -107,3 +110,9 @@ instance, calculations on `numeric` are slower than on the floating-point types
  `real` and `double precision`. But as mentioned earlier, floating-point types 
  don't guarantee exactness. You'll have to understand your data storage and 
  processing needs and weigh your options for numeric types carefully.
+
+### Monetary values
+
+While `money` is a data type included in Postgres, it has been deprecated a 
+few times and could cause unexpected results. The recommended approach is to 
+use `numeric`.

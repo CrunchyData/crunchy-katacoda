@@ -8,7 +8,7 @@ Declaring a `char` or `varchar` type when creating a new table looks like this:
 
 ```
 CREATE TABLE texttable (
-    id serial, 
+    id serial PRIMARY KEY, 
     chara1 char(8), 
     chara2 varchar(32))
 ;
@@ -28,6 +28,22 @@ If the `n` isn't specified for `char`, it is interpreted as `char(1)`. If the
 For `char`, the string is padded up to n characters if the length is shorter 
 than n. For `varchar`, strings shorter than n are stored as is.
 
+### Which character type to use
+
+While in other DBMS's there might be key differences between `char` and 
+`varchar`, there are generally no substantial differences in performance 
+between them (as well as `text`) in Postgres. 
+
+`varchar` and `text` are preferred and more commonly used. If you need to limit
+ the number of characters, use the `varchar(n)` syntax, or use a check 
+ constraint with `text`. You might consider `char` if you know that your values
+ will _always_ have a fixed number of characters - less than 3 characters might
+  be a valid use case: for example, US state abbreviations. Otherwise, for 
+  most cases, even if you need to limit the length, you're better off using 
+  `varchar` or `text`.
+
+The `text` type is specific to Postgres and is not part of the SQL standard.
+
 ### Add text values to a table
 
 Let's try adding a few rows of values:
@@ -42,12 +58,3 @@ VALUES  ('55', 'Blue'),
 
 SELECT * FROM texttable;
 ```{{execute}}
-
-### Which character type to use
-
-The `text` type in Postgres is not part of the SQL standard.
-
-There are generally no substantial differences in performance between `char`, 
-`varchar`, or `text`. `text` and `varchar` are more commonly used and 
-preferred. (A constraint can be added to limit the number of characters for 
-`text`.)
