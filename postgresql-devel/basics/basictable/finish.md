@@ -8,7 +8,7 @@ Let's summarize what we did:
 - Used constraints such as Not Null, Primary Key, Foreign Key, and Check
 - Inserted data to understand how data types and constraints work
 
-The container used in this class is available in [Dockerhub](https://hub.docker.com/r/thesteve0/postgres-appdev). As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. Feel free to download the image and play some more at your own pace on your own machine.
+The container used in this class is available in [Dockerhub](https://hub.docker.com/r/crunchydata/crunchy-postgres-appdev). As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. Feel free to download the image and play some more at your own pace on your own machine.
 
 And with that, we are finished. We wish you Happy Learning!
 
