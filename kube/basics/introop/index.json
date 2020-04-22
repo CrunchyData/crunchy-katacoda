@@ -1,7 +1,6 @@
 {
   "title": "Introduction to Using Crunchy PostgreSQL Operator",
   "description": "A quick intro. to working with Crunchy PostgreSQL Operator",
-  "private": true,
   "difficulty": "beginner",
   "time": "15 minutes",
   "details": {
