@@ -43,18 +43,18 @@ The output for `boolean` is either `t` or `f`:
 
 ```
 SELECT * FROM booltable;
-````{{execute}}
+```{{execute}}
 
 ### Querying booleans
 
 We'll get more into querying and operators in later courses, but for now, the 
 important thing to remember about querying the `boolean` type is that `NULL` 
-is a representation of an _unknown_ or _missing_ (neither true not false!) 
+is a representation of an _unknown_ or _missing_ (neither true nor false!) 
 value. Let's take for example:
 
 ```
 SELECT * FROM booltable WHERE boolcol = NULL;
-``{{execute}}
+```{{execute}}
 
 And compare that with the following query:
 
@@ -63,7 +63,7 @@ SELECT * FROM booltable WHERE boolcol IS NULL;
 ```{{execute}}
 
 In the first query, we're _comparing_ to `NULL`, but unknown values cannot be 
-equal or not equal to `NULL`, so no rows are returned.
+equal nor not equal to `NULL`, so no rows are returned.
 
 So, if you need to find null or not null values, use the expressions `IS NULL` 
 or `IS NOT NULL`.

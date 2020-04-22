@@ -30,9 +30,9 @@ These types can be defined with _options_:
 
 * `with time zone` (`time` and `timestamp` only): `timestamptz` (which we used 
 in the new table above) is Postgres shorthand for `timestamp with time zone`. 
-There's several different ways to explicitly include the time zone for an input
- value - for example, by abbreviations such as `EST` and `PST`, by using an 
- _offset_ that indicates the number of hours difference from Coordinated 
+There are several different ways to explicitly include the time zone for an 
+input value - for example, by abbreviations such as `EST` and `PST`, by using 
+an _offset_ that indicates the number of hours difference from Coordinated 
  Universal Time (UTC), or by using an area and location such as 
  `America/New_York`. 
 
@@ -56,7 +56,7 @@ There's several different ways to explicitly include the time zone for an input
 
     >While `timestamp` by itself (that is, `timestamp without timezone`) is 
     technically valid, it can cause a lot of issues and so it's recommended to 
-    always 
+    always use the `with time zone` option.
 
 * _precision_ (`time`, `timestamp`, and `interval` only): an integer from 0 to 
 6 that indicates what fraction (up to the microsecond) the time value should be
