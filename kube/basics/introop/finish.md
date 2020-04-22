@@ -1,3 +1,3 @@
 ## Final notes
 
-All Done
+And with that you have had a very brief introduction to the Crunchy PostgreSQL Operator. There are many more features and advanced use cases you can carry out. For now, you can always go [read some more](https://access.crunchydata.com/documentation/postgres-operator/4.2.2/installation/install-with-ansible/) about The Operator, looks at [common tasks](https://access.crunchydata.com/documentation/postgres-operator/4.2.2/pgo-client/common-tasks/) to use with the Operator (which you can do right here in the scenario as added fun), or [command line](https://access.crunchydata.com/documentation/postgres-operator/4.2.2/pgo-client/reference/) options for _pgo_. Thanks for attending and enjoy!

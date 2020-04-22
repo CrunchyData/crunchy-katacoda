@@ -1,7 +1,6 @@
 {
   "title": "Introduction to Using Crunchy PostgreSQL Operator",
   "description": "A quick intro. to working with Crunchy PostgreSQL Operator",
-  "private": true,
   "difficulty": "beginner",
   "time": "15 minutes",
   "details": {
@@ -13,6 +12,10 @@
       {
         "title": "Creating PostgreSQL Clusters",
         "text": "02-create-cluster.md"
+      },
+      {
+        "title": "Deleting PostgreSQL Clusters",
+        "text": "03-cluster-delete.md"
       }
     ],
     "intro": {
