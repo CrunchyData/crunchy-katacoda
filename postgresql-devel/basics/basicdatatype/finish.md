@@ -1,7 +1,7 @@
 ## Conclusion
 
-In this course, we dove a little bit into three of Postgres' most 
-commonly used built-in data types: character, numeric, and date/time.
+In this course, we dove a little bit into some of Postgres' more basic built-in
+ data types: character, numeric, boolean, and date/time.
 
 It's important to have planned out your database stucture first before 
 creating new tables and adding data to them. This can save you time and effort 

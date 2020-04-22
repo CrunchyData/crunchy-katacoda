@@ -10,11 +10,11 @@ Data types in relational database management systems (DBMS) such as Postgres
 follow a lot of the same general principles, so this course will serve mostly 
 as a refresher. 
 
-Since this is an introductory course, we'll focus on three of the most common 
+Since this is an introductory course, we'll focus on a few of the most common 
 data types in Postgres: character types (`char`, `varchar`, and `text`), 
-numeric (including `integer` and `decimal`/`numeric`), and date/time (including
- `date` and `timestamp`). With that said, we'll also introduce some concepts that 
- are pertinent to Postgres and databases in general.
+numeric (including `integer` and `decimal`/`numeric`), `boolean`, and date/time
+ (including `date` and `timestamp`). With that said, we'll also introduce some 
+ concepts that are pertinent to Postgres and databases in general.
 
 ## Using the Command Line
 
