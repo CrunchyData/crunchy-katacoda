@@ -1,6 +1,6 @@
 # Deleting your PostgreSQL Clusters Using The Operator
 
-We created a couple of clusters in this class and perhaps you would like to clean them up from your cluster. in this final section we will cover how to delete your PostgreSQL clusters using the Operator.
+We created a couple of clusters in this class and perhaps you would like to clean them up from your environment.  In this final section we will cover how to delete your PostgreSQL clusters using the Operator.
 
 ## Completely deleting a cluster and all its data.  
 
@@ -52,4 +52,4 @@ Since you deleted all the data for _bigcluster_, you should only the one pvc nam
 
 ## Summary
 
-And with that you have cleaned up all the pieces of your clusters you wanted. Using The Operator you were able to reduce complicated and repetitive task to a simple command.  
+And with that you have cleaned up all the pieces of your clusters that you wanted to. Using The Operator you were able to reduce complicated and repetitive tasks to simple commands.  
