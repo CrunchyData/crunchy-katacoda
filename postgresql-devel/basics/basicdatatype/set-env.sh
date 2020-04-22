@@ -129,8 +129,6 @@ SELECT 3, '2016-03-01'::date , 40000.00, null
 UNION
 SELECT 4, '2016-03-01'::date , 40000.00, null
 ;
--- Display contents of new table
-SELECT * FROM new_test_table;
 EOF
 
 echo 'loading employees data'
