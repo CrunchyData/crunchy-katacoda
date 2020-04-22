@@ -11,7 +11,7 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   sleep 1
 done
 
-cat <<EOF > employees.sql
+cat <<EOF > employees-ddl.sql
 -- Employee table
 CREATE TABLE employee (
     empid serial 
@@ -57,6 +57,9 @@ CREATE TABLE employee_salary_hist (
         CONSTRAINT employee_id_fk1 
             FOREIGN KEY (employee_id) REFERENCES employee (empid)
 );
+EOF
+
+cat <<EOF > employees-data.sql
 -- Add Employees
 INSERT INTO employee (employee_ssn, employee_first_name, employee_last_name, employee_hire_date)
 VALUES  ('111111111', 'John', 'Smith', current_date),
@@ -115,8 +118,7 @@ VALUES (
     )
 ;
 -- Add salary history
-INSERT INTO employee_salary_hist (
-    employee_id, employee_salary_start_date, employee_salary_amount, employee_salary_end_date)
+INSERT INTO employee_salary_hist (employee_id, employee_salary_start_date, employee_salary_amount, employee_salary_end_date)
 SELECT 1, '2016-03-01'::date , 40000.00, '2017-02-28'::date
 UNION
 SELECT 1, '2017-03-01'::date , 50000.00, null
@@ -131,8 +133,11 @@ SELECT 4, '2016-03-01'::date , 40000.00, null
 ;
 EOF
 
+echo 'loading employee schema'
+PGPASSWORD="password" psql -h localhost -U groot -f employees-ddl.sql workshop
+
 echo 'loading employees data'
-PGPASSWORD="password" psql -h localhost -U groot -f employees.sql workshop
+PGPASSWORD="password" psql -h localhost -U groot -f employees-data.sql workshop
 
 echo 'finished loading employees data'
 
