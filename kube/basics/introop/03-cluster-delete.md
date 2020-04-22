@@ -45,7 +45,7 @@ This command should say "No resources found in the opspace namespace". If there 
 Now let's see if the PVC is still there:
 
 ```
-kubectl get pods -n opspace
+kubectl get pvc -n opspace
 ```{{execute}}
 
 Since you deleted all the data for _bigcluster_, you should only the one pvc named _mycluster_.

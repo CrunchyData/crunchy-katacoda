@@ -106,7 +106,13 @@ psql -h localhost -U normaluser workshop
 
 When prompted for a password use the output from the kubectl command two steps back. After doing that you should be greeted with the normal `psql` prompt. You can go ahead and enter any PostgreSQL commands you want. To disconnect from the database you can type **ctrl+d**, `\q` or simply 'quit' ('exit' would work too).
 
-Next we will spin up a more exciting PostgreSQL cluster. Let's go back to the 'Operator Command Here' tab and type **ctrl+c** to break the port forward. Stay in this window for the next section.  
+Next we will spin up a more exciting PostgreSQL cluster. Let's go back to the 'Operator Command Here' tab and type **ctrl+c** to break the port forward. Make sure you get the command prompt that looks like:
+
+```
+[root@master pgo]#
+```
+
+Stay in this window for the next section.  
  
  ## Creating a replicated cluster
  
