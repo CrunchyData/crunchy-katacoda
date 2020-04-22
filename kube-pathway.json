@@ -3,7 +3,7 @@
     "courses": [
         {
             "action" : "Start Course",
-            "external_link" : "https://learn.crunchydata.com/postgresql-devel/courses/basics/",
+            "external_link" : "https://learn.crunchydata.com/kube/courses/basics/",
             "course_id" : "basics",
             "title": "Basic Usage of the Crunchy Postgres Operator"
         }, {
