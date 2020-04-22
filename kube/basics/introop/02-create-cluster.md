@@ -8,7 +8,7 @@ Spinning up a database cluster is extremely easy. The following command will spi
 
 ```
 pgo create cluster mycluster -n opspace
-```
+```{{execute}}
 
 The command will return a workflow id to track the progress of the cluster creation. The name of our database cluster will be _mycluster_.
 
@@ -52,7 +52,7 @@ If you want to see the configuration on the cluster all you have to do is this c
 
 ```
 pgo show cluster mycluster -n opspace
-```
+```{{execute}}
 
 The response will show you all the Kubernetes metadata about your cluster including service name and storage capacity. 
 
@@ -60,7 +60,7 @@ The Operator also created some secrets to handle usernames and passwords for the
 
 ```
 kubectl get secrets -n opspace -l pg-cluster=mycluster
-``` 
+``` {{execute}}
 
 The only secrets we care about are the ones that end in _-secret_. Names for the secrets abide by the following convention:
 
@@ -73,7 +73,7 @@ To obtain the password for user _normaluser_ we can use the following command:
 
 ```
 kubectl get secrets/mycluster-normaluser-secret --template={{.data.password}} -n opspace | base64 -d
-```
+```{{execute}}
 
 This command gets the password from the secret and then decrypts the password to plain string format.
  
@@ -87,7 +87,7 @@ First the port-forward in the current terminal:
 
 ```
 kubectl port-forward svc/mycluster 5432:5432 -n opspace
-```
+```{{execute}}
 
 Note, if you have kubectl on your local machine you could use the same command to port-forward from your local machine to your PostgreSQL instance running in your Kubernetes cluster. From there you can connect any of the desktop tools you usually use to work with your database, such as the psql command line, PgAdmin, [DBeaver](https://dbeaver.io/), [DataGrip](https://www.jetbrains.com/datagrip/), or your IDE of choice by connecting to localhost on your machine.
 
@@ -96,13 +96,13 @@ Now in the 'PSQL Commands Here' terminal let's get the user _normaluser_'s passw
 
 ```
 kubectl get secrets/mycluster-normaluser-secret --template={{.data.password}} -n opspace | base64 -d
-```
+```{{execute}}
 
 And now we can use the `psql` command line client to connect to our database. 
 
 ```
 psql -h localhost -U normaluser workshop
-```
+```{{execute}}
 
 When prompted for a password use the output from the kubectl command two steps back. After doing that you should be greeted with the normal `psql` prompt. You can go ahead and enter any PostgreSQL commands you want. To disconnect from the database you can type **ctrl+d**, `\q` or simply 'quit' ('exit' would work too).
 
@@ -114,13 +114,13 @@ Next we will spin up a more exciting PostgreSQL cluster. Let's go back to the 'O
  
  ```
 pgo create cluster bigcluster --replica-count 2 -n opspace
-```
+```{{execute}}
 
 You can use the normal `pgo show workflow <workflowid>` to track cluster creation. Once it is finished go ahead look at the Kubernetes metadata for the cluster:
 
 ```
 pgo show cluster bigcluster -n opspace
-```
+```{{execute}}
 
 Your output should look like this (except the random letter and numbers will be different).
 

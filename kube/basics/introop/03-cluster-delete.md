@@ -8,13 +8,13 @@ First let's just query which clusters The Operator is mananging in our namespace
 
 ```
 pgo show cluster --all -n opspace
-```
+```{{execute}}
 
 We can see that we have two clusters: _bigcluster_ and _mycluster_. Let's go ahead and completely delete everything associated with the replicated cluster, _bigcluster_.
 
 ```
 pgo delete cluster bigcluster -n opspace
-```
+```{{execute}}
 
 When given the warning about this deleting all your data reply _yes_.
 
@@ -30,7 +30,7 @@ And again this command is very simple with just a new flag added to the command 
 
 ```
 pgo delete cluster mycluster --keep-data -n opspace
-```  
+```{{execute}}
 
 Once again, reply _yes_ to the prompt (which you should notice has slightly different wording this time).
 
@@ -38,7 +38,7 @@ Now if you don't believe that the data is still there you can first check to see
 
 ```
 kubectl get pods -n opspace
-```
+```{{execute}}
 
 This command should say "No resources found in the opspace namespace". If there are any pods they are probably scheduled to be deleted. You can wait a bit and then try the command above one more time. 
 
@@ -46,7 +46,7 @@ Now let's see if the PVC is still there:
 
 ```
 kubectl get pods -n opspace
-```
+```{{execute}}
 
 Since you deleted all the data for _bigcluster_, you should only the one pvc named _mycluster_.
 

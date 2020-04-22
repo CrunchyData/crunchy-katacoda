@@ -8,7 +8,7 @@ By default, in a Kubernetes cluster, The Operators is not accessible outside of 
 
 ```
 kubectl port-forward svc/postgres-operator 8443:8443 -n pgo
-```
+```{{execute}}
 
 This terminal tab will now be blocked with the port-forward. 
 
@@ -18,7 +18,7 @@ Since our first tab is blocked, go ahead and click on the tab titled 'Operator C
 
 ```
 pgo version
-``` 
+```{{execute}}
 
 You should see 4.2.2 for both the client and server. The fact this command gave us information on the server means our `pgo` client is successfully talking to The Operator in our Kubernetes cluster.
 
@@ -30,13 +30,13 @@ First we will look at the _.pgo_ directory. This directory is created in the hom
 
 ```
 cd .pgo/pgo/
-```
+```{{execute}}
 
 and then 
 
 ```
 ls 
-```
+```{{execute}}
 
 The basic contents of this directory contain the certificates to talk over TLS to The Operator (client.crt and client.pem) and the pgouser file which is the username and password for the admin. These files will be referenced in the environment variables.
 
@@ -46,7 +46,7 @@ Let's look at the environment variables set in the initialization of the scenari
 
 ```
 cat  ~/.bashrc |grep export
-```
+```{{execute}}
    
 Your output should be this:   
 
@@ -66,7 +66,3 @@ You can see that we pointed to those files in the .pgo directory. Since we used 
 We covered the two essential configuration changes you need to make to your machine to get the `pgo` client to connect to The Operator. Showing you this was solely done so you could repeat this at home on your own machines. Here it was automatically configured for you. And finally, we made a port-forward between our terminal and the Kubernetes cluster so our `pgo` client is all set to go. Let's go make some PostgreSQL clusters! 
 
 In this section we talked about how we could connect easily once we set up the port-forward, the .bashrc and the .pgo directory.
-
-```
-
-```
