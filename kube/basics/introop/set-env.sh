@@ -15,9 +15,7 @@
 #  sleep 1
 #done
 
-launch.sh; # kubectl wait pod -n pgo -l name=postgres-operator --for=condition=ready
-
-until kubectl get pods -n pgo &> /dev/null; do
+launch.sh; until kubectl get pods -n pgo | grep -i running &> /dev/null; do
   echo >&2 "$(date +%Y%m%dt%H%M%S) Waiting The Operator to Start"
   sleep 1
 done
