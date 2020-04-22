@@ -14,7 +14,7 @@ done
 cat <<EOF > employees.sql
 -- Employee table
 CREATE TABLE employee (
-    empid serial 
+    id serial 
         CONSTRAINT employee_id_pk PRIMARY KEY,
     employee_ssn VARCHAR (10) 
         CONSTRAINT employee_ak UNIQUE NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE employee_department_asc (
         CONSTRAINT employee_department_pk 
             PRIMARY KEY (employee_id, department_number),
         CONSTRAINT employee_id_fk 
-            FOREIGN KEY (employee_id) REFERENCES employee (empid),
+            FOREIGN KEY (employee_id) REFERENCES employee (id),
         CONSTRAINT department_number_fk 
             FOREIGN KEY (department_number) REFERENCES department (department_number) 
 );
@@ -55,7 +55,7 @@ CREATE TABLE employee_salary_hist (
         CONSTRAINT employee_salary_pk 
             PRIMARY KEY (employee_id, employee_salary_start_date),
         CONSTRAINT employee_id_fk1 
-            FOREIGN KEY (employee_id) REFERENCES employee (empid)
+            FOREIGN KEY (employee_id) REFERENCES employee (id)
 );
 -- Add Employees
 INSERT INTO employee (employee_ssn, employee_first_name, employee_last_name, employee_hire_date)
@@ -81,7 +81,7 @@ INSERT INTO employee_department_asc (
     employee_id, department_number, employee_department_start_date
     )
 VALUES (
-        (SELECT empid FROM employee 
+        (SELECT id FROM employee 
             WHERE employee_first_name = 'John' AND employee_last_name = 'Smith'
         ),
         (SELECT department_number FROM department 
@@ -90,7 +90,7 @@ VALUES (
         current_date
     ),
     (
-        (SELECT empid FROM employee 
+        (SELECT id FROM employee 
             WHERE employee_first_name = 'Mary' AND employee_last_name = 'Smith'
         ),
         (SELECT department_number FROM department 
@@ -98,7 +98,7 @@ VALUES (
         current_date
     ),
     (
-        (SELECT empid FROM employee 
+        (SELECT id FROM employee 
             WHERE employee_first_name = 'Arnold' AND employee_last_name = 'Jackson'
         ),
         (SELECT department_number FROM department 
@@ -106,7 +106,7 @@ VALUES (
         current_date
     ),
     (
-        (SELECT empid FROM employee 
+        (SELECT id FROM employee 
             WHERE employee_first_name = 'Jeffrey' AND employee_last_name = 'Westman'
         ),
         (SELECT department_number FROM department 
