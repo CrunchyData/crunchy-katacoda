@@ -14,14 +14,17 @@
       {"title": "Numeric Types", 
         "text": "03-numeric.md"
       },
+      {"title": "Boolean", 
+        "text": "04-boolean.md"
+      },
       {"title": "Date/Time Types", 
-        "text": "04-date.md"
+        "text": "05-date.md"
       },
       {"title": "Using the ALTER command to change data types", 
-        "text": "05-alter.md"
+        "text": "06-alter.md"
       },
       {"title": "Final Notes", 
-        "text": "06-structure.md"
+        "text": "07-structure.md"
       }
        ],
     "intro": {
