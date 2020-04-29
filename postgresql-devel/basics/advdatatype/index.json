@@ -1,0 +1,45 @@
+{
+    "title": "Data Types II",
+    "description": "A short introduction to some advanced data types in PostgreSQL",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+      "steps": [
+        {"title": "More Data Types", 
+          "text": "01-data-structure.md"
+        },
+        {"title": "Arrays", 
+          "text": "02-array.md"
+        },
+        {"title": "Range Types", 
+          "text": "03-range.md"
+        },
+        {"title": "Enumerated Types", 
+          "text": "04-enum.md"
+        },
+        {"title": "XML", 
+          "text": "05-xml.md"
+        }
+         ],
+      "intro": {
+        "courseData": "env-init.sh",
+        "code": "set-env.sh",
+        "text": "intro.md",
+        "credits": ""
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "terminal",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+      "terminals": [
+        {"name": "Terminal 2", "target": "host01"}
+      ]
+    },
+    "backend": {
+      "imageid": "crunchydata-single1"
+    }
+  }
+  
