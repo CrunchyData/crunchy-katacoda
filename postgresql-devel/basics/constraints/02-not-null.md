@@ -10,13 +10,13 @@ We can actually combine multiple constraints on the same column so let's go ahea
 
 ```sql92
 alter table people add CONSTRAINT unique_twitter UNIQUE (twitter_username);
-```
+```{{execute}}
 
 and so now if we try to enter in a new person who claims to have the same Twitter username it won't work:
 
 ```sql92
-insert into people (family_name, given_name, age, twitter_username) values ('Banner', 'Bruce', 41, 'trashpanda')
-```
+insert into people (family_name, given_name, age, twitter_username) values ('Banner', 'Bruce', 41, 'trashpanda');
+```{{execute}}
 
 you should get this
 
@@ -29,7 +29,7 @@ If you look at the constraints again, you will see that PostgreSQL implemented t
 
 ```sql92
 \d people
-```
+```{{execute}}
 
 So be aware, that a UNIQUE constraint will create an index on all the values of the field. If you don't want the size and write delays from a full index you can also create a [partial UNIQUE index](https://www.postgresql.org/docs/12/indexes-partial.html) (covering that is beyond the scope of this class).
 
@@ -37,7 +37,7 @@ Remember you can also declare constraints against multiple columns. So you could
 
 ```sql92
 alter table people add CONSTRAINT unique_name_age UNIQUE (family_name, given_name, age);
-```
+```{{execute}}
 
 ## NOT NULL constraint
 
@@ -47,13 +47,13 @@ We need to have a family name in our application so let's insure that there is a
 
 ```sql92
 alter table people alter column family_name set NOT NULL;
-``` 
+```{{execute}} 
 
 Now let's try to enter a person without a last name:
 
 ```sql92
 insert into people ( given_name, age, twitter_username) values ('nebula', 28, 'daddyissues');
-```
+```{{execute}}
 
 Which ends up giving us error:
 

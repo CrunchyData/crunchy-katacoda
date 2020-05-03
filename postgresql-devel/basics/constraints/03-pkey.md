@@ -9,7 +9,8 @@ When you designate a column as a primary key, like we did with our _id_ column i
 
 ```sql92
 \d people
-```
+```{{execute}}
+
 You can see this work that Postgres did behind the scenes:
 
 ![People table description](assets/03-pkey.png)
@@ -30,7 +31,7 @@ create table team_role (
     people_id   integer REFERENCES people (id)
 
 );
-```  
+```{{execute}} 
 
 Of course, following good database design we have a primary key, _id_. Then we have a name for the team role, _role_, along with a date span for when the person had the role, _role_dates_. Finally, we add a foreign key back to the parent _people_ table with the column _people\_id_.
 
@@ -38,19 +39,21 @@ Now let's define a role for ~~Starlord~~ Peter Quill. To begin let's get his peo
 
 ```sql92
 select * from people;
-``` 
+```{{execute}} 
 
 Now let's insert a role for him:
 
 ```sql92
-insert into team_role (name, role_dates, people_id)  values ('mixtape master', '[2000-01-01, 2012-12-31]' , 1);
-```
+insert into team_role (name, role_dates, people_id)  values ('mixtape master', '[2000-01-01, 2012-12-31]' , 2);
+```{{execute}}
 
-This should go through fine. We just said Peter Quill was mixtap master from Jan 1, 2000 until Dec 31 2012. In my people table I have no _id_ 50 yet, so if I try to make an entry for people_id 50 I get:
+This should go through fine. We just said Peter Quill was mixtap master from Jan 1, 2000 until Dec 31, 2012. 
+
+In my _people_ table I have no _id_ 50 yet, so if I try to make an entry for people_id 50 I get:
 
 ```sql92
 insert into team_role (name, role_dates, people_id)  values ('graphic novel writer', '[2000-01-01, 2012-12-31]' , 50);
-``` 
+```{{execute}}
 
 Gives me:
 
@@ -62,8 +65,8 @@ Detail: Key (people_id)=(50) is not present in table "people".
 And if I try to delete Peter Quill from the original table
 
 ```sql92
-delete from people where id = 1;
-``` 
+delete from people where id = 2;
+```{{execute}}
 I get:
 
 ```
@@ -71,7 +74,7 @@ I get:
 Detail: Key (id)=(1) is still referenced from table "team_role".
 ```
 
-There are [many ways](https://www.postgresql.org/docs/12/sql-createtable.html) (search for FOREIGN KEY  on the page) to set up your foreign keys so that PostgreSQL can do different behavior when you try to delete a parent table entry with existing child entries but covering that is beyond the scope of this class. TODO LINK FOR THIS
+There are [many ways](https://www.postgresql.org/docs/12/sql-createtable.html) (search for FOREIGN KEY  on the page) to set up your foreign keys so that PostgreSQL can do different behavior when you try to delete a parent table entry with existing child entries but covering that is beyond the scope of this class.
 
 And with that we have covered Primary and Foreign keys. The last scenario will cover our last kind of constraints, _exclusion constraints_. 
 
