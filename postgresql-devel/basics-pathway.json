@@ -17,6 +17,11 @@
       "title": "Introduction to Data Types"
     },
     {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/constraints",
+      "course_id": "Constraints",
+      "title": "Introduction to PostgreSQL Data Constraints"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
       "title": "Quick Intro. To PostgreSQL in Containers"
