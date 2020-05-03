@@ -1,0 +1,33 @@
+{
+  "title": "Using Constraints with Columns and Tables",
+  "description": "Looking at the basic constraint types in Postgres and how you can use them to keep your data clean",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {"title": "Check Constraints", "text": "01-check.md"},
+      {"title": "Not-Null and Unique Constraints", "text": "02-not-null.md"},
+      {"title": "Primary and Foreign Key Constraints", "text": "03-pkey.md"},
+      {"title": "Exclusion Constraints", "text": "04-exclusion.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
