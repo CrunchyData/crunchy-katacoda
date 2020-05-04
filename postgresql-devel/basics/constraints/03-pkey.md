@@ -5,7 +5,7 @@ While you may not immediately think of primary keys and foreign keys as constrai
 
 ## Primary Key 
 
-When you designate a column as a primary key, like we did with our _id_ column in the first exercise, we are starting that the value in this column MUST be unique to each row. The value has to be unique because the primary key is the way you can guaranteed to refer to only that row. To insure this condition, PostgreSQL creates a unique b-tree index for the primary key. To also insure that each row has a referencable id we also need a not null constraint on the column, which PostgreSQL does automatically. So if we describe our table again:
+When you designate a column as a primary key, like we did with our _id_ column in the first exercise, we are stating that the value in this column MUST be unique to each row. The value has to be unique because the primary key is the way you can  guarantee the row you want. To ensure this condition, PostgreSQL creates a unique b-tree index for the primary key. To also ensure that each row has a referencable id we also need a not null constraint on the column, which PostgreSQL does automatically. So if we describe our table again:
 
 ```sql92
 \d people
@@ -47,7 +47,7 @@ Now let's insert a role for him:
 insert into team_role (name, role_dates, people_id)  values ('mixtape master', '[2000-01-01, 2012-12-31]' , 2);
 ```{{execute}}
 
-This should go through fine. We just said Peter Quill was mixtap master from Jan 1, 2000 until Dec 31, 2012. 
+This should go through fine. We just said Peter Quill was mixtape master from Jan 1, 2000 until Dec 31, 2012. 
 
 In my _people_ table I have no _id_ 50 yet, so if I try to make an entry for people_id 50 I get:
 
@@ -71,7 +71,7 @@ I get:
 
 ```
 [23503] ERROR: update or delete on table "people" violates foreign key constraint "team_role_people_id_fkey" on table "team_role"
-Detail: Key (id)=(1) is still referenced from table "team_role".
+Detail: Key (id)=(2) is still referenced from table "team_role".
 ```
 
 There are [many ways](https://www.postgresql.org/docs/12/sql-createtable.html) (search for FOREIGN KEY  on the page) to set up your foreign keys so that PostgreSQL can do different behavior when you try to delete a parent table entry with existing child entries but covering that is beyond the scope of this class.

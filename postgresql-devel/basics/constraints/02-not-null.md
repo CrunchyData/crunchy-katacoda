@@ -33,7 +33,7 @@ If you look at the constraints again, you will see that PostgreSQL implemented t
 
 So be aware, that a UNIQUE constraint will create an index on all the values of the field. If you don't want the size and write delays from a full index you can also create a [partial UNIQUE index](https://www.postgresql.org/docs/12/indexes-partial.html) (covering that is beyond the scope of this class).
 
-Remember you can also declare constraints against multiple columns. So you could also ensure there are no duplicates of the combination family name, first name, and age by doing:
+Remember you can also declare constraints against multiple columns. So you could also insure there are no duplicates of the combination family name, first name, and age by doing:
 
 ```sql92
 alter table people add CONSTRAINT unique_name_age UNIQUE (family_name, given_name, age);
@@ -62,4 +62,4 @@ Which ends up giving us error:
 Detail: Failing row contains (9, null, nebula, 28, daddyissues).
 ```
 
-And with that we have covered these two simple, yet powerful constraints for insuring clean data. In the next section we are going to cover some constraints that core to the relational nature of databases, _primary keys_ and _foreign keys_.
+And with that we have covered these two simple, yet powerful constraints for ensuring clean data. In the next section we are going to cover some constraints that core to the relational nature of databases, _primary keys_ and _foreign keys_.

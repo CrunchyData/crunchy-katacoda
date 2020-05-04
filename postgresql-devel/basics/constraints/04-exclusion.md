@@ -1,8 +1,8 @@
  # Exclusion Constraints
  
- Our final scenario will cover Exclusion Constraints, which are actually used to compare between rows. If the expression with in the exclusion returns true then the insert or update will not proceed. Another way of phrasing this condition is that at least one of the conditions in the exclusion expression must return false for the data entry to proceed.
+ Our final scenario will cover Exclusion Constraints, which are actually used to compare between rows. If the expression in the exclusion returns true then the insert or update will not proceed. Another way of phrasing this condition is that at least one of the conditions in the exclusion expression must return false for the data entry to proceed.
   
- These types of constraints are usually used to prevent a condition that you consider a data conflict. A good example would be a calendar application. You generally do not want to schedule two meetings at the same time for the same person. The exclusion constraint allows you to say no events can be schedule for the same sure user over the same time span.
+ These types of constraints prevent conditions that most people consider a data conflict. A good example would be a calendar application. You generally do not want to schedule two meetings at the same time for the same person. The exclusion constraint allows you to say "no events can be scheduled for the same sure user over the same time span."
  
  In our case we are going to prevent:  
  1. A person from having two different roles at the same time
@@ -14,7 +14,7 @@ You may have noticed in our *team\_role* table we used a [daterange](https://www
  
  The operator we care about with daterange is `&&` which checks for "overlap (have points in common)". So in our case if any of the compared date ranges overlap then && will return true. Let's go ahead and add the first exclude constraint. Since there is no direct operator to do integer comparison in a GIST index (the type we are going to use), we first need to install the PostgreSQL extension. Extensions can only be installed by the superuser _postgres_.
  
- GIST indices natively work with a very limited [set of operators](https://www.postgresql.org/docs/12/gist-builtin-opclasses.html). Since _id_ is an integer, we need to install an extension that allows the GIST index to handle operators on simple data types, [btree_gist](https://www.postgresql.org/docs/12/btree-gist.html)  do not 
+ GIST indices natively work with a very limited [set of operators](https://www.postgresql.org/docs/12/gist-builtin-opclasses.html). Since _id_ is an integer, we need to install an extension that allows the GIST index to handle operators on simple data types, [btree_gist](https://www.postgresql.org/docs/12/btree-gist.html)  
 
 First, connect to the workshop database as postgres user (password _password_) 
 ```sql92
@@ -61,7 +61,7 @@ Detail: Key (people_id, role_dates)=(2, [2004-06-15,2010-03-17)) conflicts with 
 
 ```
 
-So let's change the date rang so that Peter becomes a "dance instructor" as a promotion from "mixtape master":
+So let's change the date range so that Peter becomes a "dance instructor" as a promotion from "mixtape master":
 
 ```sql92
 insert into team_role (name, role_dates, people_id)  values ('dance instructor', '[2013-01-01, 2016-12-31]' , 2);
@@ -89,7 +89,7 @@ You should get:
 
 ```
 [23P01] ERROR: conflicting key value violates exclusion constraint "no_sharing_roles"
-[2020-05-03 13:24:57] Detail: Key (name, people_id, role_dates)=(dance instructor, 3, [2014-01-01,2015-11-01)) conflicts with existing key (name, people_id, role_dates)=(dance instructor, 1, [2013-01-01,2017-01-01)).
+[2020-05-03 13:24:57] Detail: Key (name, people_id, role_dates)=(dance instructor, 6, [2014-01-01,2015-11-01)) conflicts with existing key (name, people_id, role_dates)=(dance instructor, 2, [2013-01-01,2017-01-01)).
 ```
 
 But it we say Rocky is a "mad scientist" during this time, the data is entered without an error:

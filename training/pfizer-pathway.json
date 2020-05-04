@@ -33,10 +33,16 @@
       "title": "Basic Introduction to Functions in PostgreSQL"
     },
     {
-      "pathway_id": "crunchydata/postgresql-devel/basics",
-      "id": "runcontainers",
-      "course_id": "runcontainers",
-      "title": "Quick Intro. To PostgreSQL in Containers"
+      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "id": "basicpgadmin",
+      "course_id": "basicpgadmin",
+      "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
+    },
+    {
+      "pathway_id": "crunchydata/kube/basics",
+      "id": "introop",
+      "course_id": "introop",
+      "title": "Intro. to Operator For Developers"
     },
     {
       "pathway_id": "crunchydata/postgresql-devel/basics",

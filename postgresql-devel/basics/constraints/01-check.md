@@ -1,6 +1,6 @@
 # Using Check constraints
 
-The first type of database constraint we will cover is a [check constraint](https://www.postgresql.org/docs/12/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS). Like its name implies, a check constraint checks the value that is being inserted or updated against a pre-defined condition. If the data meets the condition then the insert or update can proceed. If not then an error is returned and the insert of update does not proceed.
+The first type of database constraint we will cover is a [check constraint](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS). Like its name implies, a check constraint checks the value that is being inserted or updated against a pre-defined condition. If the data meets the condition then the insert or update can proceed. If not then an error is returned and the insert of update does not proceed.
 
 > **NOTE**: defining a check constraint on column or table which already has data checks the constraint against existing data. If you have existing data that violates the constraint then PostgreSQL will not allow you to create the constraint. You will need to correct your data first or add the NOT VALID keywords to your [alter table](https://www.postgresql.org/docs/10/sql-altertable.html) statement.
 
@@ -86,7 +86,7 @@ insert into people (family_name, given_name, age, twitter_username) values ('Udo
 
 ### Table Constraints
 
-The constraints we made above are column constraints because they only apply to a single column. PostgreSQL also has the ability to make table constraints, which are attached to the table rather than an individual column. These constraints are usually added after all the column definitions in the DDL statements. For our users we don't want their Twitter handle to be any part of their family name:
+The constraints we made above are column constraints because they only apply to a single column. PostgreSQL also has the ability to make table constraints, which are attached to the table rather than an individual column. For our users we don't want their Twitter handle to be any part of their family name:
 
 ```sql92
 alter table people add constraint no_name_twitter check ( strpos(lower(twitter_username), lower(family_name)) = 0);
@@ -115,7 +115,7 @@ For more complicated logic checks you can write your own function in this place.
 
 ## Listing Constraints
 
-To see all the constraints we have made on our table you simply have to use the `\dt <tablename>` command.
+To see all the constraints we have made on our table you simply have to use the `\d <tablename>` command.
 
 ```sql92
 \d people
@@ -123,7 +123,7 @@ To see all the constraints we have made on our table you simply have to use the 
 
 You can see that when PostgreSQL returns the table statements it shows all the constraints in a section on the bottom of the output titled "Check Constraints". You can also see that PostgreSQL created the name "people_age_check" for our unnamed check constraint on the on the age column.
 
-The choice to make your check constraints table or column constraints is only a matter of preference, it makes no different to functionality or performance in the database.   
+The choice to make your check constraints table or column constraints is only a matter of preference, it makes no difference to functionality or performance in the database.   
 
 ## Deleting Constraints
 
