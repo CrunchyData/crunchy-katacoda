@@ -33,7 +33,7 @@
       "title": "Basic Introduction to Functions in PostgreSQL"
     },
     {
-      "pathway_id": "crunchydata/basic-postgresql-devel",
+      "pathway_id": "crunchydata/postgresql-devel/basics",
       "id": "basicpgadmin",
       "course_id": "basicpgadmin",
       "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
