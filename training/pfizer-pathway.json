@@ -39,12 +39,6 @@
       "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
     },
     {
-      "pathway_id": "crunchydata/kube/basics",
-      "id": "introop",
-      "course_id": "introop",
-      "title": "Intro. to Operator For Developers"
-    },
-    {
       "pathway_id": "crunchydata/postgresql-devel/basics",
       "id": "runcontainers",
       "course_id": "runcontainers",
