@@ -1,11 +1,11 @@
 {
     "title": "Data Types II",
-    "description": "A short introduction to some advanced data types in PostgreSQL",
+    "description": "An introduction to some advanced data types in PostgreSQL",
     "difficulty": "beginner",
-    "time": "15 minutes",
+    "time": "20 minutes",
     "details": {
       "steps": [
-        {"title": "More Data Types", 
+        {"title": "Before We Begin", 
           "text": "01-data-structure.md"
         },
         {"title": "Arrays", 
@@ -19,6 +19,9 @@
         },
         {"title": "XML", 
           "text": "05-xml.md"
+        },
+        {"title": "Other Types", 
+          "text": "06-etc.md"
         }
          ],
       "intro": {
