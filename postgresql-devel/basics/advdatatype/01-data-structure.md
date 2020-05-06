@@ -39,12 +39,12 @@ client only.
 * An event can have zero (for example, if registration hasn't been opened yet),
  one, or many attendees.
 
- Again, we'll keep it to a very simple data structure for this course, but 
- you may already realize some of the things it lacks. For example, we 
- haven't included a table for career counselors. Also, in the real world, these
-  three tables will likely need more fields. Planning and implementing a 
-  database design is typically a rather involved exercise, taking into account 
-  many business rules and processes.
+Again, we'll keep it to a very simple data structure for this course, but 
+you may already realize some of the things it lacks. For example, we 
+haven't included a table for career counselors. Also, in the real world, these
+three tables will likely need more fields. Planning and implementing a 
+database design is typically a rather involved exercise, taking into account 
+many business rules and processes.
 
 ### What we'll focus on
 

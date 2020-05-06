@@ -7,14 +7,14 @@ course:
 Postgres supports JSON, and there are two types for storing JSON data: `json`, 
 and `jsonb`. To get your feet wet with these two types, and to learn a little 
 more about why `jsonb` would be preferable, check out our [Intro to JSON in 
-PostgreSQL course](../../courses/beyond-basics/qjsonintro/) right here in the 
+PostgreSQL course](../../beyond-basics/qjsonintro/) right here in the 
 Learning Portal.
 
 ### Text search
 
 Postgres provides data types to support full text search: `tsvector` and 
 `tsquery`. Learn more in our [Intro to Full Text Search in 
-PostgreSQL](../../courses/beyond-basics/qftextintro/) course.
+PostgreSQL](../../beyond-basics/qftextintro/) course.
 
 ### User-defined types
 

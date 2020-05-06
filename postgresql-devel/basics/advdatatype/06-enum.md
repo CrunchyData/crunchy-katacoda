@@ -61,14 +61,14 @@ need to change an enum's list of values. For example, according to the
   type." Meanwhile, creating, updating, and deleting values from lookup 
   tables are more straightforward.
 
-Enums might be better suited to a set of acceptable values that you're sure will 
+Enums might be better suited for a set of acceptable values that you're sure will 
 never change. Even so, using enums versus reference tables could also come down
  to just a matter of preference.
 
 Yet another option is to create a CHECK constraint for the list of values. This
- does require setting the constraint in every table definition. CHECK 
- constraints can't be modified, so if you need to update one, you would have to 
- drop the current constraint and add a new one.
+ does require setting the constraint in every table definition that needs it. 
+ CHECK constraints can't be modified, so if you need to update one, you would 
+ have to drop the current constraint and add a new one.
 
 The choices should ultimately be weighed against your business needs and 
 processes.
