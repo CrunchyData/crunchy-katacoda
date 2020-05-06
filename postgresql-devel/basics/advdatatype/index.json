@@ -11,17 +11,23 @@
         {"title": "Arrays", 
           "text": "02-array.md"
         },
+        {"title": "Arrays", 
+          "text": "03-array.md"
+        },
         {"title": "Range Types", 
-          "text": "03-range.md"
+          "text": "04-range.md"
+        },
+        {"title": "Range Types", 
+          "text": "05-range.md"
         },
         {"title": "Enumerated Types", 
-          "text": "04-enum.md"
+          "text": "06-enum.md"
         },
         {"title": "XML", 
-          "text": "05-xml.md"
+          "text": "07-xml.md"
         },
         {"title": "Other Types", 
-          "text": "06-etc.md"
+          "text": "08-etc.md"
         }
          ],
       "intro": {
