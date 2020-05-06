@@ -1,5 +1,5 @@
 Range types are unique to Postgres. Range types allow you to store a _range_ of
- values of a particular _subtype_ (i.e. some other data type such as 
+ values of a particular _subtype_ (i.e. some other data type, such as 
  `numeric`). You could then check whether something falls within
   or outside of the range, or before 
  or after the range _bounds_. It's also helpful for finding overlaps.
@@ -52,7 +52,7 @@ Let's take a closer look at the `tstzrange` syntax we used:
 Ranges are expressed with lower and upper **bounds**, and these bounds can be 
 _inclusive_ or _exclusive_ of the boundary points. A square bracket (`[` or 
 `]`) denotes an inclusive bound, and parentheses (`(` or `)`) denotes 
-exclusive. So in the syntax above, we are saying that the event time range is 
+exclusive. So in the syntax above, we're saying that the event time range is 
 _inclusive_ of the start time at 2:30PM PST, but exclusive of the end time at 
 3:30PM PST.
 

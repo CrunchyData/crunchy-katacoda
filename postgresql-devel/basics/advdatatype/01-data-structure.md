@@ -24,12 +24,12 @@ on a regular basis, or have only ever attended one event.
 ### Data structure
 
 Since we're focusing on a few specific data types, we'll work with an 
-"incomplete" data structure, i.e. it will display only a few tables, 
-relationships, and columns that serve the purpose of this course.
+"incomplete" data structure, i.e. we'll only concern ourselves with a few 
+tables, relationships, and columns that serve the purpose of this course.
 
 ![Extra Mile Counseling entity relationship diagram](assets/extra_mile_counseling_erd-1.png)
 
-_PK_ and _FK_ indicate primary keys and foreign keys respectively. The _attendance_
+_PK_ and _FK_ indicate primary keys and foreign keys respectively. The attendance
  table has a _composite_ primary key comprised of its two columns.
 
 The main concepts to derive from this data model are:

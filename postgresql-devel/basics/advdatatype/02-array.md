@@ -76,7 +76,7 @@ SELECT * FROM client;
 You'll notice that the text values that contain whitespaces (e.g. `Project 
 Management`) are enclosed by double quotes. Numeric arrays won't contain 
 quotes, but textual arrays may. The [official docs](https://www.postgresql.org/docs/current/arrays.html#ARRAYS-IO) 
-has details on how array values are outputted.
+have details on how array values are outputted.
 
 Array elements each have a position within the array. Postgres uses a **one-based** 
 numbering convention for arrays; that is, the first array element is 
@@ -92,5 +92,5 @@ SELECT
 FROM client;
 ```{{execute}}
 
-With that said, that's not particularly helpful for our case, so let's look at 
-a couple of functions that come in handy for arrays.
+With that said, that may not be particularly helpful for our case, so let's 
+look at a couple of functions that come in handy for arrays.

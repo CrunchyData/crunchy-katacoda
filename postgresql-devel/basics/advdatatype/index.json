@@ -2,7 +2,7 @@
     "title": "Data Types II",
     "description": "An introduction to some advanced data types in PostgreSQL",
     "difficulty": "beginner",
-    "time": "20 minutes",
+    "time": "15 minutes",
     "details": {
       "steps": [
         {"title": "Before We Begin", 
