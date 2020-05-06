@@ -2,7 +2,7 @@ If you're a programmer, you know that an array holds a _list_ or _collection_
 of values. In Postgres, the array can hold a set of values of other data types 
 (i.e. a set of integers, or enums, or even user-defined types). 
 
-With that said, while some programming languages such as JavaScript allow 
+While some programming languages such as JavaScript allow 
 different data types within the same array, in Postgres the array elements are 
 of the **same** type.
 
@@ -31,8 +31,8 @@ The simplest way to set the column type to an array is to add square brackets `[
  CREATE TABLE above. 
  
 While you can specify an array size, e.g. `career_interests[5]`, Postgres 
-won't actually enforce it. If you needed to limit the number of array 
-elements, you could use a [CHECK constraint](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS).
+won't actually enforce it. If you must limit the number of array elements, you 
+could use a [CHECK constraint](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS).
 
 ### Add array values
 
@@ -78,7 +78,7 @@ Management`) are enclosed by double quotes. Numeric arrays won't contain
 quotes, but textual arrays may. The [official docs](https://www.postgresql.org/docs/current/arrays.html#ARRAYS-IO) 
 has details on how array values are outputted.
 
-Array elements each have within the array. Postgres uses a **one-based** 
+Array elements each have a position within the array. Postgres uses a **one-based** 
 numbering convention for arrays; that is, the first array element is 
 `array[1]`, and the last of **n** elements is `array[n]`.
 

@@ -5,7 +5,7 @@ course:
 ### JSON
 
 Postgres supports JSON, and there are two types for storing JSON data: `json`, 
-and `jsonb`. To get your feet wet with this data type, and to learn a little 
+and `jsonb`. To get your feet wet with these two types, and to learn a little 
 more about why `jsonb` would be preferable, check out our [Intro to JSON in 
 PostgreSQL course](../../courses/beyond-basics/qjsonintro/) right here in the 
 Learning Portal.

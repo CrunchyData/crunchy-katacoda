@@ -41,7 +41,7 @@ SELECT
     last,
     career_interests
 FROM client
-WHERE 'Developer' = ANY(career_interests);
+WHERE 'Data Science' = ANY(career_interests);
 ```{{execute}}
 
 >**Note**:
@@ -99,7 +99,7 @@ operation, it might be more efficient to store the data in separate lookup
 tables instead.
 
 The array type would be more suitable if you mostly plan on processing, 
-analyzing or reporting on these values as an aggregate, or perhaps if you're 
+analyzing, or reporting on these values as an aggregate, or perhaps if you're 
 expecting thousands of elements.
 
 ### Links to official documentation

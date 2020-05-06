@@ -19,7 +19,7 @@ ORDER BY "Start Time";
  which is something you could do in your application code as well so that it 
  matches the user/client's time zone.)
 
-#### Contains (`<@`>)
+#### Contains (`<@`)
 
 Let's say we want to know what events have been scheduled at a particular day 
 and time. We can use the `<@` operator to check whether some event in 
@@ -27,7 +27,7 @@ our table _contains_ that desired time:
 
 ```
 SELECT * FROM event
-WHERE event_dt @> '2020-06-26 16:30:00 PDT'::timestamptz;
+WHERE event_dt @> '2020-01-11 11:30:00 PDT'::timestamptz;
 ```{{execute}}
 
 (The timestamps should be in UTC per this environment's `TimeZone` setting.)

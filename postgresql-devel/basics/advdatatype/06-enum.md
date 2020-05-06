@@ -58,10 +58,10 @@ need to change an enum's list of values. For example, according to the
 [official docs](https://www.postgresql.org/docs/current/datatype-enum.html#id-1.5.7.15.8),
  "existing values cannot be removed from an enum type, nor can the sort 
  ordering of such values be changed, short of dropping and re-creating the enum
-  type." Meanwhile, creating, updating, or deleting values from lookup 
-  tables is more straightforward.
+  type." Meanwhile, creating, updating, and deleting values from lookup 
+  tables are more straightforward.
 
-Enums might be better suited to a set or list of values that you're sure will 
+Enums might be better suited to a set of acceptable values that you're sure will 
 never change. Even so, using enums versus reference tables could also come down
  to just a matter of preference.
 
