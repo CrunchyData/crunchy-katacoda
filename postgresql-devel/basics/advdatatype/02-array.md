@@ -73,8 +73,8 @@ Let's start with a simple SELECT on the table:
 SELECT * FROM client;
 ```{{execute}}
 
-You'll notice that the text values that contain whitespaces (e.g. `Project 
-Management`) are enclosed by double quotes. Numeric arrays won't contain 
+You'll notice that the text values that contain whitespaces (e.g. `Project Management`)
+ are enclosed by double quotes. Numeric arrays won't contain 
 quotes, but textual arrays may. The [official docs](https://www.postgresql.org/docs/current/arrays.html#ARRAYS-IO) 
 have details on how array values are outputted.
 
