@@ -5,7 +5,7 @@ imply that you should have already done some planning around what kind of data
 you'll be storing and what it'll be used for. 
 
 In the preceding [course for 
-`CREATE TABLE`](../basics/basictable), you'll notice 
+`CREATE TABLE`](../basictable), you'll notice 
 that we actually start out by identifying a real-world business scenario, and 
 then translate that into a data model. Doing this kind of planning allows you 
 to choose the most appropriate data types out of a few possible options, and 

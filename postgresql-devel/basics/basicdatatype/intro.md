@@ -20,5 +20,5 @@ numeric (including `integer` and `decimal`/`numeric`), `boolean`, and date/time
 
 This course will use `psql` to navigate and do updates in the database. If 
 you're not familiar with `psql`, we'd encourage you to check out the preceding
-[introductory course on `psql`](../basics/intropsql) in 
+[introductory course on `psql`](../intropsql) in 
 this series first, before diving in to this course.
