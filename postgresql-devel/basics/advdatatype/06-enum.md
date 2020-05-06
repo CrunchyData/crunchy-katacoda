@@ -1,13 +1,14 @@
-Enumerated types give you the ability to define a set of values that will be 
-stored in the column, without the overhead of setting up a separate lookup 
-table.
+Enumerated types give you the ability to define an acceptable set of values 
+that will be stored in the column, without the overhead of setting up a 
+separate reference table.
 
 In our example, we've decided to use an enum type to denote how events are 
-conducted. You can think of dropdown lists or anything 
+conducted. You can think of dropdown lists, or anything with a "predefined" 
+list of options, as good use cases for enums.
 
 ### Using the enum type
 
-The syntax for declaring enums is a little different, and consists of:
+The syntax for declaring enums is a little different, consisting of:
 
 1. The `CREATE TYPE` statement, and
 2. Specifying the name of the created enum type in the table definition
@@ -36,7 +37,7 @@ VALUES ('New Event',
         tstzrange('2019-12-21 12:00:00 EST', '2019-12-21 17:00:00 EST', '[)'),
         'In person'        
 );
-```
+```{{execute}}
 
  >ERROR: invalid input value for enum event_mode: "In person"
 
@@ -47,20 +48,24 @@ enums kind of function as constraints and can help ensure you have clean data.
 ### Enum or reference table?
 
 In relational database design, it's common to have reference or "lookup" tables
- that contain a list of codes or values that are used in other tables. In our business scenario, we could actually have a separate `event_mode` table that the `event` table could reference.
+ that contain a list of codes or values that are used in other tables. In our 
+ business scenario, we could actually have a separate `event_mode` table that 
+ the `event` table would reference.
 
 While it might be nice to not have to deal with the "overhead" of having 
 separate lookup tables, you do lose a little bit of flexibility if you ever 
 need to change an enum's list of values. For example, according to the 
 [official docs](https://www.postgresql.org/docs/current/datatype-enum.html#id-1.5.7.15.8),
- "existing values cannot be removed from an enum type, not can the sort 
- ordering of such values be changed, short of dropping and re-creating the enum type." On the other hand, creating, updating, or deleting values from lookup tables is more straightforward.
+ "existing values cannot be removed from an enum type, nor can the sort 
+ ordering of such values be changed, short of dropping and re-creating the enum
+  type." Meanwhile, creating, updating, or deleting values from lookup 
+  tables is more straightforward.
 
 Enums might be better suited to a set or list of values that you're sure will 
 never change. Even so, using enums versus reference tables could also come down
  to just a matter of preference.
 
-### Links
+### Links to official documentation
 
 [postgresql.org: Enumerated Types](https://www.postgresql.org/docs/current/datatype-enum.html)  
 [postgresql.org: Enum Support Functions](https://www.postgresql.org/docs/current/functions-enum.html)
