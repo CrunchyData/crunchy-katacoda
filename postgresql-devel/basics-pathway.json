@@ -17,6 +17,11 @@
       "title": "Introduction to Data Types"
     },
     {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/advdatatype",
+      "course_id": "advdatatype",
+      "title": "Data Types II"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/constraints",
       "course_id": "constraints",
       "title": "Introduction to PostgreSQL Data Constraints"

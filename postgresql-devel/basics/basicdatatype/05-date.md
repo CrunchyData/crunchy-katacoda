@@ -26,9 +26,9 @@ The different date/time types are:
 * `interval` - stores an interval of a specified measure or range of time, and 
 is useful for _relative_ times
 
-These types can be defined with _options_:
+These types can be defined with _options_: `(precision)` and `with time zone` :
 
-* `with time zone` (`time` and `timestamp` only): `timestamptz` (which we used 
+* `with time zone` (for `time` and `timestamp` only): `timestamptz` (which we used 
 in the new table above) is Postgres shorthand for `timestamp with time zone`. 
 There are several different ways to explicitly include the time zone for an 
 input value - for example, by abbreviations such as `EST` and `PST`, by using 
@@ -58,7 +58,7 @@ an _offset_ that indicates the number of hours difference from Coordinated
     technically valid, it can cause a lot of issues and so it's recommended to 
     always use the `with time zone` option.
 
-* _precision_ (`time`, `timestamp`, and `interval` only): an integer from 0 to 
+* _precision_ (for `time`, `timestamp`, and `interval` only): an integer from 0 to 
 6 that indicates what fraction (up to the microsecond) the time value should be
  stored. If the precision isn't specified, the default precision is 6 (i.e. to 
  the microsecond).

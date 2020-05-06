@@ -14,7 +14,7 @@ helps you use the database more efficiently.
 ## Operators and functions
 
 There are many built-in operators and functions in Postgres for processing 
-text, numeric, and date/time values. There's a lot to talk about there that's 
+text, numeric, and date/time values. There's a lot to talk about that's 
 beyond the scope of this introductory course, so we'll have to cover it in 
 another course. In the meantime, feel free to check out the 
 [official docs](https://www.postgresql.org/docs/current/functions.html) to 

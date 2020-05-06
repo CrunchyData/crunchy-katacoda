@@ -1,4 +1,4 @@
-Booleans in Postgres can store three "states" true, false, and unknown, 
+Booleans in Postgres can store three "states": true, false, and unknown, 
 represented by the NULL value.
 
 In Postgres, the `boolean` (or `bool` for short) type can accept different 
@@ -6,17 +6,17 @@ literal representations for true and false, including but not limited to:
 
 | True  | False  |
 |---|---|
-| true*  | false*  |
-| `1`  | `0`  |
-| `yes`  | `no`  |
-|  `y` | `n`  |
-| `on`  | `off`  |
+| `true`*  | `false`*  |
+| `'1'`  | `'0'`  |
+| `'yes'`  | `'no'`  |
+|  `'y'` | `'n'`  |
+| `'on'`  | `'off'`  |
 
 *true and false can also be enclosed in quotes.
 
-Postgres also accepts _prefixes_ of the strings `true`, `yes` (as seen above), 
-`false`, and `no`, but the usage has to be consistent. For example, you 
-cannot use both `tr` and `t` for true.
+Postgres also accepts _prefixes_ of the strings `'true'`, `'yes'`, 
+`'false'`, and `'no'`, such as `'y'` and `'n'` (as seen above), `'t'`, `'tr'`, 
+`'f'`, `'fa'`, etc.
 
 ### Add boolean values
 
