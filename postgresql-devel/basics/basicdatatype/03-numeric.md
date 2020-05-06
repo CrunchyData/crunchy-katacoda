@@ -131,6 +131,9 @@ and from other types such as `real` is also technically possible but requires
 intermediate steps. You might also run into rounding errors or loss in 
 precision.
 
+Additionally, if you ever change the locale or underlying currency setting, 
+existing monetary values don't get updated or converted.
+
 If you're only ever going to work with a single currency, and won't be going 
 beyond simple mathematical operations such as addition or subtraction, `money` 
 might be a good option since it can boost performance. Otherwise, sticking to 

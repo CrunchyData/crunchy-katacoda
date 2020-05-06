@@ -49,7 +49,7 @@ Let's take a closer look at the `tstzrange` syntax we used:
 
 `'[2019-12-02 14:30 PST, 2019-12-02 15:30 PST)'`
 
-Range are expressed with lower and upper **bounds**, and these bounds can be 
+Ranges are expressed with lower and upper **bounds**, and these bounds can be 
 _inclusive_ or _exclusive_ of the boundary points. A square bracket (`[` or 
 `]`) denotes an inclusive bound, and parentheses (`(` or `)`) denotes 
 exclusive. So in the syntax above, we are saying that the event time range is 

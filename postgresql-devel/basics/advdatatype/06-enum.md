@@ -45,12 +45,12 @@ Notice that the only thing wrong is that `'In person'` is missing the `-`.
 You'll also get the same error if you try it with `'IN-PERSON'`. In a way, 
 enums kind of function as constraints and can help ensure you have clean data.
 
-### Enum or reference table?
+### Enum or reference table or constraint?
 
 In relational database design, it's common to have reference or "lookup" tables
  that contain a list of codes or values that are used in other tables. In our 
  business scenario, we could actually have a separate `event_mode` table that 
- the `event` table would reference.
+ the `event` table would reference. 
 
 While it might be nice to not have to deal with the "overhead" of having 
 separate lookup tables, you do lose a little bit of flexibility if you ever 
@@ -64,6 +64,14 @@ need to change an enum's list of values. For example, according to the
 Enums might be better suited to a set of acceptable values that you're sure will 
 never change. Even so, using enums versus reference tables could also come down
  to just a matter of preference.
+
+Yet another option is to create a CHECK constraint for the list of values. This
+ does require setting the constraint in every table definition. CHECK 
+ constraints can't be modified, so if you need to update one, you would have to 
+ drop the current constraint and add a new one.
+
+The choices should ultimately be weighed against your business needs and 
+processes.
 
 ### Links to official documentation
 

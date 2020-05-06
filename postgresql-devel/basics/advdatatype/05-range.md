@@ -49,7 +49,7 @@ ORDER BY "Start Time";
 >**Note:**
 >
 >In this scenario, we haven't specified a business rule that no events can 
-overlap. We can enforce such a rule with an EXCLUDE constraint -- which is 
+overlap. We can enforce such a rule with an exclusion constraint -- which is 
 discussed in [this course](../constraints/).
 
 ### Links to official documentation

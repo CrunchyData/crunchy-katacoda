@@ -60,7 +60,7 @@ The other way is to use the [ARRAY constructor](https://www.postgresql.org/docs/
 VALUES (ARRAY ['Social media', 'Communications', 'PR'])
 
 Note the differences in syntax between the two methods:
-* curly braces (`{}`), versus square brackets (`[]`),
+* curly braces (`{}`), versus square brackets (`[]`)
 * double quotes (`""`) around literals inside the braces, versus single quotes 
 (`''`) around literals inside the brackets
 * enclose curly brackets in single quotes
