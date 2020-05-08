@@ -1,0 +1,42 @@
+{
+  "title": "Introduction to Using Crunchy PostgreSQL Operator",
+  "description": "A quick intro. to working with Crunchy PostgreSQL Operator",
+  "difficulty": "beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Connecting the pgo Client",
+        "text": "01-connect.md"
+      },
+      {
+        "title": "Creating PostgreSQL Clusters",
+        "text": "02-create-cluster.md"
+      },
+      {
+        "title": "Deleting PostgreSQL Clusters",
+        "text": "03-cluster-delete.md"
+      }
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "terminals": [
+      {"name": "Operator Commands Here", "target": "host01"},
+      {"name": "PSQL Commands Here", "target": "host01"}
+    ],
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "crunchydata-k8s-centos"
+  }
+}

@@ -1,1 +1,1 @@
-base: 'centos7'
+base: 'kubernetes-master-centos7-1-16'

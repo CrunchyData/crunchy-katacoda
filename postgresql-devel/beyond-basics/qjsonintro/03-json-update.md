@@ -27,5 +27,5 @@ select json_content #>> '{"categories",0,"title"}' as title, count(id) from natu
 
 ## Final Notes on Working with JSON in PostgreSQL
 
-Now we have seen how you can query, select, and update different parts of your JSON documents in PostgreSQL. We didn't even cover  other  [fun operations](https://www.postgresql.org/docs/11/datatype-json.html). There is a [full page](https://www.postgresql.org/docs/11/functions-json.html) of JSON functions and operators, go ahead and start playing with them right now in this class if you want. One other fun thing to keep in mind you can also create indexes directly on a tree within the JSONB document, which is recommended if you are going within that document tree a lot.
+Now we have seen how you can query, select, and update different parts of your JSON documents in PostgreSQL. We didn't even cover  other  [fun operations](https://www.postgresql.org/docs/current/datatype-json.html). There is a [full page](https://www.postgresql.org/docs/current/functions-json.html) of JSON functions and operators, so go ahead and start playing with them right now in this class if you want. One other fun thing to keep in mind is you can also create indexes directly on a tree within the JSONB document, which is recommended if you are going within that document tree a lot.
 

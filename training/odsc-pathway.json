@@ -1,0 +1,42 @@
+{
+  "title": "ODSC  Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "qplr",
+      "course_id": "qplr",
+      "title": "Using R in Postgresql (PL/R)"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "qpostgisintro",
+      "course_id": "qpostgisintro",
+      "title": "Basic Introduction to PostGIS"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "qjsonintro",
+      "course_id": "qjsonintro",
+      "title": "Basic Introduction to JSON"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "qftextintro",
+      "course_id": "qftextintro",
+      "title": "Basic Introduction to Full Text Search"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "basicfunctions",
+      "course_id": "basicfunctions",
+      "title": "Basic Introduction to Functions in PostgreSQL"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/basics",
+      "id": "runcontainers",
+      "course_id": "runcontainers",
+      "title": "Quick Intro. To PostgreSQL in Containers"
+    }
+  ]
+}

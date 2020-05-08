@@ -10,6 +10,7 @@
       {"title": "Subscription", "text": "30-subscription.md"}
     ],
     "intro": {
+      "courseData": "env-init.sh",
       "code": "set-env.sh",
       "text": "intro.md",
       "credits": ""

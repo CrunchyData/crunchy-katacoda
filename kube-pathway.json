@@ -1,0 +1,18 @@
+{
+    "title": "Crunchy PostgreSQL Operator for Kubernetes",
+    "courses": [
+        {
+            "action" : "Start Course",
+            "external_link" : "https://learn.crunchydata.com/kube/courses/basics/",
+            "course_id" : "basics",
+            "title": "Basic Usage of the Crunchy Postgres Operator"
+        }, {
+            "action" : "coming soon",
+            "external_link" : "https://learn.crunchydata.com/comingsoon",
+            "title": "Advanced Usage of the Crunchy Postgres Operator"
+        }
+    ]
+}
+
+ 
+        

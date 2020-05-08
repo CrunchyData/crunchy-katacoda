@@ -1,0 +1,50 @@
+ {
+  "title": "Intro to Data Types",
+  "description": "A look at a few of the most common data types encountered in PostgreSQL",
+  "difficulty": "beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "Data Types", 
+        "text": "01-view-types.md"
+      },
+      {"title": "Character Types", 
+        "text": "02-text.md"
+      },
+      {"title": "Numeric Types", 
+        "text": "03-numeric.md"
+      },
+      {"title": "Boolean", 
+        "text": "04-boolean.md"
+      },
+      {"title": "Date/Time Types", 
+        "text": "05-date.md"
+      },
+      {"title": "Using the ALTER command to change data types", 
+        "text": "06-alter.md"
+      },
+      {"title": "Final Notes", 
+        "text": "07-structure.md"
+      }
+       ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

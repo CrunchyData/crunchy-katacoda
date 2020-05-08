@@ -1,0 +1,48 @@
+{
+  "title": "ODSC  Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "qjsonintro",
+      "course_id": "qjsonintro",
+      "title": "Basic Introduction to JSON"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/basics",
+      "id": "constraints",
+      "course_id": "constraints",
+      "title": "Working With Data Constraints"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/basics",
+      "id": "explain",
+      "course_id": "explain",
+      "title": "Using EXPLAIN to analyze your queries"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "qftextintro",
+      "course_id": "qftextintro",
+      "title": "Basic Introduction to Full Text Search"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/beyond-basics",
+      "id": "basicfunctions",
+      "course_id": "basicfunctions",
+      "title": "Basic Introduction to Functions in PostgreSQL"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/basics",
+      "id": "basicpgadmin",
+      "course_id": "basicpgadmin",
+      "title": "Using PgAdmin4 as a GUI to your PostgreSQL Server"
+    },
+    {
+      "pathway_id": "crunchydata/postgresql-devel/basics",
+      "id": "runcontainers",
+      "course_id": "runcontainers",
+      "title": "Quick Intro. To PostgreSQL in Containers"
+    }
+  ]
+}
