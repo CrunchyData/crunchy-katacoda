@@ -18,19 +18,10 @@
       "action": "Start Course"
     },
     {
-      "external_link": "https://learn.crunchydata.com/comingsoon",
-      "title": "Advanced Concepts",
-      "action": "Coming Soon"
-    },
-    {
       "external_link": "https://learn.crunchydata.com/kube",
       "title": "PostgreSQL for Kubernetes/OpenShift",
       "action": "Start Course"
-    },
-    {
-      "external_link": "https://learn.crunchydata.com/workshops/",
-      "title": "Workshops",
-      "action": "Start Course"
     }
+
   ]
 }

@@ -62,7 +62,7 @@ appropriately for our workshop.
 Let's set a new username, give the container a fixed (rather than random) name, expose port 5432 from the container 
 into the VM we are running, and have it detach so we can get our prompt back. 
 
-`docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABASE=workshop --name=pgsql thesteve0/postgres-appdev`{{execute}}
+`docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABASE=workshop --name=pgsql crunchydata/crunchy-postgres-appdev`{{execute}}
     
 And with that we have now spun up PostgreSQL with
 1. The ability to connect from our VM to the instance running in the container
