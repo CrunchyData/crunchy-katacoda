@@ -37,11 +37,11 @@ It's goal is to get you up and running quickly and easily for your development w
 
 Let's start with the quickest and easiest way to start up PostgreSQL using a container.
 
-`docker run -e PG_PASSWORD=password thesteve0/postgres-appdev`{{execute}}
+`docker run -e PG_PASSWORD=password crunchydata/crunchy-postgres-appdev`{{execute}}
 
 If you click the little check mark in the box above it will execute the command in the terminal window. 
 What you are doing is telling docker to run image 
-[_thesteve0/postgres-appdev_](https://cloud.docker.com/u/thesteve0/repository/docker/thesteve0/postgres-appdev) and pass 
+[_crunchydata/crunchy-postgres-appdev_]https://hub.docker.com/r/crunchydata/crunchy-postgres-appdev) and pass 
 in the environment variable for what you want the password to be for both the standard user and the postgres (DBAdmin) user. 
 
 1. The default name for the primary database will be: mydb
@@ -77,7 +77,7 @@ appropriately for your daily work.
 Let's set a new username, give the container a fixed (rather than random) name, expose port 5432 from the container 
 into the VM we are running, and have it detach so we can get our prompt back. 
 
-`docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABASE=workshop --name=pgsql thesteve0/postgres-appdev`{{execute}}
+`docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=password -e PG_DATABASE=workshop --name=pgsql crunchydata/crunchy-postgres-appdev`{{execute}}
     
 And with that we have now spun up PostgreSQL with
 1. The ability to connect from our VM to the instance running in the container
