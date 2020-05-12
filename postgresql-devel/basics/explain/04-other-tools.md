@@ -32,7 +32,7 @@ Then click the submit button.
 
 You should see something like this:
 
-![Join Query](basics/explain/assets/04-web-output.png)
+![Join Query](./assets/04-web-output.png)
 
 
 ### Explaining the output
@@ -66,7 +66,7 @@ from se_details as d, se_fatalities as f where d.event_id = f.event_id AND d.sta
 
 Now take that output and put it in the web site:
 
-![More Complicatd Query](basics/explain/assets/04-web-output-more.png)
+![More Complicatd Query](./assets/04-web-output-more.png)
 
 Having the exclusive column allows us to see that, for this query, the join is still the most expensive part of the operation. But it also allows us to quickly glean some of the more important information without having to try and visually parse through all the detailed textual statistics.
 

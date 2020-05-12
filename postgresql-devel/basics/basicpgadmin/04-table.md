@@ -10,7 +10,7 @@ Make sure you select the table icon inside the schema where you want the table c
 
 >Then either click on the _Object_ menu on the very top menu bar or right click on the table item in the left nav bar. Then chose _Create_
 
-![Data Table](basicpgadmin/assets/04-top-create.png) 
+![Data Table](./assets/04-top-create.png) 
 
 This will will bring up the create table dialog.
 
@@ -19,13 +19,13 @@ This will will bring up the create table dialog.
 You will notice it is placed in your schema and you will be the owner by 
 default. 
 
-![Data Table](basicpgadmin/assets/04-dialog-1.png)
+![Data Table](./assets/04-dialog-1.png)
 
 ### Adding the primary key
 
 Now click on the second tab to add columns. Let's start with our primary key field named _id_.
 
-![Data Table](basicpgadmin/assets/04-column-1.png)
+![Data Table](./assets/04-column-1.png)
  
 > 1. Click on the + symbol on the right hand side (labeled with a red 1).  
 > 2. because we are creating a primary key we need to click on the pencil icon on the left to bring up the extended creation dialog (labeled with a red 2).
