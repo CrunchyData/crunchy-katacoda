@@ -10,7 +10,7 @@ To bring up an empty query box on your database:
 1. Make sure your database or one of it sub-objects is selected in the left nav
 2. Click on the lighting icon on the top of the left nav area
 
-![Icon for Query](basicpgadmin/assets/03-lightning.png)
+![Icon for Query](./assets/03-lightning.png)
 
 In the right pane you now have a right text area to write a query or multiple queries. 
 
@@ -25,21 +25,21 @@ To execute this query either:
 1. Press F5 on your keyboard 
 1. Click on the lightning icon on the top of the query area
 
-![Execute Query](basicpgadmin/assets/03-execute-query.png)
+![Execute Query](./assets/03-execute-query.png)
 
 Once the query is done executing you will see a nice tabular view of the data on the bottom of the right pane. The column names and data values will be displayed as well. 
 
-![Data Table](basicpgadmin/assets/03-data-table.png)
+![Data Table](./assets/03-data-table.png)
 
 **Note** You can not edit data in this table view.
 
 ### Other ways to bring up a query
 
 The other ways to bring up a query are:
-1. Right click on the table and select the "Query Tool..." menu option ![Right click query](basicpgadmin/assets/03-right-query.png)
+1. Right click on the table and select the "Query Tool..." menu option ![Right click query](./assets/03-right-query.png)
 1. Right click on the table and select  "Scripts" > "Select Script" . This creates a query with all the columns listed and 
 the table fully schema qualified. 
-![Right Click scripts](basicpgadmin/assets/03-right-script.png)
+![Right Click scripts](./assets/03-right-script.png)
 
 If you had SQL files saved on your local machine you can bring them into the editor by click on the folder icon right under 
 the "Dashboard" right pane menu. This will allow you to load a file from your local machine. If you want to save the contents of the editor to your local machine you would click on the disc icon.
@@ -49,7 +49,7 @@ If you want to edit data in the table, you can:
 1. Click on the table
 1. Click on the little table icon in the top of the left nav
 
-![Data Table](basicpgadmin/assets/03-edit-table.png)
+![Data Table](./assets/03-edit-table.png)
 
 To edit a value, just double click on the cell and when you are done, click save.
 

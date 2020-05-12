@@ -14,7 +14,7 @@ EXPLAIN ANALYZE select * from se_details;
 
 You should get a result that looks like this:
 
-![Explain Analyze Output](basics/explain/assets/02-explain-analyze.png)
+![Explain Analyze Output](./assets/02-explain-analyze.png)
 
 You should know everything up to Actual time from the last scenario. This time the new numbers are much more straightforward. Let's use the red numbers to go through the new items. 
 

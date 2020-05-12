@@ -7,7 +7,7 @@ to login using username _admin_ and password _password_.
 
 You should be seeing a screen that looks like this:
 
-![Home Screen](basics/basicpgadmin/assets/01-home-screen.png)
+![Home Screen](./assets/01-home-screen.png)
 
 This is the home page for PgAdmin4. Before we can do anything meaningful we need to connect to a PostgreSQL server. There are two ways to do this:
 
@@ -18,7 +18,7 @@ Let's start by doing the right click option because it will give us more flexibi
 
 ### Right click options
 
-![Create Server](basics/basicpgadmin/assets/01-server-selection.png)
+![Create Server](./assets/01-server-selection.png)
 
 When you right click on the icon you should see a list of options. Go ahead and mouse over _create_. This will then show _server group_ and _server_. If you are going to manage and interact with a lot of PostgreSQL servers then you might want to create server groups such as testing vs production. Server groups is just a logical organization in the PgAdmin interface. 
 
@@ -32,7 +32,7 @@ While there are quite a few boxes and tabs in this dialog, only a few of them ar
 
 ### First Tab
 
-![First Tab](basics/basicpgadmin/assets/01-create-server-tab1.png)
+![First Tab](./assets/01-create-server-tab1.png)
 
 On the general tab, the only field required is _Name_. This name represents the name YOU want to use to identify this PostgreSQL server in the PgAdmin interface. You could call it monkey if you want - it doesn't **require** any relation to a name in the real world. 
 
@@ -46,7 +46,7 @@ Once you are done filling in those fields go ahead and click on the second tab t
 
 This _Connection_ tab contains most of the important information about your server. 
 
-![Second Tab](basics/basicpgadmin/assets/01-create-server-tab2.png)
+![Second Tab](./assets/01-create-server-tab2.png)
 
 In the Host name/address field you put the IP address, DNS name, or network name PgAdmin should use to reach your PostgreSQL Server. 
 For today's exercise we are running PgAdmin and PostgreSQL in containers with a host network so we are going to use the 
@@ -76,7 +76,7 @@ The other tabs are for more advanced use cases not covered today.
 
 After clicking the **Save** button, your left nav should now have a connection named _Workshop_.
 
-![New Connection](basics/basicpgadmin/assets/01-new-connection.png)
+![New Connection](./assets/01-new-connection.png)
     
   
 ## Wrap Up

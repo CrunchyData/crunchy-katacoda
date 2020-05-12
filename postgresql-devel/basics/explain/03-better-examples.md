@@ -12,7 +12,7 @@ EXPLAIN ANALYZE select event_id from se_details where state = 'NEW YORK';
 
 You should see output something like this:
 
-![Filter Node](basics/explain/assets/03-with-filter.png)
+![Filter Node](./assets/03-with-filter.png)
 
 So again we are doing a sequential scan and the rest of the output looks standard. What's new is the second and third lines. We now see that the planner is using a filter because we put in a WHERE clause. It tells us the exact syntax of filter (for example we see that the query planner cast our input string by using *::text* since we didn't explicitly cast our string to a SQL type). The third line tells us how many records were excluded with the filter, in this case we reduced the number of records by quite a bit, filtering out most of them and only returning a relatively small amount.
 
@@ -33,7 +33,7 @@ and now let's run our filtered query again
 
 Your output should look something like this:
 
-![Filter Node with Index](basics/explain/assets/03-with-filter-index.png)
+![Filter Node with Index](./assets/03-with-filter-index.png)
 
 One of the first things you should notice is that we get a significant reduction in execution time. PostgreSQL took advantage of the new index we just created and it significantly reduced the execution time of our query.
 
@@ -60,7 +60,7 @@ from se_details as d, se_fatalities as f where d.event_id = f.event_id AND d.sta
   
 and again your output should look something like this:
 
-![Join Query](basics/explain/assets/03-join.png)
+![Join Query](./assets/03-join.png)
 
 So there are actually 3 nodes in this query. The node in yellow rectangle (the sequentical scan) and node in the red rectangle (the index scan) which are both children of the node in the green rectangle (the nested loop). 
 

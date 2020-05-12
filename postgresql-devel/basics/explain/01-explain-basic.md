@@ -18,7 +18,7 @@ EXPLAIN select * from se_details;
 
 Your output should look like this (without the red numbers)
 
-![First Explain Output](basics/explain/assets/01-first-explain.png)
+![First Explain Output](./assets/01-first-explain.png)
 
 Time to explain the basic pieces of explain output. 
 

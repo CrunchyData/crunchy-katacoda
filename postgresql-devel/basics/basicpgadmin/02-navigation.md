@@ -7,7 +7,7 @@ Now that we have our shiny new connection to our server let's explore how to use
 Go ahead and click on the Workshop server in the left nav bar. Your right hand pane should transform to something that looks 
 like this (without the red highlight boxes):
 
-![Top Level View](basicpgadmin/assets/02-top-level.png)
+![Top Level View](./assets/02-top-level.png)
 
 The top highlighted area shows you statistics on your current server for all the current sessions connected to the server. 
 The bottom area shows you all the current running Postgres processes (PID = process ID), and if applicable, information 
@@ -27,7 +27,7 @@ You should see two databases, postgres and workshop (capitalization matters in P
 
  > Let's go ahead and click on the **workshop** icon. 
  
-![Top Level View](basicpgadmin/assets/02-db-top.png)
+![Top Level View](./assets/02-db-top.png)
 
 The left side now allows you to see and navigate to all the objects in your database. The right side is now just showing you the stats 
 for this database, not the whole server. 
@@ -52,7 +52,7 @@ By default, all PostgreSQL databases have a public database. If you create an ob
  You will see that in the workshop database we create a schema with our username. Therefore, to find the objects we need 
  to navigate into our schema _groot_ first.
  
- ![Top Level View](basicpgadmin/assets/02-groot-schema.png)
+ ![Top Level View](./assets/02-groot-schema.png)
  
  Now you can see all the different objects that can be contained within a schema. 
  
@@ -61,7 +61,7 @@ By default, all PostgreSQL databases have a public database. If you create an ob
  
  > Go ahead and click on _se_details_ and then click on the top SQL tab. You should now see the DDL statements to create this table.
  
-![Top Level View](basicpgadmin/assets/02-se-table.png)
+![Top Level View](./assets/02-se-table.png)
  
 
 ## Wrap Up
