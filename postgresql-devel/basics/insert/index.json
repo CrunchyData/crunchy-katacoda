@@ -1,0 +1,45 @@
+{
+    "title": "Add Data with the INSERT statement",
+    "description": "A closer look at how data is added to a PostgreSQL database",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+      "steps": [
+        {"title": "", 
+          "text": "01-.md"
+        },
+        {"title": "", 
+          "text": "02-.md"
+        },
+        {"title": "", 
+          "text": "03-.md"
+        },
+        {"title": "", 
+          "text": "04-.md"
+        },
+        {"title": "", 
+          "text": "05-.md"
+        }
+         ],
+      "intro": {
+        "courseData": "env-init.sh",
+        "code": "set-env.sh",
+        "text": "intro.md",
+        "credits": ""
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "terminal",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+      "terminals": [
+        {"name": "Terminal 2", "target": "host01"}
+      ]
+    },
+    "backend": {
+      "imageid": "crunchydata-single1"
+    }
+  }
+  
