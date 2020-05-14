@@ -11,11 +11,11 @@ https://github.com/pgpartman/pg_partman
  * Manage constraints on non-partition columns
  * Naming length limits; ensure complete partition name suffix
  * Ensure consistent child table privileges (mostly non-native, but can apply to native)
+ * Supports logical publication & subscription features
  * Sub-partitioning supported
- * Limited UPSERT support
  * Monitoring
-    * Check parent/default for unexpected data
-    * Check across child tables for uniqueness
+    * Check default/parent for unexpected data
+    * Check across child tables for uniqueness (not real-time)
     * pg_jobmon - logging & monitoring to ensure maintenance is running properly
 
 
