@@ -99,8 +99,9 @@ done
 
 echo 'finished loading  data'
 
-PGPASSWORD="password" psql -h localhost -U groot workshop
-
 clear
 
 : 'ready to go!'
+
+PGPASSWORD="password" psql -h localhost -U groot workshop
+
