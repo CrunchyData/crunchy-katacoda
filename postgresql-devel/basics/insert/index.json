@@ -9,7 +9,8 @@
           "text": "01-review.md"
         },
         {"title": "Use a SELECT Query to Add Data", 
-          "text": "02-insert-subquery.md"
+          "text": "02-insert-subquery.md",
+          "answer": "test-answer.md"
         },
         {"title": "What to Do When There Is an Insert Conflict", 
           "text": "03-conflict.md"
