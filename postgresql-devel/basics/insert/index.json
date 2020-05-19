@@ -5,20 +5,20 @@
     "time": "15 minutes",
     "details": {
       "steps": [
-        {"title": "", 
-          "text": "01-.md"
+        {"title": "Reviewing INSERT", 
+          "text": "01-review.md"
         },
-        {"title": "", 
-          "text": "02-.md"
+        {"title": "Use a SELECT Query to Add Data", 
+          "text": "02-insert-subquery.md"
         },
-        {"title": "", 
+        {"title": "What to Do When There Is an Insert Conflict", 
           "text": "03-.md"
         },
-        {"title": "", 
+        {"title": "Returning Data from an INSERT", 
           "text": "04-.md"
         },
-        {"title": "", 
-          "text": "05-.md"
+        {"title": "INSERT Within Context", 
+          "text": "05-misc.md"
         }
          ],
       "intro": {
