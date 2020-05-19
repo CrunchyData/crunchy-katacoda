@@ -82,7 +82,7 @@ Let's try an upsert (we're only including an `id` value here for demo purposes):
 ```
 INSERT INTO payment (id, date, type, client_id, event_id, amount, balance)
 VALUES (
-        2,
+        1,
         '2020-01-11 16:00 PST',
         'Event',
         1,
@@ -105,7 +105,7 @@ criteria by using the WHERE predicate, like so:
 ```
 INSERT INTO payment (id, date, type, client_id, event_id, amount, balance)
 VALUES (
-        2,
+        1,
         '2020-01-11 13:00 PST',
         'Event',
         1,
