@@ -26,7 +26,7 @@ following the VALUES clause)
 The exceptions to the above are serial and identity columns. Postgres 
 automatically generates these values, so you should not include them in the 
 INSERT statement. The event table we're using in this scenario does have 
-an identity column (use `\dt event` in `psql` to check again), but we're not 
+an identity column (use `\d event` in `psql` to check again), but we're not 
 including it in our INSERT. 
 
 (Our [Create Table course](https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable) 
@@ -84,7 +84,7 @@ In Postgres, it is possible to skip the column list entirely (but all
 columns _must_ be filled), like so :
 
 ```
-INSERT INTO attendance (5, 1, DEFAULT);
+INSERT INTO attendance VALUES (5, 1, DEFAULT);
 
 SELECT * FROM attendance;
 ```{{execute}}

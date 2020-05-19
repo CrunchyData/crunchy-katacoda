@@ -26,7 +26,7 @@ to decide the best thing to do next in that situation.
 You've probably also noticed by now that it's possible to add multiple rows 
 with a single INSERT. Many application developers won't need to carry these 
 out themselves, but it's good to know that it's possible. And, if a batch 
-insert is executed within a transaction and a conflict or error takes place on,
+insert is executed within a transaction and a conflict or error takes place at,
  say, the last row to be inserted, a rollback will take the database back to a 
  point where none of the rows have been inserted - even if all of them except the 
  last were successful.

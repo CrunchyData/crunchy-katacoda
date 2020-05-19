@@ -16,10 +16,10 @@ been created and we don't know the `id` value yet?
 
 The basic INSERT statement doesn't give any return values when executed (it 
 just displays a message that says how many rows were inserted). Technically, 
-you could run another INSERT statement that selects the data you need from 
+you could run another query that selects the data you need from 
 the row that was just inserted. But the RETURNING clause allows you to bypass 
-that - the INSERT _can_ return values that you could then use right away for 
-subsequent operations.
+that extra query - the INSERT _can_ return values that you could then use right
+ away for subsequent operations.
 
 ```
 INSERT INTO client (first, last, email, career_interests)
