@@ -12,10 +12,10 @@
           "text": "02-insert-subquery.md"
         },
         {"title": "What to Do When There Is an Insert Conflict", 
-          "text": "03-.md"
+          "text": "03-conflict.md"
         },
         {"title": "Returning Data from an INSERT", 
-          "text": "04-.md"
+          "text": "04-returning.md"
         },
         {"title": "INSERT Within Context", 
           "text": "05-misc.md"
