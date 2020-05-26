@@ -36,3 +36,13 @@ VALUES (1,
     (SELECT id FROM event where lower(event_dt) = '2020-01-11 17:00'::timestamptz),
     'No Show');
 ```{{execute}}
+
+Notice that in this case we are adding multiple rows using a single INSERT
+command, this is because the VALUES clause will accept multiple rows by having 
+multiple sets of values (in parenthesis) separated by commas.  If you'd like to
+see other fun things you can do, see what happens if you don't include the INSERT
+clause and just type: 
+
+```
+VALUES (1), (2), (3);
+```{{execute}}
