@@ -1,5 +1,5 @@
-First, we'll take a quick look at our tables that have been populated with data
- about Extra Mile's clients as well as events:
+First, we'll take a quick look at our tables that have been populated with data 
+about Extra Mile's clients as well as events:
 
 ```
 SELECT * FROM client;
@@ -7,7 +7,7 @@ SELECT * FROM client;
 SELECT * FROM event;
 ```{{execute}}
 
-Let's review the basic syntax for adding rows using INSERT:
+Let's review the basic syntax for adding a single row using INSERT:
 
 ```
 INSERT INTO event (name, event_dt, mode)
@@ -18,16 +18,23 @@ VALUES ('Test Event',
 ```
 
 The basic syntax includes:
-1. The names of columns to which you're adding data (in parentheses following 
-the INSERT INTO)
-2. The values that should go in each respective column (in parentheses 
-following the VALUES clause)
+1. The name of the table you are inserting data into
+2. The names of columns to which you're adding data (in parentheses following 
+the table name)
+3. The values that should go in each respective column (in parentheses 
+following the VALUES keyword)
 
-The exceptions to the above are serial and identity columns. Postgres 
-automatically generates these values, so you should not include them in the 
-INSERT statement. The event table we're using in this scenario does have 
-an identity column (use `\d event` in `psql` to check again), but we're not 
-including it in our INSERT. 
+When there are columns in the table which are not populated as part of the 
+INSERT command, Postgres will fill those columns using the default value for 
+the column, if there is one such as in the case of serial and identity columns, 
+or will insert a 'NULL' (which means that there is no value for the column).
+
+Generally speaking, when there is a serial or identity column you should not 
+include them in the INSERT statement and instead allow Postgres to populate 
+them. The event table we're using in this scenario has an identity column 
+(use `\d event` in `psql` to see it), but we're not including it in our 
+INSERT, so it will automatically be populated using the identity value by 
+Postgres. 
 
 (Our [Create Table course](https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable) 
 also discusses what happens if you include an insert value for serial and 
