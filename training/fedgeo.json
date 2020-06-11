@@ -1,0 +1,48 @@
+{
+  "title": "FedGeo 2020 PostGIS Workshop",
+  "description": "An Introduction to PostGIS",
+  "courses": [
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "geometries",
+      "course_id": "geometries",
+      "title": "Working With Geometries"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "geography",
+      "course_id": "geography",
+      "title": "Working With Geographic Data"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "projection",
+      "course_id": "projection",
+      "title": "Projecting your Spatial Data  "
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "spatial_relationships",
+      "course_id": "spatial_relationships",
+      "title": "Analyzing Spatial Relationships"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "geom_functions",
+      "course_id": "geom_functions",
+      "title": "Functions to Create Spatial Objects"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "joins",
+      "course_id": "joins",
+      "title": "Spatial Joins"
+    },
+    {
+      "pathway_id": "crunchydata/postgis",
+      "id": "joins_advanced",
+      "course_id": "joins_advanced",
+      "title": "Advanced Spatial Joins"
+    }
+  ]
+}

@@ -4,12 +4,12 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/qftextintro/",
       "course_id": "qftextintro",
-      "title": "Quick Intro To Full Text Search in PostgreSQL"
+      "title": "Full Text Search in PostgreSQL"
     },
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/qjsonintro/",
       "course_id": "qjsonintro",
-      "title": "Quick Intro To JSON in PostgreSQL"
+      "title": "JSON in PostgreSQL 11"
     },
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions",
@@ -18,7 +18,7 @@
     }, {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/qplr/",
       "course_id": "qplr",
-      "title": "Quick Intro To using R in PostgreSQL"
+      "title": "Using R in PostgreSQL"
     }
   ]
 

@@ -19,7 +19,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/advdatatype",
       "course_id": "advdatatype",
-      "title": "Data Types II"
+      "title": "Advanced Data Types"
     },
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/constraints",
@@ -29,7 +29,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
-      "title": "Quick Intro. To PostgreSQL in Containers"
+      "title": "Introduction To PostgreSQL in Containers"
     },
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/basicpgadmin",
@@ -39,7 +39,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/explain",
       "course_id": "explain",
-      "title": "Intro. to Using EXPLAIN (ANALYZE) on Your Queries"
+      "title": "Using EXPLAIN (ANALYZE) on Your Queries"
     }
   ]
 }
