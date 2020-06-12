@@ -50,6 +50,12 @@ rows have been inserted:
 
 >INSERT 0 0
 
+As you have likely noticed, it's the second number that's returned from INSERT 
+that indicates the number of rows which were actually written into the table, 
+zero in this case. The first number used to be "LastOid" but is now hard-coded to 
+InvalidOid in all modern versions of PostgreSQL, to avoid breaking backwards 
+compatibility.
+
 And to verify that nothing has actually been changed:
 
 ```
@@ -63,8 +69,8 @@ the result is still the same.
 ### ON CONFLICT DO UPDATE
 
 You can use DO UPDATE to update the existing row where there is a conflict (and
-go ahead with the INSERT otherwise -- in Postgres, this is also referred to as an 
-"upsert").
+go ahead with the INSERT otherwise -- this is also referred to as an "upsert" in
+other database systems).
 
 Our `workshop` database also has a payment table that stores payment 
 information:
@@ -95,9 +101,9 @@ ON CONFLICT (id) DO UPDATE
 SELECT * FROM payment;
 ```{{execute}}
 
-`excluded` is a special table that contains the values you intended to insert. 
-Even with the conflict, we see that the existing row's `date` has been updated
- with the new value.
+`excluded` is a special table that contains the values you attempted to insert. 
+Even with the conflict, we see that the existing row's `date` has been updated 
+with the new value.
 
 You can also restrict the upsert to only rows that meet more specific 
 criteria by using the WHERE predicate, like so:
