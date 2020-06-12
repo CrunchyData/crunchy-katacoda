@@ -15,7 +15,7 @@ VALUES ('Test Event',
         tstzrange('2019-12-14 12:00:00 EST', '2019-12-14 17:00:00 EST', '[)'),
         'Virtual'
 );
-```
+```{{execute}}
 
 The basic syntax includes:
 1. The name of the table you are inserting data into
@@ -26,15 +26,11 @@ following the VALUES keyword)
 
 When there are columns in the table which are not populated as part of the 
 INSERT command, Postgres will fill those columns using the default value for 
-the column, if there is one such as in the case of serial and identity columns, 
-or will insert a 'NULL' (which means that there is no value for the column).
-
-Generally speaking, when there is a serial or identity column you should not 
-include them in the INSERT statement and instead allow Postgres to populate 
-them. The event table we're using in this scenario has an identity column 
-(use `\d event` in `psql` to see it), but we're not including it in our 
-INSERT, so it will automatically be populated using the identity value by 
-Postgres. 
+the column if there is one (such as in the case of serial and identity columns), 
+or it will insert a `NULL` (which means that there is no value for the column). 
+We'll see this in action later in this step. Generally speaking, when there is 
+a serial or identity column you should not include them in the INSERT statement 
+and instead allow Postgres to populate them. 
 
 (Our [Create Table course](https://learn.crunchydata.com/postgresql-devel/courses/basics/basictable) 
 also discusses what happens if you include an insert value for serial and 
@@ -55,7 +51,8 @@ The order of the values must always match the order of the column names.
 
 #### What happens when a column is omitted?
 
-It depends on whether a default value has been set for that column.
+As mentioned above, it depends on whether a **default value** has been set for
+ that column.
 
 In this scenario, we also have an attendance table (that we did not include as 
 an example in the previous scenario, _Advanced Data Types_):
@@ -69,8 +66,8 @@ tables. This table tracks what events were attended by which clients, so the
 foreign key references indicate the record on the client table as well as the 
 record on the event table.
 
-You'll also see that the column has been set with a default. If we add a new 
-row to the table and not specify an `attend_status`:
+You'll also see that the `attend_status` column has been set with a default. If 
+we add a new row to the table and not specify an `attend_status`:
 
 ```
 INSERT INTO attendance (client_id, event_id)

@@ -50,11 +50,10 @@ rows have been inserted:
 
 >INSERT 0 0
 
-As you have likely noticed, it's the second number that's returned from INSERT 
-that indicates the number of rows which were actually written into the table, 
-zero in this case. The first number used to be "LastOid" but is now hard-coded to 
-InvalidOid in all modern versions of PostgreSQL, to avoid breaking backwards 
-compatibility.
+The second number that's returned from INSERT indicates the number of rows 
+which were actually written into the table (zero in this case). The first 
+number used to be `LastOid` but is now hard-coded to `InvalidOid` (0) in all 
+modern versions of PostgreSQL, to avoid breaking backwards compatibility.
 
 And to verify that nothing has actually been changed:
 

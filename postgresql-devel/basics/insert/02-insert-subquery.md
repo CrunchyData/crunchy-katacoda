@@ -38,11 +38,13 @@ VALUES (1,
 ```{{execute}}
 
 Notice that in this case we are adding multiple rows using a single INSERT
-command, this is because the VALUES clause will accept multiple rows by having 
-multiple sets of values (in parenthesis) separated by commas.  If you'd like to
+command. The VALUES clause will accept multiple rows by having 
+multiple sets of values (in parentheses) separated by commas.  If you'd like to
 see other fun things you can do, see what happens if you don't include the INSERT
 clause and just type: 
 
 ```
 VALUES (1), (2), (3);
 ```{{execute}}
+
+Read more about the VALUES clause in the [official docs](https://www.postgresql.org/docs/current/queries-values.html).
