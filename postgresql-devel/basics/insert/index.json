@@ -1,0 +1,46 @@
+{
+    "title": "Add Data with the INSERT statement",
+    "description": "A closer look at how data is added to a PostgreSQL database",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+      "steps": [
+        {"title": "Reviewing INSERT", 
+          "text": "01-review.md"
+        },
+        {"title": "Use a SELECT Query to Add Data", 
+          "text": "02-insert-subquery.md",
+          "answer": "test-answer.md"
+        },
+        {"title": "What to Do When There Is an Insert Conflict", 
+          "text": "03-conflict.md"
+        },
+        {"title": "Returning Data from an INSERT", 
+          "text": "04-returning.md"
+        },
+        {"title": "INSERT Within Context", 
+          "text": "05-misc.md"
+        }
+         ],
+      "intro": {
+        "courseData": "env-init.sh",
+        "code": "set-env.sh",
+        "text": "intro.md",
+        "credits": ""
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "uilayout": "terminal",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+      "terminals": [
+        {"name": "Terminal 2", "target": "host01"}
+      ]
+    },
+    "backend": {
+      "imageid": "crunchydata-single1"
+    }
+  }
+  

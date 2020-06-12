@@ -27,6 +27,11 @@
       "title": "Introduction to PostgreSQL Data Constraints"
     },
     {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/insert",
+      "course_id": "insert",
+      "title": "Add Data with INSERT"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
       "title": "Introduction To PostgreSQL in Containers"
