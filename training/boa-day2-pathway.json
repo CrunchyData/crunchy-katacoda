@@ -1,0 +1,17 @@
+{
+  "title": "PostgreSQL Administration Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-11/setting-up-replication",
+      "course_id": "setting-up-replication",
+      "title": "2 - Setting Up PostgreSQL Replication"
+    },{
+      "pathway_id": "crunchydata",
+      "id": "pg-administration/basic-postgresql-for-dbas-11/failover",
+      "course_id": "failover",
+      "title": "6 - Failover"
+    }
+  ]
+}
