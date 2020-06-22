@@ -1,0 +1,31 @@
+{
+  "title": "Learning Lateral Joins",
+  "description": "Module on Learning Lateral Joins",
+  "difficulty": "Intermediate",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {"title": "Understand Lateral Joins", "text": "01-understanding-lateral.md"},
+      {"title": "Using Lateral Joins", "text": "02-using-lateral.md"},
+      {"title": "Examples of Lateral Joins", "text": "03-better-examples.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uilayout": "terminal",
+    "dashboards": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
