@@ -9,6 +9,8 @@ the address which is passed in to it.  With such an SRF, if you had a table of a
 select * from myaddresses cross join lateral geocode(address);
 ```
 
+Note that in the above example, 'address' is (one of the) columns in the 'myaddresses' table.
+
 Which would return all the results from the geocode() function for each address passed in.
 
 ## Top-N Results
@@ -31,6 +33,9 @@ select event_id, state, fatality_id, fatality_date from se_details left join lat
 
 This will return at least one row for every event in se_details, and return the top five (or as many as exist, if there are fewer than 5 results) in descending order of fatality date in the fatalities
 table for that event.
+
+You may notice that in this case we had to include an ON clause (the 'on true' at the end), this is because we are using a left join, which requires an ON clause, so that rows from the 'se_details' table are
+returned even if they don't have any rows returned from the 'se_fatalities' lateral sub-query.
 
 ## Wrap Up
 
