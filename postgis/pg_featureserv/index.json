@@ -1,0 +1,39 @@
+{
+"title": "pg_featureserv",
+"description": "Service enabling your spatial data with pg_featureserv",
+"difficulty": "beginner",
+"time": "15 minutes",
+"details": {
+  "steps": [
+    {"title": "pg_featureserv", "text": "01-pg_featureserv.md"},
+    {"title": "How pg_featureserv works", "text": "02-pg_featureserv_cont.md"},
+    {"title": "The pg_featureserv UI", "text": "03-pg_featureserv-ui.md"},
+    {"title": "Adding user defined functions", "text": "04-user_defined_functions.md"}
+  ],
+  "intro": {
+    "courseData": "env-init.sh",
+    "code": "set-env.sh",
+    "text": "intro.md",
+    "credits": ""
+  },
+  "finish": {
+    "text": "finish.md"
+  },
+  "assets": {
+    "client": [
+    ]
+  }
+},
+"environment": {
+  "hideintro": false,
+  "showdashboard": true,
+  "dashboards": [
+      {"name": "pg_featureserv", "port": 9000}],
+  "terminals": [
+        {"name": "Terminal 2", "target": "host01"}],
+  "uilayout": "terminal-iframe"
+},
+"backend": {
+  "imageid": "crunchydata-single1"
+  }
+}

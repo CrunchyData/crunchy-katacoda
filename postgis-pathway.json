@@ -37,7 +37,11 @@
       "external_link": "https://learn.crunchydata.com/postgis/indexing/",
       "course_id": "indexing",
       "title": "8 - Spatial Indexing"
+    },{
+      "external_link": "https://learn.crunchydata.com/postgis/pg_featureserv/",
+      "course_id": "pg_featureserv",
+      "title": "9 - Creating Spatial Features with pg_featureserv"
     }
-
+    
   ]
 }
