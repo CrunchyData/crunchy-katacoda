@@ -24,13 +24,13 @@ You can see we have six tables with information about New York City. If you look
 
 The US Census Bureau is responsible for conducting the census of the US population every 10 years. (We just had one in 2020.) This information is then used by the US government to make all sorts of decisions to regarding the use and dispersment of tax dollars. But did you know they also make all this information publicly available? You can download this data and use it for your own analysis. 
 
-The query in the funciton below could potentially be the first step in determining the population demographic (i.e. age, race, gender, etc) around certain subway stops within a walking radius. You could then add additional queries to further analyze the data (i.e. median household income in the area, time table of when the subway stops, peak rush hour traffic, etc)
+The query in the function below could potentially be the first step in determining the population demographic (i.e. age, race, gender, etc) around certain subway stops within a walking radius. You could then add additional queries to further analyze the data (i.e. median household income in the area, time table of when the subway stops, peak rush hour traffic, etc)
 
 Now, let's go back to the **Terminal 2** tab, and we'll take a quick look at one of the tables we'll use in the function.
 
 ```SELECT DISTINCT * FROM public.nyc_subway_stations ORDER BY name ASC LIMIT 10;```{{execute}}
 
-You can see there is a variety of data in the table, but we will only use a subesection of this table and the US Census Block table. Now, let's get back to the function.
+You can see there is a variety of data in the table, but we will only use a subsection of this table and the US Census Block table. Now, let's get back to the function.
 
 ## Create a user-defined function
 
