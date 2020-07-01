@@ -6,4 +6,4 @@ When pg_featureserv connects to the PostGIS database, it will automatically expo
 
 ## Why expose all spatial data?
 
-Pg_featureserv was created to address the issue of requiring multiple points of configuration typically found in a tradional GIS stack. With Pg_featureserv, your database is your configuration. There is power and efficiency in this approach, but it does require you to think a bit more about your database configuration than perhaps you may have in the past. The nice part about this is you only have to worry about the database, and not having to make changes through out your tech stack.
+Pg_featureserv was created to address the issue of requiring multiple points of configuration typically found in a tradional GIS stack. With pg_featureserv, your database is your configuration. There is power and efficiency in this approach, but it does require you to think a bit more about your database configuration than perhaps you may have in the past. The nice part about this is you only have to worry about the database, and not having to make changes through out your tech stack.

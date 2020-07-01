@@ -23,6 +23,6 @@ Pg_featureserv uses PostGIS to provide geospatial functionality, namely:
 
 Pg_featureserv requires **PostGIS 2.4 or greater** to operate.
 
-That's great, but you might be askingL "What does it do? How does it work?" Pg_featureserv works by taking an HTTP request and converting it to the neccessary SQL to have PostGIS return the spatial data as a feature. Pg_featureserv connects to the target PostGIS database via a Database URL [connection string](https://www.postgresql.org/docs/10/libpq-connect.html#LIBPQ-CONNSTRING). It runs in a completely stateless manner, and any configuration of the data layers is driven by the underlying database. This means that data scientists, analysts and stewards can focus on maintaining their data and data structures. 
+That's great, but you might be asking: "What does it do? How does it work?" Pg_featureserv works by taking an HTTP request and converting it to the neccessary SQL to have PostGIS return the spatial data as a feature. Pg_featureserv connects to the target PostGIS database via a Database URL [connection string](https://www.postgresql.org/docs/10/libpq-connect.html#LIBPQ-CONNSTRING). It runs in a completely stateless manner, and any configuration of the data layers is driven by the underlying database. This means that data scientists, analysts and stewards can focus on maintaining their data and data structures. 
 
 Now, let's get to showing you how easily it can be added to your PostGIS implementation and expose features. 

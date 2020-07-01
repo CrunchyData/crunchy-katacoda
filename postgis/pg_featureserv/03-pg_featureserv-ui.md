@@ -33,6 +33,6 @@ Functions is where you will find any user-defined functions made available to pg
 
 If you click on a JSON link, it will take you to the full JSON response from the API for that particular path. As an example, clicking on JSON for Collections returns the response for `/collections`. This is what you will need/use for incorporating it into your user application. 
 
-### view
+### View
 
-Wiew (available under the Collections or Functions pages) will take you to a preview page that returns a limited set of features so you can verify that the features are being returned as expected. It comes with a basic basemap out of the box. 
+View (available under the Collections or Functions pages) will take you to a preview page that returns a limited set of features so you can verify that the features are being returned as expected. It comes with a basic basemap out of the box. 

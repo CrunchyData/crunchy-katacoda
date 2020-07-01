@@ -39,7 +39,8 @@ VALUES (1,
 
 Notice that in this case we are adding multiple rows using a single INSERT
 command. The VALUES clause will accept multiple rows by having 
-multiple sets of values (in parentheses) separated by commas.  If you'd like to
+multiple sets of values (in parentheses) separated by commas.  Multi-row inserts 
+are more performant than multiple single row inserts. If you'd like to
 see other fun things you can do, see what happens if you don't include the INSERT
 clause and just type: 
 
