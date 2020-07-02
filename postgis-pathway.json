@@ -2,42 +2,52 @@
   "title": "CrunchyData PostGIS",
   "courses": [
     {
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/qpostgisintro/",
       "course_id": "qpostgisintro",
       "title": "0 - Quick Introduction To PostGIS"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/geometries/",
       "course_id": "geometries",
       "title": "1 - Geometries"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/geography/",
       "course_id": "geography",
       "title": "2 - Geography"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/projection/",
       "course_id": "projection",
       "title": "3 - Projection"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/spatial_relationships/",
       "course_id": "spatial_relationships",
       "title": "4 - Spatial Relationships"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/geom_functions/",
       "course_id": "geom_functions",
       "title": "5 - Geometry Constructing Functions"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/joins/",
       "course_id": "joins",
       "title": "6 - Spatial Joins"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/joins_advanced/",
       "course_id": "joins_advanced",
       "title": "7 - Advanced Spatial Joins"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/indexing/",
       "course_id": "indexing",
       "title": "8 - Spatial Indexing"
     },{
+      "action" : "Start Scenario",
       "external_link": "https://learn.crunchydata.com/postgis/pg_featureserv/",
       "course_id": "pg_featureserv",
       "title": "9 - Creating Spatial Features with pg_featureserv"
