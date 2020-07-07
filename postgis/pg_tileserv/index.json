@@ -1,0 +1,38 @@
+{
+"title": "pg_tileserv",
+"description": "Service enabling your spatial data with pg_tileserv.",
+"difficulty": "beginner",
+"time": "15 minutes",
+"details": {
+  "steps": [
+    {"title": "Vector Tiles", "text": "01-pg_tileserv.md"},
+    {"title": "pg_tileserv", "text": "02-pg_tileserv-ui.md"},
+    {"title": "user defined functions", "text": "03-user_defined_functions.md"}
+  ],
+  "intro": {
+    "courseData": "env-init.sh",
+    "code": "set-env.sh",
+    "text": "intro.md",
+    "credits": ""
+  },
+  "finish": {
+    "text": "finish.md"
+  },
+  "assets": {
+    "client": [
+    ]
+  }
+},
+"environment": {
+  "hideintro": false,
+  "showdashboard": true,
+  "dashboards": [
+      {"name": "pg_tileserv", "port": 7800}],
+  "terminals": [
+        {"name": "Terminal 2", "target": "host01"}],
+  "uilayout": "terminal-iframe"
+},
+"backend": {
+  "imageid": "crunchydata-single1"
+  }
+}

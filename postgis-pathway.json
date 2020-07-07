@@ -51,7 +51,11 @@
       "external_link": "https://learn.crunchydata.com/postgis/pg_featureserv/",
       "course_id": "pg_featureserv",
       "title": "9 - Creating Spatial Features with pg_featureserv"
+    },{
+      "action" : "Start Scenario",
+      "external_link": "https://learn.crunchydata.com/postgis/pg_tileserv/",
+      "course_id": "pg_tileserv",
+      "title": "10 - Creating Dynamic Vector Tiles with pg_tileserv"
     }
-    
   ]
 }
