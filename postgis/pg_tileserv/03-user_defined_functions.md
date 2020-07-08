@@ -2,7 +2,7 @@
 
 ## Create a user-defined function
 
-For this part of the exercise, we'll be using the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry). This post creates a four internal funcitons first and then pulls them all together in one public facing function that can be exposed through pg_tileserv. This is also a good example of showing how not everything will be exposed if managed properly. At the end, you'll only see one function exposed through pg_tileserv. 
+For this part of the exercise, we'll be using the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry). This post creates four internal funcitons first and then pulls them all together in one public facing function that can be exposed through pg_tileserv. This is also a good example of showing how not everything will be exposed if managed properly. At the end, you'll only see one function exposed through pg_tileserv. 
 
 To create a user-defined function, first we must log into the running database.
 
