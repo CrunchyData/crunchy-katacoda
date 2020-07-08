@@ -1,14 +1,13 @@
-All of the commands on this page should be run within Terminal 2.
-
-To create a user-defined function, first we must log into the running database.
-
 >**WAIT!** Before you execute the code block below, make sure you've navigated back to ```Terminal 2```. 
-
-```PGPASSWORD="password" psql -h localhost -U groot nyc```{{execute}}
 
 ## Create a user-defined function
 
-For this part of the exercise, we'll use a couple of the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry).
+For this part of the exercise, we'll be using the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry). This post creates a four internal funcitons first and then pulls them all together in one public facing function that can be exposed through pg_tileserv. This is also a good example of showing how not everything will be exposed if managed properly. At the end, you'll only see one function exposed through pg_tileserv. 
+
+To create a user-defined function, first we must log into the running database.
+
+```PGPASSWORD="password" psql -h localhost -U groot nyc```{{execute}}
+
 
 First we need to create the hexagons.
 
@@ -164,7 +163,7 @@ PARALLEL SAFE;
 COMMENT ON FUNCTION public.hexagons IS 'Hex coverage dynamically generated. Step parameter determines how approximately many hexes (2^step) to generate per tile.';
 ```{{execute}}
 
-Now, go back to the pg_tileserv tab and you should now see two new functions. (You may need to hit the refresh symbol in the pg_tileserv tab.)
+Now, go back to the pg_tileserv tab and you should now see the new dynamic hexagon tile function. (You may need to hit the refresh symbol in the pg_tileserv tab.)
 
 Now that you have these tiles, you could use them to do real-time filtering and analysis of data in your database. That is a more advanced use case that goes beyond the scope of this exercise.
 
