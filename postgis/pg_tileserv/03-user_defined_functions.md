@@ -9,7 +9,7 @@ To create a user-defined function, first we must log into the running database.
 ```PGPASSWORD="password" psql -h localhost -U groot nyc```{{execute}}
 
 
-First we need to create the hexagons.
+Next, we'll create a function that makes hexagons.
 
 ```
 CREATE OR REPLACE 
@@ -163,7 +163,7 @@ PARALLEL SAFE;
 COMMENT ON FUNCTION public.hexagons IS 'Hex coverage dynamically generated. Step parameter determines how approximately many hexes (2^step) to generate per tile.';
 ```{{execute}}
 
-Now, go back to the pg_tileserv tab and you should now see the new dynamic hexagon tile function. (You may need to hit the refresh symbol in the pg_tileserv tab.)
+Now, go back to the pg_tileserv tab and you should now see the new dynamic hexagon tile function. (You may need to hit the refresh symbol in the pg_tileserv tab.) If you click on the ```preview`` link, you'll see the hexagons getting tiled in. And you can change the number int he top left corner of the preview to change the size of the hexagons.
 
 Now that you have these tiles, you could use them to do real-time filtering and analysis of data in your database. That is a more advanced use case that goes beyond the scope of this exercise.
 
