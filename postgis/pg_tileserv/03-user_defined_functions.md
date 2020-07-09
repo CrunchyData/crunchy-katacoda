@@ -1,15 +1,16 @@
->**WAIT!** Before you execute the code block below, make sure you've navigated back to ```Terminal 2```. 
-
-## Create a user-defined function
-
-For this part of the exercise, we'll be using the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry). This post creates four internal funcitons first and then pulls them all together in one public facing function that can be exposed through pg_tileserv. This is also a good example of showing how not everything will be exposed if managed properly. At the end, you'll only see one function exposed through pg_tileserv. 
+All of the commands on this page should be run within **Terminal 2**.
 
 To create a user-defined function, first we must log into the running database.
 
+>**WAIT!** Before you execute the code block below, make sure you've navigated back to ```Terminal 2```. 
+
 ```PGPASSWORD="password" psql -h localhost -U groot nyc```{{execute}}
 
+## Create a user-defined function
 
-Next, we'll create a function that makes hexagons.
+For this part of the exercise, we'll use a couple of the functions from Paul Ramsey's blog post on [Serving Tiles with Dynamic Geometry](https://info.crunchydata.com/blog/tile-serving-with-dynamic-geometry). We create four internal functions first and then pull them all together in one public-facing function that can be exposed through pg_tileserv. 
+
+First we need to create the hexagons.
 
 ```
 CREATE OR REPLACE 
@@ -39,7 +40,7 @@ STRICT
 PARALLEL SAFE;
 ```{{execute}}
 
-Then we'll fill tiles with those Hexagons.
+Then we'll fill tiles with those hexagons.
 
 ```
 CREATE OR REPLACE 
@@ -69,8 +70,7 @@ STRICT
 PARALLEL SAFE;
 ```{{execute}}
 
-Now we need to create the ```ST_TileEnvelope``` Function (we have to create it here since the version of PostGIS we're using in this container is Postgis 2.4. This function is included in Postgis 3.0+)
-
+Now we need to create the ```ST_TileEnvelope``` function. While this function is actually included in PostGIS 3.0+, we have to create it here since the version of PostGIS in this container is PostGIS 2.4. 
 
 ```
 CREATE OR REPLACE
@@ -129,7 +129,7 @@ STRICT
 PARALLEL SAFE;
 ```{{execute}}
 
-And finally we can pull them all together in a function that allows us to have dynamic hexagons as vector tiles.
+Finally, we can pull them all together in a function that allows us to have dynamic hexagons as vector tiles.
 
 ```
 CREATE OR REPLACE 
@@ -163,7 +163,6 @@ PARALLEL SAFE;
 COMMENT ON FUNCTION public.hexagons IS 'Hex coverage dynamically generated. Step parameter determines how approximately many hexes (2^step) to generate per tile.';
 ```{{execute}}
 
-Now, go back to the pg_tileserv tab and you should now see the new dynamic hexagon tile function. (You may need to hit the refresh symbol in the pg_tileserv tab.) If you click on the ```preview``` link, you'll see the hexagons getting tiled in. And you can change the number int he top left corner of the preview to change the size of the hexagons.
+Now, go back to the pg_tileserv tab and you should now see the new `public.hexagons` function. (You may need to hit the refresh symbol in the pg_tileserv tab.) Despite having created a few intermediary functions, we only see the final function since it has the form `function(z integer, x integer, y integer, ...)` that returns an MVT `bytea`, so pg_tileserv knows to expose it as a function layer. 
 
 Now that you have these tiles, you could use them to do real-time filtering and analysis of data in your database. That is a more advanced use case that goes beyond the scope of this exercise.
-
