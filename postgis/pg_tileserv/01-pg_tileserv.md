@@ -8,7 +8,7 @@ To add pg_tileserv to your PostGIS database, you need to either download the [so
 
 The code block below allows you to click on it to have the code execute in the terminal. Be sure to click on the ```Terminal``` tab before click on the box to make sure the code executes in the correct tab. You also have the option of copying and pasting the code, or typing it yourself in the ```Terminal``` tab.
 
-```docker run -p 7800:7800 --env=DATABASE_URL=postgres://groot:password@172.18.0.2/nyc timmam/pg_tileserv:Katacoda```{{execute}}
+```docker run -p 7800:7800 --env=DATABASE_URL=postgres://groot:password@172.18.0.2/nyc pramsey/pg_tileserv:CI```{{execute}}
 
 You'll see that the connection info we provided in the intro (database name: `nyc`, username: `groot`, and password: `password`) is used in the statement above. 
 
