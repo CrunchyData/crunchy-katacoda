@@ -163,6 +163,8 @@ PARALLEL SAFE;
 COMMENT ON FUNCTION public.hexagons IS 'Hex coverage dynamically generated. Step parameter determines how approximately many hexes (2^step) to generate per tile.';
 ```{{execute}}
 
-Now, go back to the pg_tileserv tab and you should now see the new `public.hexagons` function. (You may need to hit the refresh symbol in the pg_tileserv tab.) Despite having created a few intermediary functions, we only see the final function since it has the form `function(z integer, x integer, y integer, ...)` that returns an MVT `bytea`, so pg_tileserv knows to expose it as a function layer. 
+Now, go back to the pg_tileserv tab and you should now see the new `public.hexagons` function. (You may need to hit the refresh symbol in the pg_tileserv tab.) Feel free to look at the preview and play around with the _step_ parameter to see how it updates the tiles.
+
+Despite having created a few intermediary functions, we only see the final function since it has the form `function(z integer, x integer, y integer, ...)` that returns an MVT `bytea`, so pg_tileserv knows to expose it as a function layer. 
 
 Now that you have these tiles, you could use them to do real-time filtering and analysis of data in your database. That is a more advanced use case that goes beyond the scope of this exercise.

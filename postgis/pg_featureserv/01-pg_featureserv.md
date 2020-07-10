@@ -26,4 +26,4 @@ time="2020-06-30T19:48:04Z" level=info msg="172.17.0.2:34332 HEAD /\n"
 time="2020-06-30T19:48:08Z" level=info msg="172.17.0.4:51916 GET /\n"
 ```
 
-Once you do, open the pg_featureserv tab again, and you'll see that it has scucessfully connected to the default UI. We'll go over some additional information about how pg_featureserv works and the basic layout of the UI on the next pages.
+Once you do, open the pg_featureserv tab again, and you'll see that it has successfully connected to the default UI. We'll go over some additional information about how pg_featureserv works and the basic layout of the UI on the next pages.
