@@ -8,11 +8,11 @@ The service metadata provides basic information in JSON format to make it discov
 
 ## Table Layers
 
-Table layers will list all of the tables that it has access to that contain a valid geometry column (```geom```). If a table is missing from this view that you were expecting to see, you can try the following troubleshooting steps:  
+Table Layers will list all tables that it has access to that contain a valid geometry column (```geom```). If a table is missing from this view that you were expecting to see, you can try the following troubleshooting steps:  
 
 1. Verify user roles/permissions for the service account.  
 2. Verify the table has a geometry column and the geometry is valid. 
 
 ## Function Layers
 
-Functions is where you will find any user-defined functions made available to pg_tileserv. Note that we haven't added any functions yet, so this section should be empty. We'll go into user-defined functions in more detail on the next page. 
+Function Layers is where you will find any user-defined functions made available to pg_tileserv. Note that we haven't added any functions yet, so this section should be empty. We'll go into user-defined functions in more detail on the next page. 

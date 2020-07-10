@@ -1,4 +1,4 @@
-All of the commands on this page should be run within Terminal 2.
+All of the commands on this page should be run within **Terminal 2**.
 
 ## `postgisftw` schema
 
@@ -63,5 +63,3 @@ To show that it's live, go back to **Terminal 2** and let's get some station nam
 ORDER BY name ASC LIMIT 30;```{{execute}}
 
 Try grabbing one of these names (e.g. `14th St`), and in the pg_featureserv UI, enter that name in the ```stop_name``` Function Args field on the `nyc_katacoda` function view. (Click `Requery` to view the output geometries.)
-
-

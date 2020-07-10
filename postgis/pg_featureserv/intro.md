@@ -4,7 +4,7 @@ This scenario gives you an introduction to pg_featureserv.
 
 To use pg_featureserv, you need to have a PostGIS database with spatial data loaded in it. The database has already been started in this learning environment and the spatial data has already been loaded. This scenario will use data from census data from New York City (NYC). 
 
-This exercise shows how to connect pg_featureserv to your database and shows the resulting features. We also demonstrate an example of using user-defined functions through pg_featureserv. If you would like to learn more about creating functions in PostgreSQL, please review our [Basics on Writing Functions](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions) scenario. Data from this scenario is used in our other exercises as well, but the environements don't persist between scenarios.
+This exercise shows how to connect pg_featureserv to your database and shows the resulting features. We also demonstrate an example of using user-defined functions through pg_featureserv. If you would like to learn more about creating functions in PostgreSQL, please review our [Basics on Writing Functions](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions) scenario. Data from this scenario is used in our other exercises as well, but the environments don't persist between scenarios.
 
 Here are the details on the database we are connecting to:
 

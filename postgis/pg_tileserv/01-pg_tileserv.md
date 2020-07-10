@@ -1,14 +1,16 @@
-This exercise will show you the steps to take to add pg_tileserv to your PostGIS implementation. 
+This exercise shows you the steps to add pg_tileserv to your PostGIS implementation. 
 
-First, take a look at the tab to the right called "pg_tileserv". You'll see that it's still waiting for an available conneciton on port 7800, the port that pg_tileserv serves data on. That's because we haven't added pg_tileserv to our PostGIS implementation yet. Let's do that now (click back to ```Terminal```)
+First, take a look at the tab in the terminal to the right called "pg_tileserv". You'll see that it's still waiting for an available conneciton on port 7800, the port that pg_tileserv serves data on. That's because we haven't added pg_tileserv to our PostGIS implementation yet. Let's do that now.
 
 ## Add pg_tileserv
 
 To add pg_tileserv to your PostGIS database, you need to either download the [source code](https://github.com/CrunchyData/pg_tileserv), the binaries, or one of our supported containers. We'll use the container version of pg_tileserv for this scenario. 
 
-To add the container to your postgis implentation, you'll need the connection info and username and password (from the first screen). 
+The code block below allows you to click on it to have the code execute in the terminal. Be sure to click on the ```Terminal``` tab before click on the box to make sure the code executes in the correct tab. You also have the option of copying and pasting the code, or typing it yourself in the ```Terminal``` tab.
 
 ```docker run -p 7800:7800 --env=DATABASE_URL=postgres://groot:password@172.18.0.2/nyc timmam/pg_tileserv:Katacoda```{{execute}}
+
+You'll see that the connection info we provided in the intro (database name: `nyc`, username: `groot`, and password: `password`) is used in the statement above. 
 
 You should see lines of output like this in the terminal:
 
@@ -23,6 +25,6 @@ time="2020-07-02T14:06:47Z" level=info msg="HEAD /" method=HEAD url=/
 time="2020-07-02T14:06:50Z" level=info msg="GET /" method=GET url=/
 ```
 
-Now, if you look at the pg_tileserv tab again, you'll see the default UI and all of the nyc data being delivered as vector tiles (under ```Table Layers```).
+Now, if you look at the pg_tileserv tab again, you'll see the default UI as well as all of the NYC data being delivered as vector tiles (under ```Table Layers```).
 
-Next, we'll go over the default UI and then show you how you can add a simple user defined function and have it available via pg_tileserv.
+Next, we'll go over the default UI and then show you how to add a user-defined function and have it available via pg_tileserv.
