@@ -57,7 +57,9 @@ docker pull crunchydata/crunchy-postgres-appdev:latest
 echo "Downloading sample data"
 cd /tmp
 wget https://github.com/CrunchyData/crunchy-demo-data/releases/download/v0.3/crunchy_demo_data_v0.3.zip
+wget https://github.com/CrunchyData/crunchy-demo-data/releases/download/v0.6/crunchy-demo-data.dump.sql.gz
 mkdir /data
 chmod 777 /data
 unzip -u crunchy_demo_data_v0.3.zip -d /data
+mv crunchy-demo-data.dump.sql.gz /data
 rm -f crunchy_demo_data_v0.3.zip
