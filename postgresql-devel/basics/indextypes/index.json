@@ -1,0 +1,33 @@
+{
+  "title": "PostgreSQL Index Types",
+  "description": "Introducing the main index types in PostgreSQL",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {"title": "B-Tree", "text": "01-b-tree.md"},
+      {"title": "GIN", "text": "02-gin.md"},
+      {"title": "GIST", "text": "03-gist.md"},
+      {"title": "SP-GIST", "text": "04-sp-gist.md"},
+      {"title": "BRIN", "text": "05-brin.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uilayout": "terminal",
+    "dashboards": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}

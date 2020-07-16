@@ -1,9 +1,6 @@
 # Working with JSON(B) data PostgreSQL
 
-PostgreSQL has some quite advance JSON capabilites, especially with the addition of JSONB. The B in JSONB stands for binary, meaning the document is actually stored in binary format. This gives us a couple of advantages:
-
-1. The document takes up less space as JSONB
-2. We can index JSONB giving us all the benefits of database indices.
+PostgreSQL has some quite advance JSON capabilites, especially with the addition of JSONB. The B in JSONB stands for binary, meaning the document is actually stored in binary format. This gives us the ability to index JSONB giving us all the benefits of database indices.
 
 If you just want to store your JSON as a Text Large Object that you only reproduce wholesale and never query, then go ahead 
 and make the column a JSON type, otherwise use JSONB.

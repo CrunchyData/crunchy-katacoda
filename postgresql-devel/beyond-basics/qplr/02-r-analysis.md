@@ -61,7 +61,7 @@ WITH get_aggs AS (
 
 This is using a common table expression (CTE). With a CTE we get a much nicer subquery syntax. We start the statement
  with "WITH get_aggs AS (" which is basically saying that next section in the ( ) can be used later in the query as a
- table named get_aggs.  We do this first call to get our 
+ table named get_aggs.  We do this first call to get our arrays of land and water values. 
 
 The second select statement then treats our function call as a table. 
  
@@ -71,8 +71,7 @@ Remember, everything after the FROM is table declarations, so
 
 `from ... r_corr_row(get_aggs.aland_vector, get_aggs.awater_vector) as r_corr_output;`     
 
-Is saying "call the function and name its results as r_corr_output". Once we have our function results with a table
- like structyre  we can call it like any other table in the beginning part of our SELECT statement.
+Is saying "call the function and name its results as r_corr_output". Once we have our function results with a table like structure  we can call it like any other table in the beginning part of our SELECT statement.
 
 
 ## Final Notes
