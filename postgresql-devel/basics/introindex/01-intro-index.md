@@ -10,7 +10,7 @@ column (or columns) on that relation.
 2. Indices are automatically created for primary key and unique constraint 
 columns.
 3. The database query planner takes into account the indices available when 
-determining the best way for executing a query.
+determining the best _path_ for executing a query.
 
 Indexes are their own data structures, and they're also stored on disk. 
 PostgreSQL supports several different index types, with [b-tree](https://en.wikipedia.org/wiki/B-tree)

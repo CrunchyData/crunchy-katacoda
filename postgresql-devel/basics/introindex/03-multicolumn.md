@@ -9,30 +9,30 @@ Let's use EXPLAIN ANALYZE again to see how the query planner works this out:
 ```
 EXPLAIN ANALYZE
 SELECT * FROM se_details 
-WHERE state = 'Florida' and month_text = 'August';
-```
+WHERE state = 'Florida' and month_name = 'August';
+```{{execute}}
 
 Now we'll add a multicolumn index for the combination of state and month_text:
 
 ```
-CREATE INDEX idx_state_month ON se_details(state,month_text);
-```
+CREATE INDEX idx_state_month ON se_details(state,month_name);
+```{{execute}}
 
 And let's run that EXPLAIN query one more time:
 
 ```
 EXPLAIN ANALYZE
 SELECT * FROM se_details 
-WHERE state = 'Florida' and month_text = 'August';
-```
+WHERE state = 'Florida' and month_name = 'August';
+```{{execute}}
 
 
 ### List database indices
 
-Recall from the [Intro to psql]() scenario that the `\d` command displays 
+Recall from the [Intro to psql](https://learn.crunchydata.com/postgresql-devel/courses/basics/intropsql) scenario that the `\d` command displays 
 information on database objects. We can use this to view all indices on a table:
 
-`\d se_details`
+`\d se_details`{{execute}}
 
 Index information is stored in the `pg_indexes` view, which can also be queried on, for example: 
 
@@ -40,5 +40,4 @@ Index information is stored in the `pg_indexes` view, which can also be queried 
 SELECT tablename, indexname, indexdef
 FROM pg_indexes
 WHERE schemaname = 'public';
-```
-
+```{{execute}}
