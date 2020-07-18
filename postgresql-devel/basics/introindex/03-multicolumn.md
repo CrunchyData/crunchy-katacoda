@@ -39,5 +39,5 @@ Index information is stored in the `pg_indexes` view, which can also be queried 
 ```
 SELECT tablename, indexname, indexdef
 FROM pg_indexes
-WHERE schemaname = 'public';
+WHERE schemaname = 'groot';
 ```{{execute}}
