@@ -1,8 +1,8 @@
-When working with databases, one of the things you'll care most about is how 
+One of the things you'll care a lot about when working with databases is how 
 quickly you'll be able to find and retrieve data that you want. Not only might 
-it make for a poor user experience if a user has to wait too long to complete a
+it make for a poor experience if a user has to wait too long to complete a
  task (even a few seconds can be considered unacceptably 
- long!), sometimes even a mere fraction of a second makes all the difference, especially for mission-critical applications.
+ long!), sometimes even a mere fraction of a second can have a real difference especially for mission-critical applications.
 
 An index helps with finding data rows quickly and efficiently. In this 
 scenario, we'll try our hand at creating indices for a sample table with 

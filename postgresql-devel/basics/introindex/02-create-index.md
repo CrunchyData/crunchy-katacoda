@@ -22,7 +22,7 @@ SELECT * FROM se_details WHERE event_type = 'Flash Flood';
 You should see output like this, where it indicates the execution time for the 
 query:
 
-![screenshot here]()
+![EXPLAIN ANALYZE output before adding an index](./assets/explain-analyze-before-index.png)
 
 You'll also see that the query plan indicates a "Seq Scan," or a _sequential scan_. This means that it scans *each data row* in the table to see if it matches the query condition. You might be able to guess that for larger tables, a sequential scan could take up quite a bit of time!
 

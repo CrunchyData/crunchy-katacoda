@@ -1,5 +1,5 @@
-Indexes aren't always created for single columns only - Postgres also supports 
-multicolumn indexes. These can be useful if you know that you'll be querying 
+Indices aren't always created for single columns only - Postgres also supports 
+multicolumn indices. These can be useful if you know that you'll be querying 
 a lot on multiple columns at once. 
 
 For example, in this database, we know that 
@@ -30,7 +30,7 @@ WHERE state = 'Florida' and month_name = 'August';
 ### List database indices
 
 Recall from the [Intro to psql](https://learn.crunchydata.com/postgresql-devel/courses/basics/intropsql) scenario that the `\d` command displays 
-information on database objects. We can use this to view all indices on a table:
+information on database objects. We can use this to view all indices for a given table:
 
 `\d se_details`{{execute}}
 

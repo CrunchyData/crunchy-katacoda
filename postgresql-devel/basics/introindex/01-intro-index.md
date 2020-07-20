@@ -1,12 +1,12 @@
 A common analogy used to describe the role of database indices is the index 
-section at the back of the book. The book's index helps you quickly find 
+section at the back of a book. The index helps you quickly find 
 specific terms or key words as used throughout the book. In the context of 
-databases, the index stores information on where a record is in the table. 
+databases, the index stores information on where a data row is located in a table. 
 The database goes to the index and then uses that information to retrieve the 
 requested data.
 
 Each relational database management system may have its own particular ways of 
-how exactly to implement indices, but generally speaking:
+how exactly an index is implemented, but generally speaking:
 
 1. Each index works on one relation* - more specifically, the index is based on a 
 column (or columns) on that relation.
@@ -15,8 +15,9 @@ columns.
 3. The database query planner takes into account the indices available when 
 determining the best _path_ for executing a query.
 
-Indexes are their own data structures, and they're also stored on disk. 
-Postgres supports several different index types. The most common type is [b-tree](https://en.wikipedia.org/wiki/B-tree) (which stands for "Balanced Tree"). B-tree is used by default when you create a new index and don't specify a specific other type.
+Indices are their own data structures, and they're also stored on disk along 
+with data tables and other objects. Postgres supports several different index 
+types. The most common type is [b-tree](https://en.wikipedia.org/wiki/B-tree) (which stands for "Balanced Tree"). B-tree is used by default when you create a new index and don't specify an index type.
 
 Query tuning and optimizing is a pretty big topic, and something that database 
 administrators focus heavily on. With that said, anyone using a database system
