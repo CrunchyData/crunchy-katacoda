@@ -16,3 +16,13 @@ have to be added or updated as well. Indices can absolutely also have an impact
 updates, or deletes. Depending on the size of the index, that may mean the 
 table is locked for a longer time. (There is an option to allow other database 
 operations to proceed [concurrently](https://www.postgresql.org/docs/current/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY).)
+
+### Indices aren't used all the time
+
+It's also important to note that creating an index does not mean PostgreSQL 
+will _always_ use it. If there is a large enough number of rows that meet the 
+query criteria ([more than 5-10%](https://thoughtbot.com/blog/why-postgres-wont-always-use-an-index#how-indexes-are-used)),
+ it might be more cost-effective for the database to skip reading the index 
+entirely and just go straight to retrieving the requested records from the 
+table.
+
