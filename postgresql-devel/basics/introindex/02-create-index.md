@@ -46,4 +46,10 @@ EXPLAIN ANALYZE
 SELECT * FROM se_details WHERE event_type = 'Flash Flood';
 ```{{execute}}
 
-This time, you should see that the input indicates an index scan. The execution time is now a fraction of the previous one. Neat!
+This time, you should see that the query plan is different, where it now uses 
+our new index `se_details_state_idx` in a Bitmap Index Scan. (Definitely check
+ out [Using Explain](https://www.postgresql.org/docs/current/using-explain.html)
+  from the official Postgres docs for more detail on how to read this output, 
+  as well as our [Using EXPLAIN (ANALYZE) on Your Queries](https://learn.crunchydata.com/postgresql-devel/courses/basics/explain)
+  course if you haven't yet.) The execution time should now also be a fraction 
+  of what it was previously. Neat!

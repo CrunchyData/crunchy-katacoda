@@ -21,7 +21,7 @@ operations to proceed [concurrently](https://www.postgresql.org/docs/current/sql
 
 It's also important to note that creating an index does not mean PostgreSQL 
 will _always_ use it. If there is a large enough number of rows that meet the 
-query criteria ([more than 5-10%](https://thoughtbot.com/blog/why-postgres-wont-always-use-an-index#how-indexes-are-used)),
+query criteria (about [more than 5-10%](https://thoughtbot.com/blog/why-postgres-wont-always-use-an-index#how-indexes-are-used)),
  it might be more cost-effective for the database to skip reading the index 
 entirely and just go straight to retrieving the requested records from the 
 table.
