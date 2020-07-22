@@ -8,8 +8,7 @@
       {"title": "B-Tree", "text": "01-b-tree.md"},
       {"title": "GIN", "text": "02-gin.md"},
       {"title": "GIST", "text": "03-gist.md"},
-      {"title": "SP-GIST", "text": "04-sp-gist.md"},
-      {"title": "BRIN", "text": "05-brin.md"}
+      {"title": "BRIN", "text": "04-brin.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",
