@@ -1,0 +1,32 @@
+{
+  "title": "Introduction to PL/Python in PostgreSQL",
+  "description": "Working with the Python programming language as an embedded language in PostgreSQL",
+  "difficulty": "intermediate",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {"title": "Use Python in PostgreSQL", "text": "01-r-intro.md"}
+
+
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
