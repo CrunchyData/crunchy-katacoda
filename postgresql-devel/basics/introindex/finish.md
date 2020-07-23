@@ -6,7 +6,7 @@ detrimental.
 The official docs have more helpful information on how indices work:
 
 - Reference for [CREATE INDEX](https://www.postgresql.org/docs/current/sql-createindex.html)
-- [Multicolumn Indexes](https://www.postgresql.org/docs/10/indexes-multicolumn.html)
+- [Multicolumn Indexes](https://www.postgresql.org/docs/current/indexes-multicolumn.html)
 
 The next scenario will go into a bit more detail on the **different types** of 
 indices in PostgreSQL. See you there!

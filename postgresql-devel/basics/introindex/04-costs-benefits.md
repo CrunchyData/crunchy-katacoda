@@ -25,4 +25,3 @@ query criteria (about [more than 5-10%](https://thoughtbot.com/blog/why-postgres
  it might be more cost-effective for the database to skip reading the index 
 entirely and just go straight to retrieving the requested records from the 
 table.
-

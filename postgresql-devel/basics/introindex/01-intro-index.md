@@ -15,6 +15,10 @@ columns.
 3. The database query planner takes into account the indices available when 
 determining the best _path_ for executing a query.
 
+It's also worth noting that an index not only helps with retrieving data (i.e. 
+the WHERE part of the query), it might even help with joins, or sorting the 
+results set (i.e. the ORDER BY clause).
+
 Indices are their own data structures, and they're also stored on disk along 
 with data tables and other objects. Postgres supports several different index 
 types. The most common type is [b-tree](https://en.wikipedia.org/wiki/B-tree) (which stands for "Balanced Tree"). B-tree is used by default when you create a new index and don't specify an index type.
