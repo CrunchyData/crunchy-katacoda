@@ -42,8 +42,8 @@ CREATE INDEX idx_evt_type ON se_details(event_type);
 We name our index `idx_evt_type`. The name can also be left out - Postgres will
  generate a name based on the table and the indexed column(s) name.
 
-We specify that we want the index on the `se_details` table with `ON 
-se_details`, and the name of the column to be indexed goes inside the parentheses. 
+We specify that we want the index on the `se_details` table with 
+`ON se_details`, and the name of the column to be indexed goes inside the parentheses. 
 
 We'll run the same EXPLAIN statement as above:
 
