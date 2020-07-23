@@ -5,7 +5,7 @@ how they're used to speed up queries, you might be wondering: Should we create
 The quick answer is: You don't want to create indexes for _all_ the things. 
 Indexes **come at a cost**, and these basically boil down to:
 
-1. You can't (shouldn't) create an index on the fly just to speed up a one-off 
+1. You can't (shouldn't) create an index on the fly as you're about to run a one-off 
 query. Indexes are defined before they can be used, and they take time to build
  especially for larger tables. 
 2. Indexes are stored on disk, and so they also take up space. 

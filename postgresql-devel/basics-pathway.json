@@ -49,7 +49,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/introindex",
       "course_id": "introindex",
-      "title": "Introduction to Indices"
+      "title": "Introduction to Indexes"
     }
   ]
 }

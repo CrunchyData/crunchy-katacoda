@@ -5,7 +5,7 @@ it make for a poor experience if a user has to wait too long to complete a
  long!), sometimes even a mere fraction of a second can have a real difference especially for mission-critical applications.
 
 An index helps with finding data rows quickly and efficiently. In this 
-scenario, we'll try our hand at creating indices for a sample table with 
+scenario, we'll try our hand at creating indexes for a sample table with 
 data already loaded in. We'll also use the EXPLAIN (ANALYZE) command to take 
 a look at how indexes affect querying. If you'd like to review [EXPLAIN](https://learn.crunchydata.com/postgresql-devel/courses/basics/explain) first, feel free to go through that scenario before coming back to 
 this one.

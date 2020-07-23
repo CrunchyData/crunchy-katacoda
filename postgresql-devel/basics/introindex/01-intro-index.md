@@ -8,8 +8,8 @@ requested data.
 Each relational database management system may have its own particular ways of 
 how exactly an index is implemented, but generally speaking:
 
-1. Each index works on one relation* - more specifically, the index is based on a 
-column (or columns) in that relation.
+1. Each index works on one relation<sup>1</sup> - more specifically, the index is 
+based on a column (or columns) in that relation.
 2. Indexes are automatically created for primary key and unique constraint 
 columns.
 3. The database query planner takes into account the indexes available when 
@@ -29,5 +29,5 @@ Query tuning and optimizing is a pretty big topic, and something that database
 administrators focus heavily on. With that said, anyone using a database system
  can benefit from having general knowledge on the role that indexes play. 
 
-\***Note:** in the next steps we'll be working with table indexes. Indexes can be 
-created for materialized views as well, so we say "relation" here.
+<sup>1</sup>**Note:** In the next steps we'll be working specifically with table indexes. 
+Indexes can be also be created for materialized views, so we say "relation" here.
