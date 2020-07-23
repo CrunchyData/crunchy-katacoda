@@ -110,8 +110,10 @@ It doesn't use the index because over 50% of the data in the table is returned i
 But if we say we only want the states that come alphabetically after Wisconsin (which is just Wyoming), the query planner now uses the index.
 
 ```sql92
-workshop=> explain analyze select event_id, state from se_details where state >  'WISCONSIN';
+explain analyze select event_id, state from se_details where state >  'WISCONSIN';
 ```
+
+This change in query plan occurs because we are now returning fewer rows so scan of the index and then the random access of the disk pages with the data is faster than the sequential scan.
 
 HAVING TROUBLE with LIKE using the index
 
