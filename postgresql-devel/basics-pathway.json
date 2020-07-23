@@ -49,7 +49,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/indextypes",
       "course_id": "indextypes",
-      "title": "Different Index Types in PostgreSQL"
+      "title": "Index Types in PostgreSQL"
     }
   ]
 }
