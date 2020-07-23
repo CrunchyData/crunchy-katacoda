@@ -45,6 +45,11 @@
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/explain",
       "course_id": "explain",
       "title": "Using EXPLAIN (ANALYZE) on Your Queries"
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/introindex",
+      "course_id": "introindex",
+      "title": "Introduction to Indexes"
     }
   ]
 }
