@@ -1,11 +1,11 @@
 {
-  "title": "Intro to Indices",
+  "title": "Intro to Indexes",
   "description": "First in a short series on using indices in PostgreSQL",
-  "difficulty": "Intermediate",
+  "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
-      { "title": "About Database Indices", "text": "01-intro-index.md"},
+      { "title": "About Database Indexes", "text": "01-intro-index.md"},
       { "title": "CREATE INDEX", "text": "02-create-index.md"},
       { "title": "Multicolumn Indices", "text": "03-multicolumn.md"},
       { "title": "Consider the Costs and Benefits", "text": "04-costs-benefits.md"}
