@@ -118,5 +118,7 @@ This change in query plan occurs because we are now returning fewer rows so scan
 HAVING TROUBLE with LIKE using the index
 
 
+STILL NEED TO LOOK AT INSERT
+
  
  
