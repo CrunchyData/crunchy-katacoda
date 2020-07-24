@@ -9,7 +9,7 @@ Let's use EXPLAIN ANALYZE again to see how the query planner works this out:
 ```
 EXPLAIN ANALYZE
 SELECT * FROM se_details 
-WHERE state = 'Florida' and month_name = 'August';
+WHERE state = 'FLORIDA' and month_name = 'August';
 ```{{execute}}
 
 Now we'll add a multicolumn index for the combination of state and month_text. 
@@ -25,7 +25,7 @@ And let's run that EXPLAIN query one more time:
 ```
 EXPLAIN ANALYZE
 SELECT * FROM se_details 
-WHERE state = 'Florida' and month_name = 'August';
+WHERE state = 'FLORIDA' and month_name = 'August';
 ```{{execute}}
 
 
