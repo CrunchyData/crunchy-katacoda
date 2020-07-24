@@ -7,7 +7,7 @@
     "steps": [
       { "title": "About Database Indexes", "text": "01-intro-index.md"},
       { "title": "CREATE INDEX", "text": "02-create-index.md"},
-      { "title": "Multicolumn Indices", "text": "03-multicolumn.md"},
+      { "title": "Multicolumn Indexes", "text": "03-multicolumn.md"},
       { "title": "Consider the Costs and Benefits", "text": "04-costs-benefits.md"}
     ],
     "intro": {
