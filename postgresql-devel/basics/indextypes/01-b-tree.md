@@ -20,7 +20,7 @@ From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-t
 >
 >The optimizer can also use a B-tree index for queries involving the pattern matching operators LIKE and ~ if the pattern is a constant and is anchored to the beginning of the string — for example, col LIKE 'foo%' or col ~ '^foo', but not col LIKE '%bar'... It is also possible to use B-tree indexes for ILIKE and ~*, but only if the pattern starts with **non-alphabetic** characters, i.e., characters that are not affected by upper/lower case conversion.
 
-<> or != is covered as the negation of the = operator
+<> or != is covered as the negation of the = operator. If you are going to want to take advantage of the index with `like` queries then it is important to understand the first section of [this documentation](https://www.postgresql.org/docs/12/indexes-opclass.html) on operator classes and families. In particular, with text columns you need to make sure you use the right operator class that matches your "string" column, text, char, or varchar.
 
 ## Size and Speed  
 
@@ -62,11 +62,14 @@ explain analyze select event_id, state from se_details where state = 'NEW YORK';
 
 We can see that query planner did a sequential scan (Seq Scan) and the "Execution Time" tells us this query took 34.41 milliseconds (times may be slightly different depending on the load on your machine). 
 
-Finally, let's see how long and insert takes. Since Explain Analyze actually carries out the transaction, we are going to wrap this statement in a transaction that we rollback. This way we don't change the data in the table.
+Finally, let's see how long and insert takes. The timing on inserts are so fast that if we "benchmark" this, there is too much variation to see the difference clearly. Therefore, we are going to insert 1000 values using simulated data and UUIDs. We are generating our UUIDs using  
+
+Since Explain Analyze actually carries out the transaction, we are going to wrap this statement in a transaction that we rollback. This way we don't change the data in the table.
 
 ```sql92
+
 begin;
-explain analyze insert into se_details (event_id, state) values (100000, 'NEW YORK');
+explain analyze insert into se_details (event_id, state) values (generate_series(100000,101000), gen_random_uuid());
 rollback;
 ```
 
@@ -115,8 +118,7 @@ explain analyze select event_id, state from se_details where state >  'WISCONSIN
 
 This change in query plan occurs because we are now returning fewer rows so scan of the index and then the random access of the disk pages with the data is faster than the sequential scan.
 
-HAVING TROUBLE with LIKE using the index
-
+Now let's wrap up by looking at how the B-tree index affects insert speed. Let's redo our  
 
 STILL NEED TO LOOK AT INSERT
 

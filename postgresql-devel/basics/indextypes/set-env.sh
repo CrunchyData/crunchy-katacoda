@@ -10,6 +10,8 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   echo >&2 "$(date +%Y%m%dt%H%M%S) Waiting for Postgres to start"
   sleep 1
 done
+PGPASSWORD="password" psql -h localhost -U groot -p 5432 -c 'CREATE EXTENSION IF NOT EXISTS "pgcrypto";' workshop
+
 
 echo 'loading data'
 gunzip -c /data/crunchy-demo-data.dump.sql.gz | PGPASSWORD="password" psql -h localhost -U groot -p 5432 workshop
