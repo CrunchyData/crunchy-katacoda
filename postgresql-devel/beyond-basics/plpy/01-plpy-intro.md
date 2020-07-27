@@ -1,71 +1,30 @@
-Brief intro Python
+Generic greeting
 
+Make PL/Python trusted
 
+`psql -U postgres -h localhost workshop`{{execute}}
 
-# Using R **Inside** Postgresql
+`CREATE OR REPLACE TRUSTED LANGUAGE plypthon3u;`{{execute}}
 
-R is a FOSS statistical language that is well know in the data analysis and statistical fields. It is a specialized 
-programming language that is focused on statistical work and visualization. It does have a syntax that is different than 
-most other programming languages and it really good at doing matrix and vector calculations. Analysis that would take 
-the inclusion of numerous specialized libraries and many lines of code are simple and concise in R.
+Log out and log in as groot
 
-For example, here is how you tell R to calculate correlation between cost of a car and years the car lasts
+`psql -U groot -h localhost workshop`{{execute}}
 
-```corr(car_data$car_cost, car_data$car_lasts)```
+Create a new function
 
-and then solve a regression where years of life for the car is directly affected by cost of the car:
+```sql
+CREATE OR REPLACE FUNCTION two_power_three ()
+RETURNS VARCHAR
+AS $$
+    result = 2**3
+    return f'Hello! Two to the power of three is {result}.'
+$$ LANGUAGE 'plpython3u';
 
-```lm(car_lasts ~ car_cost, data = car_data)```
+```{{execute}}
 
-Here lm stands for linear model (another name for linear regression). The output would show you the intercept and slope and 
-it is quite easy to get summary statistics on the model as well. 
+Call the function
 
-Having this language embedded within your database is **extremely** powerful. We have can have our analysis routines living 
-right next to the data. No need to move it across the wire and then run the analysis. Now we also can use R in functions 
-(stored procedures and by extension, trigger). This means we as the data scientist can write the linear regression as
- a function 
-that is triggered to update the results every time there is a new data entry. Then we can expose that to application
- developers 
-as a simple function that they can call in their sql like:
-
-
-`SELECT my_r_regression()`
-
-and get back the slope, intercept, and any other summary stats you want to give them. Data scientists and statisticians can 
-feel comfortable that the correct analysis is being done without anyone changing their methods. Application developers are 
-excited because they get just the answers they want without having to figure out how to code it themselves or use yet another 
-programming language.
-
-#### Use R a little
-
-We installed R on your machines, so let's start by showing you the simplest flow possible.
-
-1. Write 2x2 in R function
-2. Take the function and make it a function in Postgresql
-3. Call it and see the amazing results
-
-After this we will quickly do the linear regression we talked about earlier. 
-
-To start R just type:
-
-`R`{{execute}}
-
-at the terminal.
-
-Now to do 2x2 you just do:
-
-
-`2*2`{{execute}}
-
-and hit enter. Wow, amazing right ;)
-
-To quite R just type:
-
-
-`quit()`{{execute}} 
-
-and say N when it asks if you want to save your workspace. A workspace is just as it sounds - in your profile it will store 
-your command history and data you may have output.
+`SELECT two_power_three ()`{{execute}}
 
 ## Stored Procedures and Functions in R
 
