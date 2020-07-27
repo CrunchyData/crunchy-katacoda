@@ -5,7 +5,7 @@
   "time": "15 minutes",
   "details": {
     "steps": [
-      {"title": "Use Python in PostgreSQL", "text": "01-r-intro.md"}
+      {"title": "Use Python in PostgreSQL", "text": "01-plpy-intro.md"}
 
 
     ],
