@@ -1,10 +1,14 @@
-Generic greeting
 
-Make PL/Python trusted
+
+Install pl/python
 
 `psql -U postgres -h localhost workshop`{{execute}}
 
-`CREATE OR REPLACE TRUSTED LANGUAGE plypthon3u;`{{execute}}
+`CREATE EXTENSION plpython3u;`{{execute}}
+
+Make PL/Python trusted
+
+`UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plpython3u';`{{execute}}
 
 Log out and log in as groot
 
@@ -17,7 +21,7 @@ CREATE OR REPLACE FUNCTION two_power_three ()
 RETURNS VARCHAR
 AS $$
     result = 2**3
-    return f'Hello! Two to the power of three is {result}.'
+    return f'Hello! 2 to the power of 3 is {result}.'
 $$ LANGUAGE 'plpython3u';
 
 ```{{execute}}
