@@ -12,4 +12,9 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
   sleep 1
 done
 
+echo 'loading data'
+gunzip -c /data/crunchy-demo-data.dump.sql.gz | PGPASSWORD="password" psql -h localhost -U groot -p 5432 workshop
+
+echo 'finished loading data'
+
 PGPASSWORD="password" psql -h localhost -U groot workshop
