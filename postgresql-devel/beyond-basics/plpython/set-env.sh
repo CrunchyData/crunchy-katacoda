@@ -17,4 +17,3 @@ gunzip -c /data/crunchy-demo-data.dump.sql.gz | PGPASSWORD="password" psql -h lo
 
 echo 'finished loading data'
 
-PGPASSWORD="password" psql -h localhost -U groot workshop
