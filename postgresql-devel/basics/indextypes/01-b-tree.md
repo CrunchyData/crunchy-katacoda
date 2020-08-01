@@ -62,18 +62,18 @@ explain analyze select event_id, state from se_details where state = 'NEW YORK';
 
 We can see that query planner did a sequential scan (Seq Scan) and the "Execution Time" tells us this query took 34.41 milliseconds (times may be slightly different depending on the load on your machine). 
 
-Finally, let's see how long and insert takes. The timing on inserts are so fast that if we "benchmark" this, there is too much variation to see the difference clearly. Therefore, we are going to insert 1000 values using simulated data and UUIDs. We are generating our UUIDs using  
+Finally, let's see how long and insert takes. The timing on inserts are so fast that if we "benchmark" this, there is too much variation to see the difference clearly. Therefore, we are going to insert 10,000 values using simulated data and UUIDs. We are generating our UUIDs using the [pgcrypto extension](https://www.postgresql.org/docs/current/pgcrypto.html).
 
 Since Explain Analyze actually carries out the transaction, we are going to wrap this statement in a transaction that we rollback. This way we don't change the data in the table.
 
 ```sql92
 
 begin;
-explain analyze insert into se_details (event_id, state) values (generate_series(100000,101000), gen_random_uuid());
+explain analyze insert into se_details (event_id, state) values (generate_series(100000,110000), gen_random_uuid());
 rollback;
 ```
 
-And we can see that carrying out the insert took about 0.324 milliseconds (again timing may vary on your machine). 
+And we can see that carrying out the insert took about 45 milliseconds (again timing may vary on your machine). 
 
 ### After Index
 
@@ -118,9 +118,23 @@ explain analyze select event_id, state from se_details where state >  'WISCONSIN
 
 This change in query plan occurs because we are now returning fewer rows so scan of the index and then the random access of the disk pages with the data is faster than the sequential scan.
 
-Now let's wrap up by looking at how the B-tree index affects insert speed. Let's redo our  
+Now let's wrap up by looking at how the B-tree index affects insert speed. Let's redo our inserts before. Again, because inserts are so quick we need to 10K of them to detect the difference. 
 
-STILL NEED TO LOOK AT INSERT
+```sql92
 
+begin;
+explain analyze insert into se_details (event_id, state) values (generate_series(100000,110000), gen_random_uuid());
+rollback;
+```
+
+And when we run it this time we can see this run times between 262 and 95 milliseconds - so that's anywhere from a 2x to over 5x increase in insert time. One thing to note is that this only seems to become a significant time difference with a large number of inserts. Be aware we only have one two indices on this table, the primary key (event_id) and state column. If you have more indices that receive data on an insert, all of them will add to the insert timing. 
+
+
+With that we are done with the lesson but you should play around some more if you want. If you want to drop the index to run some test the command would be:
+
+```sql92
+drop index se_details_state_idx on se_details(state);
+```  
  
+You can also create B-tree indexes on other columns and see what happens. In the exercises we are going to move on to the GIN index.
  
