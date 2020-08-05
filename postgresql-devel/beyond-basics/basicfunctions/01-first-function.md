@@ -42,7 +42,7 @@ $$
 $$
 ```{{execute}}
 
-Notice we use the SQL ';' delimeters at the the end of each SQL statement. 
+Notice we use the SQL ';' delimiters at the end of each SQL statement. 
 
 ### Language Specification
 

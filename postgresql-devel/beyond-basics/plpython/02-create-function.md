@@ -21,12 +21,12 @@ $$ LANGUAGE 'plpython3u';
 * The function does not accept any parameters, indicated by `()`
 * The function returns a character string
 * Everything in between the two `$$` is the actual Python code
-* We indicate that the function uses `plpython3u`, or Python 3.
+* We indicate that the function uses `plpython3u`, or Python 3
 
 Now, let's call our new function:
 
-`SELECT two_power_three ()`{{execute}}
+`SELECT two_power_three ();`{{execute}}
 
 And it should return the following string: `Hello! 2 to the power of 3 is 8.`
 
-Next, let's try doing something more interesting, such as using Python modules and libraries.
+Next, let's try doing something a little more interesting: using Python modules and libraries.

@@ -2,7 +2,7 @@
   "title": "Introduction to PL/Python in PostgreSQL",
   "description": "Working with the Python programming language as an embedded language in PostgreSQL",
   "difficulty": "intermediate",
-  "time": "15 minutes",
+  "time": "< 10 minutes",
   "details": {
     "steps": [
       {"title": "Use Python in PostgreSQL", "text": "01-plpython-intro.md"},
