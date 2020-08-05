@@ -1,6 +1,6 @@
 
-You saw in the [Basic Functions for Developers](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions)
- scenario that you can use a variety of programming languages 
+In the [Basic Functions for Developers](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions)
+ scenario, you saw that we can use a variety of programming languages 
  to add even more functionality to PostgreSQL. This comes in handy if you 
 happen to be already familiar with one of these languages. 
 

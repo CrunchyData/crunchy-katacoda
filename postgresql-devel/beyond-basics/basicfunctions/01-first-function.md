@@ -32,7 +32,7 @@ RETURNS VARCHAR AS
 ```{{execute}} 
 
 ### Function Body
-Now we can write our function body. We demarcate the begin and end of the code with $$ symbol. We use $$ rather than " or
+Now we can write our function body. We demarcate the begin and end of the code with $$ symbol. We use [`$$`](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-DOLLAR-QUOTING) rather than " or
 ' so that we don't have to bother escaping strings in our code. When using SQL as our programming language only the last 
 executed line (ending in a ;) will be returned. We also *can't* use RETURN to specify which result we want to return. 
 

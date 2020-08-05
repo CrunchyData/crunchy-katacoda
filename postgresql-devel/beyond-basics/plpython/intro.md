@@ -1,6 +1,6 @@
 This scenario gives you a quick introduction to using Python as an embedded language in PostgreSQL. The database has already been started and Python has been installed into the learning environment as well. 
 
-While it's not required, we recommend doing the [Basics of PostgreSQL Functions](https://learn.crunchydata.com/basic-postgresql-devel/basicfunctions) scenario before doing this one. 
+You'll want to complete the [Basics of PostgreSQL Functions](https://learn.crunchydata.com/basic-postgresql-devel/basicfunctions) scenario before proceeding with this one if you're **not** familiar with writing and using functions in Postgres. 
 
 Here are the details on the database we are connecting to:
 1. Username: groot
