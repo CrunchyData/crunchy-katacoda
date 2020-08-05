@@ -53,14 +53,14 @@ to install the package.
 
 `pip3 install numpy`{{execute}}
 
-Let's exit the shell, and log back in to Postgres as `groot` (password: `password`):
+Once NumPy is successfully installed, exit the shell and log back in to Postgres as `groot` (password: `password`):
 
 `exit`{{execute}}
 
 `psql -U groot -h localhost workshop`{{execute}}
 
 Finally, let's go ahead and create our PL/Python function that uses NumPy. 
-We'll just use the same example found in the NumPy [Quickstart tutorial](https://numpy.org/doc/stable/user/quickstart.html):
+We'll use a similar example found in the NumPy [Quickstart tutorial](https://numpy.org/doc/stable/user/quickstart.html):
 
 ```
 CREATE OR REPLACE FUNCTION testnp ()
