@@ -6,9 +6,8 @@
   "details": {
     "steps": [
       {"title": "Use Python in PostgreSQL", "text": "01-plpython-intro.md"},
-      {"title": "Use Python in PostgreSQL", "text": "02-more-plpy.md"}
-
-
+      {"title": "Create a PL/Python Function", "text": "02-create-function.md"},
+      {"title": "More PL/Python", "text": "03-more-plpy.md"}
     ],
     "intro": {
       "courseData": "env-init.sh",

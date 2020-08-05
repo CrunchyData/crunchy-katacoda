@@ -1,111 +1,44 @@
+We saw in the [Basic Functions for Developers](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions)
+ scenario that you can use a variety of programming languages 
+ to add even more functionality to PostgreSQL. This comes in handy if you 
+happen to already be familiar with one of these languages. Python is a very 
+popular language, and it's also one that's [supported in core PostgreSQL](https://www.postgresql.org/docs/current/external-pl.html).
+ In this scenario, we'll learn how to enable PL/Python and get started with 
+ creating some simple user-defined functions.
 
+With that said, just because the base distribution of Postgres already comes 
+with Python support, doesn't mean Postgres also includes Python itself. You'll 
+need to make sure Python is installed on the same machine as well. 
 
-Install pl/python
+What about different Python versions?
+
+Postgres supports [both Python 2 and Python 3](https://www.postgresql.org/docs/current/plpython-python23.html). The current "default" is Python 2. 
+
+## Enable PL/Python
+
+In this environment, we already have Python 3 installed. To enable PL/Python in
+ Postgres, we first need a superuser role to load the extension in the database
+  we're working in.
 
 `psql -U postgres -h localhost workshop`{{execute}}
+
+(The password is `password`, same as the user `groot`.)
 
 `CREATE EXTENSION plpython3u;`{{execute}}
 
-Make PL/Python trusted
+PL/Python is only available as an [untrusted language](https://www.postgresql.org/docs/current/plpython.html). As you may have also seen in the [PL/R in PostgreSQL](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/qplr/) scenario, the language can be updated to make it trusted, like so:
 
-`UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plpython3u';`{{execute}}
-
-Log out and log in as groot
-
-`psql -U groot -h localhost workshop`{{execute}}
-
-Create a new function
-
-```sql
-CREATE OR REPLACE FUNCTION two_power_three ()
-RETURNS VARCHAR
-AS $$
-    result = 2**3
-    return f'Hello! 2 to the power of 3 is {result}.'
-$$ LANGUAGE 'plpython3u';
-
+```
+UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plpython3u';
 ```{{execute}}
 
-Call the function
+We also want to emphasize here that Python, like many of the procedural 
+languages supported in Postgres, can interact with the underlying operating 
+system. So again, just as we mentioned in the PL/R scenario, our proposed 
+workflow for development would be to:
 
-`SELECT two_power_three ()`{{execute}}
-
-Include some of the content below:
-
-
-
-## Stored Procedures and Functions in R
-
-Stored procedures and functions allow you to write code, embed it into the database, and then be called the same as other normal
-database functions. A stored procedure is the same as a stored function except the procedure does not return anything.
-
-There are [many languages](https://www.postgresql.org/docs/11/external-pl.html) you can use to write a stored function in Postgresql, 
-but today we will be working with R. If you go look at that list you will notice many of those languages can interact with 
-the Operating System. That is why, in general, most languages are treated as **untrusted**. Since stored functions execute with 
-the OS privileges of the Postgres user - you don't want just anyone writing stored functions unless they are using a trusted 
-language.  
-
-#### What this means for development.
-
-Our proposed workflow for development, which will we do below, is to allow the language to be trusted **only** in the development 
-environment. In this way developers can make their own functions, iterate them, and get them working correctly. Then
-, when it's 
-time to go to production, someone with DB superuser privileges can transfer the function to the production database
-. This will involve
-tracking changes to function and having a migration procedure but the extra work is well worth it given the alternative. 
-
-Again - make the language trusted in your development environment **NOT** your production environment.
-
-Here is the overview documentation on [stored functions](https://www.postgresql.org/docs/11/xfunc.html) and here is the 
-reference doc on how to create a [stored function](https://www.postgresql.org/docs/11/sql-createfunction.html) 
-or a [stored procedure](https://www.postgresql.org/docs/11/sql-createprocedure.html).
-
-#### Putting R in PostgreSQL
-We already installed the R language (PL/R) into PostgreSQL for you, so let's get started.
-
-First we need to make PL/R a trusted language - this has to be done as the postgres user:
-
-`psql -U postgres -h localhost workshop`{{execute}}
-
-
-The password will be "password" just like the user groot.
-
-Now update the language status:
-
-
-`UPDATE pg_language SET lanpltrusted = true WHERE lanname LIKE 'plr';`{{execute}}
-
-Now logout:
-
-`\q`{{execute}}
-
-Changing the language status only has to happen once in the lifetime of the database. 
-
-Now log back in as normal user groot. 
-
-`psql -U groot -h localhost workshop`{{execute}}
-
-
-and then enter the following command:
-
-```sql
-CREATE OR REPLACE FUNCTION two_times_two()
-RETURNS INTEGER as $$
-    result <- 2*2
-    return(result)
-$$ LANGUAGE 'plr';
-
-```{{execute}}
-
-1. We name our function *two_times_two*
-1. We are not accepting any input, hence the () 
-1. We are going to return an integer
-1. Everything between the set of $$s is the actual function
-1. We declare that the function uses the language extension PL/R.
-
-and now let's call our highly technical new function:
-
-` select two_times_two();`{{execute}}
-
-### Wrap up 
-Ok now that we have R working as a language in PostgreSQL let's do more interesting things!
+1. Allow PL/Python to be a trusted language **only in the development environment**.
+2. Developers can create, iterate, and test PL/Python functions in their dev 
+environment.
+3. When ready, someone with superuser privileges can transfer the function 
+into production.
