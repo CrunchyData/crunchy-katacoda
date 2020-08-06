@@ -3,7 +3,7 @@
 GIST stands for Generalized Search-Tree. 
 
 ## Purpose
-Remember, the B-tree operates based on the data that is naturally sortable so that <, >, and = can be used to generate the tree structure. This format won't work for things like geospatial objects or full-text search. The GiST, like its name implies, has the ability to create a tree structure using arbitrary "splitting" based on a custom operator. For example, in PostGIS, the GiST spatial indexing happens with an R-Tree under the hoods. 
+Remember, the B-tree operates based on the data that is naturally sortable so that <, >, and = can be used to generate the tree structure. This format won't work for things like geospatial objects or full-text search. The GiST, like its name implies, has the ability to create a tree structure using arbitrary "splitting" based on a custom operator. For example, in PostGIS, the GiST spatial indexing happens with an R-Tree under the hood. 
 
 Any datatype you can describe with a split method and a compare method you can leverage the GIST infrastructure to make an index. 
 
@@ -57,10 +57,10 @@ Like the last indexes, we will start with looking at the existing table size.
 select
     pg_size_pretty(sum(pg_column_size(the_geom))) as total_size,
     pg_size_pretty(avg(pg_column_size(the_geom))) as average_size,
-    sum(pg_column_size(the_geom)) * 100.0 / pg_relation_size('county_geometry') as percentage,
-     pg_size_pretty(pg_relation_size('county_geometry')) as table_size 
+    sum(pg_column_size(the_geom)) * 100.0 / pg_total_relation_size('county_geometry') as percentage,
+     pg_size_pretty(pg_total_relation_size('county_geometry')) as table_size 
 from county_geometry;
-```
+```{{execute}}
 
 We can see that 120 of the 127 MB in the table are due to the polygon column. This large size makes sense since a polygon is often composed of many points that form the boundary.
 
@@ -68,10 +68,11 @@ We can see that 120 of the 127 MB in the table are due to the polygon column. Th
  select
      pg_size_pretty(sum(pg_column_size(interior_pnt))) as total_size,
      pg_size_pretty(avg(pg_column_size(interior_pnt))) as average_size,
-     sum(pg_column_size(interior_pnt)) * 100.0 / pg_relation_size('county_geometry') as percentage,
-      pg_size_pretty(pg_relation_size('county_geometry')) as table_size 
+     sum(pg_column_size(interior_pnt)) * 100.0 / pg_total_relation_size('county_geometry') as percentage,
+      pg_size_pretty(pg_total_relation_size('county_geometry')) as table_size 
  from county_geometry;
- ```
+ ```{{execute}}
+
 At only 92 kB for the entire column, the interior center point of each county is a comparatively small column, since it is basically only two coordinates. 
 
 We will do one query with the polygons and one query with the points. For point data we will find the 10 closest points to the geographic center of the United States by taking advantage of the <-> operator. For polygons we will find all the counties that share a boundary (intersect &&) the county I grew up in (Rockland County, NY). 
@@ -80,7 +81,7 @@ We will do one query with the polygons and one query with the points. For point 
 ```sql92
 explain analyze 
 SELECT id, county_name, ST_Distance('POINT(-103.771555 44.967244)'::geography, interior_pnt) as meters FROM county_geometry ORDER BY interior_pnt <-> 'POINT(-103.771555 44.967244)'::geography LIMIT 10;
-```
+```{{execute}}
 
 I am getting times between 8 and 12 milliseconds.
 
@@ -92,7 +93,7 @@ with rockland as (
         select the_geom as rock_geom from county_geometry  where county_name = 'Rockland' 
     )
 select county.county_name from county_geometry as county, rockland where rockland.rock_geom && county.the_geom; 
-```
+```{{execute}}
 
 I am getting times between 18 and 25 milliseconds.
 
@@ -104,7 +105,8 @@ explain analyze
 insert into county_geometry (id, interior_pnt) values (generate_series(4000,9000), ST_geogfromtext('point(' || random() * -179 || ' ' || random() * 89 || ')'));
 rollback;
 
-```
+```{{execute}}
+
 The timings I am seeing for this are between 39 and 45 milliseconds.
 
 ### After an Index
@@ -115,13 +117,15 @@ Time to add an index to both our geometry columns:
 create index county_geometry_the_geom_idx  on county_geometry using gist(the_geom);
 create index county_geometry_interior_pnt_idx  on county_geometry using gist(interior_pnt);
 
-```
+```{{execute}}
+
 And now we can rerun our top 10 counties near the center of the U.S.A.:
 
 ```sql92
 explain analyze 
 SELECT id, county_name, ST_Distance('POINT(-103.771555 44.967244)'::geography, interior_pnt) as meters FROM county_geometry ORDER BY interior_pnt <-> 'POINT(-103.771555 44.967244)'::geography LIMIT 10;
-```
+```{{execute}}
+
 For timings I am getting between 1.5 and 2 milliseconds which is almost an order of magnitude faster. 
 
 Let's see what we get for the polygon search (which is even more intensive):
@@ -132,7 +136,7 @@ with rockland as (
         select the_geom as rock_geom from county_geometry  where county_name = 'Rockland' 
     )
 select county.county_name from county_geometry as county, rockland where rockland.rock_geom && county.the_geom; 
-```
+```{{execute}}
 
 which now runs at 1.3 to 1.4 milliseconds, which is about 30x the original query times. 
 
@@ -144,6 +148,6 @@ explain analyze
 insert into county_geometry (id, interior_pnt) values (generate_series(4000,9000), ST_geogfromtext('point(' || random() * -179 || ' ' || random() * 89 || ')'));
 rollback;
 
-```
+```{{execute}}
 
 With that, we are done with GiST indexes and we can move on to our final type, BRIN.

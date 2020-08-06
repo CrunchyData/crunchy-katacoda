@@ -1,5 +1,5 @@
 # GIN index
-GIN is an acronym which stands for Genealized Inverted Index. Just like B-Tree it is a 
+GIN is an acronym which stands for Genealized Inverted Index. 
 
 ## Purpose
 GIN indexes are quite different from the B-Tree indices in that they have the ability to have multiple keys per row. From the [official doc]:
@@ -35,13 +35,13 @@ create table myarrays (
 id int,
 thearray int[]
 );
-```
+```{{execute}}
 
 We are going to create a 3 element array that contains integers between 0 and 1000. Let's create 15,000 entries in the table:
 
 ```sql92
 insert into myarrays values (generate_series(1,15000), array[floor(random() * 1000)::int, floor(random() * 1000)::int,floor(random() * 1000)::int]); 
-```
+```{{execute}}
 
 Let's look at the size of the table
 
@@ -52,7 +52,8 @@ select
     sum(pg_column_size(thearray)) * 100.0 / pg_relation_size('myarrays') as percentage,
      pg_size_pretty(pg_relation_size('myarrays')) as table_size 
 from myarrays;
-```
+```{{execute}}
+
 The array column is 483 kB making up 46% of the total table size. 
 
 ### Before an Index
@@ -67,7 +68,8 @@ Your result set should only contain rows where there is a 75 somewhere in the ar
 
 ```sql92
 explain analyze select id, thearray from myarrays where thearray @> ARRAY[75];
-```
+```{{execute}}
+
 For my query I got an Execution Time of 3.2 milliseconds
 
 Let's look at the timing for inserting another 15,000 rows but, just like we did for B-tree we will wrap it in a transaction so we don't actually insert the records.
@@ -76,7 +78,7 @@ Let's look at the timing for inserting another 15,000 rows but, just like we did
 begin;
 explain analyze insert into myarrays values (generate_series(1,15000), array[floor(random() * 1000)::int, floor(random() * 1000)::int,floor(random() * 1000)::int]);
 rollback;
-```
+```{{execute}}
 
 I got timings somewhere between 15 and 16 milliseconds. 
 
@@ -86,22 +88,21 @@ Now let's add our index to the Array column.
 
 ```sql92
 create index arry_idx on myarrays using GIN(thearray);
-```
+```{{execute}}
+
 First, we will look at the size of the index
 
 ```sql92
 \di+ arry_idx
-```
+```{{execute}}
 
 I got an index size of 232 kB so the index is 50% the size of the actual column itself. 
-
-From this we can see our array column is 483 kB, which is 1/3 the size of the whole table. 
 
 Let's see what kind of speedup we get with the index. 
 
 ```sql92
 explain analyze select id, thearray from myarrays where thearray @> ARRAY[75];
-```
+```{{execute}}
 
 I am getting times around 0.18 milliseconds, that's a 17X improvement in search speed!
 
@@ -118,7 +119,7 @@ select    pg_size_pretty(sum(pg_column_size(thearray))) as total_size,
 from myarrays;
 \di+ arry_idx
 rollback;
-```
+```{{execute}}
 
 The inserts took about 33 milliseconds which is twice as slow as the non-indexed insert. We can also see that our column has grown linearly in size but your index has grown 10X in size to 2248 kB. 
  

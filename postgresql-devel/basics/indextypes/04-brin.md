@@ -1,8 +1,8 @@
 # BRIN index
 
-The BRIN index is really useful in a very narrow use case, but in that use case it is VERY useful. BRIN stands for Block Range Index. A block is PostgreSQLs base unit of storage, typically 8 kB. The index, by default samples 128 blocks in a row and stores the start value in the first block and the end value in the last block. Then each entry in the index contains the location on the first block on disk and the range of values for the block range (128 blocks).  
+The BRIN index is really useful in a very narrow use case, but in that use case it is VERY useful. BRIN stands for Block Range Index. A block is PostgreSQLs base unit of storage, typically 8 kB. The index, by default samples 128 blocks in a row and stores the start value in the first block and the end value in the last block. Then each entry in the index contains the location on the first block on disc and the range of values for the block range (128 blocks).  
 
-Since the data is put on disk in order, the index ranges will be in order as well. So when a query looks for a value it does a scan of the index and finds all the ranges that might contain the values of interest and then does a disc scan of the relevant block ranges.  
+Since the data is put on disc in order, the index ranges will be in order as well. So when a query looks for a value it does a scan of the index and finds all the ranges that might contain the values of interest and then does a disc scan of the relevant block ranges.  
 
 ## Purpose 
 BRIN indexes are very good for tables that meet the following conditions:
@@ -13,7 +13,7 @@ BRIN indexes are very good for tables that meet the following conditions:
 
 Examples of things people use BRIN indexes for are log records from server, financial transactions, or data feeds from IoT like sensors. All of these streams of data usually come in order based on timestamp, the data is not edited or deleted, and there are large volumes of data. 
 
-Because the index covers 128 blocks of data with 3 values (disk location, start of range, end of range), they are extremely small and efficient. With BRIN indexes the whole index can often be read into memory or read very quickly off disk. If you are finding that the indexes are not specific enough you can tell the index to use range sizes smaller than 128 blocks but this will also come with in an increase in size for the index. 
+Because the index covers 128 blocks of data with 3 main values, disc location, start of range, end of range, they are extremely small and efficient (There are several more columns but they are mostly booleans). With BRIN indexes the whole index can often be read into memory or read very quickly off disc. If you are finding that the indexes are not specific enough you can tell the index to use range sizes smaller than 128 blocks but this will also come with in an increase in size for the index. There is an exercise at the end where you can play with block range size.
 
 ## Operators
 BRIN index ships with operator bindings for most of the default datatypes. There is a complete list of the operators found in [table 67.1](https://www.postgresql.org/docs/current/brin-builtin-opclasses.html) of the official documentation.
@@ -34,7 +34,7 @@ create table brinme (
 id int
 );
 insert into brinme values (generate_series(1,1000000));
-```
+```{{execute}}
 
 ### Before an Index
 
@@ -48,14 +48,15 @@ select
     sum(pg_column_size(id)) * 100.0 / pg_relation_size('brinme') as percentage,
      pg_size_pretty(pg_relation_size('brinme')) as table_size 
 from brinme;
-```
+```{{execute}}
+
 Our column is only 4 MB in size.
 
 Let's do a query to look for the id = 99000
 
 ```sql92
 explain analyze select id from brinme where id = 99000; 
-```
+```{{execute}}
 
 I get query times between 45 and 55 milliseconds.
 
@@ -65,7 +66,7 @@ Finally, let's go ahead and add a million more rows and look at timing:
 begin;
 explain analyze insert into brinme values (generate_series(1000001,2000000));
 rollback;
-```
+```{{execute}}
 
 Which takes between 956 and 1174 milliseconds.
 
@@ -75,13 +76,13 @@ First we create our index:
 
 ```sql92
 create index brinme_brin_idx on brinme using brin (id); 
-```
+```{{execute}}
 
 Then we look at size of the index:
 
 ```sql92
 \di+ brinme_brin_idx
-```
+```{{execute}}
 
 Here we can see the BRIN efficiency with an index for 1 million records being only 48 kB in size. 
 
@@ -89,7 +90,7 @@ Now let's look at the timing for our query:
 
 ```sql92
 explain analyze select id from brinme where id = 99000; 
-```
+```{{execute}}
 
 I get speeds between 5 and 7 milliseconds which is almost an order of magnitude faster. 
 
@@ -99,7 +100,8 @@ Finally, let's look at insert speeds:
 begin;
 explain analyze insert into brinme values (generate_series(1000001,2000000));
 rollback;
-```
+```{{execute}}
+
 I am seeing between 1400 and 1800 milliseconds which is about 50% slower
 
 
@@ -111,7 +113,7 @@ drop index brinme_brin_idx;
 create index brinme_brin_idx on brinme using brin (id) with (pages_per_range = 4 ); 
 \di+ brinme_brin_idx
 explain analyze select id from brinme where id = 99000; 
-```
+```{{execute}}
 
 For me, I saw the index go from 48K to 64K but my search time went down from about 6 milliseconds to 0.9 milliseconds. 
 

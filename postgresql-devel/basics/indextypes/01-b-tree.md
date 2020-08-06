@@ -52,7 +52,7 @@ select
     sum(pg_column_size(state)) * 100.0 / pg_relation_size('se_details') as percentage,
      pg_size_pretty(pg_relation_size('se_details')) as table_size 
 from se_details;
-```
+```{{execute}}
 
 We can see that the data in the column is relatively small in size and is not a large percentage of the overall table size. 
 
@@ -62,11 +62,11 @@ Next let's look at how long it takes to query all the storms that happened in Ne
 
 ```sql92
 explain analyze select event_id, state from se_details where state = 'NEW YORK';
-```
+```{{execute}}
 
 We can see that query planner did a sequential scan (Seq Scan) and the "Execution Time" tells us this query took 34.41 milliseconds (times may be slightly different depending on the load on your machine). 
 
-Finally, let's see how long and insert takes. The timing on inserts are so fast that if we "benchmark" this, there is too much variation to see the difference clearly. Therefore, we are going to insert 10,000 values using simulated data and UUIDs. We are generating our UUIDs using the [pgcrypto extension](https://www.postgresql.org/docs/current/pgcrypto.html).
+Finally, let's see how long an insert takes. The timing on inserts are so fast that if we "benchmark" this, there is too much variation to see the difference clearly. Therefore, we are going to insert 10,000 values using simulated data and UUIDs. We are generating our UUIDs using the [pgcrypto extension](https://www.postgresql.org/docs/current/pgcrypto.html).
 
 Since Explain Analyze actually carries out the transaction, we are going to wrap this statement in a transaction that we rollback. This way we don't change the data in the table.
 
@@ -75,7 +75,7 @@ Since Explain Analyze actually carries out the transaction, we are going to wrap
 begin;
 explain analyze insert into se_details (event_id, state) values (generate_series(100000,110000), gen_random_uuid());
 rollback;
-```
+```{{execute}}
 
 And we can see that carrying out the insert took about 45 milliseconds (again timing may vary on your machine). 
 
@@ -85,7 +85,8 @@ Let's go ahead and make an index on the state column. The syntax for this is rel
 
 ```sql92
 create index se_details_state_idx on se_details(state);  
-```
+```{{execute}}
+
 Since we didn't specify a USING = METHOD on this call the index takes the default, which is B-tree.
 Given our small our table is, the indexing operation should be extremely quick. 
 
@@ -93,7 +94,7 @@ Now let's look at the size of the index:
 
 ```sql92
 \di+ se_details_state_idx;
-```
+```{{execute}}
 
 You can see that the index has a total size a little over 3x the original data in the column. The size of the index will grow at a slower **rate** than the size of the data in teh actual column. 
 
@@ -103,14 +104,15 @@ First let's do our same simple query again:
 
 ```sql92
 explain analyze select event_id, state from se_details where state = 'NEW YORK';
-```
+```{{execute}}
+
 We can see that the query planner used the index because the first node in the query plan (the one farthest down in the output) used a Bitmap Index Scan on our index. I did 3 runs of this query and I got a maximum run time of 13.5 milliseconds and minimum run time of 1.72 milliseconds, giving me an approximate 2x to 20x speedup in query times!
 
 You can see the query planner won't use the index if we also use the < operator:
 
 ```sql92
 explain analyze select event_id, state from se_details where state < 'NEW YORK';
-```
+```{{execute}}
 
 It doesn't use the index because over 50% of the data in the table is returned in this query (much more than 5-10% threshold for when an index scan is faster than a sequential scan).
 
@@ -118,18 +120,18 @@ But if we say we only want the states that come alphabetically after Wisconsin (
 
 ```sql92
 explain analyze select event_id, state from se_details where state >  'WISCONSIN';
-```
+```{{execute}}
 
 This change in query plan occurs because we are now returning fewer rows so scan of the index and then the random access of the disk pages with the data is faster than the sequential scan.
 
-Now let's wrap up by looking at how the B-tree index affects insert speed. Let's redo our inserts before. Again, because inserts are so quick we need to 10K of them to detect the difference. 
+Now let's wrap up by looking at how the B-tree index affects insert speed. Let's redo our inserts from before. Again, because inserts are so quick we need to 10K of them to detect the difference. 
 
 ```sql92
 
 begin;
 explain analyze insert into se_details (event_id, state) values (generate_series(100000,110000), gen_random_uuid());
 rollback;
-```
+```{{execute}}
 
 And when we run it this time we can see this run times between 262 and 95 milliseconds - so that's anywhere from a 2x to over 5x increase in insert time. One thing to note is that this only seems to become a significant time difference with a large number of inserts. Be aware we only have one two indices on this table, the primary key (event_id) and state column. If you have more indices that receive data on an insert, all of them will add to the insert timing. 
 
