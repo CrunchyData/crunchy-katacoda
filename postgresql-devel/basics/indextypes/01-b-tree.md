@@ -11,9 +11,13 @@ As mentioned in the introduction, since PostgreSQL ships with B-tree operator cl
 From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-types.html)
 
 > <
+>
 > <=
+>
 > =
+>
 > \>=
+>
 > \>
 >
 > Constructs equivalent to combinations of these operators, such as BETWEEN and IN, can also be implemented with a B-tree index search. Also, an IS NULL or IS NOT NULL condition on an index column can be used with a B-tree index.
@@ -45,8 +49,8 @@ Now let's look at some statistics of the column versus the overall table:
 select
     pg_size_pretty(sum(pg_column_size(state))) as total_size,
     pg_size_pretty(avg(pg_column_size(state))) as average_size,
-    sum(pg_column_size(state)) * 100.0 / pg_total_relation_size('se_details') as percentage,
-     pg_size_pretty(pg_total_relation_size('se_details')) as table_size 
+    sum(pg_column_size(state)) * 100.0 / pg_relation_size('se_details') as percentage,
+     pg_size_pretty(pg_relation_size('se_details')) as table_size 
 from se_details;
 ```
 

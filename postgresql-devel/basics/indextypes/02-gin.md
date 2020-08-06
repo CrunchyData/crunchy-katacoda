@@ -49,8 +49,8 @@ Let's look at the size of the table
 select
     pg_size_pretty(sum(pg_column_size(thearray))) as total_size,
     pg_size_pretty(avg(pg_column_size(thearray))) as average_size,
-    sum(pg_column_size(thearray)) * 100.0 / pg_total_relation_size('myarrays') as percentage,
-     pg_size_pretty(pg_total_relation_size('myarrays')) as table_size 
+    sum(pg_column_size(thearray)) * 100.0 / pg_relation_size('myarrays') as percentage,
+     pg_size_pretty(pg_relation_size('myarrays')) as table_size 
 from myarrays;
 ```
 The array column is 483 kB making up 46% of the total table size. 
@@ -113,8 +113,8 @@ explain analyze insert into myarrays values (generate_series(15000, 30000), arra
 
 select    pg_size_pretty(sum(pg_column_size(thearray))) as total_size,
     pg_size_pretty(avg(pg_column_size(thearray))) as average_size,
-    sum(pg_column_size(thearray)) * 100.0 / pg_total_relation_size('myarrays') as percentage,
-     pg_size_pretty(pg_total_relation_size('myarrays')) as table_size
+    sum(pg_column_size(thearray)) * 100.0 / pg_relation_size('myarrays') as percentage,
+     pg_size_pretty(pg_relation_size('myarrays')) as table_size
 from myarrays;
 \di+ arry_idx
 rollback;

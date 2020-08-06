@@ -15,24 +15,135 @@ There is an extension, [btree_gist](https://www.postgresql.org/docs/current/btre
 
 ## Operators
 
-PostGIS
+In PostGIS (geospatial extension in PostgreSQL) the main operators that can take advantage of the GiST index are:
+
+|  Operator |  Function |
+|---|---|
+|  @ | One geometry is contained by another   |
+|  ~ |  One geometry contains another |
+|  && |  One geometry intersects another |
+|  <-> |   When used in an "ORDER BY" clause you get efficient nearest-neighbor results|
 
 
-A GiST index can accelerate queries involving these range operators: =, &&, <@, @>, <<, >>, -|-, &<, and &>
-from https://medium.com/dataseries/range-types-in-postgresql-and-gist-indexes-788db23346c5
-https://www.postgresql.org/docs/current/functions-range.html
+A GiST index can accelerate queries involving these range operators:
+
+|  Operator |  Function |
+|---|---|
+|  = | Range equality |
+|  && |  Range overlap |
+|  <@ | Contains range or element   |
+|  @> | Range or element is contained by range  |
+|  << |  Strictly left of |
+|  >> |  Strictly right of |
+|  -&#124;- | Ranges are Adjacent  |
+|  &< |  Does not extend to the right of |
+|  &> |  Does not extend to the left of |
 
 Per the official documentation, Full Text also supports GiST but GIN is [the recommended](https://www.postgresql.org/docs/current/textsearch-indexes.html) index type.
 
 ## Size and Speed
 
-### Before an Index
+For this exercise we are going to use the PostGIS GiST indices on the County Geometry (county_geometry) table which contains the polygon outlines of all the counties (sub-state boundaries) in the USA. The database already has GiST indexes on the two geometry columns (interior_pnt and the_geom) so we need to drop the indices first to do our timing and size estimates.
 
+```sql92
+drop index countygeom_interiorpt_indx;
+drop index countygeom_the_geom_indx;
+
+``` 
+### Before an Index
+Like the last indexes, we will start with looking at the existing table size.
+
+```sql92
+select
+    pg_size_pretty(sum(pg_column_size(the_geom))) as total_size,
+    pg_size_pretty(avg(pg_column_size(the_geom))) as average_size,
+    sum(pg_column_size(the_geom)) * 100.0 / pg_relation_size('county_geometry') as percentage,
+     pg_size_pretty(pg_relation_size('county_geometry')) as table_size 
+from county_geometry;
+```
+
+We can see that 120 of the 127 MB in the table are due to the polygon column. This large size makes sense since a polygon is often composed of many points that form the boundary.
+
+ ```sql92
+ select
+     pg_size_pretty(sum(pg_column_size(interior_pnt))) as total_size,
+     pg_size_pretty(avg(pg_column_size(interior_pnt))) as average_size,
+     sum(pg_column_size(interior_pnt)) * 100.0 / pg_relation_size('county_geometry') as percentage,
+      pg_size_pretty(pg_relation_size('county_geometry')) as table_size 
+ from county_geometry;
+ ```
+At only 92 kB for the entire column, the interior center point of each county is a comparatively small column, since it is basically only two coordinates. 
+
+We will do one query with the polygons and one query with the points. For point data we will find the 10 closest points to the geographic center of the United States by taking advantage of the <-> operator. For polygons we will find all the counties that share a boundary (intersect &&) the county I grew up in (Rockland County, NY). 
+
+10 closest points near the geographic center of the US:
+```sql92
+explain analyze 
+SELECT id, county_name, ST_Distance('POINT(-103.771555 44.967244)'::geography, interior_pnt) as meters FROM county_geometry ORDER BY interior_pnt <-> 'POINT(-103.771555 44.967244)'::geography LIMIT 10;
+```
+
+I am getting times between 8 and 12 milliseconds.
+
+Now to search the bordering counties of Rockland County:
+
+```sql92
+explain analyze
+with rockland as (
+        select the_geom as rock_geom from county_geometry  where county_name = 'Rockland' 
+    )
+select county.county_name from county_geometry as county, rockland where rockland.rock_geom && county.the_geom; 
+```
+
+I am getting times between 18 and 25 milliseconds.
+
+Now let's insert 5,000 random points into the point interior points column:
+
+```sql92
+begin;
+explain analyze
+insert into county_geometry (id, interior_pnt) values (generate_series(4000,9000), ST_geogfromtext('point(' || random() * -179 || ' ' || random() * 89 || ')'));
+rollback;
+
+```
+The timings I am seeing for this are between 39 and 45 milliseconds.
 
 ### After an Index
 
-https://www.postgresql.org/docs/12/gist.html
+Time to add an index to both our geometry columns:
 
-https://www.postgresql.org/docs/12/btree-gist.html
+```sql92
+create index county_geometry_the_geom_idx  on county_geometry using gist(the_geom);
+create index county_geometry_interior_pnt_idx  on county_geometry using gist(interior_pnt);
 
-https://habr.com/ru/company/postgrespro/blog/444742/
+```
+And now we can rerun our top 10 counties near the center of the U.S.A.:
+
+```sql92
+explain analyze 
+SELECT id, county_name, ST_Distance('POINT(-103.771555 44.967244)'::geography, interior_pnt) as meters FROM county_geometry ORDER BY interior_pnt <-> 'POINT(-103.771555 44.967244)'::geography LIMIT 10;
+```
+For timings I am getting between 1.5 and 2 milliseconds which is almost an order of magnitude faster. 
+
+Let's see what we get for the polygon search (which is even more intensive):
+
+```sql92
+explain analyze
+with rockland as (
+        select the_geom as rock_geom from county_geometry  where county_name = 'Rockland' 
+    )
+select county.county_name from county_geometry as county, rockland where rockland.rock_geom && county.the_geom; 
+```
+
+which now runs at 1.3 to 1.4 milliseconds, which is about 30x the original query times. 
+
+But if we look at speed of inserts we see an almost of doubling of insert time:
+
+```sql92
+begin;
+explain analyze
+insert into county_geometry (id, interior_pnt) values (generate_series(4000,9000), ST_geogfromtext('point(' || random() * -179 || ' ' || random() * 89 || ')'));
+rollback;
+
+```
+
+With that, we are done with GiST indexes and we can move on to our final type, BRIN.
