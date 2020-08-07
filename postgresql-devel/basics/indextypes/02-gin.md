@@ -2,7 +2,7 @@
 GIN is an acronym which stands for Genealized Inverted Index. 
 
 ## Purpose
-GIN indexes are quite different from the B-Tree indices in that they have the ability to have multiple keys per row. From the [official doc]:
+GIN indexes are quite different from the B-Tree indices in that they have the ability to have multiple keys per row. From the [official doc](https://www.postgresql.org/docs/9.5/gin-intro.html):
 
 > GIN is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that appear within the composite items. For example, the items could be documents, and the queries could be searches for documents containing specific words.
 >
@@ -10,9 +10,9 @@ GIN indexes are quite different from the B-Tree indices in that they have the ab
  
 > A GIN index stores a set of (key, posting list) pairs, where a posting list is a set of row IDs in which the key occurs. The same row ID can appear in multiple posting lists, since an item can contain more than one key. Each key value is stored only once, so a GIN index is very compact for cases where the same key appears many times. 
 
-Out of the box GIN ships with binding for JSON, almost all primary type Arrays, and Full Text (tsvector), which makes sense since all of these data types have composite values where you want to search for values in the field. For example, in a JSON document you might want to search for values associated with an attribute that are 3 levels deep in the JSON tree.
+Out of the box GIN ships with binding for JSON, almost all primary type Arrays, and Full Text (tsvector). Since all of these data types have composite values where you want to search for values in the field, these are a reasonable default set of datatypes. For example, in a JSON document you might want to search for values associated with an attribute that is 3 levels deep in the JSON tree.
 
-There is also [an extension](https://www.postgresql.org/docs/current/btree-gin.html) that allows you to build a B-Tree index in the GIN index. You would use this when you are doing a multi-column index that includes one of the base datatypes and then JSON or Arrays. 
+There is also [an extension](https://www.postgresql.org/docs/current/btree-gin.html) that allows you to build a B-Tree index in the GIN index. You would use this when you are doing a multi-column index that includes one of the base datatypes combined with JSON or Arrays. 
 
 ## Operators
 The [official documentation](https://www.postgresql.org/docs/current/gin-builtin-opclasses.html) has a good listing of the operators and datatypes that come out of the box with GIN. Go ahead and click the link above which should open the table in a separate browser tab. [Here](https://www.postgresql.org/docs/current/functions-array.html#ARRAY-OPERATORS-TABLE) is all the operators for arrays. So if you look at the two pages together, you can see that a GIN index can help with:
@@ -62,7 +62,7 @@ Now we can do a containment search on our array data. Let's look for all the arr
 
 ```sql92
 select id, thearray from myarrays where thearray @> ARRAY[75];
-``` 
+```{{execute} 
 
 Your result set should only contain rows where there is a 75 somewhere in the array. Now let's look at the timing for that query without a GIN index.
 
@@ -121,9 +121,9 @@ from myarrays;
 rollback;
 ```{{execute}}
 
-The inserts took about 33 milliseconds which is twice as slow as the non-indexed insert. We can also see that our column has grown linearly in size but your index has grown 10X in size to 2248 kB. 
+The inserts took about 33 milliseconds which is twice as slow as the non-indexed insert. We can also see that our column has grown linearly in size but our index has grown 10X in size to 2248 kB. 
  
 The GIN index does a nice job of showing the tradeoffs you need to consider when making an index on a column.
 
-Let's now look at GIST indexes.
+Now lets look at GIST indexes.
 

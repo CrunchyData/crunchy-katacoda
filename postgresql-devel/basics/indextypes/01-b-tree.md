@@ -8,7 +8,7 @@ The index creates a data structure made up of nodes, branches, and leaves (the f
 As mentioned in the introduction, since PostgreSQL ships with B-tree operator classes for all the default data types, the B-tree index will be the type you will use most often. In general, start with a B-tree index and if that doesn't work then look to other index types. Certain advanced data types, like full-text, JSON, or PostGIS data will not work with B-tree in the way you expect. 
 
 ## Operators
-From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-types.html)
+From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-types.html) we get the default B-tree operators:
 
 > <
 >
@@ -31,7 +31,7 @@ From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-t
 Let's go ahead and make some B-tree indexes on different columns and see their disk size and difference they make in query times. 
 
 
-We'll start by getting some information on the *storm event* table and the column which tells us which United States state the storm occurred "state". 
+We'll start by getting some information on the *storm event* table and the "state: column which United States state. 
 
 First let's look at some of the data.
 
@@ -39,7 +39,7 @@ First let's look at some of the data.
 
 ```sql92
 select state from se_details limit 5;
-``` 
+```{{execute } 
 
 We can see that column stores textual data and is the state name in all upper case characters.
 
@@ -96,7 +96,7 @@ Now let's look at the size of the index:
 \di+ se_details_state_idx;
 ```{{execute}}
 
-You can see that the index has a total size a little over 3x the original data in the column. The size of the index will grow at a slower **rate** than the size of the data in teh actual column. 
+You can see that the index has a total size a little over 3x the original data in the column. The size of the index will grow at a slower **rate** than the size of the data in the actual column. 
 
 Now let's look at the benefit we get from this added use of space.
 
@@ -133,14 +133,16 @@ explain analyze insert into se_details (event_id, state) values (generate_series
 rollback;
 ```{{execute}}
 
-And when we run it this time we can see this run times between 262 and 95 milliseconds - so that's anywhere from a 2x to over 5x increase in insert time. One thing to note is that this only seems to become a significant time difference with a large number of inserts. Be aware we only have one two indices on this table, the primary key (event_id) and state column. If you have more indices that receive data on an insert, all of them will add to the insert timing. 
+And when we run it this time we can see this run times between 262 and 95 milliseconds - so that's anywhere from a 2x to over 5x increase in insert time. One thing to note is that this only seems to become a significant time difference with a large number of inserts. 
+
+Be aware we only have two indices on this table, the primary key (event_id) and state column. If you have more indices that receive data on an insert, all of them will add to the insert timing. 
 
 
 With that we are done with the lesson but you should play around some more if you want. If you want to drop the index to run some test the command would be:
 
 ```sql92
 drop index se_details_state_idx on se_details(state);
-```  
+```{{execute }  
  
 You can also create B-tree indexes on other columns and see what happens. In the exercises we are going to move on to the GIN index.
  

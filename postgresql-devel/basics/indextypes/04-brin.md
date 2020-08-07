@@ -1,33 +1,35 @@
 # BRIN index
 
-The BRIN index is really useful in a very narrow use case, but in that use case it is VERY useful. BRIN stands for Block Range Index. A block is PostgreSQLs base unit of storage, typically 8 kB. The index, by default samples 128 blocks in a row and stores the start value in the first block and the end value in the last block. Then each entry in the index contains the location on the first block on disc and the range of values for the block range (128 blocks).  
+The BRIN index is really useful in a very narrow use case, but in that use case it is VERY useful. BRIN stands for Block Range Index. A block is PostgreSQLs base unit of storage, typically 8 kB. The index, by default, samples 128 blocks in a row and stores the start value in the first block and the end value in the last block. Then each entry in the index contains the location on the first block on disc and the range of values for the block range (128 blocks).  
 
 Since the data is put on disc in order, the index ranges will be in order as well. So when a query looks for a value it does a scan of the index and finds all the ranges that might contain the values of interest and then does a disc scan of the relevant block ranges.  
 
 ## Purpose 
 BRIN indexes are very good for tables that meet the following conditions:
 
-1. Very large table (probably at least 1,000,000 rows). Below this amount and a B-Tree is better choice for an index. 
+1. Very large table (probably at least 1,000,000 rows). Below this amount and a B-Tree is usually a better choice for an index. 
 2. Insert and reads only (updates or deletes quickly ruin the efficiency by making the block ranges contain non-continuous values)
 3. The column you want to index is inserted in order. BRIN index relies on related data being written close together on disc.    
 
 Examples of things people use BRIN indexes for are log records from server, financial transactions, or data feeds from IoT like sensors. All of these streams of data usually come in order based on timestamp, the data is not edited or deleted, and there are large volumes of data. 
 
-Because the index covers 128 blocks of data with 3 main values, disc location, start of range, end of range, they are extremely small and efficient (There are several more columns but they are mostly booleans). With BRIN indexes the whole index can often be read into memory or read very quickly off disc. If you are finding that the indexes are not specific enough you can tell the index to use range sizes smaller than 128 blocks but this will also come with in an increase in size for the index. There is an exercise at the end where you can play with block range size.
+Because the index covers 128 blocks of data with 3 main values, disc location, start of range, end of range, they are extremely small and efficient (there are several more columns in the index but they are mostly booleans). With BRIN indexes the whole index can often be read into memory or read very quickly off disc. 
+
+If you are finding that the indexes are not specific enough you can tell the index to use range sizes smaller than 128 blocks but this will also come with in an increase in size for the index. There is an exercise at the end where you can play with block range size.
 
 ## Operators
 BRIN index ships with operator bindings for most of the default datatypes. There is a complete list of the operators found in [table 67.1](https://www.postgresql.org/docs/current/brin-builtin-opclasses.html) of the official documentation.
 
-Besides the typical >, <, =  operators for the usual datatypes, the operators for network types is very interesting. With BRIN indexes and network datatypes the query planner can use the index to look at questions [of containment](https://www.postgresql.org/docs/current/functions-net.html) as well, such as && or >>. For example you can ask a query like:
+Besides the typical >, <, =  operators for the usual datatypes, the operators for network types is very interesting. With BRIN indexes and network datatypes the query planner can use the index to look at questions [of containment](https://www.postgresql.org/docs/current/functions-net.html) as well, such as && or >>. For example you can ask a query like, is this inet range contained in this other range:
 
 `inet '192.168.1/24' && inet '192.168.1.80/28'`
 
-The problem with using network types is making sure they inet addresses are in order. 
+The problem with using network types is making sure they inet addresses are inserted into the table in order. 
 
-You can also use BRIN indexes with range types as well and get most of the same operators we saw with GIST indexes in the previous exercise. Again though, this requires that the ranges are inserted in order, either ascending or descending.
+You can also use BRIN indexes with range types and get most of the same operators we saw with GIST indexes in the previous exercise. Again though, this requires that the ranges are inserted in either ascending or descending order.
 
 ## Size and Speed
-For this exercise we don't have any existing tables that meet the three conditions above. We will make the exercise simple by creating a single column table of integers and fill it with 1 million incrementing values.
+For this exercise we don't have any existing tables that meet the three conditions above. For simplicity we will create a single column table of integers and fill it with 1 million incrementing values.
 
 ```sql92
 create table brinme (
@@ -84,7 +86,7 @@ Then we look at size of the index:
 \di+ brinme_brin_idx
 ```{{execute}}
 
-Here we can see the BRIN efficiency with an index for 1 million records being only 48 kB in size. 
+The BRIN index is incredibly efficient with 1 million records being reduced to an index only 48 kB in size. 
 
 Now let's look at the timing for our query:
 
