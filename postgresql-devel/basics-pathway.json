@@ -50,6 +50,11 @@
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/introindex",
       "course_id": "introindex",
       "title": "Introduction to Indexes"
+    },
+    {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/indextypes",
+      "course_id": "indextypes",
+      "title": "Index Types in PostgreSQL"
     }
   ]
 }
