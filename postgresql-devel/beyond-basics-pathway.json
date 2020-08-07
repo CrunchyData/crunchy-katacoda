@@ -20,6 +20,10 @@
       "course_id": "qplr",
       "title": "Using R in PostgreSQL"
     }, {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/plpython/",
+      "course_id": "plpython",
+      "title": "Using Python in PostgreSQL"
+    }, {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/lateral/",
       "course_id": "lateral",
       "title": "Learning Lateral Joins"

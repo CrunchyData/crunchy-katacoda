@@ -1,0 +1,32 @@
+{
+  "title": "Intro to Indexes",
+  "description": "First in a short series on using indices in PostgreSQL",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      { "title": "About Database Indexes", "text": "01-intro-index.md"},
+      { "title": "CREATE INDEX", "text": "02-create-index.md"},
+      { "title": "Multicolumn Indexes", "text": "03-multicolumn.md"},
+      { "title": "Consider the Costs and Benefits", "text": "04-costs-benefits.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uilayout": "terminal",
+    "dashboards": [
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-single1"
+  }
+}
