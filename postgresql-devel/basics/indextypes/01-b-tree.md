@@ -39,7 +39,7 @@ First let's look at some of the data.
 
 ```sql92
 select state from se_details limit 5;
-```{{execute } 
+```{{execute}} 
 
 We can see that column stores textual data and is the state name in all upper case characters.
 
