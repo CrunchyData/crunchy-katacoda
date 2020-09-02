@@ -8,7 +8,7 @@ The index creates a data structure made up of nodes, branches, and leaves (the f
 As mentioned in the introduction, since PostgreSQL ships with B-tree operator classes for all the default data types, the B-tree index will be the type you will use most often. In general, start with a B-tree index and if that doesn't work then look to other index types. Certain advanced data types, like full-text, JSON, or PostGIS data will not work with B-tree in the way you expect. 
 
 ## Operators
-From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-types.html) we get the default B-tree operators:
+From the PostgreSQL [documentation](https://www.postgresql.org/docs/current/indexes-types.html) we get the default B-tree operators:
 
 > <
 >
@@ -24,7 +24,7 @@ From the PostgreSQL [documentation](https://www.postgresql.org/docs/12/indexes-t
 >
 >The optimizer can also use a B-tree index for queries involving the pattern matching operators LIKE and ~ if the pattern is a constant and is anchored to the beginning of the string — for example, col LIKE 'foo%' or col ~ '^foo', but not col LIKE '%bar'... It is also possible to use B-tree indexes for ILIKE and ~*, but only if the pattern starts with **non-alphabetic** characters, i.e., characters that are not affected by upper/lower case conversion.
 
-<> or != is covered as the negation of the = operator. If you are going to want to take advantage of the index with `like` queries then it is important to understand the first section of [this documentation](https://www.postgresql.org/docs/12/indexes-opclass.html) on operator classes and families. In particular, with text columns you need to make sure you use the right operator class that matches your "string" column, text, char, or varchar.
+<> or != is covered as the negation of the = operator. If you are going to want to take advantage of the index with `like` queries then it is important to understand the first section of [this documentation](https://www.postgresql.org/docs/current/indexes-opclass.html) on operator classes and families. In particular, with text columns you need to make sure you use the right operator class that matches your "string" column, text, char, or varchar.
 
 ## Size and Speed  
 
@@ -142,7 +142,7 @@ With that we are done with the lesson but you should play around some more if yo
 
 ```sql92
 drop index se_details_state_idx on se_details(state);
-```{{execute }  
+```{{execute}}  
  
 You can also create B-tree indexes on other columns and see what happens. In the exercises we are going to move on to the GIN index.
  

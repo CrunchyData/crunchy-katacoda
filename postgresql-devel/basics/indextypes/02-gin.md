@@ -2,7 +2,7 @@
 GIN is an acronym which stands for Genealized Inverted Index. 
 
 ## Purpose
-GIN indexes are quite different from the B-Tree indices in that they have the ability to have multiple keys per row. From the [official doc](https://www.postgresql.org/docs/9.5/gin-intro.html):
+GIN indexes are quite different from the B-Tree indices in that they have the ability to have multiple keys per row. From the [official doc](https://www.postgresql.org/docs/current/gin-intro.html):
 
 > GIN is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that appear within the composite items. For example, the items could be documents, and the queries could be searches for documents containing specific words.
 >
@@ -62,7 +62,7 @@ Now we can do a containment search on our array data. Let's look for all the arr
 
 ```sql92
 select id, thearray from myarrays where thearray @> ARRAY[75];
-```{{execute} 
+```{{execute}} 
 
 Your result set should only contain rows where there is a 75 somewhere in the array. Now let's look at the timing for that query without a GIN index.
 

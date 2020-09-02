@@ -48,7 +48,7 @@ For this exercise we are going to use the PostGIS GiST indices on the County Geo
 ```sql92
 drop index countygeom_interiorpt_indx;
 drop index countygeom_the_geom_indx;
-```{{execute } 
+```{{execute}} 
 
 ### Before an Index
 Like the previous index types, we will start with looking at the existing table size.
