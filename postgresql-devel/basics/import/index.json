@@ -1,0 +1,38 @@
+{
+    "title": "Importing Data",
+    "description": "A walkthrough on a few ways to import data into PostgreSQL",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+      "steps": [
+        {"title": "Test", 
+          "text": "01-.md"
+        },
+        
+         ],
+      "intro": {
+        "courseData": "env-init.sh",
+        "code": "set-env.sh",
+        "text": "intro.md",
+        "credits": ""
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "showdashboard": true,
+      "uilayout": "terminal",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+      "terminals": [
+        {"name": "Terminal 2", "target": "host01"}
+      ],
+      "dashboards": [
+        {"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}
+      ]
+    },
+    "backend": {
+      "imageid": "crunchydata-single1"
+    }
+  }
+  
