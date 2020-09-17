@@ -12,7 +12,7 @@
          ],
       "assets": {
         "host01": [
-          {"file": "artists.csv", "target": "/usr/local/bin/"}
+          {"file": "artists.csv", "target": "/data/"}
         ]
       },
       "intro": {
