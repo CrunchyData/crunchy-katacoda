@@ -10,6 +10,11 @@
         }
         
          ],
+      "assets": {
+        "host01": [
+          {"file": "artists.csv", "target": "/usr/local/bin/"}
+        ]
+      },
       "intro": {
         "courseData": "env-init.sh",
         "code": "set-env.sh",
