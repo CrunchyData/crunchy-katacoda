@@ -12,7 +12,8 @@
          ],
       "assets": {
         "host01": [
-          {"file": "artists.csv", "target": "/data/"}
+          {"file": "artists.csv", "target": "/data/"},
+          {"file": "employees.sql", "target": "/data/"}
         ]
       },
       "intro": {
