@@ -13,7 +13,8 @@
       "assets": {
         "host01": [
           {"file": "artists.csv", "target": "/data/"},
-          {"file": "employees.sql", "target": "/data/"}
+          {"file": "employees.sql", "target": "/data/"},
+          {"file": "test_create_and_insert.sql", "target": "/data/"}
         ]
       },
       "intro": {
