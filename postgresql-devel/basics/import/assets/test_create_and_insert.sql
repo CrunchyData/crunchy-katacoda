@@ -1,4 +1,4 @@
--- Create another table and insert some data
+-- Create a new table and add some data
 CREATE TABLE new_test_table (
     id  SERIAL  PRIMARY KEY,
     hero_name   VARCHAR (80),
