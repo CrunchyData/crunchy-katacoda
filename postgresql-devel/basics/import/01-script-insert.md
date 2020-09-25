@@ -35,9 +35,7 @@ in our `workshop` database (password: `password`):
 psql -U groot -h localhost -d workshop -c '\dt'
 ```{{execute}}
 
-So far there are three tables... Nothing that looks related to employees.
-
-Log out from Postgres: ```\q```{{execute}}
+So far there are two tables... Nothing that looks related to employees.
 
 Let's take a look at the contents of the `employees.sql` script:
 

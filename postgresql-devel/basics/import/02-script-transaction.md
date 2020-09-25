@@ -1,6 +1,7 @@
-Let's try a script that has an error:
+Let's go back to the shell prompt and try a script that has an error:
 
 ```
+\q
 psql -U groot -h localhost -d workshop -f /data/test_create_and_insert.sql
 ```{{execute}}
 

@@ -15,11 +15,11 @@ schema where the `artists` table is located.
 ![Import/Export option from table context menu](assets/01-artists-table.png)
 3. In the Import/Export data dialog, toggle the "Import/Export" switch so that it displays "Import."  
 ![Toggle on Import dialog](assets/02-import-dialog.png)
-4. Type in the absolute path of the file you want to load, or click the Browser
+4. In the Filname field, type in the absolute path of the file you want to load, or click the Browser
  (ellipsis) button, and navigate to the file by double-clicking on a directory.  
 ![Navigate to file](assets/03-file-browser.png)
 5. Back in the Import dialog, the configuration here just matches the arguments
- we used with `\copy`:
+ we used with `\copy` earlier:
     - Format: csv
     - Header: Yes
     - Quote: "  
@@ -41,4 +41,3 @@ Alternatively, you can also write and execute a SELECT query by clicking _Tools_
 For more information on the Import/Export tool, refer to the [official pgAdmin4 documentation](https://www.pgadmin.org/docs/pgadmin4/latest/import_export_data.html).
 
 We also have a [Basic Introduction to pgAdmin4](https://learn.crunchydata.com/postgresql-devel/courses/basics/basicpgadmin) available here in our Learning Portal.
- 
