@@ -1,12 +1,21 @@
 {
-    "title": "Importing Data",
+    "title": "Loading Data into PostgreSQL",
     "description": "A walkthrough on a few ways to import data into PostgreSQL",
     "difficulty": "beginner",
-    "time": "15 minutes",
+    "time": "10 minutes",
     "details": {
       "steps": [
-        {"title": "Test", 
-          "text": "01-.md"
+        {"title": "Load data with a script", 
+          "text": "01-script-insert.md"
+        },
+        {"title": "Load data with a script (cont.)", 
+          "text": "02-script-transaction.md"
+        },
+        {"title": "Copy data from a file", 
+          "text": "03-copy-basics.md"
+        },
+        {"title": "Import data with pgAdmin", 
+          "text": "04-pgadmin-tour.md"
         }
         
          ],

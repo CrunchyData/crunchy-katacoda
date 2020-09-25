@@ -31,6 +31,7 @@ CREATE TABLE employee_department_asc (
             FOREIGN KEY (department_number) REFERENCES department (department_number) 
 );
 CREATE INDEX department_number_idx on employee_department_asc (department_number);
+
 -- Employee Salary History
 CREATE TABLE employee_salary_hist (
     employee_id integer not null,
