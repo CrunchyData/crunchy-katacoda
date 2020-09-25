@@ -12,6 +12,8 @@ until PGPASSWORD="password" psql -h localhost -U groot workshop &> /dev/null; do
   sleep 1
 done
 
+PGPASSWORD="password" psql -h localhost -U groot workshop
+
 clear
 
 : 'ready to go!'
