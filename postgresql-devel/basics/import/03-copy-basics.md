@@ -17,7 +17,7 @@ under a directory called `data`. Taking a quick look at the beginning contents o
 
 ```
 head /data/artists.csv
-```
+```{{execute}}
 
 ## 1. Create the table to store the data
 
@@ -37,7 +37,7 @@ CREATE TABLE artists (
     wiki_qid text,
     ulan int
 );
-```
+```{{execute}}
 
 ## 2. psql `\copy`
 
@@ -46,7 +46,7 @@ import the dataset:
 
 ```
 \copy artists (constituent_id, display_name, artist_bio, nationality, gender, begin_date, end_date, wiki_qid, ulan) from '/data/artists.csv' WITH CSV HEADER QUOTE '"'
-```
+```{{execute}}
 
 We include the following [arguments](https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-META-COMMANDS-COPY) with the `\copy` meta-command:
 
@@ -68,15 +68,15 @@ Let's issue a few queries against our table data:
 
 ```
 SELECT * FROM artists LIMIT 5;
-```
+```{{execute}}
 
 ```
 SELECT count(*) FROM artists WHERE nationality != 'American`;
-```
+```{{execute}}
 
 ```
 SELECT gender, count(*) FROM artists GROUP BY gender;
-```
+```{{execute}}
 
 ## SQL `COPY` vs. psql `\copy` 
 
@@ -94,7 +94,7 @@ In fact, if you try running this command in terminal again you should encounter
 
 ```
 COPY artists (constituent_id, display_name, artist_bio, nationality, gender, begin_date, end_date, wiki_qid, ulan) FROM '/data/artists.csv' WITH CSV HEADER QUOTE '"';
-```
+```{{execute}}
 >`ERROR:  must be superuser or a member of the pg_read_server_files role to COPY from a file`
 
 Notes:  
@@ -105,3 +105,6 @@ file, you can also create temporary or "staging" tables where you can do some in
 work, and then insert the values to the final table from the intermediate table when ready. 
 3. For an example on importing JSON using COPY, check out this Crunchy [blog post on fast CSV and JSON ingestion](https://info.crunchydata.com/blog/fast-csv-and-json-ingestion-in-postgresql-with-copy).
 4. `\copy` or `COPY` can also be used to export data.
+
+The Copy utility is a preferred way of bulk importing data into Postgres--it's 
+generally faster than inserts.

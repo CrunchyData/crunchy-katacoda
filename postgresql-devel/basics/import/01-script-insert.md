@@ -33,17 +33,17 @@ in our `workshop` database (password: `password`):
 
 ```
 psql -U groot -h localhost -d workshop -c '\dt'
-```
+```{{execute}}
 
 So far there are three tables... Nothing that looks related to employees.
 
-Log out from Postgres: ```\q```
+Log out from Postgres: ```\q```{{execute}}
 
 Let's take a look at the contents of the `employees.sql` script:
 
 ```sh
 less /data/employees.sql
-```
+```{{execute}}
 (Press the spacebar to scroll to the next page, or `q` to return to the command
 prompt.)
 
@@ -54,7 +54,7 @@ objects to the `workshop` database:
 
 ```
 psql -U groot -h localhost -d workshop -f /data/employees.sql
-```
+```{{execute}}
 
 The `-f` flag takes in a filename or path as argument, and the `psql` client 
 will read commands contained in that file. You should see which commands were 
@@ -65,15 +65,15 @@ Let's actually log back in and take a look at `workshop` again:
 
 ```
 psql -U groot -h localhost -d workshop
-```
+```{{execute}}
 ```
 \dt
-```
+```{{execute}}
 You should now see the four additional tables. And if we run:
 
 ```
 SELECT * FROM department;
-```
+```{{execute}}
 We see the entire contents of this table.
 
 >**Note: psql `\i` meta-command**

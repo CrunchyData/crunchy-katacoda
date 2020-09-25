@@ -2,7 +2,7 @@ Let's try a script that has an error:
 
 ```
 psql -U groot -h localhost -d workshop -f /data/test_create_and_insert.sql
-```
+```{{execute}}
 
 You should be getting an error message `ERROR:  VALUES lists must all be the same length`,
  indicating where in the file the error occurs (line 12, from `/data/test_create_and_insert.sql:12`).
@@ -13,7 +13,7 @@ quick look at the contents of the file, since it's a very short script:
 
 ```
 less /data/test_create_and_insert.sql
-```
+```{{execute}}
 
 The CREATE TABLE statement was actually executed successfully the first time 
 you ran the script. CREATE statements, like INSERT, are also treated as 
@@ -33,14 +33,14 @@ Let's log back into Postgres:
 
 ```
 psql -U groot -h localhost workshop
-```
+```{{execute}}
 
 We should see that `new_test_table` was indeed created from the script, but it 
 contains no rows. 
 
 ```
 SELECT * FROM new_test_table;
-```
+```{{execute}}
 
 When the multi-row insert is aborted, no values get added to the table (even if
 the errant row comes last!).
