@@ -1,0 +1,54 @@
+{
+    "title": "Loading Data into PostgreSQL",
+    "description": "A walkthrough on a few ways to import data into PostgreSQL",
+    "difficulty": "beginner",
+    "time": "10 minutes",
+    "details": {
+      "steps": [
+        {"title": "Load data with a script", 
+          "text": "01-script-insert.md"
+        },
+        {"title": "Load data with a script (cont.)", 
+          "text": "02-script-transaction.md"
+        },
+        {"title": "Copy data from a file", 
+          "text": "03-copy-basics.md"
+        },
+        {"title": "Import data with pgAdmin", 
+          "text": "04-pgadmin-tour.md"
+        }
+        
+         ],
+      "assets": {
+        "host01": [
+          {"file": "artists.csv", "target": "/data/"},
+          {"file": "employees.sql", "target": "/data/"},
+          {"file": "test_create_and_insert.sql", "target": "/data/"}
+        ]
+      },
+      "intro": {
+        "courseData": "env-init.sh",
+        "code": "set-env.sh",
+        "text": "intro.md",
+        "credits": ""
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "showdashboard": true,
+      "uilayout": "terminal",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+      "terminals": [
+        {"name": "Terminal 2", "target": "host01"}
+      ],
+      "dashboards": [
+        {"name": "PgAdmin4", "href": "https://[[HOST_SUBDOMAIN]]-5050-[[KATACODA_HOST]].environments.katacoda.com/login"}
+      ]
+    },
+    "backend": {
+      "imageid": "crunchydata-single1"
+    }
+  }
+  

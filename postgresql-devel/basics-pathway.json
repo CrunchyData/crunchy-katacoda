@@ -32,6 +32,11 @@
       "title": "Add Data with INSERT"
     },
     {
+      "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/import",
+      "course_id": "import",
+      "title": "Loading Data into PostgreSQL"
+    },
+    {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
       "course_id": "runcontainers",
       "title": "Introduction To PostgreSQL in Containers"
