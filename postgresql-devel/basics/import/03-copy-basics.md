@@ -101,14 +101,14 @@ COPY artists (constituent_id, display_name, artist_bio, nationality, gender, beg
 ```{{execute}}
 >`ERROR:  must be superuser or a member of the pg_read_server_files role to COPY from a file`
 
-Notes:  
+Additional Notes:  
 1. If a column is not included in the list to be copied to, the column will be populated with its default value.
 2. Sometimes you'll need to do some cleanup before the data is imported in its 
 "final" form to the desired table. In addition to directly manipulating the 
 file, you can also create temporary or "staging" tables where you can do some intermediary 
 work, and then insert the values to the final table from the intermediate table when ready. 
 3. For an example on importing JSON using COPY, check out this Crunchy [blog post on fast CSV and JSON ingestion](https://info.crunchydata.com/blog/fast-csv-and-json-ingestion-in-postgresql-with-copy).
-4. `\copy` or `COPY` can also be used to export data.
+4. Using the `COPY` command to load data server-side can run a lot faster than running `\copy` on a client. Server-side `COPY` avoids network latency. When you are the database’s administrator and can place files on the server, `COPY` excels at bulk loading.
+5. `\copy` or `COPY` can also be used to export data.
 
-The Copy utility is a preferred way of bulk importing data into Postgres--it's 
-generally faster than inserts.
+>COPY is a driver level [https://www.postgresql.org/docs/current/libpq-copy.html] capability in Postgres, so your applications may be able to utilize it as well. However you use COPY--psql, your app, server-side--it’s the **preferred and fastest way** of bulk importing data into Postgres.

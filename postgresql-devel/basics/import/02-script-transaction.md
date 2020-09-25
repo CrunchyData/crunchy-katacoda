@@ -23,9 +23,10 @@ independent transaction so you can still consider the script as "completed"
 even if these statements were executed within a single `psql` command.
 
 With this in mind, there are some [`psql` command-line options](https://www.postgresql.org/docs/current/app-psql.html)
- that you might consider using when feeding in a script:
+ that you might find helpful when feeding in a script:
 
-- `-b` / `--echo-errors`: print failed SQL commands to standard error output
+- `-b` / `--echo-errors`: print failed SQL commands to standard error output  
+- `-e` / `--echo-queries`: print all SQL commands to standard output
 - `-1` / `--single-transaction`: wrap all commands in a single transaction, 
 which means that either all commands complete successfully, or no changes are 
 applied.
