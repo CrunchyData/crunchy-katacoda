@@ -34,7 +34,7 @@
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/import",
       "course_id": "import",
-      "title": "Importing Data"
+      "title": "Loading Data into PostgreSQL"
     },
     {
       "external_link": "https://learn.crunchydata.com/postgresql-devel/courses/basics/runcontainers/",
