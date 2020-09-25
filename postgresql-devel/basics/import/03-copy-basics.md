@@ -111,4 +111,4 @@ work, and then insert the values to the final table from the intermediate table 
 4. Using the `COPY` command to load data server-side can run a lot faster than running `\copy` on a client. Server-side `COPY` avoids network latency. When you are the database’s administrator and can place files on the server, `COPY` excels at bulk loading.
 5. `\copy` or `COPY` can also be used to export data.
 
->COPY is a driver level [https://www.postgresql.org/docs/current/libpq-copy.html] capability in Postgres, so your applications may be able to utilize it as well. However you use COPY--psql, your app, server-side--it’s the **preferred and fastest way** of bulk importing data into Postgres.
+>COPY is a [driver level](https://www.postgresql.org/docs/current/libpq-copy.html) capability in Postgres, so your applications may be able to utilize it as well. However you use COPY--psql, your app, server-side--it’s the **preferred and fastest way** of bulk importing data into Postgres.

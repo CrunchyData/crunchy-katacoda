@@ -15,7 +15,7 @@ schema where the `artists` table is located.
 ![Import/Export option from table context menu](assets/01-artists-table.png)
 3. In the Import/Export data dialog, toggle the "Import/Export" switch so that it displays "Import."  
 ![Toggle on Import dialog](assets/02-import-dialog.png)
-4. In the Filname field, type in the absolute path of the file you want to load, or click the Browser
+4. In the Filename field, type in the absolute path of the file you want to load, or click the Browser
  (ellipsis) button, and navigate to the file by double-clicking on a directory.  
 ![Navigate to file](assets/03-file-browser.png)
 5. Back in the Import dialog, the configuration here just matches the arguments
