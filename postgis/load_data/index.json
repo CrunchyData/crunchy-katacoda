@@ -7,6 +7,15 @@
     "steps": [
       {"title": "", "text": "01-.md"}
     ],
+    "assets": {
+      "host01": [
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.cpg", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.dbf", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.prj", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.shp", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.shx", "target": "/data/tpa/"}
+      ]
+    },
     "intro": {
       "courseData": "env-init.sh",
       "code": "set-env.sh",
