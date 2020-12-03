@@ -1,16 +1,16 @@
 # Working with Spatial Data in PostGIS
 
-PostgreSQL has the Gold Standard in spatial extensions for any RDBMs on the market - PostGIS. If you have data that has 
+PostgreSQL has the Gold Standard in spatial extensions for any RDBMS on the market - PostGIS. If you have data that has 
 direct spatial information, like coordinates, or indirect, such as an address, you can leverage the power of spatial 
-analysis to enhance the insights into your dataIn the workshopwe will barely be scratching the surface of what you can 
-do with PostGIS so please don't consider this exhaustive in the slightest.
+analysis to enhance the insights into your data.
 
-Final note before we dig in, remember that usually to work with spatial data you need to 
+**Important:**
+>Before we dig in, remember that to work with spatial data you need to 
 
 ```CREATE EXTENSION postgis;```
 
-in your database to enable all the functionality. We don't have to do it in the workshop because we already enabled the 
-extension when we created the DB in the container. 
+>in your database to enable all the functionality. We don't have to do it in the workshop because we already enabled the 
+extension when we created the database in the container.  
 
 #### Spatial Tables
 
@@ -18,14 +18,17 @@ Let's go ahead and log in to our PostgreSQL database:
 
 ```psql -U groot -h localhost workshop```{{execute}}
 
-Remember that the password is the word 'password'.
+Remember that the password is 'password'.
+
+You can confirm that the PostGIS extension has been added by running this PostGIS function: 
+
+```SELECT postgis_full_version();```{{execute}}
 
 Now if you do:
 
 `\d county_geometry`{{execute}}
 
-PostgreSQL will show you a full description of the county_geometry table. To see all the \ commands in PostgreSQL just do 
-`\?` (though don't do it right now).
+PostgreSQL will show you a full description of the county_geometry table. To see all the `\` commands in PostgreSQL (also called meta-commands) you can enter `\?` at the command prompt - though don't do it right now.
 
 You will see two spatial columns: 
 ```
@@ -65,7 +68,7 @@ method to handle our use case. It's called a K Nearest Neighbor Search (KNN) wit
 
 ```SELECT id, county_name, ST_Distance('POINT(-103.771555 44.967244)'::geography, the_geom) FROM county_geometry ORDER BY the_geom <-> 'POINT(-103.771555 44.967244)'::geography LIMIT 3;```{{execute}}
 
-When we have a spatial index on the column, set a relatively small limit (X) on the return,  and we use the <-> operator, the database 
+When we have a spatial index on the column, set a relatively small LIMIT (X) on the return,  and we use the `<->` operator, the database 
 "knows" to find the first X spatially closest results and THEN calculate everything else on them. Spatial indices to the
 rescue!
 
@@ -73,19 +76,19 @@ rescue!
 
 This next query will demonstrate joining data based on spatial co-incidence rather than a shared primary key-foreign key 
 relationship. Our example will be to join the storm location data to the county geometry data, given us the county of the 
-incident eventhough it is not in our original file.
+incident even though it is not in our original file.
 
 ```select geo.statefp, geo.county_name, geo.aland, se.event_id, se.location from county_geometry as geo, se_locations as se where ST_Covers(geo.the_geom, se.the_geom) limit 10;```{{execute}}
 
-The spatial operator we use is [ST_Covers](https://postgis.net/docs/ST_Covers.html) which return a boolean if the second geometry is completely withing the first geometry. 
+The spatial operator we use is [ST_Covers](https://postgis.net/docs/ST_Covers.html) which returns a boolean if the second geometry is completely withing the first geometry. 
 We set the limit to 5 because we don't want to wait for all the results to return for over 48K rows. The results also show 
-the [state fips](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) code which tells us 
-the state name given the number. This way we can check if their is a county with the name in that state as well as a 
-location and if they two overlap.
+the [state FIPS](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) code which tells us 
+the state name given the number. This way we can check if there is a county with the name in that state as well as a 
+location, and if the two overlap.
 
 #### Spatial buffer and then select
 
-Finally let's do more complicated query that you could not do without sophisticated spatial operations. Suppose we were 
+Finally, let's do more complicated query that you could not do without sophisticated spatial operations. Suppose we were 
 trying to put together emergency response centers in counties with high potential for storms. We are going to buffer a 12.5 KM radius (about 8 miles) 
 off a storm even center point and then select all the counties that intersect that buffered circle. We will use a grouping 
 query to do a count of the storms circles per county.
@@ -108,7 +111,7 @@ with all_counties as (
 The _with x as ()_ syntax is called a [Common Table Expression](https://www.postgresql.org/docs/11/queries-with.html) 
 (CTE) in PostgreSQL and makes writing subqueries a lot easier. The CTE create a temporary table that exists for just 
 one query. The tradeoff is that they are an optimization boundary. In this case they are fine to use for the workshop but 
-if you use them in future work please dig deeper into the tradeoffs of CTEs. 
+if you use them in future work, please dig deeper into the tradeoffs of CTEs. 
 
 ## Final Note
 
@@ -124,5 +127,4 @@ governments, non-profits, and companies will using give you the coordinates in a
 how to use it in PostGIS. The ideas above remain exactly the same, it's just the way you store your data will change.
 
 To learn more, there is a great, but slightly outdated, [discussion](http://postgis.net/workshops/postgis-intro/geography.html) in this other workshop content.
- 
-   
+
