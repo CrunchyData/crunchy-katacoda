@@ -22,7 +22,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 echo 'installing RPMs'
-sudo yum install -y postgresql11 postgresql11-server postgresql12 postgresql12-server postgresql12-contrib postgresql11-contrib postgis25_11 R unzip nano
+sudo yum install -y postgresql11 postgresql11-server postgresql12 postgresql12-server postgresql12-contrib postgresql11-contrib postgis R unzip nano
 if [ "$?" -ne 0 ]; then
     echo "Unable to install Postgres"
     exit 1
