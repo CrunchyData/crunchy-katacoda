@@ -13,7 +13,8 @@
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.dbf", "target": "/data/tpa/"},
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.prj", "target": "/data/tpa/"},
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.shp", "target": "/data/tpa/"},
-        {"file": "TPA_Parking_On_Street/Parking_On_Street_.shx", "target": "/data/tpa/"}
+        {"file": "TPA_Parking_On_Street/Parking_On_Street_.shx", "target": "/data/tpa/"},
+        {"file": "Sidewalk.geojson", "target": "/data/tpa/"}
       ]
     },
     "intro": {
