@@ -13,7 +13,7 @@ until PGPASSWORD="password" psql -h localhost -U groot postgres -c '\l' &> /dev/
 done
 
 echo 'create demo database'
-PGPASSWORD="password" psql -h localhost -U groot -c 'CREATE DATABASE tampa'
+PGPASSWORD="password" psql -h localhost -U postgres -c 'CREATE DATABASE tampa WITH OWNER = groot'
 
 echo 'DB created'
 
