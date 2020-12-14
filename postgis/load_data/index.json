@@ -14,6 +14,11 @@
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.prj", "target": "/data/tpa/"},
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.shp", "target": "/data/tpa/"},
         {"file": "TPA_Parking_On_Street/Parking_On_Street_.shx", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_Garages/Parking_Garages_and_Lots.cpg", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_Garages/Parking_Garages_and_Lots.dbf", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_Garages/Parking_Garages_and_Lots.prj", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_Garages/Parking_Garages_and_Lots.shp", "target": "/data/tpa/"},
+        {"file": "TPA_Parking_Garages/Parking_Garages_and_Lots.shx", "target": "/data/tpa/"},
         {"file": "Sidewalk.geojson", "target": "/data/tpa/"}
       ]
     },
