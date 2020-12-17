@@ -3,11 +3,11 @@ spatial data in a plain text file. If you're already familiar with the `\copy`
 command in `psql`, you can definitely also use it to load spatial data when 
 appropriate.
 
-In this environment, we have a `cities15000.txt` from the [Geonames database](https://download.geonames.org/export/dump/).
+In this environment, we have a `cities15000.txt` file from the [Geonames database](https://download.geonames.org/export/dump/).
  This file contains cities with a population > 15000 or capitals (ca 25.000), 
  and has columns for `longitude` and `latitude`.
 
-In this exercise, we'll create a new table with a calculated geometry column. 
+For this exercise, we'll create a new table with a calculated geometry column. 
 (This feature is also referred to as [Generated Columns](https://www.postgresql.org/docs/current/ddl-generated-columns.html)
  and is only available for Postgres version 12+.) When we import the data into 
  this table, the geometry column will automatically
@@ -52,23 +52,24 @@ The main things to note here are:
 SRID to 4326.
 3. We use the `GENERATED ALWAYS AS` clause to tell Postgres how the values in 
 this column are to be calculated. (The `STORED` keyword is also required.)
-4. We take the values from the `longitude` and `latitude` columns and:
-  a. Call [ST_MakePoint](https://postgis.net/docs/ST_MakePoint.html) to create the Point geometry,
+4. We take the values from the `longitude` and `latitude` columns and:  
+  a. Call [ST_MakePoint](https://postgis.net/docs/ST_MakePoint.html) to create the Point geometry,  
   b. Set SRID 4326 on the generated geometry using [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html). 
 
 >***Note:***
 If you've completed the [Geography](https://learn.crunchydata.com/postgis/geography/) 
 course in this series, you may be wondering if we should be using the Geography
- type instead for this data, since it meets the criteria of "geographically 
+ type instead for this table, since the data meets the criteria of "geographically 
  dispersed." It depends on how you intend to use this data and what types of 
  queries you want to run. We're keeping it simple and sticking to Geometry for
-  our purposes but using Geography here would make sense too.
+  our purposes, but using Geography here would make sense too.
 
 We'll now use the `\copy` command to populate `cities`:
 
 ```
 \copy cities (geonameid, name, asciiname, alternatenames, latitude, longitude, feature_class, feature_code, country_code, cc2, admin1_code, admin2_code, admin3_code, admin4_code, population, elevation, dem, timezone, modification_date) from '/data/cities15000.txt' with (format csv, delimiter E'\t', header false)
-```
+```{{execute}}
+
 - Our data file does not have the `id` and `geom` values, so we're not 
 including them in the list of columns in `cities (...)`.
 - We also use these options in `WITH`:
@@ -83,7 +84,7 @@ including them in the list of columns in `cities (...)`.
 Try running some simple queries against `cities`, such as:
 
 ```
-SELECT * FROM cities ORDER BY population LIMIT 3;
+SELECT * FROM cities ORDER BY population DESC LIMIT 3;
 ```{{execute}}
 
 ### Good ol' INSERT statements
