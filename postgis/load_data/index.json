@@ -1,11 +1,16 @@
   {
   "title": "Loading Spatial Data into PostGIS",
-  "description": "",
+  "description": "Use the command line to import spatial data into PostGIS. Learn some background on GIS and spatial reference systems.",
   "difficulty": "intermediate",
-  "time": "15 minutes",
+  "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "", "text": "01-.md"}
+      {"title": "Spatial Reference Systems", "text": "01-srs.md"},
+      {"title": "Getting Ready to Load Spatial Data", "text": "02-prep.md"},
+      {"title": "Import Shapefiles Using shp2pgsql", "text": "03-shp2pgsql.md"},
+      {"title": "Use ogr2ogr for Various GIS Formats", "text": "04-ogr2ogr.md"},
+      {"title": "Plain Text Files", "text": "05-textfiles.md"},
+      {"title": "QGIS", "text": "06-qgis.md"}
     ],
     "assets": {
       "host01": [
@@ -19,7 +24,8 @@
         {"file": "TPA_Sidewalk/Sidewalk.prj", "target": "/data/tpa/"},
         {"file": "TPA_Sidewalk/Sidewalk.shp", "target": "/data/tpa/"},
         {"file": "TPA_Sidewalk/Sidewalk.shx", "target": "/data/tpa/"},        
-        {"file": "Park_Polygons.geojson", "target": "/data/tpa/"}
+        {"file": "Park_Polygons.geojson", "target": "/data/tpa/"},
+        {"file": "cities15000.txt", "target": "/data/"}
       ]
     },
     "intro": {
