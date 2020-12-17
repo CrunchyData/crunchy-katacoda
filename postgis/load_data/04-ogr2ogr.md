@@ -46,7 +46,7 @@ psql -U groot -h localhost tampa
 \d park_polygons
 ```{{execute}}
 
-We do see that we have a column named `geom` that has the `geometry` type, and 
+We do see that we have a column named `geom` that has the `geometry` type, with 
 the SRID has been set to 4326. Sometimes, `ogr2ogr` makes a wrong guess 
 on the projection (see "When OGR guesses wrong": https://www.bostongis.com/PrinterFriendly.aspx?content_name=ogr_cheatsheet).
  (***Note on what kinds of scenarios makes this more frequent? And what to do to fix?)
@@ -57,6 +57,7 @@ Let's do a quick query:
 SELECT ST_GeometryType(geom), count(ST_GeometryType(geom)) 
 FROM park_polygons 
 GROUP BY ST_GeometryType(geom);
-```
+```{{execute}}
+
 The majority of our records in `park_polygons` are Polygons, but there are a 
 handful that are MultiPolygons.

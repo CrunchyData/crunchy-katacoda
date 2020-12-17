@@ -84,6 +84,8 @@ including them in the list of columns in `cities (...)`.
 Try running some simple queries against `cities`, such as:
 
 ```
+\x
+
 SELECT * FROM cities ORDER BY population DESC LIMIT 3;
 ```{{execute}}
 

@@ -1,5 +1,5 @@
 Spatial data allows you to model and position things, typically on the Earth's 
-surface. But a value like POINT(-103.771555 44.967244) is practically 
+surface. But a value like "POINT(-103.771555 44.967244)" is practically 
 meaningless without a **spatial reference system**. (You may also come across the 
 term "coordinate system" used interchangeably in GIS.)
  
@@ -20,7 +20,8 @@ a SELECT query to return a single record (`srid = 4326`).
 
 ```
 psql -U groot -h localhost workshop
-
+```{{execute}}
+```
 \x
 
 SELECT * FROM spatial_ref_sys WHERE srid = 26918;

@@ -59,7 +59,7 @@ Let's take a look at the script:
 
 ```
 nano parking_garages_lots.sql
-```
+```{{execute}}
 
 Outputting to a file is useful not only for checking to see what the generated SQL is.
  You can also make any desired changes to the script before running it. 
@@ -69,7 +69,7 @@ When you're ready to import the data, run this `psql` statement:
 
 ```
 psql -U groot -h localhost -d tampa -f parking_garages_lots.sql
-```
+```{{execute}}
 
 The `-f` flag tells `psql` to [read commands](https://www.postgresql.org/docs/current/app-psql.html) 
 from the given file. (We have a course on [loading data into Postgres](https://learn.crunchydata.com/postgresql-devel/courses/basics/import) if you want a bit more practice with `psql -f`.)
@@ -81,7 +81,8 @@ psql -U groot -h localhost tampa
 ```{{execute}}
 ```
 \d parking_garages_and_lots
-
+```{{execute}}
+```
 SELECT spacename, fulladdr FROM parking_garages_and_lots;
 ```{{execute}}
 
@@ -99,11 +100,17 @@ shp2pgsql -s 4326 -I /data/tpa/Sidewalk.shp | psql -U groot -h localhost tampa
  ```{{execute}}
 
 The pipe `|` operator allows you to convert and import the shapefile data in 
-one step. 
+one step. This is a larger dataset, so make sure that you wait until you see 
+the last SQL command `COMMIT` and that you are taken back to the terminal 
+before logging back in to Postgres.
 
-You may notice that the parking garages and lots are Point geometries. How are 
+```
+psql -U groot -h localhost tampa
+```{{execute}}
+
+You may have noticed that the parking garages and lots are Point geometries. How are 
 sidewalks represented? Take a guess and try checking with `\d sidewalk`, or:
 
 ```
-`SELECT ST_GeometryType(geom) FROM sidewalk LIMIT 1;
+SELECT ST_GeometryType(geom) FROM sidewalk LIMIT 1;
 ```{{execute}}

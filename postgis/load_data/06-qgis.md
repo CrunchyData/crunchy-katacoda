@@ -9,9 +9,8 @@ QGIS docs are helpful and there are many resources available from the internet.
  QGIS has a tool called [DB Manager](https://docs.qgis.org/3.16/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html#dbmanager)
  that allows you to integrate databases such as Postgres/PostGIS. 
  
-Importing 
- spatial data is as simple as adding your shapefile/GeoJSON/GIS file as a 
- layer in your project, and then using DB Manager to import the layer into 
+Importing spatial data is as simple as adding your shapefile/GeoJSON/GIS file as a 
+ layer in your QGIS project, and then using DB Manager to import the layer into 
  PostGIS. The DB Manager lets you export spatial data in various formats as well, and 
 even allows you to run queries against your database from within QGIS. 
 
