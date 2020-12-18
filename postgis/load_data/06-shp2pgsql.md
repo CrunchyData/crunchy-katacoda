@@ -1,13 +1,14 @@
 ### 2. Pipe shp2pgsql output to psql
 
-Sometimes, you may not need nor want to first redirect shp2pgsql's output to a 
+Sometimes, you may not need nor want to first redirect `shp2pgsql`'s output to a 
 file. An even quicker method of getting data into Postgres is to just pipe the 
 output into psql. This time we'll import a different shapefile containing 
 data on sidewalks throughout the City of Tampa:
 
 ```
 \q
-
+```{{execute}}
+```
 shp2pgsql -s 4326 -I /data/tpa/Sidewalk.shp | psql -U groot -h localhost tampa
  ```{{execute}}
 

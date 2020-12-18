@@ -11,7 +11,10 @@ easily import spatial data into a PostGIS database. But in case you can't use a
  with your data files.
 
 This course will focus on **importing spatial data into PostGIS via the command 
-line**. In addition to `psql`, we'll be trying out `shp2pgsql` and `ogr2ogr`. If 
+line**. We'll be dealing with GIS vector data but in case you're not aware, there 
+is [raster data](https://gisgeography.com/spatial-data-types-vector-raster/) as well.
+
+In addition to `psql`, we'll be trying out `shp2pgsql` and `ogr2ogr`. If 
 you're not familiar with `psql`, we strongly recommend checking out the [Intro to
 psql course](https://learn.crunchydata.com/postgresql-devel/courses/basics/intropsql)
  first before you proceed.
@@ -26,13 +29,17 @@ The data in this course is taken from the City of Tampa [Open Data GeoHub](https
 The data was downloaded in a few different GIS formats so you can see how you 
 might choose or use an import tool depending on the format your spatial data is in.
 
-PostGIS has already been installed in this environment. We'll use the following
- credentials to log in to Postgres (except when otherwise indicated):
+PostGIS has already been installed in this environment. We'll mostly be using the following
+ credentials to log in to Postgres:
 - username: `groot`
 - password: `password` 
 - database: `tampa`
+We'll log in as a superuser in one instance (to run CREATE EXTENSION). Otherwise,
+ it's best practice to avoid the superuser role when possible as it can bypass 
+ almost every access restriction in the database!
 
-But before we dive into PostGIS, let's also take a quick look at the 
+
+Before we dive into PostGIS, let's also take a quick look at the 
 background behind projections, and why it matters when it comes to importing 
 spatial data. If you're new to spatial work, this will be useful context to 
 have, even outside of PostGIS. 

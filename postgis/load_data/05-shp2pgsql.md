@@ -36,6 +36,9 @@ When you're ready to import the data, run this `psql` statement:
 psql -U groot -h localhost -d tampa -f parking_garages_lots.sql
 ```{{execute}}
 
+(We are logging in again as `groot` this time and not `postgres` -- remember 
+that the superuser role should only be used when really needed.)
+
 The `-f` flag tells `psql` to [read commands](https://www.postgresql.org/docs/current/app-psql.html) 
 from the given file. (We have a course on [loading data into Postgres](https://learn.crunchydata.com/postgresql-devel/courses/basics/import) if you want a bit more practice with `psql -f`.)
 

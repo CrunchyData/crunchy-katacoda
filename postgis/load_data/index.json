@@ -50,7 +50,8 @@
       {"name": "Terminal 2", "target": "host01"}
     ],
     "dashboards": [
-      {"name": "Browser", "href": "https://www.google.com/search?q=wgs+1984+epsg"}
+      {"name": "Browser", "href": "https://www.google.com/webhp?igu=1"}
+      
     ]
   },
   "backend": {

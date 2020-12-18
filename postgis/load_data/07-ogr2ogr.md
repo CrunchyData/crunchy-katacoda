@@ -14,10 +14,11 @@ between GIS formats. Check out the list of supported formats,
 ## Import GeoJSON into PostGIS with ogr2ogr
 
 In this exercise, we'll import data on [park polygons](https://city-tampa.opendata.arcgis.com/datasets/park-polygons?geometry=-83.779%2C27.778%2C-81.166%2C28.203) in the City of Tampa in 
-[GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format. Go ahead and run the 
-following command: 
+[GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format.  
 
-(Make sure you're logged out of `psql` first by running `\q`):
+Make sure you're logged out of `psql` first by running ```\q```{{excute}}
+
+Go ahead and run the following:
 
 ```
 ogr2ogr \
@@ -49,9 +50,7 @@ psql -U groot -h localhost tampa
 ```{{execute}}
 
 We do see that we have a column named `geom` that has the `geometry` type, with 
-the SRID has been set to 4326. Sometimes, `ogr2ogr` makes a wrong guess 
-on the projection (see "When OGR guesses wrong": https://www.bostongis.com/PrinterFriendly.aspx?content_name=ogr_cheatsheet).
- (***Note on what kinds of scenarios makes this more frequent? And what to do to fix?)
+the SRID having been set to 4326 -- `ogr2ogr` was able to make a guess.
 
 Let's do a quick query:
 

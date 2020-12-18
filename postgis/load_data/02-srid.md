@@ -1,8 +1,12 @@
 When you load a spatial dataset into PostGIS, you'll either specify what 
-spatial reference system to use, or it may be detected for you, depending on 
+SRS to use, or it may be detected for you, depending on 
 the import tool you use as well as the format the data came in. Generally 
-you'll use the SRID (spatial reference identifier) to assign the reference 
-system. Each reference system in `spatial_ref_sys` has an SRID.
+you'll use the spatial reference identifier (SRID) to assign the reference 
+system. Each SRS in `spatial_ref_sys` has a unique SRID.
+
+You may have seen that `spatial_ref_sys` also has an `auth_srid` column. 
+`srid` and `auth_srid` will usually have the same value - it will only differ 
+if you add new custom SRS to the table.
 
 ### How do we know what SRID to use?
 
@@ -18,8 +22,9 @@ try.
 
 ```
 \q
-
-less /data/tpa/Parking_Garages_and_Lots.prj
+```{{execute}}
+```
+cat /data/tpa/Parking_Garages_and_Lots.prj
 ```{{execute}}
 
 We've logged out of `psql` and used the `less` command-line utility to check 
