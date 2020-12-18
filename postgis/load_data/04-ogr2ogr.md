@@ -15,7 +15,9 @@ between GIS formats. Check out the list of supported formats,
 
 In this exercise, we'll import data on [park polygons](https://city-tampa.opendata.arcgis.com/datasets/park-polygons?geometry=-83.779%2C27.778%2C-81.166%2C28.203) in the City of Tampa in 
 [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format. Go ahead and run the 
-following command (make sure you're logged out of `psql` first by running `\q`):
+following command: 
+
+(Make sure you're logged out of `psql` first by running `\q`):
 
 ```
 ogr2ogr \
@@ -34,7 +36,7 @@ We'll now get a new table created in the `tampa` database. Let's
 geometry column in the new table will be `wkb_geometry`. But in this example 
 we'll give it another name `geom`.
 
-Layer creation options are format-specific. The list for Postgres/PostGIS can 
+Layer creation options are format-specific. The list applicable to Postgres/PostGIS can 
 be found on [this page](https://gdal.org/drivers/vector/pg.html).
 
 Let's log in to Postgres and take a look around:

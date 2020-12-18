@@ -47,8 +47,7 @@ shp2pgsql -s 4326 -I /data/tpa/Parking_Garages_and_Lots.shp > parking_garages_lo
 
 1. By default, a new table `parking_garages_and_lots` is created and populated 
 from the shapefile. This table will include a `geom` column.
-2. `-s 4326`: the SRID `4326` ([WGS 84](https://spatialreference.org/ref/epsg/wgs-84/)) 
-is set for the `geometry` column.
+2. `-s 4326`: the SRID `4326` (WGS 84) is set for the `geometry` column.
 3. `-I` creates a [GiST index](https://www.postgresql.org/docs/current/gist-intro.html)
  on `geometry`.
 4. `/data/tpa/Parking_Garages_and_Lots.shp` is our source file.

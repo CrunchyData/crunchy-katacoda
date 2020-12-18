@@ -28,8 +28,8 @@ roles).
 CREATE EXTENSION postgis;
 ```{{execute}}
 
-And now when we check the PostGIS version: `SELECT PostGIS_Full_Version();`{{execute}} 
-we should see the same information displayed as with `workshop` earlier.
+And now when we run `SELECT PostGIS_Full_Version();`{{execute}} 
+we can see a string containing the PostGIS version number in this database (2.5.4).
  
 Let's run `\dt` again:
 
@@ -37,7 +37,7 @@ Let's run `\dt` again:
 \dt
 ```{{execute}}
 
-We see that we now also have the `spatial_ref_sys` table.
+Great! We now also have the `spatial_ref_sys` table.
 
 We're now ready to import spatial data into our current database. The first tool 
 we'll learn about is `shp2pgsql`.
