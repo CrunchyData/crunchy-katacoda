@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {"title": "Spatial Reference Systems", "text": "01-srs.md"},
-      {"title": "Spatial Reference Systems", "text": "02-srs.md"},
+      {"title": "Spatial Reference Systems", "text": "02-srid.md"},
       {"title": "Getting Ready to Load Spatial Data", "text": "03-prep.md"},
       {"title": "Import Shapefiles Using shp2pgsql", "text": "04-shp2pgsql.md"},
       {"title": "Import Shapefiles Using shp2pgsql", "text": "05-shp2pgsql.md"},
