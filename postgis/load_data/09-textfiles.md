@@ -3,19 +3,18 @@
 We'll now use the `\copy` command to populate `cities`:
 
 ```
-\copy cities (geonameid, name, asciiname, alternatenames, latitude, longitude, feature_class, feature_code, country_code, cc2, admin1_code, admin2_code, admin3_code, admin4_code, population, elevation, dem, timezone, modification_date) from '/data/cities15000.txt' with (format csv, delimiter E'\t', header false)
+\copy cities (geonameid, name, asciiname, alternatenames, latitude, longitude, feature_class, feature_code, country_code, cc2, admin1_code, admin2_code, admin3_code, admin4_code, population, elevation, dem, timezone, modification_date) from '/data/cities15000.txt' with (null '')
 ```{{execute}}
 
 - Our data file does not have the `id` and `geom` values, so we're not 
 including them in the list of columns in `cities (...)`.
-- We also use these options in `WITH`:
-  - `format csv` - while the file has a .txt extension, `csv` is actually still
-   used if the file is "separated" or delimited. In this case, we have a 
-   tab-delimited file, but we would still need to use `csv`.
-  - `delimiter E'\t'` - we use an [escape string constant](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS)
-   to indicate the tab delimiter.
-  - `header false` is used with the `csv` format and indicates that our file 
-  does not contain a header row.
+- We also use the WITH clause to add the `null ''` option. 
+
+We have a tab-delimited .txt file, so we'd use `text` for our FORMAT parameter 
+(which is the default for `\copy`/SQL COPY, so we don't need to specify it in
+the command). The tab delimiter is also default for `text`. The only option 
+we need to explicitly include is `null ''` which indicates that null values 
+are represented by empty strings in the file. 
 
 Try running some simple queries against `cities`, such as:
 

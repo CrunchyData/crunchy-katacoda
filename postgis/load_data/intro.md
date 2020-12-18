@@ -32,7 +32,8 @@ might choose or use an import tool depending on the format your spatial data is 
 PostGIS has already been installed in this environment. We'll mostly be using the following
  credentials to log in to Postgres:
 - username: `groot`
-- password: `password` 
+- password: `password` (We've set up the environment so that you can log in via
+`psql` without having to manually enter the password)
 - database: `tampa`
 We'll log in as a superuser in one instance (to run CREATE EXTENSION). Otherwise,
  it's best practice to avoid the superuser role when possible as it can bypass 

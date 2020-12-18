@@ -16,7 +16,7 @@ between GIS formats. Check out the list of supported formats,
 In this exercise, we'll import data on [park polygons](https://city-tampa.opendata.arcgis.com/datasets/park-polygons?geometry=-83.779%2C27.778%2C-81.166%2C28.203) in the City of Tampa in 
 [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format.  
 
-Make sure you're logged out of `psql` first by running ```\q```{{excute}}
+Make sure you're logged out of `psql` first by running ```\q```{{execute}}
 
 Go ahead and run the following:
 
