@@ -6,11 +6,15 @@
   "details": {
     "steps": [
       {"title": "Spatial Reference Systems", "text": "01-srs.md"},
-      {"title": "Getting Ready to Load Spatial Data", "text": "02-prep.md"},
-      {"title": "Import Shapefiles Using shp2pgsql", "text": "03-shp2pgsql.md"},
-      {"title": "Use ogr2ogr for Various GIS Formats", "text": "04-ogr2ogr.md"},
-      {"title": "Plain Text Files", "text": "05-textfiles.md"},
-      {"title": "QGIS", "text": "06-qgis.md"}
+      {"title": "Spatial Reference Systems", "text": "02-srs.md"},
+      {"title": "Getting Ready to Load Spatial Data", "text": "03-prep.md"},
+      {"title": "Import Shapefiles Using shp2pgsql", "text": "04-shp2pgsql.md"},
+      {"title": "Import Shapefiles Using shp2pgsql", "text": "05-shp2pgsql.md"},
+      {"title": "Import Shapefiles Using shp2pgsql", "text": "06-shp2pgsql.md"},
+      {"title": "Use ogr2ogr for Various GIS Formats", "text": "07-ogr2ogr.md"},
+      {"title": "Plain Text Files", "text": "08-textfiles.md"},
+      {"title": "Plain Text Files", "text": "09-textfiles.md"},
+      {"title": "QGIS", "text": "10-qgis.md"}
     ],
     "assets": {
       "host01": [
@@ -40,7 +44,7 @@
   },
   "environment": {
     "showdashboard": true,
-    "uilayout": "terminal-iframe",
+    "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
     "terminals": [
       {"name": "Terminal 2", "target": "host01"}
