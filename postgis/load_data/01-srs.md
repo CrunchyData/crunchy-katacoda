@@ -65,7 +65,7 @@ like this:
 
 `GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984"...`
 
-Let's do a search on the internet for "WGS 1984 EPSG" using the **Browser** 
+Let's do a search on the internet for "WGS 1984 EPSG" -- click the **Browser** 
 tab in your interactive environment on the right. You should see results 
 from pages such as [spatialreference.org](https://spatialreference.org/ref/epsg/wgs-84/)
 and [epsg.io](https://epsg.io/4326) that indicate a code of `EPSG:4326`. `4326`
