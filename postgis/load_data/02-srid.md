@@ -4,17 +4,19 @@ the import tool you use as well as the format the data came in. Generally
 you'll use the spatial reference identifier (SRID) to assign the reference 
 system. Each SRS in `spatial_ref_sys` has a unique SRID.
 
-You may have seen that `spatial_ref_sys` also has an `auth_srid` column. 
-`srid` and `auth_srid` will usually have the same value - it will only differ 
-if you add new custom SRS to the table.
+You may have seen that `spatial_ref_sys` also has an `auth_srid` column. `srid`
+ is an SRS's unique identifier in PostGIS, whereas `auth_srid` is the ID 
+ given by the Authority stored in the `auth_name` column. EPSG is one such 
+ authority -- we'll get to that in a second. The vast majority of SRS's that 
+ come with `spatial_ref_sys` by default will have the same `srid` and `auth_srid`. 
 
 ### How do we know what SRID to use?
 
-An organization called European Petroleum Survey Group put together a [database 
+An organization called European Petroleum Survey Group (EPSG) put together a [database 
 of coordinate systems](https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset)
  and gave each system a unique number, known as an EPSG 
 code. Most GIS software (PostGIS, QGIS, ArcGIS, etc) will understand the EPSG 
-code to define the coordinate system.  
+code to define the coordinate system. 
 
 You might be able to confirm the SRID by examining the contents of your data 
 file/s: for example, the `.prj` file if you have a shapefile. Let's give it a 
@@ -27,7 +29,7 @@ try.
 cat /data/tpa/Parking_Garages_and_Lots.prj
 ```{{execute}}
 
-We've logged out of `psql` and used the `less` command-line utility to check 
+We've logged out of `psql` and used the `cat` command-line utility to check 
 Parking_Garages_and_Lots.prj's contents. You should see a string that starts 
 like this:
 

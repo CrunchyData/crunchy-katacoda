@@ -11,7 +11,8 @@ including them in the list of columns in `cities (...)`.
 - We also use the WITH clause to add the `null ''` option. 
 
 We have a tab-delimited .txt file, so we'd use `text` for our FORMAT parameter 
-(which is the default for `\copy`/SQL COPY, so we don't need to specify it in
+(which is the default for [`\copy`](https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-META-COMMANDS-COPY)/
+[SQL COPY](https://www.postgresql.org/docs/current/sql-copy.html), so we don't need to specify it in
 the command). The tab delimiter is also default for `text`. The only option 
 we need to explicitly include is `null ''` which indicates that null values 
 are represented by empty strings in the file. 

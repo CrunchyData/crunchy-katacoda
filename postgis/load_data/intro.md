@@ -34,7 +34,7 @@ PostGIS has already been installed in this environment. We'll mostly be using th
 - username: `groot`
 - password: `password` (We've set up the environment so that you can log in via
 `psql` without having to manually enter the password)
-- database: `tampa`
+- database: `tampa`  
 We'll log in as a superuser in one instance (to run CREATE EXTENSION). Otherwise,
  it's best practice to avoid the superuser role when possible as it can bypass 
  almost every access restriction in the database!
