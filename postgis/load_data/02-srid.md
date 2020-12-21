@@ -44,9 +44,10 @@ and [epsg.io](https://epsg.io/4326) that indicate a code of `EPSG:4326`. `4326`
 We strongly recommend reading the [section about SRID](https://postgis.net/workshops/postgis-intro/loading_data.html#srid-26918-what-s-with-that) on the official Intro to PostGIS tutorial.
 You'll see another example of a `.prj` that contains slightly different 
 information -- in this case, a "PROJCS" value "NAD83 / UTM zone 18N". If you 
-search only "NAD83" you might end up with a different EPSG code and not 26918.
+search only the GEOGCS value "NAD83" like we did with Parking_Garages_and_Lots.prj, 
+you might end up going with a different EPSG code and not 26918.
 
 So, if you have projection information _in addition to_ the reference system, 
 it's probably a safer bet to confirm the SRID using both. With that said, 
-finding out the SRID isn't always straightforward -- don't panic, and try to 
+finding out the SRID sometimes isn't the most straightforward. Don't panic, and try to 
 check with other GIS pros if you need to.

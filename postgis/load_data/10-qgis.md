@@ -4,7 +4,7 @@ you're likely already using or are at least familiar with QGIS, but even if
 you don't specialize in GIS you might still find it helpful. (For example, we've 
 found it more straightforward in QGIS to [view the EPSG code](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#information-properties) from shapefiles.) 
 
-We won't be able to demonstrate QGIS in this environment, but the official 
+We're unable to set up a QGIS demo in this environment, but the official 
 QGIS docs are helpful and there are many resources available from the internet.
  QGIS has a tool called [DB Manager](https://docs.qgis.org/3.16/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html#dbmanager)
  that allows you to integrate databases such as Postgres/PostGIS. 

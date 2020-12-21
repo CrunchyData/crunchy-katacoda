@@ -12,7 +12,7 @@ also has helpful information about shapefiles.
 ## shp2pgsql for importing shapefiles into PostGIS
 
 `shp2pgsql` is a command line tool for importing shapefiles into a PostgreSQL/PostGIS 
-database. shp2pgsql comes with a PostGIS install, so we should already be able 
+database. `shp2pgsql` comes with a PostGIS install, so we should already be able 
 to run it in our environment. Let's make sure we log out of `psql` first:
 
 ```
