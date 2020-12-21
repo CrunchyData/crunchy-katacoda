@@ -45,7 +45,7 @@ CREATE TABLE cities (
 
 The main things to note here are:
 1. We create an `id` column for our table. `id` is another type of "generated"
- column but it's distinct from the "calculated column" we create later. The cities data has its own 
+ column but it's distinct from the "calculated column" we're also creating. The cities data has its own 
 `geonameid` column, but we want the individual records in Postgres to also have
  their own table ID value.
 2. We define our geometry column `geom` to contain Point geometries and set the
