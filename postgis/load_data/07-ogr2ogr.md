@@ -4,10 +4,8 @@ data, there are many other formats that you may need to work with as well.
 format, a tool called `ogr2ogr` is recommended. 
 
 [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) allows you to easily convert 
-between GIS formats. Check out the list of supported formats,
- both for [vector data](https://gdal.org/drivers/vector/index.html) as well as 
- [raster](https://gdal.org/drivers/raster/index.html).
- And yes, `ogr2ogr` does work with shapefiles too. But `shp2pgsql` does make it
+between GIS formats. Check out the list of supported [vector data](https://gdal.org/drivers/vector/index.html) 
+formats. Yes, `ogr2ogr` does work with shapefiles too. But `shp2pgsql` does make it
  a bit more straightforward to work with shapefiles + SQL if that's precisely 
  what you need.
 
@@ -49,8 +47,8 @@ psql -U groot -h localhost tampa
 \d park_polygons
 ```{{execute}}
 
-We do see that we have a column named `geom` that has the `geometry` type, with 
-the SRID having been set to 4326 -- `ogr2ogr` was able to make a guess.
+We do see that we have a column named `geom` that has the generic `geometry` 
+type. The SRID is also set to 4326 -- `ogr2ogr` was able to extract this from the file.
 
 Let's do a quick query:
 
@@ -61,4 +59,4 @@ GROUP BY ST_GeometryType(geom);
 ```{{execute}}
 
 The majority of our records in `park_polygons` are Polygons, but there are a 
-handful that are MultiPolygons.
+handful that are MultiPolygons.  
