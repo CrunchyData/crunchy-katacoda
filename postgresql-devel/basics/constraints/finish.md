@@ -14,3 +14,5 @@ The easiest way to create these constraints is at table definition time, but we 
 The container used in this class is available [in Dockerhub](https://hub.docker.com/r/crunchydata/crunchy-postgres-appdev.) As long as you have Docker on your machine you can use the same version of PostgreSQL as the workshop. Now you have a quick and easy way to spin up PostgreSQL without installing binaries, compiling software, or any other administrative tasks.
  
  We hope you keep using Constraints for a better database experience.
+
+ _Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

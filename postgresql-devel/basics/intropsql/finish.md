@@ -7,3 +7,5 @@ You've now gotten a taste of `psql` and some command line basics. Here are a cou
 - The official [PostgreSQL documentation](https://www.postgresql.org/docs/current/app-psql.html)
 - Common `psql` commands on [postgresqltutorial.com](https://www.postgresqltutorial.com/psql-commands/)
 - [Linux Journey: Command Line](https://linuxjourney.com/lesson/the-shell)
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

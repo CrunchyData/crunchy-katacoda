@@ -8,3 +8,4 @@ Postgres in general, feel free to check out [this course](https://learn.crunchyd
 We also started a discussion on projections, but the [next course](https://learn.crunchydata.com/postgis/projection/)
  in this series contains even more technical details and examples. Enjoy!
  
+Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

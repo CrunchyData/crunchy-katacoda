@@ -5,3 +5,5 @@ From here you can now add these vector tiles as layers to your web map. Common i
 You also saw in this scenario that you can also add functions to your database to do more complex geospatial analysis in the database and have them exposed as vector tiles. We encourage you to check out our [PostGIS exercises](https://learn.crunchydata.com/postgis) for further information on the different types of analysis and functions you can create.
 
 Don't forget to also check out the [official pg_tileserv documentation](https://access.crunchydata.com/documentation/pg_tileserv/latest/).
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

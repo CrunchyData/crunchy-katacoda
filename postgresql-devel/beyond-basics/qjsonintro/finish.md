@@ -9,3 +9,5 @@ to download it and play some more at your own pace on your own machine.
 I hope you enjoyed learning a little about using [JSON in PostgreSQL](https://www.postgresql.org/docs/11/datatype-json.html) and can bring that into your work. 
   
 And with that, we are finished.
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._
