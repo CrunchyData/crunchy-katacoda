@@ -13,3 +13,5 @@ And if you're interested, the official docs also dive deeper into [index usage](
 
 The next scenario will go into a bit more detail on the **different types** of 
 indexes in PostgreSQL. See you there!
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

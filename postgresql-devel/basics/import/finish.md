@@ -7,3 +7,5 @@ are many others that might be suitable depending on your requirements. For examp
 [pgloader](https://pgloader.io/) is an example of a data migration tool that 
 supports database migrations to PostgreSQL from other DBMS's like MySQL, as 
 well as other file formats in addition to flat files like CSV.  
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

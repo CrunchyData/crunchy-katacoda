@@ -8,3 +8,5 @@ And with that we are done talking digging in a little deeper on the top useful i
 * [BRIN](https://www.postgresql.org/docs/current/brin.html)
 
 Remember, there is always a tradeoff with using an index. Be sure to look at disk size, improvements in query time, and insert/update/delete timings when working with indexes.  
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

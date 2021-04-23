@@ -15,3 +15,5 @@ about the implementation of the different data types:
 2. [Numeric types](https://www.postgresql.org/docs/current/datatype-numeric.html)
 3. [Boolean type](https://www.postgresql.org/docs/current/datatype-boolean.html)
 4. [Date/time types](https://www.postgresql.org/docs/current/datatype-datetime.html)
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

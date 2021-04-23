@@ -12,3 +12,5 @@ full text search, especially things like [highlighting results](https://www.post
  and changing [document weights](https://www.postgresql.org/docs/11/textsearch-controls.html#TEXTSEARCH-RANKING).  
   
 And with that, we are finished.
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

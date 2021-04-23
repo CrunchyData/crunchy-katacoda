@@ -16,3 +16,5 @@ from public domain or permissive licenses so that you can use it for commercial 
 to download it and play some more at your own pace on your own machine.
   
 And with that, we are finished.
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

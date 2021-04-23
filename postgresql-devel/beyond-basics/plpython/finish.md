@@ -4,3 +4,5 @@ PostgreSQL to create better applications. Don't forget to check out the [officia
 
 * [User-defined functions](https://www.postgresql.org/docs/current/xfunc.html)
 * [CREATE FUNCTION reference](https://www.postgresql.org/docs/current/sql-createfunction.html)
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._

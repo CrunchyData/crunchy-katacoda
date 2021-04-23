@@ -12,3 +12,5 @@ also gives a quick rundown on why you might use these data types
 [use case for range types](https://info.crunchydata.com/blog/range-types-recursion-how-to-search-availability-with-postgresql)
 * We have another Crunchy blog post that discusses how your choice of data 
 structure and types [may impact storage](https://info.crunchydata.com/blog/how-your-postgresql-data-model-affects-storage) 
+
+_Enjoy learning about PostgreSQL? [Sign up for our newsletter](https://www.crunchydata.com/newsletter/) and get the latest tips from us each month._
