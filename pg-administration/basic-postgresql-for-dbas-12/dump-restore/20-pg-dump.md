@@ -1,4 +1,4 @@
-A plaintext dump of large databases typically wouldn't be very useful. To make up for this, the `pg_dump` command can be used to create a custom, binary dump format that can be compressed and filtered. It also allows parallalism for both dumping and restoring to greatly increase speed. Again, we will be sending this dump to the training user's home directory.
+A plaintext dump of large databases typically wouldn't be very useful. To make up for this, the `pg_dump` command can be used to create a custom, binary dump format that can be compressed and filtered. It also allows parallelism for both dumping and restoring to greatly increase speed. Again, we will be sending this dump to the training user's home directory.
 
 ```
 pg_dump -Fc -f /home/training/training.pgr -v training

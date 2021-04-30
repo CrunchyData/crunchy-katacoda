@@ -1,4 +1,4 @@
-The first step to getting PostgreSQL running on a brand new system is to set the repositories that contain the latest package versions. For this demo we use CentOS7, but unfortunately the default repostory contains version 9.2 which has been EOL since Sept 2017 (https://www.postgresql.org/support/versioning).
+The first step to getting PostgreSQL running on a brand new system is to set the repositories that contain the latest package versions. For this demo we use CentOS7, but unfortunately the default repository contains version 9.2 which has been EOL since Sept 2017 (https://www.postgresql.org/support/versioning).
 
 Thankfully the PostgreSQL community provides an RPM repo that contains the latest version of not only postgres but many other popular third-party related tools as well (pgadmin, pgbouncer, pgbackrest, pg_partman, etc).
 
