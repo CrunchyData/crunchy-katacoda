@@ -7,7 +7,7 @@ echo $RESTORETIME
 ```{{execute T1}}
 In practice finding the exact time that the table was dropped is a lot harder than in this scenario. It may not be possible to find the exact time, but some forensic work should be able to get you close
 
-Now let's drop one of our example tables
+Our test database contains two example tables, `example1' and `example2`. Let's drop one of them:
 ```
 psql -d training -c "DROP TABLE example2"
 ```{{execute T1}}
