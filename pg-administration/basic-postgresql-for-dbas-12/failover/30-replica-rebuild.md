@@ -27,7 +27,7 @@ This causes any restores for those stanzas to automatically have these options a
 ```
 sudo bash -c "cat /var/lib/pgsql/12/data/postgresql.auto.conf"
 ```{{execute T1}}
-Having this prepared ahead of time can greatly decrease the downtime encoutered during replica rebuilds.
+Having this prepared ahead of time can greatly decrease the downtime encountered during replica rebuilds.
 
 The `--type=standby` option is also important to tell pgBackrest to create a `standby.signal` file for us. Without that, when we start up after the restore, the database would become a standalone system instead of a replica.
 

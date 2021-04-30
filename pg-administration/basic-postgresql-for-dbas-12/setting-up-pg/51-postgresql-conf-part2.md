@@ -1,5 +1,5 @@
 
-These last sections of this scenario are all explanation with no futher commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
+These last sections of this scenario are all explanation with no further commands to run. So to make it easier to read, you can enlarge this text section of the lesson by dragging the mid-bar to the right.
 
 Some of these settings will require a restart of the database to change, so it is good to try and set these to your desired values when first setting up your clusters. The values given are what we would recommend for most common scenarios. EL7 does set some of our recommendations by default, but not all systems do.
 

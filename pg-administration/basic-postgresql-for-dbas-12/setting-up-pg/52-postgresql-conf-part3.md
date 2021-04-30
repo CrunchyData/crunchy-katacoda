@@ -10,7 +10,7 @@
 
 `max_wal_senders` - Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients. More recent versions of PG default to 10. It is recommended to always have this setting be at least 2 higher than your number of replicas to allow pg_basebackup to run effectively if needed. https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-WAL-SENDERS
 
-`wal_keep_segments` - Specifies the minimum number of past log file segments kept in the pg_wal directory, in case a standby server needs to fetch them for streaming replication. Recommend a default value of 30 to start with whenever there is at least one replica. https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-WAL-KEEP-SEGMENTS 
+`wal_keep_segments` - Specifies the minimum number of past log file segments kept in the pg_wal directory, in case a standby server needs to fetch them for streaming replication. Recommend a default value of 30 to start with whenever there is at least one replica. (As of version 13, this has been renamed to `wal_keep_size`) https://www.postgresql.org/docs/11/runtime-config-replication.html#GUC-WAL-KEEP-SEGMENTS
 
 `max_replication_slots` - Replication slots are covered in better detail in the `Replication` part of this training than can be summarized here. Default value of 10 is fine in most cases. https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-REPLICATION-SLOTS
 

@@ -26,7 +26,7 @@ This causes any restores for those stanzas to automatically have these options a
 ```
 sudo bash -c "cat /var/lib/pgsql/11/data/recovery.conf"
 ```{{execute T1}}
-Having this prepared ahead of time can greatly decrease the downtime encoutered during replica rebuilds.
+Having this prepared ahead of time can greatly decrease the downtime encountered during replica rebuilds.
 
 The rebuilt replica can now be started and should connect as a streaming replica to the new primary. Again, since we're running this pair of systems on the same server, the port number needs to be updated on the new replica since it just copied the postgresql.conf from the current primary
 ```

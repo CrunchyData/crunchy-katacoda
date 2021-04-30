@@ -3,7 +3,7 @@ Since we're running our replica on the same system as our primary, we'll have to
 ```
 sed -i "/port = 5432/c\port = 5444" /var/lib/pgsql/12/replica/postgresql.conf
 ```{{execute T1}}
-A `standby.signal` file should have been created for us in the target data directory. And the minimal replica settings needed should have been added to the `postgresql.auto.conf` file. This is an override file for the `postgresql.conf` file and any settings here will take precendence. Let's take a look at its contents:
+A `standby.signal` file should have been created for us in the target data directory. And the minimal replica settings needed should have been added to the `postgresql.auto.conf` file. This is an override file for the `postgresql.conf` file and any settings here will take precedence. Let's take a look at its contents:
 ```
 cat /var/lib/pgsql/12/replica/postgresql.auto.conf
 ```{{execute T1}}
