@@ -21,7 +21,7 @@ Note that this shows the actual file's contents, not what may be active within t
 
 An example for adding an entry to allow a password protected connection for replication would be as follows:
 ```
-host    replication    replica_user    192.168.1.201/32    md5
+host  replication  replica_user  192.168.1.201/32  md5
 ```
 
 The first column controls the connection type, be it TCP, SSL, or local socket. `host` means it will be a TCP/IP based connection
