@@ -5,7 +5,7 @@ Secure connections via SSL and third-party access management via GSSAPI/Certific
 
 The file is always evaluated from the top down and as soon as a match is found, further evaluation is halted. So be careful with the ordering of entries to ensure the proper rules are evaluated in the desired order.
 
-It is recommended to avoid the "trust" authentication method whenever possible since this allows unfettered access for the users that match. It is recommended to always at least require password authentication (`scram-sha-256`, `md5`). If passwordless logins are desired, it is recommended to use a `.pgpass` file to securely keep user credentials available on the database - https://www.postgresql.org/docs/current/libpq-pgpass.html
+It is recommended to avoid the "trust" authentication method whenever possible since this allows unfettered access for the users that match. It is recommended to always at least require password authentication (`scram-sha-256`, `md5`). To prevent having to manually enter in passwords, it is recommended to use a `.pgpass` file to securely keep user credentials available on the database - https://www.postgresql.org/docs/current/libpq-pgpass.html
 
 The example system in this scenario enables peer authentication by default. This means that any system user that has a matching database role can log in without requiring a password. Since the cluster was created by the `postgres` system user, a `postgres` role exists in the database. You can see the existing roles via `psql` by using the `\du` command
 ```
