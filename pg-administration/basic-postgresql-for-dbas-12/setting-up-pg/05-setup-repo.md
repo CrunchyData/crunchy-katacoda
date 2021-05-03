@@ -20,7 +20,7 @@ sudo yum install postgresql12-server postgresql12-contrib
 
 If you just need the client programs (`psql`, `pg_dump`, `pg_restore`, etc), the `postgresql##` package (e.g. `postgresql12`) can provide that without installing the whole server environment. The server package will pull this dependency.
 
-The `postgresql##-contrib` package provides a suite of extra tools that are maintained by the core team. Even if you don't know whether you'll need them, it's recommended to install the package so they are readily available. Some popular examples are `pg_stat_statements`, `auto_explain`, and `dblink`. More can be found here: 
+The `postgresql##-contrib` package provides a suite of extra tools for Postgres. Even if you don't know whether you'll need them, it's recommended to install the package so they are readily available. Some popular examples are `pg_stat_statements`, `auto_explain`, and `dblink`. More can be found here: 
 
 https://www.postgresql.org/docs/current/contrib.html
 
