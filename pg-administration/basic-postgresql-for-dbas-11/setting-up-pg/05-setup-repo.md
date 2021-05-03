@@ -11,7 +11,7 @@ sudo yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86
 
 Confirm that this is ok and PostgreSQL is now ready to install!
 
-Note there was a recent change regarding how the community repo is organized. Previously each major version had its own repo, but now changed to one universal repo per distro. If you're managing existing systems, it's important to make note of this change for future updates.
+Note there was a recent change regarding how the community repo is organized. Previously each major version had its own repo, but now there is one universal repo per distro. If you're managing existing systems, it's important to make note of this change for future updates.
 
 Next install the necessary package(s)
 ```
