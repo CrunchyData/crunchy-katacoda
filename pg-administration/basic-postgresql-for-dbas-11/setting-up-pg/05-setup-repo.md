@@ -15,7 +15,7 @@ Note there was a recent change regarding how the community repo is organized. Pr
 
 Next install the necessary package(s)
 ```
-sudo yum install postgresql11-server postgresql11-contrib
+sudo yum install -y postgresql11-server postgresql11-contrib
 ```{{execute T1}}
 
 If you just need the client programs (`psql`, `pg_dump`, `pg_restore`, etc), the `postgresql##` package (e.g. `postgresql11`) can provide that without installing the whole server environment. The server package will pull this dependency.
