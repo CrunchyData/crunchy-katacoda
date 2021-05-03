@@ -5,7 +5,7 @@ To run the script, execute the following statement:
 sudo PGSETUP_INITDB_OPTIONS="--data-checksums" /usr/pgsql-12/bin/postgresql-12-setup initdb
 ```{{execute T1}}
 
-Passing the `initdb` command to the script tells it to initialize the PostgreSQL cluster. We also pass an option to the initdb command in order to enable checksums on our cluster. This is a feature that was introduced in PG 9.3 and is highly recommended to enable on all new clusters. Checksums on data pages help to detect corruption by the I/O system that would otherwise be silent. It can currently only be set on database initialization but work is underway to allow enabling it on existing database clusters. https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-DATA-CHECKSUMS
+Passing the `initdb` command to the script tells it to initialize the PostgreSQL cluster. We also pass an option to the initdb command in order to enable checksums on our cluster. This feature is highly recommended to enable on all new clusters. Checksums on data pages help to detect corruption by the I/O system that would otherwise be silent. It can currently only be set on database initialization but work is underway to allow enabling it on existing database clusters. https://www.postgresql.org/docs/current/app-initdb.html#APP-INITDB-DATA-CHECKSUMS
 
 Next we enable the service via systemd
 ```
