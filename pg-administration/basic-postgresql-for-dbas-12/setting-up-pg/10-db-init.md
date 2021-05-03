@@ -22,6 +22,6 @@ After starting a service it's always good to check its status
 systemctl status postgresql-12
 ```{{execute T1}}
 
-If you encounter any issues, you can check the syslog for any errors related to systemd starting the service (`/var/log/messages`) or check the PostgreSQL logs as well (`/var/lib/pgsql/##/data/log`) where ## is the major version of PostgreSQL, e.g. 11, 10, 96, etc).
+If you encounter any issues, you can check the syslog for any errors related to systemd starting the service (`/var/log/messages`) or check the PostgreSQL logs as well (`/var/lib/pgsql/##/data/log`) where ## is the major version of PostgreSQL, e.g. 11, 12, 13, etc).
 
-Note that prior to PG10, the log directory was called `pg_log`.
+Note that prior to Postgres version, the log directory was called `pg_log`.
