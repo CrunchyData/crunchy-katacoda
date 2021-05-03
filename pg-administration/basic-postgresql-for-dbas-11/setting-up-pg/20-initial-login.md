@@ -1,5 +1,5 @@
 
-By default a `postgres` system user is created for you by the packages that were installed. Let's change to that user. We're going to do so in the second terminal named "`postgres_terminal`" and from now on, any commands that need to be run by the `postgres` system user will be run from this terminal. Any other system commands prepended with a `sudo` will be run from the initial terminal.
+By default a `postgres` system user is created for you by the packages that were installed. Let's change to that user. We're going to do so in the second terminal named `postgres_terminal` and from now on, any commands that need to be run by the `postgres` system user will be run from this terminal. Any other system commands prepended with a `sudo` will be run from the initial terminal.
 ```
 sudo -iu postgres
 ```{{execute T2}}
