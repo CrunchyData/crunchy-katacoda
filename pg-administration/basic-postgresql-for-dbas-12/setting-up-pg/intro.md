@@ -4,4 +4,4 @@ This scenario will go over the initial setup of a PostgreSQL cluster and give an
 Let's get started!
 
 user: training
-password: training
+<br>password: training
