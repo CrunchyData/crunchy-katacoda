@@ -9,7 +9,7 @@ The error that returns shows that if you do not tell psql which role you want to
 
 So let's create a training role in our `postgres_terminal` where we can log in
 ```
-CREATE ROLE training WITH LOGIN SUPERUSER;
+CREATE ROLE training   WITH LOGIN   SUPERUSER;
 ```{{execute T2}}
 
 We've added two properties onto this role.
