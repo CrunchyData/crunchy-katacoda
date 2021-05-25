@@ -24,4 +24,4 @@ systemctl status postgresql-12
 
 If you encounter any issues, you can check the syslog for any errors related to systemd starting the service (`/var/log/messages`) or check the PostgreSQL logs as well (`/var/lib/pgsql/##/data/log`) where ## is the major version of PostgreSQL (e.g. 11, 12, 13).
 
-Note that prior to Postgres version, the log directory was called `pg_log`.
+Note that prior to Postgres version 10, the log directory was called `pg_log`.
