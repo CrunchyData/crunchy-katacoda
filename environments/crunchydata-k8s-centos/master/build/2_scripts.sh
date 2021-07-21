@@ -72,9 +72,12 @@ kubectl apply -f /opt/weave-kube
 # done
 
 /opt/create-pv.sh
+
+kubectl patch storageclass fast -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+
 # Operator install
-cd /home/cent/postgres-operator/ansible
-ansible-playbook -i inventory --tags=install main.yml
+cd /home/cent/postgres-operator/installers/ansible
+ansible-playbook -i inventory.yaml --tags=install main.yml
 
 #now source the env variables for the client
 source ~/.bashrc
@@ -354,218 +357,139 @@ chmod +x /usr/local/bin/launch.sh
 
 
 ## Operator work
-
-cat <<EOF > /home/cent/postgres-operator/ansible/inventory
-localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python"
-
-[all:vars]
-
-crunchy_debug='false'
-
-
-# Deploy into Kubernetes
-# ==================
-# Note: Context name can be found using:
-#   kubectl config current-context
-# ==================
-kubernetes_context='kubernetes-admin@kubernetes'
-
-# Create RBAC
-# ==================
-# Note: you may disable creating RBAC resources if they where already
-# provisoned by a cluster admin.
-# ==================
-create_rbac='true'
-
-# ===================
-# PGO Client Container Settings
-# The following settings configure the deployment of a PGO Client Container
-# ===================
-# PGO Client Container Install
-pgo_client_container_install='true'
-
-# PGO Apiserver URL - Url to be used to connect to the operator service
-#pgo_apiserver_url='https://postgres-operator'
-
-# PGO Client Secret
-#pgo_client_cert_secret='pgo.tls'
-
-# ===================
-# PGO Settings
-# The following settings configure the Crunchy PostgreSQL Operator
-# functionality.
-# ===================
-
-# The name of the PGO installation
-pgo_installation_name='operatorinstall'
-
-# PGO Admin Credentials
-pgo_admin_username='admin'
-pgo_admin_password='letmein'
-
-# PGO Admin Role & Permissions
-pgo_admin_role_name='pgoadmin'
-pgo_admin_perms='*'
-
-# Namespace where operator will be deployed
-# NOTE: Ansible will create namespaces that don't exist
-pgo_operator_namespace='pgo'
-
-# Comma separated list of namespaces Operator will manage
-# NOTE: Ansible will create namespaces that don't exist
-namespace='opspace,opnamespace'
-
-# Crunchy Container Suite images to use. The tags centos7 and rhel7 are acceptable.
-# CentOS7 images can be found in dockerhub: https://hub.docker.com/u/crunchydata
-# RHEL7 images are available to Crunchy customers: https://access.crunchydata.com/login/
-ccp_image_prefix='crunchydata'
-ccp_image_tag='centos7-12.2-4.2.2'
-
-# Name of a Secret containing credentials for container image registries.
-# Provide a path to the Secret manifest to be installed in each namespace. (optional)
-ccp_image_pull_secret=''
-ccp_image_pull_secret_manifest=''
-
-# Crunchy PostgreSQL Operator images to use.  The tags centos7 and rhel7 are acceptable.
-pgo_image_prefix='crunchydata'
-pgo_image_tag='centos7-4.2.2'
-
-# Name of a Secret containing credentials for container image registries.
-# Provide a path to the Secret manifest to be installed in each namespace. (optional)
-#pgo_image_pull_secret=''
-#pgo_image_pull_secret_manifest=''
-
-# PGO Client Install
-pgo_client_install='true'
-pgo_client_version='v4.2.2'
-
-# PGO Apiserver TLS Settings
-#pgo_tls_no_verify='false'
-#pgo_disable_tls='false'
-#pgo_apiserver_port=8443
-#pgo_tls_ca_store=''
-#pgo_add_os_ca_store='false'
-#pgo_noauth_routes=''
-
-# PGO Event Settings
-#pgo_disable_eventing='false'
-
-# Set to 'true' to assign the cluster-admin role to the PGO service account.  Needed for
-# OCP installs to enable dynamic namespace creation (see the PGO docs for more details).
-#pgo_cluster_admin='false'
-
-# This will set default enhancements for operator deployed PostgreSQL clusters
-backrest='true'
-badger='false'
-metrics='false'
-pod_anti_affinity='preferred'
-sync_replication='false'
-
-# pgBadger Defaults
-pgbadgerport='10000'
-
-# pgBackRest Defaults
-archive_mode='true'
-archive_timeout=60
-#backrest_port=''
-
-# Log Defaults
-log_statement='none'
-log_min_duration_statement=60000
-
-# Autofail Settings
-disable_auto_failover='false'
-
-# Scheduler Settings
-scheduler_timeout=3600
-
-# Service Type for PG Primary & Replica Services
-service_type='ClusterIP'
-
-# ===================
-# PostgreSQL Settings
-# Default parameters for objects created when the database container starts
-# such as: default database name and default username
-# ===================
-db_name='workshop'
-db_password_age_days=60
-db_password_length=10
-db_port=5432
-db_replicas=0
-db_user='normaluser'
-
-# ==================
-# Storage Settings
-# ==================
-backrest_storage='storageos'
-backup_storage='storageos'
-primary_storage='storageos'
-replica_storage='storageos'
-
-storage5_name='storageos'
-storage5_access_mode='ReadWriteOnce'
-storage5_size='1G'
-storage5_type='dynamic'
-storage5_class='fast'
-storage5_fs_group=26
-
-# ==================
-# Container Resource Configurations
-# ==================
-resource1_name='small'
-resource1_requests_memory='512Mi'
-resource1_requests_cpu=0.1
-resource1_limits_memory='512Mi'
-resource1_limits_cpu=0.1
-
-# ==================
-# Metrics
-# ==================
-# Optional installation of Grafana and Prometheus optimized
-# to work with the Crunchy PostgreSQL Operator
-
-# Note: Ansible will create namespaces that don't exist
-metrics_namespace='metrics'
-exporterport='9187'
-
-grafana_install='false'
-grafana_admin_username='admin'
-grafana_admin_password=''
-#grafana_storage_access_mode='ReadWriteOnce'
-#grafana_storage_class_name='fast'
-#grafana_volume_size='1G'
-#grafana_supplemental_groups=65534
-#grafana_fs_group=26
-
-prometheus_install='false'
-#prometheus_storage_access_mode='ReadWriteOnce'
-#prometheus_storage_class_name='fast'
-#prometheus_volume_size='1G'
-#prometheus_supplemental_groups=65534
-#prometheus_fs_group=26
-
-
-# ==================
-# Namespace Cleanup
-# ==================
-# The following settings determine whether or not the PGO and metrics namespaces (defined using
-# inventory variables 'pgo_operator_namespace', 'namespace' and 'metrics_namespace') are deleted
-# when deprovisioning. Please note that this will also result in the deletion of any non-PGO
-# resources deployed in these namespaces, and cannot be undone. By default (and unless otherwise
-# specified using the variables below), all namespaces will be preserved when deprovisioning.
-
-#delete_operator_namespace='false'
-#delete_watched_namespaces='false'
-#delete_metrics_namespace='false'
+cat <<EOF > /home/cent/postgres-operator/installers/ansible/values.yaml
+# =====================
+# Configuration Options
+# More info for these options can be found in the docs
+# https://access.crunchydata.com/documentation/postgres-operator/latest/installation/configuration/
+# =====================
+archive_mode: "true"
+archive_timeout: "60"
+backrest_aws_s3_bucket: ""
+backrest_aws_s3_endpoint: ""
+backrest_aws_s3_key: ""
+backrest_aws_s3_region: ""
+backrest_aws_s3_secret: ""
+backrest_aws_s3_uri_style: ""
+backrest_aws_s3_verify_tls: "true"
+backrest_gcs_bucket: ""
+backrest_gcs_endpoint: ""
+backrest_gcs_key_type: ""
+backrest_port: "2022"
+badger: "false"
+ccp_image_prefix: "registry.developers.crunchydata.com/crunchydata"
+ccp_image_pull_secret: ""
+ccp_image_pull_secret_manifest: ""
+ccp_image_tag: "centos8-13.3-4.7.0"
+create_rbac: "true"
+crunchy_debug: "false"
+db_name: "workshop"
+db_password_age_days: "0"
+db_password_length: "24"
+db_port: "5432"
+db_replicas: "0"
+db_user: "normaluser"
+default_instance_memory: "128Mi"
+default_pgbackrest_memory: "48Mi"
+default_pgbouncer_memory: "24Mi"
+default_exporter_memory: "24Mi"
+delete_operator_namespace: "false"
+delete_watched_namespaces: "false"
+disable_auto_failover: "false"
+reconcile_rbac: "true"
+exporterport: "9187"
+metrics: "false"
+namespace: "pgo"
+namespace_mode: "dynamic"
+pgbadgerport: "10000"
+pgo_add_os_ca_store: "false"
+pgo_admin_password: "examplepassword"
+pgo_admin_perms: "*"
+pgo_admin_role_name: "pgoadmin"
+pgo_admin_username: "admin"
+pgo_apiserver_port: "8443"
+pgo_apiserver_url: "https://postgres-operator"
+pgo_client_cert_secret: "pgo.tls"
+pgo_client_container_install: "false"
+pgo_client_install: "true"
+pgo_client_version: "4.7.0"
+pgo_cluster_admin: "false"
+pgo_disable_eventing: "false"
+pgo_disable_tls: "false"
+pgo_image_prefix: "registry.developers.crunchydata.com/crunchydata"
+pgo_image_pull_secret: ""
+pgo_image_pull_secret_manifest: ""
+pgo_image_tag: "centos8-4.7.0"
+pgo_installation_name: "devtest"
+pgo_noauth_routes: ""
+pgo_operator_namespace: "pgo"
+pgo_tls_ca_store: ""
+pgo_tls_no_verify: "false"
+pod_anti_affinity: "preferred"
+pod_anti_affinity_pgbackrest: ""
+pod_anti_affinity_pgbouncer: ""
+scheduler_timeout: "3600"
+service_type: "ClusterIP"
+sync_replication: "false"
+backrest_storage: "default"
+backup_storage: "default"
+primary_storage: "default"
+replica_storage: "default"
+pgadmin_storage: "default"
+wal_storage: ""
+storage1_name: "default"
+storage1_access_mode: "ReadWriteOnce"
+storage1_size: "1G"
+storage1_type: "dynamic"
+storage2_name: "hostpathstorage"
+storage2_access_mode: "ReadWriteMany"
+storage2_size: "1G"
+storage2_type: "create"
+storage3_name: "nfsstorage"
+storage3_access_mode: "ReadWriteMany"
+storage3_size: "1G"
+storage3_type: "create"
+storage3_supplemental_groups: "65534"
+storage4_name: "nfsstoragered"
+storage4_access_mode: "ReadWriteMany"
+storage4_size: "1G"
+storage4_match_labels: "crunchyzone=red"
+storage4_type: "create"
+storage4_supplemental_groups: "65534"
+storage5_name: "storageos"
+storage5_access_mode: "ReadWriteOnce"
+storage5_size: "5Gi"
+storage5_type: "dynamic"
+storage5_class: "fast"
+storage6_name: "primarysite"
+storage6_access_mode: "ReadWriteOnce"
+storage6_size: "4G"
+storage6_type: "dynamic"
+storage6_class: "primarysite"
+storage7_name: "alternatesite"
+storage7_access_mode: "ReadWriteOnce"
+storage7_size: "4G"
+storage7_type: "dynamic"
+storage7_class: "alternatesite"
+storage8_name: "gce"
+storage8_access_mode: "ReadWriteOnce"
+storage8_size: "300M"
+storage8_type: "dynamic"
+storage8_class: "standard"
+storage9_name: "rook"
+storage9_access_mode: "ReadWriteOnce"
+storage9_size: "1Gi"
+storage9_type: "dynamic"
+storage9_class: "rook-ceph-block"
 EOF
+
 
 cat <<EOF >> ~/.bashrc
 export PGOUSER="${HOME?}/.pgo/pgo/pgouser"
 export PGO_CA_CERT="${HOME?}/.pgo/pgo/client.crt"
 export PGO_CLIENT_CERT="${HOME?}/.pgo/pgo/client.crt"
-export PGO_CLIENT_KEY="${HOME?}/.pgo/pgo/client.pem"
+export PGO_CLIENT_KEY="${HOME?}/.pgo/pgo/client.key"
 export PGO_APISERVER_URL='https://127.0.0.1:8443'
 export PGO_CMD='kubectl'
 export PGO_OPERATOR_NAMESPACE='pgo'
 EOF
-
