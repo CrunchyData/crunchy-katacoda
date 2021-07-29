@@ -1,8 +1,10 @@
+set -e
+
+# Reset our cache and then recreate
+# Cleans out old repo information
 yum clean all
 yum makecache
-yum update -y -q
 
-set -e
 sudo rpm --import https://api.developers.crunchydata.com/downloads/gpg/RPM-GPG-KEY-crunchydata-dev
 sudo yum install -y https://api.developers.crunchydata.com/downloads/repo/rpm-centos/postgresql12/crunchypg12.repo
 if [ "$?" -ne 0 ]; then
@@ -22,7 +24,6 @@ cd postgres-operator
 git checkout v4.7.0
 cd ansible
 
-
 echo "Pull recent docker images"
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-pgadmin4:centos8-12.7-4.7.0
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-pgbadger:centos8-12.7-4.7.0
@@ -40,6 +41,3 @@ sudo docker pull registry.developers.crunchydata.com/crunchydata/pgo-client:cent
 sudo docker pull registry.developers.crunchydata.com/crunchydata/pgo-rmdata:centos8-4.7.0
 sudo docker pull registry.developers.crunchydata.com/crunchydata/pgo-deployer:centos8-4.7.0
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-postgres-exporter:centos8-4.7.0
-
-sudo rm -rf /var/cache/yum
-yum makecache
