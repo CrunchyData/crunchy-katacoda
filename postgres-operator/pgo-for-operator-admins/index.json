@@ -1,0 +1,33 @@
+ {
+  "title": "PostgreSQL Operator for Kubernetes for Admins",
+  "description": "Introduction to PostgreSQL Operator for Kubernetes Admins",
+  "difficulty": "beginniner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {"title": "pgo-for-operator-admins", "text": "pgo-for-operator-admins.md"}
+    ],
+    "intro": {
+      "courseData": "env-init.sh",
+      "code": "set-env.sh",
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "client": []
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal\u001b[m\r\n",
+    "terminals": [
+      {"name": "Terminal 2", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "crunchydata-k8s-centos"
+  }
+}
