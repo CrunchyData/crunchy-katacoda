@@ -21,7 +21,6 @@ cd /home/cent
 git clone https://github.com/CrunchyData/postgres-operator.git
 cd postgres-operator
 git checkout v4.7.1
-cd installers/ansible
 
 echo "Pull recent docker images"
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-pgadmin4:centos8-12.7-4.7.1
