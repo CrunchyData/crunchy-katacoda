@@ -63,7 +63,7 @@ SELECT name, ST_AsText(geom)
 
 ### Linestrings
 
-![image](geometries/assets//lines.png)
+![image](geometries/assets/lines.png)
 
 A **linestring** is a path between locations. It takes the form of an ordered series of two or more points. Roads and rivers are typically represented as linestrings. A linestring is said to be **closed** if it starts and ends on the same point. It is said to be **simple** if it does not cross or touch itself (except at its endpoints if it is closed). A linestring can be both **closed** and **simple**.
 
