@@ -2,7 +2,8 @@ set -e
 
 sudo docker pull storageos/node:1.5.0
 
-#now operator stuff
+# now operator stuff
+# 
 
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-pgadmin4:centos8-12.7-4.7.1
 sudo docker pull registry.developers.crunchydata.com/crunchydata/crunchy-pgbadger:centos8-12.7-4.7.1
