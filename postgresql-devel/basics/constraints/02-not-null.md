@@ -33,7 +33,7 @@ If you look at the constraints again, you will see that PostgreSQL implemented t
 
 So be aware, that a UNIQUE constraint will create an index on all the values of the field. If you don't want the size and write delays from a full index you can also create a [partial UNIQUE index](https://www.postgresql.org/docs/12/indexes-partial.html) (covering that is beyond the scope of this class).
 
-Remember you can also declare constraints against multiple columns. So you could also insure there are no duplicates of the combination family name, first name, and age by doing:
+Remember you can also declare constraints against multiple columns. So you could also ensure there are no duplicates of the combination family name, first name, and age by doing:
 
 ```sql92
 alter table people add CONSTRAINT unique_name_age UNIQUE (family_name, given_name, age);
@@ -43,7 +43,7 @@ alter table people add CONSTRAINT unique_name_age UNIQUE (family_name, given_nam
 
 The same general pattern works for a NOT NULL constraint. This constraint type prevents a NULL (no data) value from being inserted into a column. Again, the constraint can be used in conjunction with any of the other constraint types. 
 
-We need to have a family name in our application so let's insure that there is always data for this field. The syntax for adding a NOT NULL constraint after table creation is a bit different. Instead of adding a constraint we just set a condition on the column:
+We need to have a family name in our application so let's ensure that there is always data for this field. The syntax for adding a NOT NULL constraint after table creation is a bit different. Instead of adding a constraint we just set a condition on the column:
 
 ```sql92
 alter table people alter column family_name set NOT NULL;
@@ -52,14 +52,14 @@ alter table people alter column family_name set NOT NULL;
 Now let's try to enter a person without a last name:
 
 ```sql92
-insert into people ( given_name, age, twitter_username) values ('nebula', 28, 'daddyissues');
+insert into people ( given_name, age, twitter_username) values ('nebula', 28, 'ganymede224');
 ```{{execute}}
 
 Which ends up giving us error:
 
 ```
 [23502] ERROR: null value in column "family_name" violates not-null constraint
-Detail: Failing row contains (9, null, nebula, 28, daddyissues).
+Detail: Failing row contains (9, null, nebula, 28, ganymede224).
 ```
 
 And with that we have covered these two simple, yet powerful constraints for ensuring clean data. In the next section we are going to cover some constraints that core to the relational nature of databases, _primary keys_ and _foreign keys_.
