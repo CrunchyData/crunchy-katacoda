@@ -1,3 +1,4 @@
+<script src='https://link.crunchydata.com/cd.js'></script>
 This scenario gives you a quick introduction to using Python as an embedded language in PostgreSQL. The database has already been started and Python has been installed into the learning environment as well. 
 
 You'll want to complete the [Basics of PostgreSQL Functions](https://learn.crunchydata.com/postgresql-devel/courses/beyond-basics/basicfunctions) scenario before proceeding with this one if you're **not** familiar with writing and using functions in Postgres.
